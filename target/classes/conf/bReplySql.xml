@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bReply">
+	<resultMap id="BReplyResult" type="BReplyVO">
+		<result property="uReIdx" column="USER_REPLY_NO" />
+		<result property="BIdx" column="BOARD_CODE" />
+		<result property="uIdx" column="USER_CODE" />
+		<result property="uReContent" column="USER_REPLY" />
+		<result property="uReDate" column="REPLY_DATE" />
+	</resultMap>
+	<select id="selectBReplyList" parameterType="BReplyVO" resultMap="BReplyResult">
+	<![CDATA[
+		SELECT * FROM b_reply
+	]]>
+	</select>
+	
+	
+</mapper>

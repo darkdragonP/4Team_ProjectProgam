@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="medicine">
+	<resultMap id="medicineResult" type="MedicineVO">
+		<result property="uIdx" column="USER_CODE" />
+		<result property="mdIdx" column="MD_CODE" />
+		<result property="mdTitle" column="MD_TITLE" />
+		<result property="mdGrade" column="MD_GRADE" />
+		<result property="mdDate" column="MD_DATE" />
+		<result property="mdHits" column="MD_HITS" />
+		<result property="mdRating" column="MD_RATING" />
+		<result property="mdImage" column="MD_IMAGE" />
+		<result property="mdShape" column="MD_SHAPE" />
+		<result property="mdColor" column="MD_COLOR" />
+		<result property="mdType" column="MD_TYPE" />
+		<result property="mdLine" column="MD_LINE" />
+		<result property="mdEffect" column="MD_EFFECT" />
+		<result property="mdCapa" column="MD_CAPA" />
+		<result property="mdCaut" column="MD_CAUTION" />
+		<result property="mdSave" column="MD_SAVE" />
+		<result property="mdIngd" column="MD_INGREDIENT" />
+		<result property="mdComp" column="MD_COMPANIES" />
+		<result property="mdClass" column="MD_CLASS" />
+		<result property="mdAppr" column="MD_APPR" />
+	</resultMap>
+	
+	<select id="selectMedicineList" parameterType="MedicineVO" resultMap="medicineResult">
+	<![CDATA[
+		SELECT * FROM medicine
+	]]>
+	</select>
+	
+	<select id="selectMedicine" parameterType="String" resultMap="medicineResult">
+	<![CDATA[
+		SELECT * FROM medicine 
+		where user_code = #{mdIdx}
+	]]>
+	</select>
+	
+</mapper>
