@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -11,16 +11,16 @@
 </head>
 <body>
 	<div class="container">
-			<h2 class="sub-header">¾à °Ë»ö</h2>
+			<h2 class="sub-header">ì•½ ê²€ìƒ‰</h2>
 			<div class="card mb-4">
 				<h5 class="card-header">
 					<img src="images/googleVision.jpg" alt="OCR"
-						style="width: 2%; height: 2%;" />OCR ÀÌ¿ëÇÏ±â</h5>
+						style="width: 2%; height: 2%;" />OCR ì´ìš©í•˜ê¸°</h5>
 				<div class="card-body">
 					<span class="input-group-btn">
-						<button class="btn btn-secondary" type="button">»çÁøÀ¸·Î °Ë»ö</button>
+						<button class="btn btn-secondary" type="button">ì‚¬ì§„ìœ¼ë¡œ ê²€ìƒ‰</button>
 					</span> <span class="input-group-btn">
-						<button class="btn btn-secondary" type="button">Ã³¹æÀü µî·ÏÇÏ±â</button>
+						<button class="btn btn-secondary" type="button">ì²˜ë°©ì „ ë“±ë¡í•˜ê¸°</button>
 					</span>
 				</div>
 			</div>
@@ -28,7 +28,7 @@
 
 			<!-- Search Widget -->
 			<div class="card mb-4">
-				<h5 class="card-header">ºÐ·ùº° °Ë»ö</h5>
+				<h5 class="card-header">ë¶„ë¥˜ë³„ ê²€ìƒ‰</h5>
 				<div class="card-body">
 					<div class="input-group">
 						<input type="text" class="form-control"
@@ -38,69 +38,69 @@
 					<div class="shape">
 						<div style="border: 1px solid hidden; float: left; width: 9%;">
 							<div>
-								<input type="radio" name="color" value="¿øÇü">
+								<input type="radio" name="color" value="ì›í˜•">
 							</div>
-							<div>¿øÇü</div>
+							<div>ì›í˜•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 9%;">
 							<div>
-								<input type="radio" name="color" value="Å¸¿øÇü">
+								<input type="radio" name="color" value="íƒ€ì›í˜•">
 							</div>
-							<div>Å¸¿øÇü</div>
+							<div>íƒ€ì›í˜•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 9%;">
 							<div>
-								<input type="radio" name="color" value="¹Ý¿øÇü">
+								<input type="radio" name="color" value="ë°˜ì›í˜•">
 							</div>
-							<div>¹Ý¿øÇü</div>
+							<div>ë°˜ì›í˜•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 9%;">
 							<div>
-								<input type="radio" name="color" value="»ï°¢Çü">
+								<input type="radio" name="color" value="ì‚¼ê°í˜•">
 							</div>
-							<div>»ï°¢Çü</div>
+							<div>ì‚¼ê°í˜•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 9%;">
 							<div>
-								<input type="radio" name="color" value="»ç°¢Çü">
+								<input type="radio" name="color" value="ì‚¬ê°í˜•">
 							</div>
-							<div>»ç°¢Çü</div>
+							<div>ì‚¬ê°í˜•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 9%;">
 							<div>
-								<input type="radio" name="color" value="¸¶¸§¸ðÇü">
+								<input type="radio" name="color" value="ë§ˆë¦„ëª¨í˜•">
 							</div>
-							<div>¸¶¸§¸ðÇü</div>
+							<div>ë§ˆë¦„ëª¨í˜•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 9%;">
 							<div>
-								<input type="radio" name="color" value="Àå¹æÇü">
+								<input type="radio" name="color" value="ìž¥ë°©í˜•">
 							</div>
-							<div>Àå¹æÇü</div>
+							<div>ìž¥ë°©í˜•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 9%;">
 							<div>
-								<input type="radio" name="color" value="¿À°¢Çü">
+								<input type="radio" name="color" value="ì˜¤ê°í˜•">
 							</div>
-							<div>¿À°¢Çü</div>
+							<div>ì˜¤ê°í˜•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 9%;">
 							<div>
-								<input type="radio" name="color" value="À°°¢Çü">
+								<input type="radio" name="color" value="ìœ¡ê°í˜•">
 							</div>
-							<div>À°°¢Çü</div>
+							<div>ìœ¡ê°í˜•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 9%;">
 							<div>
-								<input type="radio" name="color" value="ÆÈ°¢Çü">
+								<input type="radio" name="color" value="íŒ”ê°í˜•">
 							</div>
-							<div>ÆÈ°¢Çü</div>
+							<div>íŒ”ê°í˜•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 9%;">
 							<div>
-								<input type="radio" name="color" value="±âÅ¸">
+								<input type="radio" name="color" value="ê¸°íƒ€">
 							</div>
-							<div>±âÅ¸</div>
+							<div>ê¸°íƒ€</div>
 						</div>
 					</div>
 					<br>
@@ -108,105 +108,105 @@
 					<div class="color">
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="ÇÏ¾ç">
+								<input type="radio" name="color" value="í•˜ì–‘">
 							</div>
-							<div>ÇÏ¾ç</div>
+							<div>í•˜ì–‘</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="³ë¶û">
+								<input type="radio" name="color" value="ë…¸ëž‘">
 							</div>
-							<div>³ë¶û</div>
+							<div>ë…¸ëž‘</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="ÁÖÈ²">
+								<input type="radio" name="color" value="ì£¼í™©">
 							</div>
-							<div>ÁÖÈ²</div>
+							<div>ì£¼í™©</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="ºÐÈ«">
+								<input type="radio" name="color" value="ë¶„í™">
 							</div>
-							<div>ºÐÈ«</div>
+							<div>ë¶„í™</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="»¡°­">
+								<input type="radio" name="color" value="ë¹¨ê°•">
 							</div>
-							<div>»¡°­</div>
+							<div>ë¹¨ê°•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="°¥»ö">
+								<input type="radio" name="color" value="ê°ˆìƒ‰">
 							</div>
-							<div>°¥»ö</div>
+							<div>ê°ˆìƒ‰</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="¿¬µÎ">
+								<input type="radio" name="color" value="ì—°ë‘">
 							</div>
-							<div>¿¬µÎ</div>
+							<div>ì—°ë‘</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="ÃÊ·Ï">
+								<input type="radio" name="color" value="ì´ˆë¡">
 							</div>
-							<div>ÃÊ·Ï</div>
+							<div>ì´ˆë¡</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="Ã»·Ï">
+								<input type="radio" name="color" value="ì²­ë¡">
 							</div>
-							<div>Ã»·Ï</div>
+							<div>ì²­ë¡</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="ÆÄ¶û">
+								<input type="radio" name="color" value="íŒŒëž‘">
 							</div>
-							<div>ÆÄ¶û</div>
+							<div>íŒŒëž‘</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="Ã»·Ï">
+								<input type="radio" name="color" value="ì²­ë¡">
 							</div>
-							<div>Ã»·Ï</div>
+							<div>ì²­ë¡</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="³²»ö">
+								<input type="radio" name="color" value="ë‚¨ìƒ‰">
 							</div>
-							<div>³²»ö</div>
+							<div>ë‚¨ìƒ‰</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="ÀÚÁÖ">
+								<input type="radio" name="color" value="ìžì£¼">
 							</div>
-							<div>ÀÚÁÖ</div>
+							<div>ìžì£¼</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="º¸¶ó">
+								<input type="radio" name="color" value="ë³´ë¼">
 							</div>
-							<div>º¸¶ó</div>
+							<div>ë³´ë¼</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="È¸»ö">
+								<input type="radio" name="color" value="íšŒìƒ‰">
 							</div>
-							<div>È¸»ö</div>
+							<div>íšŒìƒ‰</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="°ËÁ¤">
+								<input type="radio" name="color" value="ê²€ì •">
 							</div>
-							<div>°ËÁ¤</div>
+							<div>ê²€ì •</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 							<div>
-								<input type="radio" name="color" value="Åõ¸í">
+								<input type="radio" name="color" value="íˆ¬ëª…">
 							</div>
-							<div>Åõ¸í</div>
+							<div>íˆ¬ëª…</div>
 						</div>
 					</div>
 					<br>
@@ -214,21 +214,21 @@
 					<div class="Type">
 						<div style="border: 1px solid hidden; float: left; width: 30%;">
 							<div>
-								<input type="radio" name="color" value="Á¤Á¦·ù">
+								<input type="radio" name="color" value="ì •ì œë¥˜">
 							</div>
-							<div>Á¤Á¦·ù</div>
+							<div>ì •ì œë¥˜</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 30%;">
 							<div>
-								<input type="radio" name="color" value="°æÁúÄ¸½¶">
+								<input type="radio" name="color" value="ê²½ì§ˆìº¡ìŠ">
 							</div>
-							<div>°æÁúÄ¸½¶</div>
+							<div>ê²½ì§ˆìº¡ìŠ</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 30%;">
 							<div>
-								<input type="radio" name="color" value="¿¬ÁúÄ¸½¶">
+								<input type="radio" name="color" value="ì—°ì§ˆìº¡ìŠ">
 							</div>
-							<div>¿¬ÁúÄ¸½¶</div>
+							<div>ì—°ì§ˆìº¡ìŠ</div>
 						</div>
 					</div>
 					<br>
@@ -236,36 +236,37 @@
 					<div class="Type">
 						<div style="border: 1px solid hidden; float: left; width: 25%;">
 							<div>
-								<input type="radio" name="color" value="¾øÀ½">
+								<input type="radio" name="color" value="ì—†ìŒ">
 							</div>
-							<div>¾øÀ½</div>
+							<div>ì—†ìŒ</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 25%;">
 							<div>
-								<input type="radio" name="color" value="(-)Çü">
+								<input type="radio" name="color" value="(-)í˜•">
 							</div>
-							<div>(-)Çü</div>
+							<div>(-)í˜•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 25%;">
 							<div>
-								<input type="radio" name="color" value="(+)Çü">
+								<input type="radio" name="color" value="(+)í˜•">
 							</div>
-							<div>(+)Çü</div>
+							<div>(+)í˜•</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 25%;">
 							<div>
-								<input type="radio" name="color" value="±âÅ¸">
+								<input type="radio" name="color" value="ê¸°íƒ€">
 							</div>
-							<div>±âÅ¸</div>
+							<div>ê¸°íƒ€</div>
 						</div>
 					</div>
 					<br>
 					<hr>
-					<span class="input-group-btn">
-						<button class="btn btn-secondary" type="button">°Ë»ö</button>
-					</span> <span class="input-group-btn">
-						<button class="btn btn-secondary" type="button">ÃÊ±âÈ­</button>
-					</span>
+				<span style="float: right;"> <span class="input-group-btn">
+						<button class="btn btn-secondary" type="button">ê²€ìƒ‰</button>
+				</span> <span class="input-group-btn">
+						<button class="btn btn-secondary" type="button">ì´ˆê¸°í™”</button>
+				</span>
+				</span>
 
 				</div>
 			</div>
@@ -275,17 +276,17 @@
 			<!-- Page Content -->
 			<div class="breadcrumb-main">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item">¾à ¸®½ºÆ®</li>
+					<li class="breadcrumb-item">ì•½ ë¦¬ìŠ¤íŠ¸</li>
 				</ol>
 			</div>
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>ÀÌ¹ÌÁö</th>
-						<th>ÀÌ¸§</th>
-						<th>³»¿ë</th>
-						<th>Æò±Õº°Á¡</th>
-						<th>Á¶È¸¼ö</th>
+						<th>ì´ë¯¸ì§€</th>
+						<th>ì´ë¦„</th>
+						<th>ë‚´ìš©</th>
+						<th>í‰ê· ë³„ì </th>
+						<th>ì¡°íšŒìˆ˜</th>
 					</tr>
 				</thead>
 		<c:forEach items="${medicineList}" var="medicine">
@@ -294,7 +295,7 @@
 						<td>${medicine.mdImage}</td>
 						<td><a href="SelectMedicine.do?mdIdx=${medicine.mdIdx}">${medicine.mdTitle}</td>
 						<td>${medicine.mdAppr}</td>
-						<td>[º°Á¡ÀÌ¹ÌÁö]&nbsp;<!--${medicine.mdRating} --></td>
+						<td>[ë³„ì ì´ë¯¸ì§€]&nbsp;<!--${medicine.mdRating} --></td>
 						<td>${medicine.mdHits}</td>
 					</tr>
 				</tbody>

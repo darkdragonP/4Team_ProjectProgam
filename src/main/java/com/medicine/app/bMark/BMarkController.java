@@ -19,10 +19,10 @@ public class BMarkController {
 	
 	@RequestMapping(value="/bMarkdList.do")
 	public ModelAndView selectBMarkList(HttpServletRequest request){
-		System.out.println("selectBmarkList ¸Þ¼Òµå Á¤»ó ½ÇÇà.");
+		System.out.println("selectBmarkList ë©”ì†Œë“œ ì‹¤í–‰.");
 		
 		List<BMarkVO> bMarkList = bMarkService.selectBMarkList();
-		System.out.println("°á°ú°ª : "+bMarkList);
+		System.out.println("ê²°ê³¼ê°’: "+bMarkList);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("bMarkList", bMarkList);
 		mv.setViewName("/bMark/SetBMarkList");

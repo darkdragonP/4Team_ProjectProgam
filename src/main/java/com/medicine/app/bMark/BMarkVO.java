@@ -1,12 +1,13 @@
 package com.medicine.app.bMark;
 
 
-//B_MARK ÀÏ¹İ °Ô½ÃÆÇ º°Á¡
+
+//B_MARK ì¼ë°˜ ê²Œì‹œíŒ ë³„ì 
 public class BMarkVO {
 
-private int bIdx; //ÀÏ¹İ °Ô½ÃÆÇ ÄÚµå
-private int uIdx; //ÅëÇÕ È¸¿ø ÄÚµå
-private int bmr; //°Ô½ÃÆÇ º°Á¡ ´©Àû
+private int bIdx; //ì¼ë°˜ ê²Œì‹œíŒ ì½”ë“œ
+private int uIdx; //í†µí•© íšŒì› ì½”ë“œ
+private int bmr; //ê²Œì‹œíŒ ë³„ì  ëˆ„ì 
 
 public int getbIdx() {
 	return bIdx;

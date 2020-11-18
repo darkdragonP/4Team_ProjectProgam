@@ -5,6 +5,7 @@
 <configuration>
     <typeAliases>
     	<typeAlias type="com.medicine.app.user.UserVO" alias="UserVO" />
+    	<typeAlias type="com.medicine.app.user.UserVO" alias="AdminVO" />
     	<typeAlias type="com.medicine.app.uPdPage.UpdVO" alias="UpdVO" />
     	<typeAlias type="com.medicine.app.medicine.MedicineVO" alias="MedicineVO" />
     	<typeAlias type="com.medicine.app.mdReply.MdReplyVO" alias="MdReplyVO" />
@@ -13,6 +14,8 @@
     	<typeAlias type="com.medicine.app.bReply.BReplyVO" alias="BReplyVO" />
     	<typeAlias type="com.medicine.app.board.BoardVO" alias="BoardVO" />
     	<typeAlias type="com.medicine.app.bMark.BMarkVO" alias="BMarkVO" />
+    	<typeAlias type="com.medicine.app.qna.QnAVO" alias="QnAVO" />
+    	
     </typeAliases>
     
  <mappers>
@@ -24,7 +27,10 @@
 		<mapper resource="conf/comCodeSql.xml" />
 		<mapper resource="conf/bReplySql.xml" />
 		<mapper resource="conf/boardSql.xml" />
-		<mapper resource="conf/bMarkSql.xml" />	
+		<mapper resource="conf/bMarkSql.xml" />
+		<mapper resource="conf/qnaSql.xml" />
+		<mapper resource="conf/adminSql.xml" />
+			
  </mappers>
 </configuration>
 

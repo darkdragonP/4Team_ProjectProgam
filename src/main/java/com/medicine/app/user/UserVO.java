@@ -1,24 +1,24 @@
 package com.medicine.app.user;
 
 
-//USER À¯ÀúÅ×ÀÌºí
+//USER
 public class UserVO {
 
-	private int uIdx; //ÅëÇÕÈ¸¿øÄÚµå
-	private String userID; //¾ÆÀÌµğ
-	private String userPW; //ºñ¹Ğ¹øÈ£
-	private String uEmail; //ÀÌ¸ŞÀÏ
-	private String uName; //ÀÌ¸§
-	private String uBirth; //»ıÀÏ
-	private String uPostNum; //¿ìÆí¹øÈ£
-	private String uPhCD; //Åë½Å ½Äº°¹øÈ£
-	private String uPhNum; //ÇÚµåÆù ¹øÈ£ 
-	private String uProfile; //ÇÁ·ÎÇÊ»çÁø
-	private String address; //ÁÖ¼Ò
-	private String uDate; //°¡ÀÔÀÏ
-	private String uMailCon; //±¤°íµ¿ÀÇ
-	private String uGrade; //»ç¾÷ÀÚµî·ÏÁõ µî·Ï¶õ
-	private String 	ocrPay; //OCR°áÁ¦
+	private int uIdx; //í†µí•©íšŒì›ì½”ë“œ
+	private String userID; //ì•„ì´ë””
+	private String userPW; //ë¹„ë°€ë²ˆí˜¸
+	private String uEmail; //ì´ë©”ì¼
+	private String uName; //ì´ë¦„
+	private String uBirth; //ìƒì¼
+	private String uPostNum; //ìš°í¸ë²ˆí˜¸
+	private String uPhCD; //í†µì‹  ì‹ë³„ë²ˆí˜¸
+	private String uPhNum; //í•¸ë“œí° ë²ˆí˜¸ 
+	private String uProfile; //í”„ë¡œí•„ì‚¬ì§„
+	private String address; //ì£¼ì†Œ
+	private String uDate; //ê°€ì…ì¼
+	private String uMailCon; //ê´‘ê³ ë™ì˜
+	private String uGrade; //ì‚¬ì—…ìë“±ë¡ì¦ ë“±ë¡ë€
+	private String 	ocrPay; //OCRê²°ì œ
 public int getuIdx() {
 	return uIdx;
 }

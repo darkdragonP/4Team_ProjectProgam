@@ -1,12 +1,12 @@
 package com.medicine.app.mdReply;
 
-//MD_REPLY ¾à °Ô½ÃÆÇ_´ñ±Û
+//MD_REPLY ì•½ ê²Œì‹œíŒ_ëŒ“ê¸€
 public class MdReplyVO {
-private int uReIdx; //´ñ±Û ÄÚµå
-private int uIdx; //ÅëÇÕÈ¸¿øÄÚµå
-private int mdIdx; //¾à ÄÚµå
-private String uReContent; //´ñ±Û ³»¿ë
-private String uReDate; //´ñ±Û ÀÛ¼ºÀÏ
+private int uReIdx; //ëŒ“ê¸€ ì½”ë“œ
+private int uIdx; //í†µí•©íšŒì›ì½”ë“œ
+private int mdIdx; //ì•½ ì½”ë“œ
+private String uReContent; //ëŒ“ê¸€ ë‚´ìš©
+private String uReDate; //ëŒ“ê¸€ ì‘ì„±ì¼
 
 public int getuReIdx() {
 	return uReIdx;

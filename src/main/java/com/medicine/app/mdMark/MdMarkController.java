@@ -19,10 +19,10 @@ public class MdMarkController {
 
 	@RequestMapping(value="/mdMarkList.do")
 	public ModelAndView selectMdMarkList(HttpServletRequest request){
-		System.out.println("selectMdMarkList ¸Þ¼Òµå Á¤»ó ½ÇÇà.");
+		System.out.println("selectMdMarkList ë©”ì†Œë“œ ì‹¤í–‰.");
 		
 		List<MdMarkVO> mdMarkList =mdMarkService.selectMdMarkList();
-		System.out.println("°á°ú°ª : "+mdMarkList);
+		System.out.println("ê²°ê³¼ê°’: "+mdMarkList);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("mdMarkList", mdMarkList);
 		mv.setViewName("/mdMark/SetMdMarkList");

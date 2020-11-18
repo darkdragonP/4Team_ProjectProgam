@@ -3,7 +3,6 @@ package com.medicine.app.medicine;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,10 +20,11 @@ public class MedicineController {
 	
 	@RequestMapping(value="/medicineList.do")
 	public ModelAndView selectmedicineList(HttpServletRequest request){
-		System.out.println("selectmedicineList ¸Ş¼Òµå Á¤»ó ½ÇÇà.");
+		System.out.println("selectmedicineList ë©”ì†Œë“œ ì‹¤í–‰.");
 		
 		List<MedicineVO> medicineList = medicineService.selectMedicineList();
-		System.out.println("°á°ú°ª : "+medicineList);
+		System.out.println("ê²°ê³¼ê°’: "+medicineList);
+		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("medicineList", medicineList);
 		mv.setViewName("/medicine/SetMedicineList");
@@ -33,19 +33,19 @@ public class MedicineController {
 	}
 	@RequestMapping(value="/SelectMedicine.do")
 	public ModelAndView selectmedicine(@ModelAttribute MedicineVO vo, HttpServletRequest request){
-		System.out.println("selectmedicine ¸Ş¼Òµå Á¤»ó ½ÇÇà.");
-		System.out.println("jsp¿¡¼­ °¡Á®¿Â °ª:"+vo);
-		System.out.println("ÇØ´ç °ªÀÇ Å¸ÀÔ:"+vo.getClass().getName());
+		System.out.println("selectmedicine  ë©”ì†Œë“œ ì‹¤í–‰.");
+		System.out.println("jspì—ì„œ ì „ë‹¬ë°›ì€ ë³€ìˆ˜ ê°’:"+vo);
+		
+		System.out.println("ì „ë‹¬ë°›ì€ ê°’ì˜ ìë£Œí˜•:"+vo.getClass().getName());
 		
 		
 		String mdIdx = Integer.toString(vo.getMdIdx());
 		
 		MedicineVO medicine = medicineService.selectMedicine(mdIdx);
 		
-		System.out.println("°á°ú°ª : "+medicine);
+		System.out.println("sqlì¶œë ¥ê°’: "+medicine);
 		ModelAndView mv = new ModelAndView();
 		
-		System.out.println("sql¿¡¼­ ¹Ş¾Æ¿Â °ª:"+medicine.getMdCapa());
 		mv.addObject("medicine", medicine);
 		mv.setViewName("/medicine/SelectMedicine");
 

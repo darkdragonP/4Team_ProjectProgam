@@ -1,13 +1,13 @@
 package com.medicine.app.bReply;
 
-//B_REPLY ÀÏ¹İ°Ô½ÃÆÇ_´ñ±Û
-public class BReplyVO {	
-private int uReIdx; //´ñ±Û ÄÚµå
-private int BIdx; //ÀÏ¹İ°Ô½ÃÆÇ ÄÚµå
-private int uIdx; //ÅëÇÕÈ¸¿ø ÄÚµå
-private int uReContent; //´ñ±Û ³»¿ë
-private int uReDate; //´ñ±Û ÀÛ¼ºÀÏ
 
+//B_REPLY ì¼ë°˜ê²Œì‹œíŒ_ëŒ“ê¸€
+public class BReplyVO {	
+private int uReIdx; //ëŒ“ê¸€ ì½”ë“œ
+private int BIdx; //ì¼ë°˜ê²Œì‹œíŒ ì½”ë“œ
+private int uIdx; //í†µí•©íšŒì› ì½”ë“œ
+private int uReContent; //ëŒ“ê¸€ ë‚´ìš©
+private int uReDate; //ëŒ“ê¸€ ì‘ì„±ì¼
 
 public int getuReIdx() {
 	return uReIdx;

@@ -1,17 +1,16 @@
 package com.medicine.app.board;
 
-
-//BOARD ÀÏ¹İ °Ô½ÃÆÇ
+//BOARD ì¼ë°˜ ê²Œì‹œíŒ
 public class BoardVO {
 
-private int bIdx; //ÀÏ¹İ °Ô½ÃÆÇ ÄÚµå
-private int uIdx; //ÅëÇÕ È¸¿ø ÄÚµå
-private String bTitle; //ÀÏ¹İ °Ô½ÃÆÇ Á¦¸ñ
-private String bContents; //ÀÏ¹İ °Ô½ÃÆÇ ³»¿ë
-private String bDate; //ÀÏ¹İ °Ô½ÃÆÇ  ÀÛ¼ºÀÏ
-private int bHits; //ÀÏ¹İ °Ô½ÃÆÇ Á¶È¸¼ö ´©Àû
-private int bRating; //ÀÏ¹İ °Ô½ÃÆÇ º°Á¡ ´©Àû
-private int bCry; //ÀÏ¹İ °Ô½ÃÆÇ ½Å°í ´©Àû
+private int bIdx; //ì¼ë°˜ ê²Œì‹œíŒ ì½”ë“œ
+private int uIdx; //í†µí•© íšŒì› ì½”ë“œ
+private String bTitle; //ì¼ë°˜ ê²Œì‹œíŒ ì œëª©
+private String bContents; //ì¼ë°˜ ê²Œì‹œíŒ ë‚´ìš©
+private String bDate; //ì¼ë°˜ ê²Œì‹œíŒ  ì‘ì„±ì¼
+private int bHits; //ì¼ë°˜ ê²Œì‹œíŒ ì¡°íšŒìˆ˜ ëˆ„ì 
+private int bRating; //ì¼ë°˜ ê²Œì‹œíŒ ë³„ì  ëˆ„ì 
+private int bCry; //ì¼ë°˜ ê²Œì‹œíŒ ì‹ ê³  ëˆ„ì 
 
 
 

@@ -1,256 +1,206 @@
 package com.medicine.app.medicine;
 
-
-//MEDICINE ¾à °Ô½ÃÆÇ
+//MEDICINE ì•½ ê²Œì‹œíŒ
 public class MedicineVO {
-	
-private int uIdx; //ÅëÇÕÈ¸¿øÄÚµå
-private int mdIdx; //¾à ÄÚµå
-private String mdTitle; //¾à ÀÌ¸§
-private String mdGrade; //¾à ±¸ºĞ
-private String mdDate; //¾à µî·ÏÀÏ
-private String mdHits; //¾à °Ô½ÃÆÇ ´©Àû Á¢¼ÓÀÚ
-private String mdRating; //¾à °Ô½ÃÆÇ ´©Àû º°Á¡
-private String mdImage; //¾à ÀÌ¹ÌÁö
-private String mdShape; //¾à ¸ğ¾ç
-private String mdColor; //¾à »ö±ò
-private String mdType; //¾à Á¦Çü
-private String mdLine; //¾à ºĞÇÒ¼±
-private String mdEffect; //¾à È¿´ÉÈ¿°ú
-private String mdCapa; //¾à ¿ë¹ı ¿ë·®
-private String mdCaut; //¾à ÁÖÀÇ»çÇ×
-private String mdSave; //¾à ÀúÀåÁ¤º¸
-private String mdIngd; //¾à ¼ººĞÁ¤º¸
-private String mdComp; //¾à ¾÷Ã¼¸í
-private String mdClass; //½Ä¾àÃ³ ºĞ·ù
-private String mdAppr; //¾à ¼º»ó
 
-
-public int getuIdx() {
-	return uIdx;
-}
-
-
-public void setuIdx(int uIdx) {
-	this.uIdx = uIdx;
-}
-
-
-public int getMdIdx() {
-	return mdIdx;
-}
-
-
-public void setMdIdx(int mdIdx) {
-	this.mdIdx = mdIdx;
-}
-
-
-public String getMdTitle() {
-	return mdTitle;
-}
-
-
-public void setMdTitle(String mdTitle) {
-	this.mdTitle = mdTitle;
-}
-
-
-public String getMdGrade() {
-	return mdGrade;
-}
-
-
-public void setMdGrade(String mdGrade) {
-	this.mdGrade = mdGrade;
-}
-
-
-public String getMdDate() {
-	return mdDate;
-}
-
-
-public void setMdDate(String mdDate) {
-	this.mdDate = mdDate;
-}
-
-
-public String getMdHits() {
-	return mdHits;
-}
-
-
-public void setMdHits(String mdHits) {
-	this.mdHits = mdHits;
-}
-
-
-public String getMdRating() {
-	return mdRating;
-}
-
-
-public void setMdRating(String mdRating) {
-	this.mdRating = mdRating;
-}
-
-
-public String getMdImage() {
-	return mdImage;
-}
-
-
-public void setMdImage(String mdImage) {
-	this.mdImage = mdImage;
-}
-
-
-public String getMdShape() {
-	return mdShape;
-}
-
-
-public void setMdShape(String mdShape) {
-	this.mdShape = mdShape;
-}
-
-
-public String getMdColor() {
-	return mdColor;
-}
-
-
-public void setMdColor(String mdColor) {
-	this.mdColor = mdColor;
-}
-
-
-public String getMdType() {
-	return mdType;
-}
-
-
-public void setMdType(String mdType) {
-	this.mdType = mdType;
-}
-
-
-public String getMdLine() {
-	return mdLine;
-}
-
-
-public void setMdLine(String mdLine) {
-	this.mdLine = mdLine;
-}
-
-
-public String getMdEffect() {
-	return mdEffect;
-}
-
-
-public void setMdEffect(String mdEffect) {
-	this.mdEffect = mdEffect;
-}
-
-
-public String getMdCapa() {
-	return mdCapa;
-}
-
-
-public void setMdCapa(String mdCapa) {
-	this.mdCapa = mdCapa;
-}
-
-
-public String getMdCaut() {
-	return mdCaut;
-}
-
-
-public void setMdCaut(String mdCaut) {
-	this.mdCaut = mdCaut;
-}
-
-
-public String getMdSave() {
-	return mdSave;
-}
-
-
-public void setMdSave(String mdSave) {
-	this.mdSave = mdSave;
-}
-
-
-public String getMdIngd() {
-	return mdIngd;
-}
-
-
-public void setMdIngd(String mdIngd) {
-	this.mdIngd = mdIngd;
-}
-
-
-public String getMdComp() {
-	return mdComp;
-}
-
-
-public void setMdComp(String mdComp) {
-	this.mdComp = mdComp;
-}
-
-
-public String getMdClass() {
-	return mdClass;
-}
-
-
-public void setMdClass(String mdClass) {
-	this.mdClass = mdClass;
-}
-
-
-public String getMdAppr() {
-	return mdAppr;
-}
-
-
-public void setMdAppr(String mdAppr) {
-	this.mdAppr = mdAppr;
-}
-
-
-@Override
-public String toString() {
-	// TODO Auto-generated method stub
-	return "uIdx:"+uIdx+
-			", mdIdx:"+mdIdx+
-			", mdTitle:"+mdTitle+
-			", mdGrade:"+mdGrade+
-			", mdDate:"+mdDate+
-			", mdHits:"+mdHits+
-			", mdRating:"+mdRating+
-			", mdImage:"+mdImage+
-			", mdShape:"+mdShape+
-			", mdColor:"+mdColor+
-			", mdType:"+mdType+
-			", mdLine:"+mdLine+
-			", mdEffect:"+mdEffect+
-			", mdCapa:"+mdCapa+
-			", mdSave:"+mdSave+
-			", mdIngd:"+mdIngd+
-			", mdComp:"+mdComp+
-			", mdClass:"+mdClass+
-			", mdAppr:"+mdAppr;
-}
-
-
-
+	private int uIdx; // í†µí•©íšŒì›ì½”ë“œ
+	private int mdIdx; // ì•½ ì½”ë“œ
+	private String mdTitle; // ì•½ ì´ë¦„
+	private String mdGrade; // ì•½ êµ¬ë¶„
+	private String mdDate; // ì•½ ë“±ë¡ì¼
+	private String mdHits; // ì•½ ê²Œì‹œíŒ ëˆ„ì  ì ‘ì†ì
+	private String mdRating; // ì•½ ê²Œì‹œíŒ ëˆ„ì  ë³„ì 
+	private String mdImage; // ì•½ ì´ë¯¸ì§€
+	private String mdShape; // ì•½ ëª¨ì–‘
+	private String mdColor; // ì•½ ìƒ‰ê¹”
+	private String mdType; // ì•½ ì œí˜•
+	private String mdLine; // ì•½ ë¶„í• ì„ 
+	private String mdEffect; // ì•½ íš¨ëŠ¥íš¨ê³¼
+	private String mdCapa; // ì•½ ìš©ë²• ìš©ëŸ‰
+	private String mdCaut; // ì•½ ì£¼ì˜ì‚¬í•­
+	private String mdSave; // ì•½ ì €ì¥ì •ë³´
+	private String mdIngd; // ì•½ ì„±ë¶„ì •ë³´
+	private String mdComp; // ì•½ ì—…ì²´ëª…
+	private String mdClass; // ì‹ì•½ì²˜ ë¶„ë¥˜
+	private String mdAppr; // ì•½ ì„±ìƒ
+	private String mdIn; // ì•½ ì‹ë³„í‘œê¸°
+
+	public int getuIdx() {
+		return uIdx;
+	}
+
+	public void setuIdx(int uIdx) {
+		this.uIdx = uIdx;
+	}
+
+	public int getMdIdx() {
+		return mdIdx;
+	}
+
+	public void setMdIdx(int mdIdx) {
+		this.mdIdx = mdIdx;
+	}
+
+	public String getMdTitle() {
+		return mdTitle;
+	}
+
+	public void setMdTitle(String mdTitle) {
+		this.mdTitle = mdTitle;
+	}
+
+	public String getMdGrade() {
+		return mdGrade;
+	}
+
+	public void setMdGrade(String mdGrade) {
+		this.mdGrade = mdGrade;
+	}
+
+	public String getMdDate() {
+		return mdDate;
+	}
+
+	public void setMdDate(String mdDate) {
+		this.mdDate = mdDate;
+	}
+
+	public String getMdHits() {
+		return mdHits;
+	}
+
+	public void setMdHits(String mdHits) {
+		this.mdHits = mdHits;
+	}
+
+	public String getMdRating() {
+		return mdRating;
+	}
+
+	public void setMdRating(String mdRating) {
+		this.mdRating = mdRating;
+	}
+
+	public String getMdImage() {
+		return mdImage;
+	}
+
+	public void setMdImage(String mdImage) {
+		this.mdImage = mdImage;
+	}
+
+	public String getMdShape() {
+		return mdShape;
+	}
+
+	public void setMdShape(String mdShape) {
+		this.mdShape = mdShape;
+	}
+
+	public String getMdColor() {
+		return mdColor;
+	}
+
+	public void setMdColor(String mdColor) {
+		this.mdColor = mdColor;
+	}
+
+	public String getMdType() {
+		return mdType;
+	}
+
+	public void setMdType(String mdType) {
+		this.mdType = mdType;
+	}
+
+	public String getMdLine() {
+		return mdLine;
+	}
+
+	public void setMdLine(String mdLine) {
+		this.mdLine = mdLine;
+	}
+
+	public String getMdEffect() {
+		return mdEffect;
+	}
+
+	public void setMdEffect(String mdEffect) {
+		this.mdEffect = mdEffect;
+	}
+
+	public String getMdCapa() {
+		return mdCapa;
+	}
+
+	public void setMdCapa(String mdCapa) {
+		this.mdCapa = mdCapa;
+	}
+
+	public String getMdCaut() {
+		return mdCaut;
+	}
+
+	public void setMdCaut(String mdCaut) {
+		this.mdCaut = mdCaut;
+	}
+
+	public String getMdSave() {
+		return mdSave;
+	}
+
+	public void setMdSave(String mdSave) {
+		this.mdSave = mdSave;
+	}
+
+	public String getMdIngd() {
+		return mdIngd;
+	}
+
+	public void setMdIngd(String mdIngd) {
+		this.mdIngd = mdIngd;
+	}
+
+	public String getMdComp() {
+		return mdComp;
+	}
+
+	public void setMdComp(String mdComp) {
+		this.mdComp = mdComp;
+	}
+
+	public String getMdClass() {
+		return mdClass;
+	}
+
+	public void setMdClass(String mdClass) {
+		this.mdClass = mdClass;
+	}
+
+	public String getMdAppr() {
+		return mdAppr;
+	}
+
+	public void setMdAppr(String mdAppr) {
+		this.mdAppr = mdAppr;
+	}
+
+	public String getMdIn() {
+		return mdIn;
+	}
+
+	public void setMdIn(String mdIn) {
+		this.mdIn = mdIn;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "uIdx:" + uIdx + ", mdIdx:" + mdIdx + ", mdTitle:" + mdTitle + ", mdGrade:" + mdGrade + ", mdDate:"
+				+ mdDate + ", mdHits:" + mdHits + ", mdRating:" + mdRating + ", mdImage:" + mdImage + ", mdShape:"
+				+ mdShape + ", mdColor:" + mdColor + ", mdType:" + mdType + ", mdLine:" + mdLine + ", mdEffect:"
+				+ mdEffect + ", mdCapa:" + mdCapa + ", mdSave:" + mdSave + ", mdIngd:" + mdIngd + ", mdComp:" + mdComp
+				+ ", mdClass:" + mdClass + ", mdAppr:" + mdIn;
+	}
 
 }

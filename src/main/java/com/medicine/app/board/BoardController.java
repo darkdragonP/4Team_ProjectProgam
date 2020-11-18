@@ -19,14 +19,44 @@ public class BoardController {
 	
 	@RequestMapping(value="/boardList.do")
 	public ModelAndView selectBoardList(HttpServletRequest request){
-		System.out.println("selectBoardList �޼ҵ� ���� ����.");
+		System.out.println("selectBoardList 메소드 실행.");
 		
 		List<BoardVO> boardList = boardService.selectBoardList();
-		System.out.println("����� : "+boardList);
+		System.out.println("결과값: "+boardList);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("boardList", boardList);
-		mv.setViewName("/board/SetBoradList");
+		mv.setViewName("/board/BoradList");
 
+		return mv;
+	}
+	
+	@RequestMapping(value="/insertBoard.do")
+	public ModelAndView InsertBoard(HttpServletRequest request){
+		System.out.println("insertBoard 임시 메소드 실행.");
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/board/InsertBoard");
+		
+		return mv;
+	}
+	
+	@RequestMapping(value="/updateBoard.do")
+	public ModelAndView UpdateBoard(HttpServletRequest request){
+		System.out.println("UpdateBoard 임시 메소드 실행.");
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/board/UpdateBoard");
+		
+		return mv;
+	}
+	
+	@RequestMapping(value="/selectBoard.do")
+	public ModelAndView selectBoard(HttpServletRequest request){
+		System.out.println("selectBoard 임시 메소드 실행.");
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/board/SelectBoard");
+		
 		return mv;
 	}
 	

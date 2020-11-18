@@ -1,11 +1,11 @@
 package com.medicine.app.comCode;
 
 
-//COM_CODE ¿¬¶ôÃ³ ¹× È¸¿ø ±¸ºĞ
+//COM_CODE ì—°ë½ì²˜ ë° íšŒì› êµ¬ë¶„
 public class ComCodeVO {
-private String commTyCd; //ÄÚµå¹øÈ£
-private String commCd; //±¸ºĞ¹øÈ£
-private String commCdNm; //±¸ºĞ³»¿ë
+private String commTyCd; //ì½”ë“œë²ˆí˜¸
+private String commCd; //êµ¬ë¶„ë²ˆí˜¸
+private String commCdNm; //êµ¬ë¶„ë‚´ìš©
 
 
 

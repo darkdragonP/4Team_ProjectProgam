@@ -19,10 +19,10 @@ public class ComCodeController {
 	
 	@RequestMapping(value="/comCodeList.do")
 	public ModelAndView selectComCodeList(HttpServletRequest request){
-		System.out.println("selectComCodeList ¸Þ¼Òµå Á¤»ó ½ÇÇà.");
+		System.out.println("selectComCodeList ë©”ì†Œë“œ ì‹¤í–‰.");
 		
 		List<ComCodeVO> comCodeList = comCodeService.selectComCodeList();
-		System.out.println("°á°ú°ª : "+comCodeList);
+		System.out.println("ê²°ê³¼ê°’: "+comCodeList);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("comCodeList", comCodeList);
 		mv.setViewName("/comCode/SetComCodeList");

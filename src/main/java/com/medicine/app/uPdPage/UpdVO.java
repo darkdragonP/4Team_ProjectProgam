@@ -1,61 +1,67 @@
 package com.medicine.app.uPdPage;
 
+//ocr ê´€ë ¨
 public class UpdVO {
 
-private int uIdx; //ÅëÇÕÈ¸¿øÄÚµå
-private int ocrIdx; //¾à µî·Ï ÄÚµå
-private String ocrSearchDate; //°Ë»öÀÏ
-private String mdName; // ¾à ÀÌ¸§
-private String mdContent; //¾à ³»¿ë
-private String mdPP_Date; //Á¶Á¦ÀÏÀÚ
-public int getuIdx() {
-	return uIdx;
-}
-public void setuIdx(int uIdx) {
-	this.uIdx = uIdx;
-}
-public int getOcrIdx() {
-	return ocrIdx;
-}
-public void setOcrIdx(int ocrIdx) {
-	this.ocrIdx = ocrIdx;
-}
-public String getOcrSearchDate() {
-	return ocrSearchDate;
-}
-public void setOcrSearchDate(String ocrSearchDate) {
-	this.ocrSearchDate = ocrSearchDate;
-}
-public String getMdName() {
-	return mdName;
-}
-public void setMdName(String mdName) {
-	this.mdName = mdName;
-}
-public String getMdContent() {
-	return mdContent;
-}
-public void setMdContent(String mdContent) {
-	this.mdContent = mdContent;
-}
-public String getMdPP_Date() {
-	return mdPP_Date;
-}
-public void setMdPP_Date(String mdPP_Date) {
-	this.mdPP_Date = mdPP_Date;
-}
+	private int uIdx; // í†µí•©íšŒì›ì½”ë“œ
+	private int ocrIdx; // ì•½ ë“±ë¡ ì½”ë“œ
+	private String ocrSearchDate; // ê²€ìƒ‰ì¼
+	private String mdName; // ì•½ ì´ë¦„
+	private String mdContent; // ì•½ ë‚´ìš©
+	private String mdPP_Date; // ì¡°ì œì¼ì
 
-@Override
-public String toString() {
-	return "uIdx:"+uIdx+
-			", ocrIdx:"+ocrIdx+
-			", ocrSearchDate:"+ocrSearchDate+
-			", mdName:"+mdName+
-			", mdContent:"+mdContent+
-			", mdPP_Date:"+mdPP_Date;
-}
+	public int getuIdx() {
+		return uIdx;
+	}
 
+	public void setuIdx(int uIdx) {
+		this.uIdx = uIdx;
+	}
 
-	
-	
+	public int getOcrIdx() {
+		return ocrIdx;
+	}
+
+	public void setOcrIdx(int ocrIdx) {
+		this.ocrIdx = ocrIdx;
+	}
+
+	public String getOcrSearchDate() {
+		return ocrSearchDate;
+	}
+
+	public void setOcrSearchDate(String ocrSearchDate) {
+		this.ocrSearchDate = ocrSearchDate;
+	}
+
+	public String getMdName() {
+		return mdName;
+	}
+
+	public void setMdName(String mdName) {
+		this.mdName = mdName;
+	}
+
+	public String getMdContent() {
+		return mdContent;
+	}
+
+	public void setMdContent(String mdContent) {
+		this.mdContent = mdContent;
+	}
+
+	public String getMdPP_Date() {
+		return mdPP_Date;
+	}
+
+	public void setMdPP_Date(String mdPP_Date) {
+		this.mdPP_Date = mdPP_Date;
+	}
+
+	@Override
+	public String toString() {
+		return "uIdx:" + uIdx + ", ocrIdx:" + ocrIdx + ", ocrSearchDate:" + ocrSearchDate + ", mdName:" + mdName
+				+ ", mdContent:" + mdContent + ", mdPP_Date:" + mdPP_Date;
+	}
+
 }

@@ -18,10 +18,10 @@ public class MdReplyController {
 	
 	@RequestMapping(value="/mdReplyList.do")
 	public ModelAndView selectMdReplyList(HttpServletRequest request){
-		System.out.println("selectMdReplyList ¸Þ¼Òµå Á¤»ó ½ÇÇà.");
+		System.out.println("selectMdReplyList ë©”ì†Œë“œ ì‹¤í–‰.");
 		
 		List<MdReplyVO> mdReplyList = mdReplyService.selectMdReplyList();
-		System.out.println("°á°ú°ª : "+mdReplyList);
+		System.out.println("ê²°ê³¼ê°’: "+mdReplyList);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("mdReplyList", mdReplyList);
 		mv.setViewName("/mdReply/SetMdReplyList");

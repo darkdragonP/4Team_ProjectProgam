@@ -19,10 +19,10 @@ public class BReplyController {
 	
 	@RequestMapping(value="/bReplyList.do")
 	public ModelAndView selectBReplyList(HttpServletRequest request){
-		System.out.println("selectBReplyList ¸Þ¼Òµå Á¤»ó ½ÇÇà.");
+		System.out.println("selectBReplyList ë©”ì†Œë“œ ì‹¤í–‰.");
 		
 		List<BReplyVO> bReplyList = bReplyService.selectBRelplyList();
-		System.out.println("°á°ú°ª : "+bReplyList);
+		System.out.println("ê²°ê³¼ê°’: "+bReplyList);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("bReplyList", bReplyList);
 		mv.setViewName("/bReply/SetBReplyList");

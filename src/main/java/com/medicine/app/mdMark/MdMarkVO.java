@@ -1,13 +1,12 @@
 package com.medicine.app.mdMark;
 
 
-//MD_MARK ¾à °Ô½ÃÆÇ º°Á¡
+//MD_MARK ì•½ ê²Œì‹œíŒ ë³„ì 
 public class MdMarkVO {
 	
-private int uIdx; //ÅëÇÕÈ¸¿øÄÚµå
-private int mdIdx; //¾à ÄÚµå
-private int mdMR; //¾à ¸®½ºÆ® º°Á¡ ´©Àû
-
+private int uIdx; //í†µí•©íšŒì›ì½”ë“œ
+private int mdIdx; //ì•½ ì½”ë“œ
+private int mdMR; //ì•½ ë¦¬ìŠ¤íŠ¸ ë³„ì  ëˆ„ì 
 
 public int getuIdx() {
 	return uIdx;

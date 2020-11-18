@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <%@ include file="../../../common/top.jsp"%>
@@ -101,23 +101,26 @@
 </style>
 </head>
 <body>
+
 	<div class="container">
-				<h2 class="sub-header">¾à °Ë»ö</h2>
-			<div class="card mb-4">
-				<h5 class="card-header">
-					<img src="images/googleVision.jpg" alt="OCR"
-						style="width: 2%; height: 2%;" />OCR ÀÌ¿ëÇÏ±â</h5>
-				<div class="card-body">
-					<span class="input-group-btn">
-						<button class="btn btn-secondary" type="button">»çÁøÀ¸·Î °Ë»ö</button>
-					</span> <span class="input-group-btn">
-						<button class="btn btn-secondary" type="button">Ã³¹æÀü µî·ÏÇÏ±â</button>
-					</span>
-				</div>
+		<h2 class="sub-header">ì•½ ê²€ìƒ‰</h2>
+		<div class="card mb-4">
+			<h5 class="card-header">
+				<img src="images/googleVision.jpg" alt="OCR"
+					style="width: 2%; height: 2%;" />OCR ì´ìš©í•˜ê¸°
+			</h5>
+			<div class="card-body">
+				<span class="input-group-btn">
+					<button class="btn btn-secondary" type="button" >ì‚¬ì§„ìœ¼ë¡œ ê²€ìƒ‰</button>
+				</span> <span class="input-group-btn">
+					<button class="btn btn-secondary" type="button">ì²˜ë°©ì „ ë“±ë¡í•˜ê¸°</button>
+				</span>
+
 			</div>
+		</div>
 		<!-- Search Widget -->
 		<div class="card mb-4">
-			<h5 class="card-header">ºĞ·ùº° °Ë»ö</h5>
+			<h5 class="card-header">ë¶„ë¥˜ë³„ ê²€ìƒ‰</h5>
 			<div class="card-body">
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Search for...">
@@ -126,69 +129,69 @@
 				<div class="shape">
 					<div style="border: 1px solid hidden; float: left; width: 9%;">
 						<div>
-							<input type="radio" name="shape" value="¿øÇü">
+							<input type="radio" name="shape" value="ì›í˜•">
 						</div>
-						<div>¿øÇü</div>
+						<div>ì›í˜•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 9%;">
 						<div>
-							<input type="radio" name="shape" value="Å¸¿øÇü">
+							<input type="radio" name="shape" value="íƒ€ì›í˜•">
 						</div>
-						<div>Å¸¿øÇü</div>
+						<div>íƒ€ì›í˜•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 9%;">
 						<div>
-							<input type="radio" name="shape" value="¹İ¿øÇü">
+							<input type="radio" name="shape" value="ë°˜ì›í˜•">
 						</div>
-						<div>¹İ¿øÇü</div>
+						<div>ë°˜ì›í˜•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 9%;">
 						<div>
-							<input type="radio" name="shape" value="»ï°¢Çü">
+							<input type="radio" name="shape" value="ì‚¼ê°í˜•">
 						</div>
-						<div>»ï°¢Çü</div>
+						<div>ì‚¼ê°í˜•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 9%;">
 						<div>
-							<input type="radio" name="shape" value="»ç°¢Çü">
+							<input type="radio" name="shape" value="ì‚¬ê°í˜•">
 						</div>
-						<div>»ç°¢Çü</div>
+						<div>ì‚¬ê°í˜•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 9%;">
 						<div>
-							<input type="radio" name="shape" value="¸¶¸§¸ğÇü">
+							<input type="radio" name="shape" value="ë§ˆë¦„ëª¨í˜•">
 						</div>
-						<div>¸¶¸§¸ğÇü</div>
+						<div>ë§ˆë¦„ëª¨í˜•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 9%;">
 						<div>
-							<input type="radio" name="shape" value="Àå¹æÇü">
+							<input type="radio" name="shape" value="ì¥ë°©í˜•">
 						</div>
-						<div>Àå¹æÇü</div>
+						<div>ì¥ë°©í˜•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 9%;">
 						<div>
-							<input type="radio" name="shape" value="¿À°¢Çü">
+							<input type="radio" name="shape" value="ì˜¤ê°í˜•">
 						</div>
-						<div>¿À°¢Çü</div>
+						<div>ì˜¤ê°í˜•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 9%;">
 						<div>
-							<input type="radio" name="shape" value="À°°¢Çü">
+							<input type="radio" name="shape" value="ìœ¡ê°í˜•">
 						</div>
-						<div>À°°¢Çü</div>
+						<div>ìœ¡ê°í˜•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 9%;">
 						<div>
-							<input type="radio" name="shape" value="ÆÈ°¢Çü">
+							<input type="radio" name="shape" value="íŒ”ê°í˜•">
 						</div>
-						<div>ÆÈ°¢Çü</div>
+						<div>íŒ”ê°í˜•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 9%;">
 						<div>
-							<input type="radio" name="shape" value="±âÅ¸">
+							<input type="radio" name="shape" value="ê¸°íƒ€">
 						</div>
-						<div>±âÅ¸</div>
+						<div>ê¸°íƒ€</div>
 					</div>
 				</div>
 				<br>
@@ -196,105 +199,105 @@
 				<div class="color">
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="ÇÏ¾ç">
+							<input type="radio" name="color" value="í•˜ì–‘">
 						</div>
-						<div>ÇÏ¾ç</div>
+						<div>í•˜ì–‘</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="³ë¶û">
+							<input type="radio" name="color" value="ë…¸ë‘">
 						</div>
-						<div>³ë¶û</div>
+						<div>ë…¸ë‘</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="ÁÖÈ²">
+							<input type="radio" name="color" value="ì£¼í™©">
 						</div>
-						<div>ÁÖÈ²</div>
+						<div>ì£¼í™©</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="ºĞÈ«">
+							<input type="radio" name="color" value="ë¶„í™">
 						</div>
-						<div>ºĞÈ«</div>
+						<div>ë¶„í™</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="»¡°­">
+							<input type="radio" name="color" value="ë¹¨ê°•">
 						</div>
-						<div>»¡°­</div>
+						<div>ë¹¨ê°•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="°¥»ö">
+							<input type="radio" name="color" value="ê°ˆìƒ‰">
 						</div>
-						<div>°¥»ö</div>
+						<div>ê°ˆìƒ‰</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="¿¬µÎ">
+							<input type="radio" name="color" value="ì—°ë‘">
 						</div>
-						<div>¿¬µÎ</div>
+						<div>ì—°ë‘</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="ÃÊ·Ï">
+							<input type="radio" name="color" value="ì´ˆë¡">
 						</div>
-						<div>ÃÊ·Ï</div>
+						<div>ì´ˆë¡</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="Ã»·Ï">
+							<input type="radio" name="color" value="ì²­ë¡">
 						</div>
-						<div>Ã»·Ï</div>
+						<div>ì²­ë¡</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="ÆÄ¶û">
+							<input type="radio" name="color" value="íŒŒë‘">
 						</div>
-						<div>ÆÄ¶û</div>
+						<div>íŒŒë‘</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="Ã»·Ï">
+							<input type="radio" name="color" value="ì²­ë¡">
 						</div>
-						<div>Ã»·Ï</div>
+						<div>ì²­ë¡</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="³²»ö">
+							<input type="radio" name="color" value="ë‚¨ìƒ‰">
 						</div>
-						<div>³²»ö</div>
+						<div>ë‚¨ìƒ‰</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="ÀÚÁÖ">
+							<input type="radio" name="color" value="ìì£¼">
 						</div>
-						<div>ÀÚÁÖ</div>
+						<div>ìì£¼</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="º¸¶ó">
+							<input type="radio" name="color" value="ë³´ë¼">
 						</div>
-						<div>º¸¶ó</div>
+						<div>ë³´ë¼</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="È¸»ö">
+							<input type="radio" name="color" value="íšŒìƒ‰">
 						</div>
-						<div>È¸»ö</div>
+						<div>íšŒìƒ‰</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="°ËÁ¤">
+							<input type="radio" name="color" value="ê²€ì •">
 						</div>
-						<div>°ËÁ¤</div>
+						<div>ê²€ì •</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
 						<div>
-							<input type="radio" name="color" value="Åõ¸í">
+							<input type="radio" name="color" value="íˆ¬ëª…">
 						</div>
-						<div>Åõ¸í</div>
+						<div>íˆ¬ëª…</div>
 					</div>
 				</div>
 				<br>
@@ -302,21 +305,21 @@
 				<div class="type">
 					<div style="border: 1px solid hidden; float: left; width: 30%;">
 						<div>
-							<input type="radio" name="type" value="Á¤Á¦·ù">
+							<input type="radio" name="type" value="ì •ì œë¥˜">
 						</div>
-						<div>Á¤Á¦·ù</div>
+						<div>ì •ì œë¥˜</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 30%;">
 						<div>
-							<input type="radio" name="type" value="°æÁúÄ¸½¶">
+							<input type="radio" name="type" value="ê²½ì§ˆìº¡ìŠ">
 						</div>
-						<div>°æÁúÄ¸½¶</div>
+						<div>ê²½ì§ˆìº¡ìŠ</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 30%;">
 						<div>
-							<input type="radio" name="type" value="¿¬ÁúÄ¸½¶">
+							<input type="radio" name="type" value="ì—°ì§ˆìº¡ìŠ">
 						</div>
-						<div>¿¬ÁúÄ¸½¶</div>
+						<div>ì—°ì§ˆìº¡ìŠ</div>
 					</div>
 				</div>
 				<br>
@@ -324,43 +327,43 @@
 				<div class="line">
 					<div style="border: 1px solid hidden; float: left; width: 25%;">
 						<div>
-							<input type="radio" name="line" value="¾øÀ½">
+							<input type="radio" name="line" value="ì—†ìŒ">
 						</div>
-						<div>¾øÀ½</div>
+						<div>ì—†ìŒ</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 25%;">
 						<div>
-							<input type="radio" name="line" value="(-)Çü">
+							<input type="radio" name="line" value="(-)í˜•">
 						</div>
-						<div>(-)Çü</div>
+						<div>(-)í˜•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 25%;">
 						<div>
-							<input type="radio" name="line" value="(+)Çü">
+							<input type="radio" name="line" value="(+)í˜•">
 						</div>
-						<div>(+)Çü</div>
+						<div>(+)í˜•</div>
 					</div>
 					<div style="border: 1px solid hidden; float: left; width: 25%;">
 						<div>
-							<input type="radio" name="line" value="±âÅ¸">
+							<input type="radio" name="line" value="ê¸°íƒ€">
 						</div>
-						<div>±âÅ¸</div>
+						<div>ê¸°íƒ€</div>
 					</div>
 				</div>
 				<br>
 				<hr>
-				<span class="input-group-btn">
-					<button class="btn btn-secondary" type="button">°Ë»ö</button>
+				<span style="float: right;"> <span class="input-group-btn">
+						<button class="btn btn-secondary" type="button">ê²€ìƒ‰</button>
 				</span> <span class="input-group-btn">
-					<button class="btn btn-secondary" type="button">ÃÊ±âÈ­</button>
+						<button class="btn btn-secondary" type="button">ì´ˆê¸°í™”</button>
 				</span>
-
+				</span>
 			</div>
 		</div>
 		<!-- Page Content -->
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item">¾à ¼¼ºÎ»çÇ×</li>
+				<li class="breadcrumb-item">ì•½ ì„¸ë¶€ì‚¬í•­</li>
 			</ol>
 		</div>
 		<div class="row">
@@ -386,8 +389,8 @@
 												src="images/1.jpg" width="500" height="200"
 												alt="${medicine.mdTitle}" />
 												<div class="enlarge">
-													<a href="images/1.jpg" width="300%" height="300%">ÀÌ¹ÌÁö
-														Å©°Ôº¸±â</a>
+													<a href="images/1.jpg" width="300%" height="300%">ì´ë¯¸ì§€
+														í¬ê²Œë³´ê¸°</a>
 												</div>
 											</span>
 										</div>
@@ -402,42 +405,41 @@
 
 
 														<tr>
-															<th scope="row"><span class="title">½Ä¾àÃ³ ºĞ·ù</span></th>
+															<th scope="row">ì‹ì•½ì²˜ ë¶„ë¥˜</th>
 															<td>${medicine.getMdClass()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row"><span class="title">±¸ºĞ</span></th>
+															<th scope="row">êµ¬ë¶„</th>
 															<td>${medicine.getMdGrade()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row"><span class="title">Á¦Á¶(¼öÀÔ)
-																	¾÷Ã¼¸í</span></th>
+															<th scope="row">ì œì¡°(ìˆ˜ì…) ì—…ì²´ëª…</span></th>
 															<td>${medicine.getMdComp()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row"><span class="title">Á¦Çü</span></th>
+															<th scope="row">ì œí˜•</th>
 															<td>${medicine.getMdType()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row"><span class="title">¸ğ¾ç</span></th>
+															<th scope="row">ëª¨ì–‘</th>
 															<td>${medicine.getMdShape()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row"><span class="title">»ö»ó</span></th>
+															<th scope="row">ìƒ‰ìƒ</th>
 															<td>${medicine.getMdColor()}</td>
 														</tr>
 														<tr>
-															<th scope="row"><span class="title">¾à ºĞÇÒ¼±</span></th>
+															<th scope="row">ì•½ ë¶„í• ì„ </th>
 															<td>${medicine.getMdLine()}</td>
 														</tr>
 													</tbody>
@@ -452,38 +454,38 @@
 								<br>
 								<hr>
 								<br>
-								<h3 class="stress" id="TABLE_OF_CONTENT1">¿ÜÇüÁ¤º¸</h3>
+								<h3 class="stress" id="TABLE_OF_CONTENT1">ì™¸í˜•ì •ë³´</h3>
 								<p class="txt">
-									<strong>¡¤ ¼º»ó</strong> : ${medicine.getMdAppr()}<br> <strong>¡¤
-										Á¦Çü</strong> : ${medicine.getMdType()}<br> <strong>¡¤ ¸ğ¾ç</strong> :
-									${medicine.getMdShape()}<br> <strong>¡¤ »ö»ó</strong> :
-									${medicine.getMdColor()}<br> <strong>¡¤ ¾à ºĞÇÒ¼±</strong> :
+									<strong>Â· ì„±ìƒ</strong> : ${medicine.getMdAppr()}<br> <strong>Â·
+										ì œí˜•</strong> : ${medicine.getMdType()}<br> <strong>Â· ëª¨ì–‘</strong> :
+									${medicine.getMdShape()}<br> <strong>Â· ìƒ‰ìƒ</strong> :
+									${medicine.getMdColor()}<br> <strong>Â· ì•½ ë¶„í• ì„ </strong> :
 									${medicine.getMdLine()}
 								</p>
 								<br>
 								<hr>
 								<br>
-								<h3 class="stress" id="TABLE_OF_CONTENT2">¼ººĞÁ¤º¸</h3>
+								<h3 class="stress" id="TABLE_OF_CONTENT2">ì„±ë¶„ì •ë³´</h3>
 								<p class="txt">${medicine.getMdIngd()}</p>
 								<br>
 								<hr>
 								<br>
-								<h3 class="stress" id="TABLE_OF_CONTENT3">ÀúÀå¹æ¹ı</h3>
+								<h3 class="stress" id="TABLE_OF_CONTENT3">ì €ì¥ë°©ë²•</h3>
 								<p class="txt">${medicine.getMdSave()}</p>
 								<br>
 								<hr>
 								<br>
-								<h3 class="stress" id="TABLE_OF_CONTENT4">È¿´ÉÈ¿°ú</h3>
+								<h3 class="stress" id="TABLE_OF_CONTENT4">íš¨ëŠ¥íš¨ê³¼</h3>
 								<p class="txt">${medicine.getMdEffect()}</p>
 								<br>
 								<hr>
 								<br>
-								<h3 class="stress" id="TABLE_OF_CONTENT5">¿ë¹ı¿ë·®</h3>
+								<h3 class="stress" id="TABLE_OF_CONTENT5">ìš©ë²•ìš©ëŸ‰</h3>
 								<p class="txt">${medicine.getMdCapa()}</p>
 								<br>
 								<hr>
 								<br>
-								<h3 class="stress" id="TABLE_OF_CONTENT6">»ç¿ë»ó ÁÖÀÇ»çÇ×</h3>
+								<h3 class="stress" id="TABLE_OF_CONTENT6">ì‚¬ìš©ìƒ ì£¼ì˜ì‚¬í•­</h3>
 								<p class="txt">${medicine.getMdCapa()}</p>
 							</div>
 						</div>
@@ -491,26 +493,26 @@
 					<br>
 					<hr>
 					<br>
-					<p class="copy_alert">À§ ÀÌ¹ÌÁö¿¡ ´ëÇÑ ±Ç¸®´Â ÃâÃ³»çÀÌÆ® °Ô½ÃÀÚ¿¡°Ô ÀÖÀ¸¸ç, ÀÌ¸¦ ¹«´Ü »ç¿ëÇÒ
-						°æ¿ì ¹ıÀû Ã¥ÀÓÀ» Áú ¼ö ÀÖ½À´Ï´Ù.</p>
+					<p class="copy_alert">ìœ„ ì´ë¯¸ì§€ì— ëŒ€í•œ ê¶Œë¦¬ëŠ” ì¶œì²˜ì‚¬ì´íŠ¸ ê²Œì‹œìì—ê²Œ ìˆìœ¼ë©°, ì´ë¥¼ ë¬´ë‹¨ ì‚¬ìš©í• 
+						ê²½ìš° ë²•ì  ì±…ì„ì„ ì§ˆ ìˆ˜ ìˆìŠµë‹ˆë‹¤.</p>
 
 					<div class="section_group cite_group">
 						<div class="section_area">
-							<h3 class="title">ÃâÃ³</h3>
+							<h3 class="title">ì¶œì²˜</h3>
 							<div class="cite_area_wrap  active">
 								<div class="writer_area">
 									<ul class="writer_list">
 										<li>
 											<div class="cite_area">
 												<p class="writer_info">
-													<strong> Á¦°øÃ³ </strong> <a href="http://www.health.kr/"
+													<strong> ì œê³µì²˜ </strong> <a href="http://www.health.kr/"
 														target="_blank"
 														onclick="nclk(this, 'soc.expertlogo', '', '', 1);"> <img
 														src="https://dbscthumb-phinf.pstatic.net/2713_000_1/20170524221419866_TBGS1YWZ3.jpg/img_source.jpg?type=m1500"
-														height="20" alt="¾àÇĞÁ¤º¸¿ø">
+														height="20" alt="ì•½í•™ì •ë³´ì›">
 													</a><a href="https://naver.com/" target="_blank"
 														onclick="nclk(this, 'soc.expertlogo', '', '', 1);"> <img
-														src="images/naver.jpg" height="20" alt="³×ÀÌ¹ö ÀÇ¾àÇ° »çÀü"></a>
+														src="images/naver.jpg" height="20" alt="ë„¤ì´ë²„ ì˜ì•½í’ˆ ì‚¬ì „"></a>
 												</p>
 											</div>
 										</li>
@@ -525,20 +527,22 @@
 			<div class="col-md-4 blog-right-side">
 				<!-- Categories Widget -->
 				<div class="card my-4">
-					<h5 class="card-header">º°Á¡</h5>
-					<!-- ÇöÀç º°Á¡ -->
+					<h5 class="card-header">ë³„ì </h5>
+					<!-- í˜„ì¬ ë³„ì  -->
 					<div class="card-body">
-						
-						<h5><strong>[º°Á¡ ÀÌ¹ÌÁö]&nbsp;&nbsp;&nbsp;${medicine.mdRating}Á¡</strong></h5>
+
+						<h5>
+							<strong>[ë³„ì  ì´ë¯¸ì§€]&nbsp;&nbsp;&nbsp;${medicine.mdRating}ì </strong>
+						</h5>
 					</div>
 				</div>
 				<!-- Side Widget -->
 				<div class="card my-4">
-					<h5 class="card-header">°ü·Ã °Ô½Ã¹°</h5>
+					<h5 class="card-header">ê´€ë ¨ ê²Œì‹œë¬¼</h5>
 					<div class="card-body"
 						style="overflow: scroll; width: 350px; height: 1100px;">
 						<div>
-							<h4>°Ô½Ã±Û Á¦¸ñ</h4>
+							<h4>ê²Œì‹œê¸€ ì œëª©</h4>
 							You can put anything you want inside of these side widgets. They
 							are easy to use, and feature the new Bootstrap 4 card containers!
 						</div>
@@ -552,9 +556,9 @@
 		<div class="blog-right-side">
 			<!-- Comments Form -->
 			<div class="card my-4">
-				<h5 class="card-header">´ñ±Û µî·Ï</h5>
+				<h5 class="card-header">ëŒ“ê¸€ ë“±ë¡</h5>
 				<div class="card-body">
-					<!--  º°Á¡¸Å±â±â  -->
+					<!--  ë³„ì ë§¤ê¸°ê¸°  -->
 					<div>
 						<span class="star-input"> <span class="input"> <input
 								type="radio" name="star-input" value="1" id="p1"> <label
@@ -566,7 +570,7 @@
 								type="radio" name="star-input" value="5" id="p5"> <label
 								for="p5">5</label>
 						</span> <output for="star-input">
-								<b>0</b>Á¡
+								<b>0</b>ì 
 							</output>
 						</span>
 					</div>
@@ -576,51 +580,66 @@
 							<div class="form-group">
 								<textarea class="form-control" rows="3"></textarea>
 							</div>
-							<button type="submit" class="btn btn-primary">´ñ±Û µî·Ï</button>
+							<button type="submit" class="btn btn-primary">ëŒ“ê¸€ ë“±ë¡</button>
 						</form>
 					</div>
 				</div>
 			</div>
 			<!-- Single Comment -->
-          <div class="media mb-4">
-            <div class="media-body">
-              <h6 class="mt-0">¾ÆÀÌµğ+***&nbsp;&nbsp;&nbsp;[º°Á¡ÀÌ¹ÌÁö]&nbsp;&nbsp;&nbsp;[ÀÛ¼ºÀÏ]</h6>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
-            <hr>
-          <div class="media mb-4">
-            <div class="media-body">
-              <h6 class="mt-0">¾ÆÀÌµğ+***&nbsp;&nbsp;&nbsp;[º°Á¡ÀÌ¹ÌÁö]&nbsp;&nbsp;&nbsp;[ÀÛ¼ºÀÏ]</h6>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
-          <hr>
-          <div class="media mb-4">
-            <div class="media-body">
-              <h6 class="mt-0">¾ÆÀÌµğ+***&nbsp;&nbsp;&nbsp;[º°Á¡ÀÌ¹ÌÁö]&nbsp;&nbsp;&nbsp;[ÀÛ¼ºÀÏ]</h6>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
-          <hr>
-          <div class="media mb-4">
-            <div class="media-body">
-              <h6 class="mt-0">¾ÆÀÌµğ+***&nbsp;&nbsp;&nbsp;[º°Á¡ÀÌ¹ÌÁö]&nbsp;&nbsp;&nbsp;[ÀÛ¼ºÀÏ]</h6>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
-          <hr>
-          <div class="media mb-4">
-            <div class="media-body">
-              <h6 class="mt-0">¾ÆÀÌµğ+***&nbsp;&nbsp;&nbsp;[º°Á¡ÀÌ¹ÌÁö]&nbsp;&nbsp;&nbsp;[ÀÛ¼ºÀÏ]</h6>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
-	</div>
-	<!-- /.row -->
-	<!-- /.container -->
-	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/star.js"></script>
+			<div class="media mb-4">
+				<div class="media-body">
+					<h6 class="mt-0">ì•„ì´ë””+***&nbsp;&nbsp;&nbsp;[ë³„ì ì´ë¯¸ì§€]&nbsp;&nbsp;&nbsp;[ì‘ì„±ì¼]</h6>
+					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+					vulputate fringilla. Donec lacinia congue felis in faucibus.
+				</div>
+			</div>
+			<hr>
+			<div class="media mb-4">
+				<div class="media-body">
+					<h6 class="mt-0">ì•„ì´ë””+***&nbsp;&nbsp;&nbsp;[ë³„ì ì´ë¯¸ì§€]&nbsp;&nbsp;&nbsp;[ì‘ì„±ì¼]</h6>
+					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+					vulputate fringilla. Donec lacinia congue felis in faucibus.
+				</div>
+			</div>
+			<hr>
+			<div class="media mb-4">
+				<div class="media-body">
+					<h6 class="mt-0">ì•„ì´ë””+***&nbsp;&nbsp;&nbsp;[ë³„ì ì´ë¯¸ì§€]&nbsp;&nbsp;&nbsp;[ì‘ì„±ì¼]</h6>
+					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+					vulputate fringilla. Donec lacinia congue felis in faucibus.
+				</div>
+			</div>
+			<hr>
+			<div class="media mb-4">
+				<div class="media-body">
+					<h6 class="mt-0">ì•„ì´ë””+***&nbsp;&nbsp;&nbsp;[ë³„ì ì´ë¯¸ì§€]&nbsp;&nbsp;&nbsp;[ì‘ì„±ì¼]</h6>
+					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+					vulputate fringilla. Donec lacinia congue felis in faucibus.
+				</div>
+			</div>
+			<hr>
+			<div class="media mb-4">
+				<div class="media-body">
+					<h6 class="mt-0">ì•„ì´ë””+***&nbsp;&nbsp;&nbsp;[ë³„ì ì´ë¯¸ì§€]&nbsp;&nbsp;&nbsp;[ì‘ì„±ì¼]</h6>
+					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+					vulputate fringilla. Donec lacinia congue felis in faucibus.
+				</div>
+			</div>
+		</div>
+		<!-- /.row -->
+		<!-- /.container -->
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/star.js"></script>
 </body>
 <!--footer starts from here-->
 <%@ include file="../../../common/bottom.jsp"%>

@@ -11,7 +11,8 @@
 <body>
 
 	<c:forEach items="${userList}" var="user">
-		<tr>		
+		<tr>
+			
 			<td>${user.userID}</td>
 			<td>${user.userPW}</td>
  			<td>${user.uEmail}</td> 
