@@ -1,0 +1,175 @@
+.breadcrumb-main .breadcrumb {
+  background: #0b4877;
+}
+.breadcrumb {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 13.75px 1px;
+  margin-bottom: 0rem;
+  list-style: none;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+}
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 1.18rem 5.65rem;
+  font-size: 1rem;
+  line-height: 0.1;
+  color: #0b4877;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+iframe {
+  width: 187px;
+  height: 184px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+user agent stylesheet iframe {
+  border-width: 2px;
+  border-style: inset;
+  border-color: initial;
+  border-image: initial;
+}
+td {
+  font-family: "돋움,Tahoma";
+  font-size: 9pt;
+  line-height: 18px;
+  color: #7a7a7a;
+}
+.icofont {
+  text-align: center;
+}
+
+.footer-newsletter {
+  text-align: center;
+  margin-bottom: -1px;
+  margin-top: -5px;
+}
+.h4,
+h4 {
+  font-size: 1.6rem;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.3rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 80px;
+  color: #0b4877;
+}
+
+.play-btn {
+  width: 94px;
+  height: 94px;
+  background: radial-gradient(#cda45e 50%, rgba(205, 164, 94, 0.4) 52%);
+  border-radius: 50%;
+  text-align: right;
+
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.play-btn::before {
+  text-align: center;
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation: pulsate-btn 2s;
+  animation: pulsate-btn 2s;
+  -webkit-animation-direction: forwards;
+  animation-direction: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: steps;
+  animation-timing-function: steps;
+  opacity: 1;
+  border-radius: 50%;
+  border: 5px solid rgba(205, 164, 94, 0.7);
+  top: -15%;
+  left: -15%;
+  background: rgba(198, 16, 0, 0);
+}
+.play-btn::after {
+  text-align: center;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 100;
+  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  right: 80px;
+}
+.h4 {
+  left: 30px;
+  text-align: center;
+  color: #0b4877;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 10px;
+  z-index: 1030;
+}
+
+.nav-menu .drop-down > a:after {
+  content: "\ea99";
+  font-family: IcoFont;
+  padding-left: 5px;
+}
+.nav-menu .drop-down .drop-down > a:after {
+  content: "\eaa0";
+  font-family: IcoFont;
+  position: absolute;
+  right: 15px;
+}
+.mobile-nav .drop-down > a:after {
+  content: "\ea99";
+  font-family: IcoFont;
+  padding-left: 10px;
+  position: absolute;
+  right: 15px;
+}
+.btn-outline-success {
+  color: #0b4877;
+  border-color: #0b4877;
+}

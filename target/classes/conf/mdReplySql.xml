@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mdReply">
+	<resultMap id="mdReplyResult" type="MdReplyVO">
+		<result property="uReIdx" column="USER_REPLY_NO" />
+		<result property="uIdx" column="USER_CODE" />
+		<result property="mdIdx" column="MD_CODE" />
+		<result property="uReContent" column="USER_REPLY" />
+		<result property="uReDate" column="REPLY_DATE" />		
+	</resultMap>
+	
+	<select id="selectMdReplyList" resultMap="mdReplyResult">
+	<![CDATA[
+		SELECT * FROM md_reply
+	]]>
+	</select>
+	
+	
+</mapper>
