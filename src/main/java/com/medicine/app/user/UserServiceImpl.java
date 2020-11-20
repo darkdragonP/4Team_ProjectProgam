@@ -16,7 +16,31 @@ public class UserServiceImpl implements UserService {
 	public List<UserVO> selectUserList() {
 		return userDAO.selectUserList();
 	}
+
+
+	@Override
+	public List<UserVO> insert_Reg(UserVO vo) {
+		userDAO.insert_Reg(vo);
+		return null;
+	}
 	
+	@Override
+	public List<UserVO> update_user(UserVO vo) {
+		userDAO.update_user(vo);
+		return null;
+	}
+
+	@Override
+	public UserVO userDetail(String vo) {
+		return userDAO.userDetail(vo);
 	
+	}
+
+
+	@Override
+	public List<UserVO> delete_user(UserVO vo) {
+		return null;
+	}
+
 
 }

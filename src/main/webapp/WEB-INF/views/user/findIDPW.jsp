@@ -16,6 +16,7 @@
 </style>
 </head>
 <body>
+<%@ include file="../../../common/top.jsp"%>
     <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-8 text-center">
@@ -61,5 +62,6 @@
               </div>
         </div> <!-- END OF ROW -->
     </div>
+    <%@ include file="../../../common/bottom.jsp"%>
 </body>
 </html>

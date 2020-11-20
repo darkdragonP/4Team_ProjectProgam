@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<%@ include file="../../../common/top.jsp"%>
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
@@ -56,5 +57,6 @@
 		</div>
 	</div>
 </div>
+<%@ include file="../../../common/bottom.jsp"%>
 </body>
 </html>

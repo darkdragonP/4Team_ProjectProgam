@@ -17,98 +17,120 @@ public class UserVO {
 	private String address; //주소
 	private String uDate; //가입일
 	private String uMailCon; //광고동의
-	private String uGrade; //사업자등록증 등록란
 	private String 	ocrPay; //OCR결제
+
 public int getuIdx() {
-	return uIdx;
-}
-public void setuIdx(int uIdx) {
-	this.uIdx = uIdx;
-}
-public String getUserID() {
-	return userID;
-}
-public void setUserID(String userID) {
-	this.userID = userID;
-}
-public String getUserPW() {
-	return userPW;
-}
-public void setUserPW(String userPW) {
-	this.userPW = userPW;
-}
-public String getuEmail() {
-	return uEmail;
-}
-public void setuEmail(String uEmail) {
-	this.uEmail = uEmail;
-}
-public String getuName() {
-	return uName;
-}
-public void setuName(String uName) {
-	this.uName = uName;
-}
-public String getuBirth() {
-	return uBirth;
-}
-public void setuBirth(String uBirth) {
-	this.uBirth = uBirth;
-}
-public String getuPostNum() {
-	return uPostNum;
-}
-public void setuPostNum(String uPostNum) {
-	this.uPostNum = uPostNum;
-}
-public String getuPhCD() {
-	return uPhCD;
-}
-public void setuPhCD(String uPhCD) {
-	this.uPhCD = uPhCD;
-}
-public String getuPhNum() {
-	return uPhNum;
-}
-public void setuPhNum(String uPhNum) {
-	this.uPhNum = uPhNum;
-}
-public String getuProfile() {
-	return uProfile;
-}
-public void setuProfile(String uProfile) {
-	this.uProfile = uProfile;
-}
-public String getAddress() {
-	return address;
-}
-public void setAddress(String address) {
-	this.address = address;
-}
-public String getuDate() {
-	return uDate;
-}
-public void setuDate(String uDate) {
-	this.uDate = uDate;
-}
-public String getuMailCon() {
-	return uMailCon;
-}
-public void setuMailCon(String uMailCon) {
-	this.uMailCon = uMailCon;
-}
-public String getuGrade() {
-	return uGrade;
-}
-public void setuGrade(String uGrade) {
-	this.uGrade = uGrade;
-}
-public String getOcrPay() {
-	return ocrPay;
-}
-public void setOcrPay(String ocrPay) {
-	this.ocrPay = ocrPay;
-}
+		return uIdx;
+	}
+
+	public void setuIdx(int uIdx) {
+		this.uIdx = uIdx;
+	}
+
+	public String getUserID() {
+		return userID;
+	}
+
+	public void setUserID(String userID) {
+		this.userID = userID;
+	}
+
+	public String getUserPW() {
+		return userPW;
+	}
+
+	public void setUserPW(String userPW) {
+		this.userPW = userPW;
+	}
+
+	public String getuEmail() {
+		return uEmail;
+	}
+
+	public void setuEmail(String uEmail) {
+		this.uEmail = uEmail;
+	}
+
+	public String getuName() {
+		return uName;
+	}
+
+	public void setuName(String uName) {
+		this.uName = uName;
+	}
+
+	public String getuBirth() {
+		return uBirth;
+	}
+
+	public void setuBirth(String uBirth) {
+		this.uBirth = uBirth;
+	}
+
+	public String getuPostNum() {
+		return uPostNum;
+	}
+
+	public void setuPostNum(String uPostNum) {
+		this.uPostNum = uPostNum;
+	}
+
+	public String getuPhCD() {
+		return uPhCD;
+	}
+
+	public void setuPhCD(String uPhCD) {
+		this.uPhCD = uPhCD;
+	}
+
+	public String getuPhNum() {
+		return uPhNum;
+	}
+
+	public void setuPhNum(String uPhNum) {
+		this.uPhNum = uPhNum;
+	}
+
+	public String getuProfile() {
+		return uProfile;
+	}
+
+	public void setuProfile(String uProfile) {
+		this.uProfile = uProfile;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getuDate() {
+		return uDate;
+	}
+
+	public void setuDate(String uDate) {
+		this.uDate = uDate;
+	}
+
+	public String getuMailCon() {
+		return uMailCon;
+	}
+
+	public void setuMailCon(String uMailCon) {
+		this.uMailCon = uMailCon;
+	}
+
+	public String getOcrPay() {
+		return ocrPay;
+	}
+
+	public void setOcrPay(String ocrPay) {
+		this.ocrPay = ocrPay;
+	}
+
 @Override
 public String toString() {
 	// TODO Auto-generated method stub
@@ -125,7 +147,6 @@ public String toString() {
 			", address:"+address+
 			", uDate:"+uDate+
 			", uMailCon:"+uMailCon+
-			", uGrade:"+uGrade+
 			", ocrPay:"+ocrPay;
 }
 
