@@ -15,7 +15,7 @@ public class QnADAO {
 	private SqlSessionTemplate sqlSession;
 	
 	public List<QnAVO> selectQnAList()  {
-		return sqlSession.selectList("qna.selectQnAList");
+		return sqlSession.selectList("qna.selectQnAList암걸리겠다");
 	}
 	
 	
