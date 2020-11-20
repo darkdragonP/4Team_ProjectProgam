@@ -29,5 +29,8 @@ public class MedicineDAO {
 	public String selectMaxMdIdx() {
 		return sqlSession.selectOne("medicine.selectMaxMdIdx");
 	}
+	public void deleteAdminMedicine(String mdIdx) {
+	 sqlSession.selectOne("medicine.deleteAdminMedicine", mdIdx);
+	}
 	
 }

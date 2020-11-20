@@ -24,7 +24,7 @@ public class AdminController {
 	
 	@RequestMapping(value = "/adminMain.do")
 	public ModelAndView adminMain(HttpServletRequest request) {
-		System.out.println("adminMain-관리자페이지로의 단순이동안함");
+		System.out.println("adminMain-관리자페이지로의 단순이동");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/admin/AdminMain");
 		return mv;

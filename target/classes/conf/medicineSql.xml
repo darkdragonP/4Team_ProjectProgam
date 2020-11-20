@@ -54,5 +54,9 @@
 	]]>
 	</select>
 	
-	
+	<delete id="deleteAdminMedicine" parameterType="String">
+	<![CDATA[
+		delete from MEDICINE where MD_CODE = #{mdIdx} 
+	]]>
+	</delete>
 </mapper>

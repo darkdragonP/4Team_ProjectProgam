@@ -33,6 +33,11 @@ public class MedicineServiceImpl implements MedicineService {
 		return medicineDAO.selectMaxMdIdx();
 	}
 
+	@Override
+	public void deleteAdminMedicine(String mdIdx) {
+	 medicineDAO.deleteAdminMedicine(mdIdx);
+	}
+
 	
 
 

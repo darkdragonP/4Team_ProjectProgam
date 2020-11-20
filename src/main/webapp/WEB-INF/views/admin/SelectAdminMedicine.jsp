@@ -10,7 +10,7 @@
 <body>
 
 	<div class="container">
-	
+
 		<!-- Page Content -->
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
@@ -172,31 +172,37 @@
 							</div>
 						</div>
 					</div>
+				<button type="button" style="align-items: right;"
+					class="btn btn-primary" onclick="location.href='deleteAdminMedicine.do?mdIdx=${medicine.getMdIdx()}'">삭제</button>
+				<button type="button" style="align-items: right;"
+					class="btn btn-primary" onclick="location.href='AdminMedicineList.do'">돌아가기</button>
 				</div>
 			</div>
+
+
 			<!-- Sidebar Widgets Column -->
 			<div class="col-md-4 blog-right-side">
 
 				<!-- Side Widget -->
 				<div class="card my-4">
 					<h5 class="card-header">바로가기</h5>
-					<div class="card-body"
-						style="overflow: scroll; width: 350px; height: 200px;">
+					<div class="card-body">
 						<div>
-						
 							<h4>제목</h4>
 							뭘바로가기루 하징?
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+
 
 		</div>
-		<!-- /.row -->
-		<!-- /.container -->
-		<script src="js/jquery-1.11.3.min.js"></script>
-		<script src="js/star.js"></script>
+
+	</div>
+	<!-- /.row -->
+	<!-- /.container -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/star.js"></script>
 </body>
 <!--footer starts from here-->
 <%@ include file="../../../common/bottom.jsp"%>

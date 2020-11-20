@@ -14,5 +14,8 @@ public interface MedicineService {
 	
 	public String selectMaxMdIdx();
 	
+	public void deleteAdminMedicine(String mdIdx);
+	
+	
 	
 }
