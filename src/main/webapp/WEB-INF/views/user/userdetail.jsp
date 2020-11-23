@@ -18,12 +18,12 @@
 	<%@ include file="../../../common/top.jsp"%>
 	<div class="container">
 		<h3>
-			<b>내 정보 확인</b>
+			<b>${selectUser.getuName()}님의 회원정보입니다.</b>
 		</h3>
 		<p>
 		<div class="tab-content" id="myTabContent">
 
-			<form action=detailUser.do>
+			<form action=detailUser.do method="post">
 				<div class="tab-pane fade show active" id="home" role="tabpanel"
 					aria-labelledby="home-tab">
 					<div class="row register-form">
@@ -36,10 +36,10 @@
 							</div>
 							<div class="form-group">
 								비밀번호 <input type="password" id="userPW" name="userPW"
-									class="form-control" value="${selectUser.getUserPW()}" />
+									class="form-control" placeholder="Password"/>
 							</div>
 							<div class="form-group">
-								비밀번호 확인 <input type="password" id="re-password"
+								비밀번호 확인 <input type="password" id="re-password" name="re-passwo rd"
 									class="form-control" placeholder="Confirm Password" value="" />
 							</div>
 							<div class="form-group">
@@ -94,6 +94,7 @@
 		</div>
 	</div>
 	<%@ include file="../../../common/bottom.jsp"%>
+	
 	<!-- 우편번호 가져오기 -->
 	<script>
 		$(function() {
@@ -102,5 +103,22 @@
 	</script>
 	<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
 	<!-- 우편번호 가져오기 -->
+
+	<!-- 비밀번호 매치 -->
+	<script type="text/javascript">
+		function test() {
+			var p1 = document.getElementById('userPW').value;
+			var p2 = document.getElementById('re-password').value;
+				if (p1 != p2) {
+					alert("비밀번호가 일치 하지 않습니다");
+					return false;
+				} else {
+					$("form").submit();
+					return true;
+				}
+		}
+	</script>
+	<!-- 비밀번호 매치 -->
+	</script>
 </body>
 </html>

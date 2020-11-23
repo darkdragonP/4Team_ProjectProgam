@@ -24,12 +24,21 @@
 		]]>
 	</select>
 	
+	<select id="loginCheck" resultType="String">
+	SELECT userID  FROM USERS WHERE as #{uName}
+	</select>
+	
+	<!-- 회원정보 -->
 	<select id="detail_user" parameterType="String" resultMap="userResult">
 		<![CDATA[
 			select * from users where USER_CODE=#{uIdx}
 		]]>
 	</select>
 	
+	<!-- 로그인 -->
+	<select id="login" parameterType="UserVO" resultMap="userResult">
+		select ID, PW from users where ID=#{userID} and PW=#{userPW}
+	</select>
 
 	<!-- 회원가입 -->
 	<insert id="insert_Reg" parameterType="UserVO">
@@ -61,7 +70,9 @@
 		]]>
 	</insert>
 	
+	<!-- 회원수정 -->
 	<update id="update_user" parameterType="UserVO">
+	<![CDATA[
 	UPDATE USERS SET NAME = #{uName},
 		PW = #{userPW},
 		BIRTH = #{uBirth},
@@ -73,5 +84,6 @@
 		PROFILE_IMG = #{uProfile},
 		UMAIL_CONSENT = #{uMailCon},
 		WHERE USERID = USERS_SEQ)
+		]]>
 	</update>	
 </mapper>

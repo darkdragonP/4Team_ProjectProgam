@@ -41,6 +41,11 @@ public class UserServiceImpl implements UserService {
 	public List<UserVO> delete_user(UserVO vo) {
 		return null;
 	}
+	
+	@Override
+	public UserVO login(UserVO vo) {
+		return userDAO.login(vo);
+	}
 
 
 }

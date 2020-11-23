@@ -3,16 +3,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HOMEDICINE:::회원가입</title>
 <link rel="stylesheet" href="css/register_styles.css" />
 <link rel="stylesheet" href="css/all.css" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<link 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"	rel="stylesheet" id="bootstrap-css">
-<script type="text/javascript"	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-<script	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -30,20 +35,20 @@
 					<div class="tab-pane fade active show" id="home" role="tabpanel"
 						aria-labelledby="home-tab">
 						<h3 class="register-heading">회원가입</h3>
-						<form action="insert_Reg.do">
+						<form action="insert_Reg.do" method="post">
 							<div class="row register-form">
 								<div class="col-md-6">
 									<div class="form-group">
 										아이디 <input type="text" id="userID" name="userID"
-											class="form-control" placeholder="ID" value="" /> 
-									<div class="check_font" id="id_check"></div>
+											class="form-control" placeholder="ID" value="" /> <input
+											type="button" id="id-check" class="id-check" value="중복체크">
 									</div>
 									<div class="form-group">
 										비밀번호 <input type="password" id="userPW" name="userPW"
 											class="form-control" placeholder="Password" value="" />
 									</div>
 									<div class="form-group">
-										비밀번호 확인 <input type="password" id="re-password"
+										비밀번호 확인 <input type="password" id="re-password" name="re-password"
 											class="form-control" placeholder="Confirm Password" value="" />
 									</div>
 									<div class="form-group">
@@ -91,8 +96,8 @@
 										동의
 									</div>
 									<div class="form-group">
-										<input type="submit" id="submit" class="btnRegister" id="reg_submit"
-											value="가입하기" />
+										<input type="button" class="btnRegister" id="reg_submit"
+											onclick="test()" value="가입하기" />
 									</div>
 								</div>
 							</div>
@@ -102,70 +107,28 @@
 			</div>
 		</div>
 	</div>
-		<%@ include file="../../../common/bottom.jsp"%>
+	<%@ include file="../../../common/bottom.jsp"%>
+
+
 	<!-- 아이디 중복체크 -->
-	<script>
-		// 아이디 유효성 검사(1 = 중복 / 0 != 중복)
-		$("#userID")
-				.blur(
-						function() {
-							var user_id = $('#userID').val();
-							$
-									.ajax({
-										url : '${pageContext.request.contextPath}/user/idCheck?userId='
-												+ userID,
-										type : 'get',
-										success : function(data) {
-											console.log("1 = 중복o / 0 = 중복x : "
-													+ data);
 
-											if (data == 1) {
-												// 1 : 아이디가 중복되는 문구
-												$("#id_check").text(
-														"사용중인 아이디입니다 :p");
-												$("#id_check").css("color",
-														"red");
-												$("#reg_submit").attr(
-														"disabled", true);
-											} else {
+	<!-- 아이디 중복체크 -->
 
-												if (idJ.test(userID)) {
-													// 0 : 아이디 길이 / 문자열 검사
-													$("#id_check").text("");
-													$("#reg_submit").attr(
-															"disabled", false);
-
-												} else if (user_id == "") {
-
-													$('#id_check').text(
-															'아이디를 입력해주세요 :)');
-													$('#id_check').css('color',
-															'red');
-													$("#reg_submit").attr(
-															"disabled", true);
-
-												} else {
-
-													$('#id_check')
-															.text(
-																	"아이디는 소문자와 숫자 4~12자리만 가능합니다 :) :)");
-													$('#id_check').css('color',
-															'red');
-													$("#reg_submit").attr(
-															"disabled", true);
-												}
-
-											}
-										},
-										error : function() {
-											console.log("실패");
-										}
-									});
-						});
+	<!-- 비밀번호 매치 -->
+	<script type="text/javascript">
+		function test() {
+			var p1 = document.getElementById('userPW').value;
+			var p2 = document.getElementById('re-password').value;
+				if (p1 != p2) {
+					alert("비밀번호가 일치 하지 않습니다");
+					return false;
+				} else {
+					$("form").submit();
+					return true;
+				}
+		}
 	</script>
-	<!-- 아이디 중복체크 -->
-
-
+	<!-- 비밀번호 매치 -->
 	<!-- 우편번호 가져오기 -->
 	<script>
 		$(function() {

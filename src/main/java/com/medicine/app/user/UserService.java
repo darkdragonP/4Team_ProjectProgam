@@ -10,5 +10,5 @@ public interface UserService {
 	public List<UserVO> update_user(UserVO vo);
 	public UserVO userDetail(String vo);
 	public List<UserVO> delete_user(UserVO vo);
-	
+	public UserVO login(UserVO vo);
 }

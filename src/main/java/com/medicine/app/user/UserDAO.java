@@ -1,6 +1,7 @@
 package com.medicine.app.user;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -31,7 +32,11 @@ public class UserDAO {
 	}
 
 	public UserVO login(UserVO vo) {
-		return sqlSession.selectOne("user.detail_user", vo);
+		return sqlSession.selectOne("user.login", vo);
+	}
+
+	public ArrayList<UserVO> loginMember(String mid, String password) {
+		return null;
 	}
 	
 }
