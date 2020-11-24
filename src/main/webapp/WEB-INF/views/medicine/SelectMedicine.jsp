@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <%@ include file="../../../common/top.jsp"%>
+<link rel="stylesheet" href="css/Medicine.css?after" />
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
@@ -553,9 +554,14 @@
 				</div>
 			</div>
 		</div>
+		</div>
+		
+	 <div class="container">
 		<div class="blog-right-side">
 			<!-- Comments Form -->
-			<div class="card my-4">
+	
+			<div class="card my-5">
+			
 				<h5 class="card-header">댓글 등록</h5>
 				<div class="card-body">
 					<!--  별점매기기  -->
@@ -585,9 +591,19 @@
 					</div>
 				</div>
 			</div>
+			</div>
+			</div>
+			
+				<div class="container">
 			<!-- Single Comment -->
+	<a href="#" class="delete" data-action="remove" data-param="parentCommentNo:403613626,commentNo:403613626,replyPreviewNo:0,imageCount:0,objectId:'597447_359'" data-log="RPC.modify"><span class="delete"></span><span class="delete">삭제</span>&nbsp;&nbsp;</a>
+	<a href="#" class="modify" data-action="modify" data-param="parentCommentNo:403613626,commentNo:403613626,replyPreviewNo:0,imageCount:0,objectId:'597447_359'" data-log="RPC.del"><span class="modify"></span><span class="modify">수정하기</span></a>
+	
+	<br>
+	<br>
 			<div class="media mb-4">
-				<div class="media-body">
+			
+				<div class="media-body">				
 					<h6 class="mt-0">아이디+***&nbsp;&nbsp;&nbsp;[별점이미지]&nbsp;&nbsp;&nbsp;[작성일]</h6>
 					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
 					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
@@ -636,6 +652,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<!-- /.row -->
 		<!-- /.container -->
 		<script src="js/jquery-1.11.3.min.js"></script>

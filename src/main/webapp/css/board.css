@@ -1,0 +1,21 @@
+
+.page-link {
+    text-align: center;
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #0b4877;
+    background-color: #f2efea;
+    border: 1px solid #dee2e6;
+}
+
+.pagination {
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 320px;
+    list-style: none;
+    border-radius: .25rem;
+}
+ 

@@ -1,3 +1,127 @@
+
+.pagination {
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 310px;
+    list-style: none;
+    border-radius: 5.25rem;
+    text-align: center;
+}
+
+
+
+
+
+.footer {
+    width: 100%;
+    background-color: #263238;
+    min-height: 0px;
+    height:50px;
+}
+.page-link {
+	margin 0 auto;
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    line-height: 1.25;
+    color: #0b4877;
+    border: 1px solid #dee2e6;
+        background-color: #f2efea;
+}
+
+input[type="checkbox"]{
+
+width: 30px; /*Desired width*/
+
+height: 30px; /*Desired height*/
+
+cursor: pointer;
+
+-webkit-appearance: none;
+
+appearance: none;
+
+}
+
+
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+}
+input[type="checkbox"] {
+    width: 20px;
+    height: 30px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+.mdccheckbox {
+    padding: 0 5px;
+    size: 20px;
+    width: 10px;
+    height: 30px;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+
+
+.mdccheckbox{
+	size:50px;
+	width:30px;
+	height:30px;
+}
+
+input[type="checkbox" i] {
+	
+	width:15px;
+	height:20px;
+    background-color: initial;
+    cursor: default;
+    appearance: checkbox;
+    box-sizing: border-box;
+    margin: 5px 5px 5px 4px;
+    padding: initial;
+    border: initial;
+}
+
+
+
+input {
+	
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: textfield;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 5px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+
+
 .col-sm-9 {
   -ms-flex: 0 0 100%;
   flex: 80 80 100%;
@@ -116,7 +240,7 @@ h6 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-사용자 에이전트 스타일시트 div {
+�궗�슜�옄 �뿉�씠�쟾�듃 �뒪���씪�떆�듃 div {
   display: block;
 }
 .col-lg-12 {

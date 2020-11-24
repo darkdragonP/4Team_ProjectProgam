@@ -5,7 +5,10 @@
 <html>
 <%@ include file="../../../common/top.jsp"%>
 
+
 <head>
+<link rel="stylesheet" href="css/board.css?after" />
+
 <meta charset="EUC-KR">
 <title>MEDICINE</title>
 </head>
@@ -113,16 +116,46 @@
 						<button class="btn btn-secondary" type="button">
 						<a href="insertBoard.do">새 글 등록</a></button></span>
 		</div>
-		<div class="pager" align="center"> <!-- 원하는 부분을 가운데(center)로 옮겨주는 기능 / left or right -->
-			<img src="images/btn_first.png" class="btn" alt="처음"> <img
-				src="images/btn_prev.png" class="btn" alt="이전"> <a href="#"
-				class="current">1</a> <a href="#"
-				onclick="boardPageMove(2);return false;">2</a> <a href="#"
-				onclick="boardPageMove(3);return false;">3</a> <a href="#"
-				onclick="boardPageMove(4);return false;">4</a> <a href="#"
-				onclick="boardPageMove(5);return false;">5</a> <img
-				src="images/btn_next.png" class="btn" alt="다음"> <img
-				src="images/btn_last.png" class="btn" alt="마지막">
+		
+		<ul class="pagination">
+                    <li class="page-item">
+                      <b href="#" class="page-link">이전</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">1</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">2</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">3</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">4</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">5</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">6</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">7</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">8</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">9</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">10</b>       
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">다음</b>
+                    </li>
+                  </ul>
+			
 		</div>
 
 

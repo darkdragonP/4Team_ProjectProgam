@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <%@ include file="../../../common/top.jsp"%>
-
+<link rel="stylesheet" href="css/Medicine.css?after" />
 <head>
 <meta charset="EUC-KR">
 <title>MEDICINE</title>
@@ -12,6 +12,8 @@
 <body>
 	<div class="container">
 			<h2 class="sub-header">약 검색</h2>
+			
+			
 			<div class="card mb-4">
 				<h5 class="card-header">
 					<img src="images/googleVision.jpg" alt="OCR"
@@ -301,6 +303,48 @@
 				</tbody>
 	</c:forEach>
 			</table>
+			
+				<ul class="pagination">
+                    <li class="page-item">
+                      <b href="#" class="page-link">이전</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">1</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">2</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">3</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">4</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">5</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">6</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">7</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">8</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">9</b>
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">10</b>       
+                    </li>
+                    <li class="page-item">
+                      <b href="#" class="page-link">다음</b>
+                    </li>
+                  </ul>
+			
+			
+			
 	</div>
 </body>
 <%@ include file="../../../common/bottom.jsp"%>
