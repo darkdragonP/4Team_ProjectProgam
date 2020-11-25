@@ -11,4 +11,5 @@ public interface UserService {
 	public UserVO userDetail(String vo);
 	public List<UserVO> delete_user(UserVO vo);
 	public UserVO login(UserVO vo);
+	public String idoverlap(String id);
 }

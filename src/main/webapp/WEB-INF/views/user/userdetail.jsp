@@ -23,7 +23,7 @@
 		<p>
 		<div class="tab-content" id="myTabContent">
 
-			<form action=detailUser.do method="post">
+			<form action="update_user.do" method="post">
 				<div class="tab-pane fade show active" id="home" role="tabpanel"
 					aria-labelledby="home-tab">
 					<div class="row register-form">
@@ -39,7 +39,7 @@
 									class="form-control" placeholder="Password"/>
 							</div>
 							<div class="form-group">
-								비밀번호 확인 <input type="password" id="re-password" name="re-passwo rd"
+								비밀번호 확인 <input type="password" id="re-password" name="re-password"
 									class="form-control" placeholder="Confirm Password" value="" />
 							</div>
 							<div class="form-group">
@@ -71,7 +71,7 @@
 									value="${selectUser.uPostNum}" /> <input type="button"
 									id="postcodify_search_button" class="btnSearch" value="주소검색"><br>
 								<input type="text" name="address" id="address"
-									class="postcodify_address" value="${userService.getAddress()}" /><br>
+									class="postcodify_address" value="${selectUser.getAddress()}" /><br>
 							</div>
 							<div class="form-group">
 								프로필이미지 <input type="file" id="uProfile" name="uProfile"
@@ -83,8 +83,8 @@
 								<p>
 									<br>
 								<div class="buttons">
-									<input type="submit" value="수정하기" /> <input type="submit"
-										value="회원탈퇴" />
+									<input type="button" onclick="test()" value="수정하기" /> 
+									<a href="userDelete.do"><input type="button" value="회원탈퇴" /></a>
 								</div>
 							</div>
 						</div>
@@ -118,7 +118,6 @@
 				}
 		}
 	</script>
-	<!-- 비밀번호 매치 -->
-	</script>
+	<!-- 비밀번호 매치 끝 -->
 </body>
 </html>

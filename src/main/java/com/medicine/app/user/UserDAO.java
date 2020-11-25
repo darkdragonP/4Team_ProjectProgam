@@ -1,7 +1,6 @@
 package com.medicine.app.user;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -18,25 +17,30 @@ public class UserDAO {
 	public List<UserVO> selectUserList()  {
 		return sqlSession.selectList("user.selectUserList");
 	}
-	
+
+	// 회원가입
 	public void insert_Reg(UserVO vo){
 		sqlSession.selectList("user.insert_Reg", vo);
 	}
-	
+
+	// 회원수정
 	public void update_user(UserVO vo){
 		sqlSession.selectList("user.update_user", vo);
 	}
-	
+
+	// 회원상세보기
 	public UserVO userDetail(String vo){
 		return sqlSession.selectOne("user.detail_user", vo);
 	}
 
+	// 로그인
 	public UserVO login(UserVO vo) {
 		return sqlSession.selectOne("user.login", vo);
 	}
-
-	public ArrayList<UserVO> loginMember(String mid, String password) {
-		return null;
-	}
 	
+	// 아이디중복확인
+	public String idoverlap(String id) {
+		System.out.println(id);
+		return sqlSession.selectOne("user.idoverlap", id);
+	}
 }

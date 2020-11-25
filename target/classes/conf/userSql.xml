@@ -24,12 +24,17 @@
 		]]>
 	</select>
 	
+	<!-- 회원정보 -->
 	<select id="detail_user" parameterType="String" resultMap="userResult">
 		<![CDATA[
 			select * from users where USER_CODE=#{uIdx}
 		]]>
 	</select>
 	
+	<!-- 로그인 -->
+	<select id="login" parameterType="UserVO" resultMap="userResult">
+		select * from users where ID=#{userID} and PW=#{userPW}
+	</select>
 
 	<!-- 회원가입 -->
 	<insert id="insert_Reg" parameterType="UserVO">
@@ -61,7 +66,9 @@
 		]]>
 	</insert>
 	
+	<!-- 회원수정 -->
 	<update id="update_user" parameterType="UserVO">
+	<![CDATA[
 	UPDATE USERS SET NAME = #{uName},
 		PW = #{userPW},
 		BIRTH = #{uBirth},
@@ -71,7 +78,14 @@
 		POST_NUM = #{uPostNum},
 		ADDRRESS = #{address},
 		PROFILE_IMG = #{uProfile},
-		UMAIL_CONSENT = #{uMailCon},
-		WHERE USERID = USERS_SEQ)
+		UMAIL_CONSENT = #{uMailCon}
+		WHERE USER_CODE = #{uIdx}
+		]]>
 	</update>	
+	
+	<!-- 아이디 중복 확인 -->
+ 	<select id = "idoverlap" parameterType="String" resultType ="String">
+ 		SELECT * FROM USERS WHERE ID = #{userID}
+ 	</select>
+ 	
 </mapper>

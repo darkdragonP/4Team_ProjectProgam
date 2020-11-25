@@ -24,10 +24,6 @@
 		]]>
 	</select>
 	
-	<select id="loginCheck" resultType="String">
-	SELECT userID  FROM USERS WHERE as #{uName}
-	</select>
-	
 	<!-- 회원정보 -->
 	<select id="detail_user" parameterType="String" resultMap="userResult">
 		<![CDATA[
@@ -37,7 +33,7 @@
 	
 	<!-- 로그인 -->
 	<select id="login" parameterType="UserVO" resultMap="userResult">
-		select ID, PW from users where ID=#{userID} and PW=#{userPW}
+		select * from users where ID=#{userID} and PW=#{userPW}
 	</select>
 
 	<!-- 회원가입 -->
@@ -82,8 +78,14 @@
 		POST_NUM = #{uPostNum},
 		ADDRRESS = #{address},
 		PROFILE_IMG = #{uProfile},
-		UMAIL_CONSENT = #{uMailCon},
-		WHERE USERID = USERS_SEQ)
+		UMAIL_CONSENT = #{uMailCon}
+		WHERE USER_CODE = #{uIdx}
 		]]>
 	</update>	
+	
+	<!-- 아이디 중복 확인 -->
+ 	<select id = "idoverlap" parameterType="String" resultType ="String">
+ 		SELECT * FROM USERS WHERE ID = #{userID}
+ 	</select>
+ 	
 </mapper>

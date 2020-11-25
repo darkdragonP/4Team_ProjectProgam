@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -58,20 +60,19 @@ public class UserController {
 	}
 
 	// 회원정보
-	@RequestMapping(value = "/detailUser.do")
-	public ModelAndView userdetail(UserVO vo, HttpServletRequest request) {
-		System.out.println("userdetail회원정보페이지 이동");
-		System.out.println(vo);
-		System.out.println(vo.getClass().getName());
-		String uIdx = Integer.toString(vo.getuIdx());
+		@RequestMapping(value = "/detailUser.do")
+		public ModelAndView userdetail(UserVO vo, HttpServletRequest request) {
+			System.out.println("userdetail회원정보페이지 이동");
+			System.out.println(vo);
 
-		UserVO selectUser = userService.userDetail(uIdx);
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("selectUser", selectUser);
-		mv.setViewName("/user/userdetail");
-		return mv;
-	}
+			String uIdx = Integer.toString(vo.getuIdx());
+			UserVO selectUser = userService.userDetail(uIdx);
 
+			ModelAndView mv = new ModelAndView();
+			mv.addObject("selectUser", selectUser);
+			mv.setViewName("/user/userdetail");
+			return mv;
+		}
 	// 회원가입
 	@RequestMapping(value = "/insert_Reg.do", method = RequestMethod.POST)
 	public ModelAndView insert_Reg(UserVO vo, HttpServletRequest request) {
@@ -93,7 +94,18 @@ public class UserController {
 		userService.update_user(vo);
 
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/user/update_user.do");
+		mv.setViewName("../../main");
+		return mv;
+	}
+	
+	// 회원삭제
+	@RequestMapping(value = "/userDelete.do", method = RequestMethod.GET)
+	public ModelAndView userDelete(UserVO vo, HttpServletRequest request) {
+		System.out.println("userDelete 메소드 실행");
+		System.out.println(vo);
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("userDelete");
 		return mv;
 	}
 
@@ -135,5 +147,11 @@ public class UserController {
 		return "../../main";
 	}
 	
-	 
+	//아이디 중복 확인
+		 @RequestMapping(value = "idoverlap")
+		 public @ResponseBody String idoverlap(@RequestParam("userID") String id){
+			 //json형식으로 보낸걸 받기위해 사용 : @ResponseBody
+			 String resultMsg = userService.idoverlap(id);
+			 return resultMsg;
+		 }
 }
