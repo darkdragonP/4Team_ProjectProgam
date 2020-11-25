@@ -23,18 +23,19 @@
 }
 
 .form-control {
-    display: block;
-    width: 100%;
-    padding: 0.39rem 5.65rem;
-    font-size: 1rem;
-    line-height: 0.1;
-    color: #0b4877;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  display: block;
+  width: 100%;
+  padding: 1.18rem 5.65rem;
+  font-size: 1rem;
+  line-height: 0.1;
+  color: #0b4877;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 iframe {
   width: 187px;
   height: 184px;
@@ -50,7 +51,7 @@ user agent stylesheet iframe {
   border-image: initial;
 }
 td {
-  font-family: "�룍��,Tahoma";
+  font-family: "돋움,Tahoma";
   font-size: 9pt;
   line-height: 18px;
   color: #7a7a7a;
@@ -171,15 +172,4 @@ h6 {
 .btn-outline-success {
   color: #0b4877;
   border-color: #0b4877;
-}
-.btn-outline-success {
-    color: #0b4877;
-    background-color: transparent;
-    background-image: none;
-    border-color: #0b4877;
-}
-
-.btn-outline-success:hover{
-	background-color: #0b4877 !important;
-	 border-color: #0b4877;
 }

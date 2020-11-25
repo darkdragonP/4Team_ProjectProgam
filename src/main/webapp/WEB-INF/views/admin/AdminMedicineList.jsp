@@ -51,11 +51,9 @@
 						<br>
 						<br>
 
+
 						<hr>
-					
-						<li><a href="adminMain.do"><h6>	<br>
-						<br>
-						<br>관리자 홈</h6></a></li>
+						<li><a href="adminMain.do"><h6>관리자 홈</h6></a></li>
 						<li><a href="main.jsp"><h6>메인 홈</h6></a></li>
 					</ul>
 				</nav>

@@ -5,9 +5,7 @@
 
 <%@ include file="../../../common/top.jsp"%>
 <head>
-
   <link href="css/QnA.css" rel="stylesheet">
-  
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script type='text/javascript'> 
        $(document).ready(function () {
@@ -93,9 +91,6 @@
 <footer id="footer">
     <div class="footer-top">
       <!-푸터 위쪽입니다.-->
-      
-      
-      
  <body>
       
 
@@ -113,6 +108,15 @@
          
        <div class="h7">Welcome to Homedicine -QnA</div>
     
+
+
+
+
+
+
+
+
+
 
           
             <div class="col-lg-12">
@@ -168,29 +172,26 @@
                               </thead>
                               <tbody>
                               <tr>
-                                <th>QUESTION <br><input class="mdccheckbox" type="checkbox" id="toggle--qde27pz51t" value="1"></th>
-                                
+                                <th>QUESTION </th>
                                   <td><div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" checked="" class="i-checks" name="input[]" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>                          
                                   <td>
-                              
                                             <h2>피부과 처방약입니다.</h2>     
                                             <p>
-                                            해외나간다고 약품을 영어로 영수증 뽑아줄수 있냐고 물어보는데
-                                            약제비계산서/영수증(영문)-> 이걸로 뽑으면 약품만 한글로 나오는데요
-                                            약품도 영문으로 나오게끔 할수 있는 양식 없을까요???
+                                            피부과처방약인대요.
+                                            이중에 살찌는 성분이 있나요?
+                                            살이 너무나도 많이 쪄서영.
+                                            
+                                            메치론정, 투리온정,비)마크로제정,쎄렌잘정입니다.
                                             </p>
 
 
 
 
-                                             </td>
-                                             
-                                             
+                                            
+                                  </td>
 
                                     <td>
-                                 <a href="#" class="u_cbox_btn_delete" data-action="remove" data-param="parentCommentNo:403613626,commentNo:403613626,replyPreviewNo:0,imageCount:0,objectId:'597447_359'" data-log="RPC.del"><span class="u_cbox_ico_delete"></span><span class="u_cbox_in_delete">삭제</span></a>
                                       <br>  2020-11-18
-                                      
                                     </td>
                                     
                                 </tr>
@@ -228,7 +229,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                              <th>QUESTION <br><input class="mdccheckbox" type="checkbox" id="toggle--qde27pz51t" value="1"></th>
+                              <th>QUESTION </th>
                                 <td><div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" checked="" class="i-checks" name="input[]" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>                          
                                 <td>
                                           <h3>영문처방</h3>     
@@ -241,7 +242,6 @@
                                   </td>
 
                                   <td>
-                                  <a href="#" class="u_cbox_btn_delete" data-action="remove" data-param="parentCommentNo:403613626,commentNo:403613626,replyPreviewNo:0,imageCount:0,objectId:'597447_359'" data-log="RPC.del"><span class="u_cbox_ico_delete"></span><span class="u_cbox_in_delete">삭제</span></a>
                                     <br>  2020-11-18
                                   </td>
                                   
@@ -284,7 +284,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                              <th>QUESTION <br><input class="mdccheckbox" type="checkbox" id="toggle--alx95rdder" value="1"></th>
+                              <th>QUESTION </th>
                                 <td><div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" checked="" class="i-checks" name="input[]" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>                          
                                 <td>
                                           <h4>내복액제 처방 질문</h4>     
@@ -296,7 +296,6 @@
                                   </td>
 
                                   <td>
-                                   <a href="#" class="u_cbox_btn_delete" data-action="remove" data-param="parentCommentNo:403613626,commentNo:403613626,replyPreviewNo:0,imageCount:0,objectId:'597447_359'" data-log="RPC.del"><span class="u_cbox_ico_delete"></span><span class="u_cbox_in_delete">삭제</span></a>
                                     <br>  2020-11-18
                                   </td>
                                   
@@ -310,7 +309,6 @@
                                       <p style="display:none">문의주신 내용 간략 안내드리면 심사평가원의 심사기준은 처방전에 표기된 메게이스내복현탁액의 코드입니다. 처방전에 표기된 해당코드에 맞게 입력을 하시고 청구진행하셔야 합니다. 처방전에 약품명은 구분이 되지만 코드표기가 되어 있지 않은 경우 Homedicine의 문의하셔서 확인하시면 됩니다.  감사합니다.
                                           <br>
                                           <span class="hide" style="color:#0b4877">닫기</span>
-                                          
                                       </p>
                           </td>
                           </tr>
@@ -330,7 +328,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                              <th>QUESTION <br><input class="mdccheckbox" type="checkbox" id="toggle--qde27pz51t" value="1"></th>
+                              <th>QUESTION </th>
                                 <td><div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" checked="" class="i-checks" name="input[]" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>                          
                                 <td>
                                           <h5>약물 관련하여 문의드립니다.</h5>     
@@ -341,7 +339,7 @@
                                           </p>
                                   </td>
 
-                                  <td>  <a href="#" class="u_cbox_btn_delete" data-action="remove" data-param="parentCommentNo:403613626,commentNo:403613626,replyPreviewNo:0,imageCount:0,objectId:'597447_359'" data-log="RPC.del"><span class="u_cbox_ico_delete"></span><span class="u_cbox_in_delete">삭제</span></a>
+                                  <td>
                                     <br>  2020-11-18
                                   </td>
                                   
@@ -363,77 +361,27 @@
                                           <br>
                                           <span class="hide" style="color:#0b4877">닫기</span>
                                       </p>
-                                      
                           </td>
-                          
                           </tr>
 
                               
                             </tbody>
                         </table>
-                      <br>
-                      <br>
-                       <br>
-                       <br>
-                        	<ul class="pagination">
-                    <li class="page-item">
-                      <b href="#" class="page-link">이전</b>
-                    </li>
-                    <li class="page-item">
-                      <b href="#" class="page-link">1</b>
-                    </li>
-                    <li class="page-item">
-                      <b href="#" class="page-link">2</b>
-                    </li>
-                    <li class="page-item">
-                      <b href="#" class="page-link">3</b>
-                    </li>
-                    <li class="page-item">
-                      <b href="#" class="page-link">4</b>
-                    </li>
-                    <li class="page-item">
-                      <b href="#" class="page-link">5</b>
-                    </li>
-                    <li class="page-item">
-                      <b href="#" class="page-link">6</b>
-                    </li>
-                    <li class="page-item">
-                      <b href="#" class="page-link">7</b>
-                    </li>
-                    <li class="page-item">
-                      <b href="#" class="page-link">8</b>
-                    </li>
-                    <li class="page-item">
-                      <b href="#" class="page-link">9</b>
-                    </li>
-                    <li class="page-item">
-                      <b href="#" class="page-link">10</b>       
-                    </li>
-                    <li class="page-item">
-                      <b href="#" class="page-link">다음</b>
-                    </li>
-                    
-                    
-                  </ul>
-                                   <div class="butoon">
-
-
-    <span style="float:right;"> <!-- 가운데로 옮길때는 <center></center>  -->
-    <button class="btn btn-secondary" type="button" >글 작성</button>
-    </span>
-    <br>
-    <br>	
-</div>
-           
-                  
-        
-                  
-                  
                     </div>
 
                   </div>
 </div>
 </div>    
+
+<div class="butoon">
+
+    <span style="float:right;"> <!-- 가운데로 옮길때는 <center></center>  -->
+    <button class="btn btn-secondary" type="button" >글 작성</button>
+    <button class="btn btn-secondary" type="button"> 삭제</button>
+    </span>
+    <br>
+    <br>	
+</div>
 
 
 </div>
@@ -448,6 +396,5 @@
 
 
 
-</body>
-
-</html>
+</div>
+  </body>  

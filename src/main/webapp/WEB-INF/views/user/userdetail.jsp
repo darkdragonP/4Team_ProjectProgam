@@ -82,8 +82,10 @@
 								광고수신 동의
 								<p>
 									<br>
-								<button class="btn btn-secondary" value="수정하기" type="submit">수정하기</button>
-								<button class="btn btn-secondary" value="회원탈퇴" type="submit">회원탈퇴</button>
+								<div class="buttons">
+									<input type="submit" value="수정하기" /> <input type="submit"
+										value="회원탈퇴" />
+								</div>
 							</div>
 						</div>
 					</div>

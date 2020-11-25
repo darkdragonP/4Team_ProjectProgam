@@ -28,16 +28,16 @@
 						<br>
 						<br>
 						<li><a href="GoogleAnalytics.do" id="top-link"><span
-								class="icon solid fa-th"><h6>Google<br> Analytics</h6></span></a></li>
+								class="icon solid fa-th"><h6>Google Analytics</h6></span></a></li>
 						<hr>
 						<li><a href="AdminMedicineList.do" id="about-link"><span
-								class="icon solid fa-th"><h6>약 리스트 <br>관리</h6></span></a></li>
+								class="icon solid fa-th"><h6>약 리스트 관리</h6></span></a></li>
 						<hr>
 						<li><a href="#type3" id="about-link"><span
-								class="icon solid fa-th"><h6>공지사항 <br>관리</h6></span></a></li>
+								class="icon solid fa-th"><h6>공지사항 관리</h6></span></a></li>
 						<hr>
 						<li><a href="#type4" id="about-link"><span
-								class="icon solid fa-th"><h6>QnA<br> 관리</h6></span></a></li>
+								class="icon solid fa-th"><h6>QnA 관리</h6></span></a></li>
 						<hr>
 						<li><a href="#type5" id="about-link"><span
 								class="icon solid fa-th"><h6>결산</h6></span></a></li>
@@ -47,7 +47,7 @@
 
 						<hr>
 						<li><a href="adminMain.do"><h6>관리자 홈</h6></a></li>
-						<li><a href="main.jsp"><h6>돌아가기</h6></a></li>
+						<li><a href="main.jsp"><h6>메인 홈</h6></a></li>
 					</ul>
 				</nav>
 
