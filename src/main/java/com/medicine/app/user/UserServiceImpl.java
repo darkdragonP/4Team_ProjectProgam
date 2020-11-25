@@ -31,14 +31,14 @@ public class UserServiceImpl implements UserService {
 
 	// 회원상세보기
 	@Override
-	public UserVO userDetail(String vo) {
+	public UserVO userDetail(UserVO vo) {
 		return userDAO.userDetail(vo);
 	}
 
 	// 회원삭제
 	@Override
-	public List<UserVO> delete_user(UserVO vo) {
-		return null;
+	public UserVO delete_user(UserVO vo) {
+		return userDAO.delete_user(vo);
 	}
 
 	// 로그인

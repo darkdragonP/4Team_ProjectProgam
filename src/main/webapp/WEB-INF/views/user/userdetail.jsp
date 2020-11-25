@@ -85,6 +85,7 @@
 								<div class="buttons">
 									<input type="button" onclick="test()" value="수정하기" /> 
 									<a href="userDelete.do"><input type="button" value="회원탈퇴" /></a>
+									<input type="hidden" name="getUserPW" value="${selectUser.getUserPW()}"/>
 								</div>
 							</div>
 						</div>

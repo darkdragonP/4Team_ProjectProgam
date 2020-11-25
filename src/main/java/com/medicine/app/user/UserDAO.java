@@ -29,14 +29,19 @@ public class UserDAO {
 	}
 
 	// 회원상세보기
-	public UserVO userDetail(String vo){
+	public UserVO userDetail(UserVO vo){
 		return sqlSession.selectOne("user.detail_user", vo);
 	}
-
+	
+	// 회원삭제
+	public UserVO delete_user(UserVO vo){
+		return sqlSession.selectOne("user.delete_user", vo);
+	}
+	
 	// 로그인
 	public UserVO login(UserVO vo) {
 		return sqlSession.selectOne("user.login", vo);
-	}
+	}	
 	
 	// 아이디중복확인
 	public String idoverlap(String id) {

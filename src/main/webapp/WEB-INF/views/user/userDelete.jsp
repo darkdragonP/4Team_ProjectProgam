@@ -26,9 +26,12 @@
 		<p>
 		<div>탈퇴하시려면 비밀번호를 재입력 해주십시오.</div>
 		<div>
-			<form action="delete_user.do?uIdx=${useruIdx}" method="post">
-				<input type="password" id="userPW" name="userPW"> <input
-					type="submit" value="탈퇴하기">
+			<form action="realUserDelete.do" method="post">
+				<input type="hidden" name="getuIdx" value="${selectUser.getuIdx()}" />
+				<input type="hidden" name="getUserPW"
+					value="${selectUser.getUserPW()}" /> <input type="password"
+					id="userPW" name="userPW"> <input type="submit"
+					id="btnDelete" value="탈퇴하기">
 			</form>
 		</div>
 	</div>
@@ -38,30 +41,13 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			// 취소
-			$("#submit").on("click", function() {
+			$("#btnDelete").on("click", function() {
 				if ($("#userPW").val() == "") {
 					alert("비밀번호를 입력해주세요.");
 					$("#userPW").focus();
 					return false;
 				}
-				$.ajax({
-					url : "/user/pwCheck",
-					type : "POST",
-					dataType : "json",
-					data : $("#form").serializeArray(),
-					success : function(data) {
-
-						if (data == 0) {
-							alert("패스워드가 틀렸습니다.");
-							return;
-						} else {
-							if (confirm("회원탈퇴하시겠습니까?")) {
-								$("#form").submit();
-							}
-						}
-					}
-				})
-			});
+			})
 		})
 	</script>
 

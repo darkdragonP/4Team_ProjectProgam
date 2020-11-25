@@ -43,16 +43,16 @@
 					</li>
 					<li class="nav-item"><a class="nav-link" href="qnaList.do">QnA</a>
 					</li>
-					<c:if test="${user == null}">
+					<c:if test="${uIdx == null}">
 						<li class="nav-item"><a class="nav-link" href="login.do">로그인</a>
 						</li>
 					</c:if>
 					<!-- 로그아웃 버튼생성, 회원정보 수정까지 로그인하면 보이게 함-->
-					<c:if test="${user != null}">
+					<c:if test="${uIdx != null}">
 						<li class="nav-item"><a class="nav-link" href="logout.do">로그아웃</a>
 						<li class="nav-item"><a class="nav-link"
-							href="detailUser.do?uIdx=${user.uIdx}">회원정보수정</a></li>
-						<c:if test="${user.userID == 'ADMIN'}">
+							href="detailUser.do">회원정보수정</a></li>
+						<c:if test="${userID == 'ADMIN'}">
 							<li class="nav-item"><a class="nav-link" href="adminMain.do">관리자
 									페이지</a></li>
 						</c:if>
