@@ -17,6 +17,11 @@
 <body>
 	<%@ include file="../../../common/top.jsp"%>
 	<div class="container">
+	<br><br><br><br>
+	
+		<h2 class="sub2" style="color: #EF746F;">&nbsp;<a href="/icons/notes-medical?style=solid" class="flex flex-column items-center justify-center color-inherit w-100 pa2 br2 br--top no-underline hover-bg-blue4 hover-white"style="font-size:30px;"> <i class="fas fa-pills" style="color: #EF746F;">&nbsp;회원님의 소중한 정보를 변경해주세요</i></a></h2>
+
+	<br><br><br><br><br>
 		<h3>
 			<b>${selectUser.getuName()}님의 회원정보입니다.</b>
 		</h3>
@@ -83,8 +88,8 @@
 								<p>
 									<br>
 								<div class="buttons">
-									<input type="button" onclick="test()" value="수정하기" /> 
-									<a href="userDelete.do"><input type="button" value="회원탈퇴" /></a>
+									<input class="btn btn-secondary" type="button" onclick="test()" value="수정하기" /> 
+									<a href="userDelete.do"><input class="btn btn-secondary"  type="button" value="회원탈퇴" /></a>
 									<input type="hidden" name="getUserPW" value="${selectUser.getUserPW()}"/>
 								</div>
 							</div>
@@ -118,7 +123,10 @@
 					return true;
 				}
 		}
+
 	</script>
+
 	<!-- 비밀번호 매치 끝 -->
+
 </body>
 </html>
