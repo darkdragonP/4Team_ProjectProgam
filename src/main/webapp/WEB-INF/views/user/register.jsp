@@ -41,15 +41,18 @@
 									<div class="form-group">
 										아이디 <input type="text" id="userID" name="userID"
 											class="form-control" placeholder="ID" value="" /> <input
-											type="button" id="id-check" class="id-check" value="중복체크">
+											type="button" id="id-check" onclick="idOverlap()"
+											value="중복체크"> <br />
+										<span id="confirmId"></span>
 									</div>
 									<div class="form-group">
 										비밀번호 <input type="password" id="userPW" name="userPW"
 											class="form-control" placeholder="Password" value="" />
 									</div>
 									<div class="form-group">
-										비밀번호 확인 <input type="password" id="re-password" name="re-password"
-											class="form-control" placeholder="Confirm Password" value="" />
+										비밀번호 확인 <input type="password" id="re-password"
+											name="re-password" class="form-control"
+											placeholder="Confirm Password" value="" />
 									</div>
 									<div class="form-group">
 										이름 <input type="text" id="uName" name="uName"
@@ -111,24 +114,51 @@
 
 
 	<!-- 아이디 중복체크 -->
+	<script>
+		function idOverlap() {
+			var idCheck = document.getElementById("userID").value;
+			var confirmId = document.getElementById("confirmId");
 
-	<!-- 아이디 중복체크 -->
+			$.ajax({
+				type : "POST",
+				url : "idoverlap.do",
+				data : {
+					"userID" : idCheck
+				}, //form의 name과 상관없다
+				dataType : "text",
+				success : function(data) {//성공시
+					if (data == "OK") {
+						confirmId.style.color = "#0000ff";
+						confirmId.innerHTML = "사용 가능한 아이디입니다.";
+					} else {
+						confirmId.style.color = "#ff0000";
+						confirmId.innerHTML = "사용 중인 아이디입니다.";
+					}
+				},
+				error : function() {//실패시
+					alert("idOverlap함수 통신 실패");
+				}
+			});
+		}
+	</script>
+
+	<!-- 아이디 중복체크 끝 -->
 
 	<!-- 비밀번호 매치 -->
 	<script type="text/javascript">
 		function test() {
 			var p1 = document.getElementById('userPW').value;
 			var p2 = document.getElementById('re-password').value;
-				if (p1 != p2) {
-					alert("비밀번호가 일치 하지 않습니다");
-					return false;
-				} else {
-					$("form").submit();
-					return true;
-				}
+			if (p1 != p2) {
+				alert("비밀번호가 일치 하지 않습니다");
+				return false;
+			} else {
+				$("form").submit();
+				return true;
+			}
 		}
 	</script>
-	<!-- 비밀번호 매치 -->
+	<!-- 비밀번호 매치 끝 -->
 	<!-- 우편번호 가져오기 -->
 	<script>
 		$(function() {
@@ -136,7 +166,7 @@
 		});
 	</script>
 	<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
-	<!-- 우편번호 가져오기 -->
+	<!-- 우편번호 가져오기 끝 -->
 
 </body>
 </html>
