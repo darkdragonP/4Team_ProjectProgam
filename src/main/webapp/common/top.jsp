@@ -17,7 +17,6 @@
 <!-- Custom styles for this template -->
 <link href="css/style.css?after" rel="stylesheet">
 
-
 </head>
 <body>
 	<!-- Navigation -->
@@ -52,15 +51,13 @@
 						<li class="nav-item"><a class="nav-link" href="logout.do">로그아웃</a>
 						<li class="nav-item"><a class="nav-link"
 							href="detailUser.do">회원정보수정</a></li>
-						<c:if test="${userID == 'ADMIN'}">
-							<li class="nav-item"><a class="nav-link" href="adminMain.do">관리자
-									페이지</a></li>
+						<c:if test="${userID == 'admin'}">
+							<li class="nav-item"><a class="nav-link" href="adminMain.do">
+							관리자페이지</a></li>
 						</c:if>
 					</c:if>
-					<li class="nav-item"><a class="nav-link" href="Contact.do">Contact</a>
+					<li class="nav-item"><a class="nav-link" href="Contact.do">Search</a>
 					</li>
-
-
 
 				</ul>
 			</div>

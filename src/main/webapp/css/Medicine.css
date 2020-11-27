@@ -1,0 +1,63 @@
+a:hover {
+    color:  #0b4877;
+    text-decoration: underline;
+}
+.modify{
+		float:right;
+	
+}
+
+.delete{
+		float:right;
+}
+
+
+
+.page-link {
+    text-align: center;
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #0b4877;
+    background-color: #f2efea;
+    border: 1px solid #dee2e6;
+}
+
+
+.pagination {
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 320px;
+    list-style: none;
+    border-radius: .25rem;
+}
+
+
+
+.mb-5, .my-5 {
+    margin-bottom: 3rem!important;
+    width: 67.5%;
+    margin-left: 0px;
+ 
+}
+.mb-4, .my-4 {
+    margin-bottom: 1.5rem!important;
+}
+.mt-4, .my-4 {
+    margin-top: 1.5rem!important;
+}
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 50px;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
