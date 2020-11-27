@@ -95,8 +95,9 @@
 											class="form-control" placeholder="" value="" />
 									</div>
 									<div class="form-group">
-										<input type="checkbox" id="uMailCon" name="uMailCon" /> 광고수신
-										동의
+										<input type="radio" id="uMailCon" name="uMailCon" checked value="0"/> 광고수신
+										동의  <input type="radio" id="uMailCon" name="uMailCon" value="1"/> 광고수신
+										미동의
 									</div>
 									<div class="form-group">
 										<input type="button" class="btnRegister" id="reg_submit"

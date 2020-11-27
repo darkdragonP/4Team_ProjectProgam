@@ -3,10 +3,12 @@ package com.medicine.app.user;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +16,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+
 public class UserController {
+
 	@Autowired
 	private UserService userService;
 
@@ -31,11 +35,19 @@ public class UserController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/findIDPW.do")
+	@RequestMapping(value = "/findID.do")
 	public ModelAndView exercise1(HttpServletRequest request, ModelAndView mv) {
-		System.out.println("findIDPW 임시 메소드 실행");
+		System.out.println("findID 임시 메소드 실행");
 
-		mv.setViewName("/user/findIDPW");
+		mv.setViewName("/user/findID");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/findPW.do")
+	public ModelAndView exercise4(HttpServletRequest request, ModelAndView mv) {
+		System.out.println("findPW 임시 메소드 실행");
+		
+		mv.setViewName("/user/findPW");
 		return mv;
 	}
 
@@ -168,4 +180,12 @@ public class UserController {
 		String resultMsg = userService.idoverlap(id);
 		return resultMsg;
 	}
+
+	// 아이디 찾기
+		@RequestMapping(value = "/find_id.do", method = RequestMethod.POST)
+		public String find_id(HttpServletResponse response, @RequestParam("email") String email, Model md) throws Exception{
+			md.addAttribute("id", userService.find_id(response, email));
+			return "/member/find_id";
+		}
+
 }

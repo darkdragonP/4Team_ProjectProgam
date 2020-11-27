@@ -48,4 +48,9 @@ public class UserDAO {
 		System.out.println(id);
 		return sqlSession.selectOne("user.idoverlap", id);
 	}
+	
+	// 아이디찾기
+	public String find_id(String email) throws Exception{
+		return sqlSession.selectOne("user.find_id", email);
+	}
 }
