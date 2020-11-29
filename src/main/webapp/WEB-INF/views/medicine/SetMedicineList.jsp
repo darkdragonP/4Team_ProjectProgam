@@ -35,7 +35,7 @@
 			<div class="card-body">
 				<form action="searchTextMedicine.do">
 					<div class="input-group">
-						<input type="text" name="TextMedicine" class="form-control"
+						<input type="text" name="textMedicine" class="form-control"
 							placeholder="약 이름 또는 성분으로 검색하세요">&nbsp;
 						<button class="btn btn-secondary" type="submit">검색</button>
 					</div>
@@ -354,12 +354,12 @@
 					<c:when test="${pageNum eq  mdBCounts.curPage}">
 						<span style="font-weight: bold;"><b class="page-link"
 							style="background-color: lightpink;"><a
-								href="medicineList.do?curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}&endp=${mdBCounts.endPage}"
+								href="medicineList.do?curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}"
 								onClick="fn_paging('${pageNum }')">${pageNum }</a></b></span>
 					</c:when>
 					<c:otherwise>
 						<li><b class="page-link"> <a
-								href="medicineList.do?curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}&endp=${mdBCounts.endPage}">${pageNum}</a></b></li>
+								href="medicineList.do?curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}">${pageNum}</a></b></li>
 					</c:otherwise>
 				</c:choose>
 			</c:forEach>

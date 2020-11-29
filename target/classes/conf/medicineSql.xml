@@ -29,7 +29,8 @@
 
 	</resultMap>
 
-	<select id="searchCountMedicine" parameterType="String" resultType="Integer">
+	<select id="searchCountMedicine" parameterType="String"
+		resultType="Integer">
 	<![CDATA[
 		select count(MD_CODE) from medicine where 
 		MD_TITLE like '%' || #{text} || '%' or
@@ -45,7 +46,19 @@
 		order by MD_CODE desc
 	]]>
 	</select>
-	
+
+	<select id="searchCountMedicine2" parameterType="map"
+		resultType="Integer">
+	<![CDATA[
+		select count(MD_CODE) from medicine where 
+		MD_SHAPE like '%' || #{mdShape} || '%' and
+		MD_COLOR like '%' || #{mdColor} || '%' and
+		MD_TYPE like '%' || #{mdType} || '%' and
+		MD_LINE like '%' || #{mdLine} || '%'
+		order by MD_CODE desc
+	]]>
+	</select>
+
 	<select id="countsMedicine" resultType="Integer">
 	<![CDATA[
 		select count(MD_CODE) from medicine
@@ -87,11 +100,15 @@
 	<select id="searchRadioMedicine" parameterType="map"
 		resultMap="medicineResult">
 	<![CDATA[
-		SELECT * FROM medicine where 
+		select *
+		from (select ROWNUM as rnum, A.*
+		from (select * from MEDICINE where 
 		MD_SHAPE like '%' || #{mdShape} || '%' and
 		MD_COLOR like '%' || #{mdColor} || '%' and
 		MD_TYPE like '%' || #{mdType} || '%' and
 		MD_LINE like '%' || #{mdLine} || '%'
+		order by MD_CODE desc) A)
+		where rnum >= #{startIndex} and rnum <=#{endIndex}
 		
 	]]>
 	</select>

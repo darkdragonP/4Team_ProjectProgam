@@ -73,8 +73,14 @@ public class MedicineServiceImpl implements MedicineService {
 	}
 
 	@Override
-	public List<MedicineVO> searchTextMedicine(Map<String, Object> vo) {
+	public List<MedicineVO> searchTextMedicine(Map<String, String> vo) {
+		System.out.println("impl통과");
 		return medicineDAO.searchTextMedicine(vo);
+	}
+
+	@Override
+	public int searchCountMedicine2(Map<String, String> vo) {
+		return medicineDAO.searchCountMedicine2(vo);
 	}
 	
 

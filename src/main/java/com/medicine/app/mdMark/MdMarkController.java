@@ -49,7 +49,7 @@ public class MdMarkController {
 		}
 		int AvgMr = mr / xe;
 		System.out.println(2);
-
+		
 		MedicineVO medicine = medicineService.selectMedicine(mdIdx);
 		medicine.setMdRating(Integer.toString(AvgMr));
 		medicineService.updateMdRating(medicine);

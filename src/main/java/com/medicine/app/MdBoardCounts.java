@@ -38,6 +38,59 @@ public class MdBoardCounts {
 
 	/** 현재 블럭(range) **/
 	private int curRange;
+	
+	private String textMedicine;
+
+	private String mdShape;
+	
+	private String mdColor;
+	
+	private String mdType;
+	
+	private String mdLine;
+	
+	
+	
+	
+	public String getMdShape() {
+		return mdShape;
+	}
+
+	public void setMdShape(String mdShape) {
+		this.mdShape = mdShape;
+	}
+
+	public String getMdColor() {
+		return mdColor;
+	}
+
+	public void setMdColor(String mdColor) {
+		this.mdColor = mdColor;
+	}
+
+	public String getMdType() {
+		return mdType;
+	}
+
+	public void setMdType(String mdType) {
+		this.mdType = mdType;
+	}
+
+	public String getMdLine() {
+		return mdLine;
+	}
+
+	public void setMdLine(String mdLine) {
+		this.mdLine = mdLine;
+	}
+
+	public String getTextMedicine() {
+		return textMedicine;
+	}
+
+	public void setTextMedicine(String textMedicine) {
+		this.textMedicine = textMedicine;
+	}
 
 	public int getPrevBlock() {
 		return prevBlock;
@@ -123,11 +176,11 @@ public class MdBoardCounts {
 		this.endPage = endPage;
 	}
 
-	public void setPage(int curPage, int startp, int endp, int curRange) {
+	public void setPage(int curPage, int startp, int curRange) {
 		this.startIndex = countPage.get(curPage - 1).get(0);
 		this.endIndex = countPage.get(curPage - 1).get(countPage.get(curPage - 1).size() - 1);
 		this.startPage = startp;
-		this.endPage = endp;
+		this.endPage = countBlock.get(curRange).get(countBlock.get(curRange).size() - 1);
 		this.curPage = curPage;
 		this.curRange = curRange;
 
@@ -150,7 +203,6 @@ public class MdBoardCounts {
 		this.endIndex = countPage.get(startPage - 1).get(countPage.get(startPage - 1).size() - 1);
 		this.curPage = startPage;
 		this.curRange = curRange - 1;
-
 	}
 
 	public void setListCnt(int listCnt) {

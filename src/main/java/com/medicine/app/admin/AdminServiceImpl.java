@@ -76,7 +76,7 @@ public class AdminServiceImpl implements MedicineService {
 	}
 
 	@Override
-	public List<MedicineVO> searchTextMedicine(Map<String, Object> vo) {
+	public List<MedicineVO> searchTextMedicine(Map<String, String> vo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -85,6 +85,12 @@ public class AdminServiceImpl implements MedicineService {
 	public Integer searchCountMedicine(String text) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int searchCountMedicine2(Map<String, String> vo) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 

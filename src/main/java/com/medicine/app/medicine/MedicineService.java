@@ -11,7 +11,7 @@ public interface MedicineService {
 	
 	public List<MedicineVO> selectMedicineList(Map<String, Integer> vo);
 
-	public List<MedicineVO> searchTextMedicine(Map<String, Object> vo);
+	public List<MedicineVO> searchTextMedicine(Map<String, String> vo);
 
 	public MedicineVO selectMedicine(String mdIdx);
 
@@ -28,6 +28,8 @@ public interface MedicineService {
 	public void updateMdRating(MedicineVO vo);
 
 	public List<MedicineVO> searchRadioMedicine(Map<String, String> vo);
+
+	public int searchCountMedicine2(Map<String, String> vo);
 	
 	public Integer searchCountMedicine(String text);
 	

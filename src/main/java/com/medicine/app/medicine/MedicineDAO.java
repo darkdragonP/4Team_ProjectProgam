@@ -23,7 +23,8 @@ public class MedicineDAO {
 		return sqlSession.selectList("medicine.selectMedicineList", vo);
 	}
 
-	public List<MedicineVO> searchTextMedicine(Map<String, Object> vo) {
+	public List<MedicineVO> searchTextMedicine(Map<String, String> vo) {
+		System.out.println("dao 통과");
 		return sqlSession.selectList("medicine.searchTextMedicine", vo);
 	}
 
@@ -46,5 +47,7 @@ public class MedicineDAO {
 	public Integer searchCountMedicine(String text) {
 		return sqlSession.selectOne("medicine.searchCountMedicine", text);
 	}
-
+	public int searchCountMedicine2(Map<String, String> vo) {
+		return sqlSession.selectOne("medicine.searchCountMedicine2", vo);
+	}
 }

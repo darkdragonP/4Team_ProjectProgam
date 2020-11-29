@@ -67,13 +67,12 @@ public class AdminController {
 	@RequestMapping(value = "/AdminMedicineList.do")
 	public ModelAndView AdminMedicineList(@RequestParam(defaultValue = "1") int curPage,
 			@RequestParam(defaultValue = "0") int curRange, @RequestParam(defaultValue = "0") int result,
-			@RequestParam(defaultValue = "1") int startp, @RequestParam(defaultValue = "10") int endp,
-			HttpServletRequest request, ModelAndView mv) {
+			@RequestParam(defaultValue = "1") int startp, HttpServletRequest request, ModelAndView mv) {
 		System.out.println("AdminMedicineList 메소드 실행.");
 		int listCnt = medicineService.countsMedicine();
 		MdBoardCounts mdBCounts = new MdBoardCounts();
 		mdBCounts.setListCnt(listCnt);
-		mdBCounts.setPage(curPage, startp, endp, curRange);
+		mdBCounts.setPage(curPage, startp, curRange);
 		if (result == 1) {
 			mdBCounts.prevSetBlock(curRange);
 
