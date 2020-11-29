@@ -8,11 +8,31 @@
 		<result property="mdIdx" column="MD_CODE" />
 		<result property="mdMR" column="MARK_RATING" />
 	</resultMap>
-	
-	<select id="selectMdMarkList" resultMap="mdMarkResult">
+
+	<select id="selectMdMark" parameterType="String"
+		resultMap="mdMarkResult">
 	<![CDATA[
-		SELECT * FROM md_mark
+		SELECT MARK_RATING FROM md_mark where MD_CODE=#{mdIdx}
 	]]>
 	</select>
+
+	<insert id="insertMdMark" parameterType="MdMarkVO">
+	<![CDATA[
+		insert into md_mark(USER_CODE,MD_CODE,MARK_RATING)
+		values(
+		#{uIdx},
+		#{mdIdx},
+		#{mdMR}
+		)
+	]]>
+	</insert>
 	
+	<select id="checkMdMark" parameterType="MdMarkVO"
+		resultMap="mdMarkResult">
+	<![CDATA[
+		SELECT * FROM md_mark where USER_CODE=#{uIdx} and MD_CODE=#{mdIdx}
+	]]>
+	</select>
+
+
 </mapper>

@@ -61,7 +61,7 @@
                     </div>  
                     <div class="form-group">
                         프로필이미지
-                        <input type="file"" class="form-control" placeholder="" value="" />
+                        <input type="file" class="form-control" placeholder="" value="" />
                     </div>      
                  </div>                                    
                  <input type="submit" class="btnModify"  value="회원차단"/>  <input type="submit" class="btnDelete"  value="회원삭제"/>

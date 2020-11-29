@@ -2,7 +2,6 @@ package com.medicine.app.mdReply;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +15,17 @@ public class MdReplyServiceImpl implements MdReplyService {
 		return mdreplyDAO.selectMdReplyList();
 	}
 
+	@Override
+	public void insertMdReplyList(MdReplyVO vo) {
+		mdreplyDAO.insertMdReplyList(vo);
+	}
+
+	@Override
+	public void deleteMdReply(String uReIdx) {
+		mdreplyDAO.deleteMdReply(uReIdx);
+		
+	}
+
+	
 	
 }

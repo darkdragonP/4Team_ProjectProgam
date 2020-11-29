@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <%@ include file="../../../common/top.jsp"%>
+<link rel="stylesheet" href="css/Medicine.css?after" />
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
@@ -104,263 +105,6 @@
 
 	<div class="container">
 		<h2 class="sub-header">약 검색</h2>
-		<div class="card mb-4">
-			<h5 class="card-header">
-				<img src="images/googleVision.jpg" alt="OCR"
-					style="width: 2%; height: 2%;" />OCR 이용하기
-			</h5>
-			<div class="card-body">
-				<span class="input-group-btn">
-					<button class="btn btn-secondary" type="button" >사진으로 검색</button>
-				</span> <span class="input-group-btn">
-					<button class="btn btn-secondary" type="button">처방전 등록하기</button>
-				</span>
-
-			</div>
-		</div>
-		<!-- Search Widget -->
-		<div class="card mb-4">
-			<h5 class="card-header">분류별 검색</h5>
-			<div class="card-body">
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search for...">
-				</div>
-				<br>
-				<div class="shape">
-					<div style="border: 1px solid hidden; float: left; width: 9%;">
-						<div>
-							<input type="radio" name="shape" value="원형">
-						</div>
-						<div>원형</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 9%;">
-						<div>
-							<input type="radio" name="shape" value="타원형">
-						</div>
-						<div>타원형</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 9%;">
-						<div>
-							<input type="radio" name="shape" value="반원형">
-						</div>
-						<div>반원형</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 9%;">
-						<div>
-							<input type="radio" name="shape" value="삼각형">
-						</div>
-						<div>삼각형</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 9%;">
-						<div>
-							<input type="radio" name="shape" value="사각형">
-						</div>
-						<div>사각형</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 9%;">
-						<div>
-							<input type="radio" name="shape" value="마름모형">
-						</div>
-						<div>마름모형</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 9%;">
-						<div>
-							<input type="radio" name="shape" value="장방형">
-						</div>
-						<div>장방형</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 9%;">
-						<div>
-							<input type="radio" name="shape" value="오각형">
-						</div>
-						<div>오각형</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 9%;">
-						<div>
-							<input type="radio" name="shape" value="육각형">
-						</div>
-						<div>육각형</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 9%;">
-						<div>
-							<input type="radio" name="shape" value="팔각형">
-						</div>
-						<div>팔각형</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 9%;">
-						<div>
-							<input type="radio" name="shape" value="기타">
-						</div>
-						<div>기타</div>
-					</div>
-				</div>
-				<br>
-				<hr>
-				<div class="color">
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="하양">
-						</div>
-						<div>하양</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="노랑">
-						</div>
-						<div>노랑</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="주황">
-						</div>
-						<div>주황</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="분홍">
-						</div>
-						<div>분홍</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="빨강">
-						</div>
-						<div>빨강</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="갈색">
-						</div>
-						<div>갈색</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="연두">
-						</div>
-						<div>연두</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="초록">
-						</div>
-						<div>초록</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="청록">
-						</div>
-						<div>청록</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="파랑">
-						</div>
-						<div>파랑</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="청록">
-						</div>
-						<div>청록</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="남색">
-						</div>
-						<div>남색</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="자주">
-						</div>
-						<div>자주</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="보라">
-						</div>
-						<div>보라</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="회색">
-						</div>
-						<div>회색</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="검정">
-						</div>
-						<div>검정</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 5.8%;">
-						<div>
-							<input type="radio" name="color" value="투명">
-						</div>
-						<div>투명</div>
-					</div>
-				</div>
-				<br>
-				<hr>
-				<div class="type">
-					<div style="border: 1px solid hidden; float: left; width: 30%;">
-						<div>
-							<input type="radio" name="type" value="정제류">
-						</div>
-						<div>정제류</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 30%;">
-						<div>
-							<input type="radio" name="type" value="경질캡슐">
-						</div>
-						<div>경질캡슐</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 30%;">
-						<div>
-							<input type="radio" name="type" value="연질캡슐">
-						</div>
-						<div>연질캡슐</div>
-					</div>
-				</div>
-				<br>
-				<hr>
-				<div class="line">
-					<div style="border: 1px solid hidden; float: left; width: 25%;">
-						<div>
-							<input type="radio" name="line" value="없음">
-						</div>
-						<div>없음</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 25%;">
-						<div>
-							<input type="radio" name="line" value="(-)형">
-						</div>
-						<div>(-)형</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 25%;">
-						<div>
-							<input type="radio" name="line" value="(+)형">
-						</div>
-						<div>(+)형</div>
-					</div>
-					<div style="border: 1px solid hidden; float: left; width: 25%;">
-						<div>
-							<input type="radio" name="line" value="기타">
-						</div>
-						<div>기타</div>
-					</div>
-				</div>
-				<br>
-				<hr>
-				<span style="float: right;"> <span class="input-group-btn">
-						<button class="btn btn-secondary" type="button">검색</button>
-				</span> <span class="input-group-btn">
-						<button class="btn btn-secondary" type="button">초기화</button>
-				</span>
-				</span>
-			</div>
-		</div>
-		<!-- Page Content -->
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">약 세부사항</li>
@@ -386,10 +130,10 @@
 										</p>
 										<div class="thmb thmb_border">
 											<span class="img_box" style="width: 250px;"> <img
-												src="images/1.jpg" width="500" height="200"
+												src="${medicine.mdImage}" width="500" height="200"
 												alt="${medicine.mdTitle}" />
 												<div class="enlarge">
-													<a href="images/1.jpg" width="300%" height="300%">이미지
+													<a href="${medicine.mdImage}" width="300%" height="300%">이미지
 														크게보기</a>
 												</div>
 											</span>
@@ -417,7 +161,7 @@
 
 
 														<tr>
-															<th scope="row">제조(수입) 업체명</span></th>
+															<th scope="row">제조(수입) 업체명</th>
 															<td>${medicine.getMdComp()}</td>
 														</tr>
 
@@ -527,13 +271,11 @@
 			<div class="col-md-4 blog-right-side">
 				<!-- Categories Widget -->
 				<div class="card my-4">
-					<h5 class="card-header">별점</h5>
 					<!-- 현재 별점 -->
 					<div class="card-body">
 
-						<h5>
-							<strong>[별점 이미지]&nbsp;&nbsp;&nbsp;${medicine.mdRating}점</strong>
-						</h5>
+						<img src="images/star${medicine.mdRating}.jpg" width="100"
+							height="20">&nbsp;&nbsp;&nbsp;${medicine.mdRating}점
 					</div>
 				</div>
 				<!-- Side Widget -->
@@ -553,93 +295,82 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="container">
 		<div class="blog-right-side">
 			<!-- Comments Form -->
-			<div class="card my-4">
+
+			<div class="card my-5">
+
 				<h5 class="card-header">댓글 등록</h5>
 				<div class="card-body">
 					<!--  별점매기기  -->
 					<div>
-						<span class="star-input"> <span class="input"> <input
-								type="radio" name="star-input" value="1" id="p1"> <label
-								for="p1">1</label> <input type="radio" name="star-input"
-								value="2" id="p2"> <label for="p2">2</label> <input
-								type="radio" name="star-input" value="3" id="p3"> <label
-								for="p3">3</label> <input type="radio" name="star-input"
-								value="4" id="p4"> <label for="p4">4</label> <input
-								type="radio" name="star-input" value="5" id="p5"> <label
-								for="p5">5</label>
-						</span> <output for="star-input">
-								<b>0</b>점
-							</output>
-						</span>
+						<form action="insertMdMark.do" method="post">
+							<input type=hidden id="mdIdx" name="mdIdx"
+								value="${medicine.mdIdx}"> <span class="star-input">
+								<span class="input"> <input type="radio" name="mdMR"
+									value="1" id="p1"> <label for="p1">1</label> <input
+									type="radio" name="mdMR" value="2" id="p2"> <label
+									for="p2">2</label> <input type="radio" name=mdMR value="3"
+									id="p3"> <label for="p3">3</label> <input type="radio"
+									name="mdMR" value="4" id="p4"> <label for="p4">4</label>
+									<input type="radio" name="mdMR" value="5" id="p5"> <label
+									for="p5">5</label>
+							</span>
+							</span><span> <output for="star-input">
+									<b>0</b>점
+									<button type="submit" class="btn btn-primary">확인</button>
+								</output>
+							</span>
+						</form>
 					</div>
 					<br>
 					<div>
-						<form>
+						<form action="insertmdReply.do" method="post">
+							<input type=hidden id="mdIdx" name="mdIdx"
+								value="${medicine.mdIdx}">
 							<div class="form-group">
-								<textarea class="form-control" rows="3"></textarea>
+								<textarea class="form-control" rows="3" id="uReContent"
+									name="uReContent" required
+									placeholder="내용을 입력하세요 or 로그인후 이용가능합니다 or ocr인증 후 이용가능합니다. [ajax로 구현 예정]"></textarea>
 							</div>
 							<button type="submit" class="btn btn-primary">댓글 등록</button>
 						</form>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<c:forEach items="${selectMdReplyList}" var="mdReplyList">
+
+			<!-- Single Comment -->
+			<c:if test="${mdReplyList.uIdx == uIdx}">
+				<a
+					href="deleteMdReply.do?uReIdx=${mdReplyList.uReIdx}&mdIdx=${medicine.mdIdx}"
+					class="delete">삭제&nbsp;&nbsp;</a>
+			</c:if>
+			<br>
+			<br>
+
 			<!-- Single Comment -->
 			<div class="media mb-4">
 				<div class="media-body">
-					<h6 class="mt-0">아이디+***&nbsp;&nbsp;&nbsp;[별점이미지]&nbsp;&nbsp;&nbsp;[작성일]</h6>
-					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-					vulputate fringilla. Donec lacinia congue felis in faucibus.
+					<h6 class="mt-0">${mdReplyList.uName}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${mdReplyList.uReDate}</h6>
+					${mdReplyList.uReContent}
 				</div>
 			</div>
 			<hr>
-			<div class="media mb-4">
-				<div class="media-body">
-					<h6 class="mt-0">아이디+***&nbsp;&nbsp;&nbsp;[별점이미지]&nbsp;&nbsp;&nbsp;[작성일]</h6>
-					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-					vulputate fringilla. Donec lacinia congue felis in faucibus.
-				</div>
-			</div>
-			<hr>
-			<div class="media mb-4">
-				<div class="media-body">
-					<h6 class="mt-0">아이디+***&nbsp;&nbsp;&nbsp;[별점이미지]&nbsp;&nbsp;&nbsp;[작성일]</h6>
-					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-					vulputate fringilla. Donec lacinia congue felis in faucibus.
-				</div>
-			</div>
-			<hr>
-			<div class="media mb-4">
-				<div class="media-body">
-					<h6 class="mt-0">아이디+***&nbsp;&nbsp;&nbsp;[별점이미지]&nbsp;&nbsp;&nbsp;[작성일]</h6>
-					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-					vulputate fringilla. Donec lacinia congue felis in faucibus.
-				</div>
-			</div>
-			<hr>
-			<div class="media mb-4">
-				<div class="media-body">
-					<h6 class="mt-0">아이디+***&nbsp;&nbsp;&nbsp;[별점이미지]&nbsp;&nbsp;&nbsp;[작성일]</h6>
-					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-					scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-					vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-					vulputate fringilla. Donec lacinia congue felis in faucibus.
-				</div>
-			</div>
-		</div>
-		<!-- /.row -->
-		<!-- /.container -->
-		<script src="js/jquery-1.11.3.min.js"></script>
-		<script src="js/star.js"></script>
+		</c:forEach>
+	</div>
+
+	<!-- /.row -->
+	<!-- /.container -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/star.js"></script>
 </body>
 <!--footer starts from here-->
 <%@ include file="../../../common/bottom.jsp"%>

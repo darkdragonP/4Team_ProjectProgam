@@ -25,38 +25,158 @@
 		<result property="mdClass" column="MD_CLASS" />
 		<result property="mdAppr" column="MD_APPR" />
 		<result property="mdIn" column="MD_IN" />
+
+
 	</resultMap>
-	
-	<select id="selectMedicineList" parameterType="MedicineVO" resultMap="medicineResult">
+
+	<select id="searchCountMedicine" parameterType="String" resultType="Integer">
 	<![CDATA[
-		SELECT * FROM medicine
+		select count(MD_CODE) from medicine where 
+		MD_TITLE like '%' || #{text} || '%' or
+		MD_GRADE like '%' || #{text} || '%' or
+		MD_EFFECT like '%' || #{text} || '%' or
+		MD_CAPA like '%' || #{text} || '%' or
+		MD_CAUTION like '%' || #{text} || '%' or
+		MD_SAVE like '%' || #{text} || '%' or
+		MD_INGREDIENT like '%' || #{text} || '%' or
+		MD_COMPANIES like '%' || #{text} || '%' or
+		MD_CLASS like '%' || #{text} || '%' or
+		MD_APPR like '%' || #{text} || '%'
+		order by MD_CODE desc
 	]]>
 	</select>
 	
-	<select id="selectMedicine" parameterType="String" resultMap="medicineResult">
+	<select id="countsMedicine" resultType="Integer">
+	<![CDATA[
+		select count(MD_CODE) from medicine
+	]]>
+	</select>
+
+	<select id="selectMedicineList" parameterType="map"
+		resultMap="medicineResult">
+	<![CDATA[
+		select *
+		from (select ROWNUM as rnum, A.*
+		from (select * from MEDICINE order by MD_CODE desc) A)
+		where rnum >= #{startIndex} and rnum <=#{endIndex}
+	]]>
+	</select>
+
+	<select id="searchTextMedicine" parameterType="map"
+		resultMap="medicineResult">
+	<![CDATA[
+	
+	select *
+		from (select ROWNUM as rnum, A.*
+		from (select * from MEDICINE where 
+		MD_TITLE like '%' || #{text} || '%' or
+		MD_GRADE like '%' || #{text} || '%' or
+		MD_EFFECT like '%' || #{text} || '%' or
+		MD_CAPA like '%' || #{text} || '%' or
+		MD_CAUTION like '%' || #{text} || '%' or
+		MD_SAVE like '%' || #{text} || '%' or
+		MD_INGREDIENT like '%' || #{text} || '%' or
+		MD_COMPANIES like '%' || #{text} || '%' or
+		MD_CLASS like '%' || #{text} || '%' or
+		MD_APPR like '%' || #{text} || '%'
+		order by MD_CODE desc) A)
+		where rnum >= #{startIndex} and rnum <=#{endIndex}
+	]]>
+	</select>
+
+	<select id="searchRadioMedicine" parameterType="map"
+		resultMap="medicineResult">
+	<![CDATA[
+		SELECT * FROM medicine where 
+		MD_SHAPE like '%' || #{mdShape} || '%' and
+		MD_COLOR like '%' || #{mdColor} || '%' and
+		MD_TYPE like '%' || #{mdType} || '%' and
+		MD_LINE like '%' || #{mdLine} || '%'
+		
+	]]>
+	</select>
+
+	<select id="selectMedicine" parameterType="String"
+		resultMap="medicineResult">
 	<![CDATA[
 		SELECT * FROM medicine 
 		where MD_CODE = #{mdIdx}
 	]]>
 	</select>
-	
+
 	<insert id="insertMedicine" parameterType="MedicineVO">
 	<![CDATA[
 		insert into 
-		medicine(MD_CODE,MD_TITLE,MD_GRADE,MD_SHAPE,MD_COLOR,MD_TYPE,MD_LINE,MD_EFFECT,MD_CAPA,MD_CAUTION,MD_SAVE,MD_INGREDIENT,MD_CLASS,MD_IN) 
-		values (medicine_seq.NEXTVAL,#{mdTitle, jdbcType=VARCHAR},#{mdGrade, jdbcType=VARCHAR},#{mdShape, jdbcType=VARCHAR},#{mdColor, jdbcType=VARCHAR},#{mdType, jdbcType=VARCHAR},#{mdLine, jdbcType=VARCHAR},#{mdEffect, jdbcType=VARCHAR},#{mdCapa, jdbcType=CLOB},#{mdCaut, jdbcType=CLOB},#{mdSave, jdbcType=VARCHAR},#{mdIngd, jdbcType=VARCHAR},#{mdClass, jdbcType=VARCHAR},#{mdIn, jdbcType=VARCHAR})
+		medicine(
+		MD_CODE, MD_TITLE, MD_GRADE, MD_IMAGE, MD_SHAPE, MD_COLOR, MD_TYPE, MD_LINE, MD_EFFECT, MD_CAPA, MD_CAUTION, MD_SAVE, MD_INGREDIENT, MD_COMPANIES, MD_CLASS, MD_APPR, MD_IN) values 
+		(medicine_seq.NEXTVAL,
+		#{mdTitle, jdbcType=VARCHAR},
+		#{mdGrade, jdbcType=VARCHAR},
+		#{mdImage, jdbcType=VARCHAR},
+		#{mdShape, jdbcType=VARCHAR},
+		#{mdColor, jdbcType=VARCHAR},
+		#{mdType, jdbcType=VARCHAR},
+		#{mdLine, jdbcType=VARCHAR},
+		#{mdEffect, jdbcType=CLOB},
+		#{mdCapa, jdbcType=CLOB},
+		#{mdCaut, jdbcType=VARCHAR},
+		#{mdSave, jdbcType=VARCHAR},
+		#{mdIngd, jdbcType=VARCHAR},
+		#{mdComp, jdbcType=VARCHAR},
+		#{mdClass, jdbcType=VARCHAR},
+		#{mdAppr, jdbcType=VARCHAR},
+		#{mdIn, jdbcType=VARCHAR}
+		)
 	]]>
 	</insert>
-	
+
 	<select id="selectMaxMdIdx" resultType="String">
 	<![CDATA[
 		select max(md_code) from medicine 
 	]]>
 	</select>
-	
+
 	<delete id="deleteAdminMedicine" parameterType="String">
 	<![CDATA[
 		delete from MEDICINE where MD_CODE = #{mdIdx} 
 	]]>
 	</delete>
+
+
+	<update id="updateHits" parameterType="MedicineVO">
+	<![CDATA[
+	
+		update medicine set MD_HITS = #{mdHits} where MD_CODE=${mdIdx}
+	]]>
+	</update>
+
+	<update id="updateAdminMedicine" parameterType="MedicineVO">
+	<![CDATA[
+		update medicine set 
+		MD_TITLE = #{mdTitle, jdbcType=VARCHAR},
+		MD_GRADE = #{mdGrade, jdbcType=VARCHAR},
+		MD_IMAGE = #{mdImage, jdbcType=VARCHAR},
+		MD_SHAPE = #{mdShape, jdbcType=VARCHAR},
+		MD_COLOR = #{mdColor, jdbcType=VARCHAR},
+		MD_TYPE = #{mdType, jdbcType=VARCHAR},
+		MD_LINE = #{mdLine, jdbcType=VARCHAR},
+		MD_EFFECT = #{mdEffect, jdbcType=CLOB},
+		MD_CAPA = #{mdCapa, jdbcType=CLOB},
+		MD_CAUTION = #{mdCaut, jdbcType=VARCHAR}, 
+		MD_SAVE = #{mdSave, jdbcType=VARCHAR}, 
+		MD_INGREDIENT = #{mdIngd, jdbcType=VARCHAR}, 
+		MD_COMPANIES = #{mdComp, jdbcType=VARCHAR}, 
+		MD_CLASS = #{mdClass, jdbcType=VARCHAR}, 
+		MD_APPR = #{mdAppr, jdbcType=VARCHAR}, 
+		MD_IN = #{mdIn, jdbcType=VARCHAR}, 
+		
+		 where MD_CODE=${mdIdx} 
+	]]>
+	</update>
+	<update id="updateMdRating" parameterType="MedicineVO">
+	<![CDATA[
+		update medicine set
+		MD_RATING = #{mdRating}  where MD_CODE=${mdIdx}
+		]]>
+	</update>
 </mapper>

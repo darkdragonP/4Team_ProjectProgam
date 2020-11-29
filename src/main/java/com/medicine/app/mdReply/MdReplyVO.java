@@ -3,11 +3,21 @@ package com.medicine.app.mdReply;
 //MD_REPLY 약 게시판_댓글
 public class MdReplyVO {
 private int uReIdx; //댓글 코드
-private int uIdx; //통합회원코드
+private int uIdx; //회원코드
 private int mdIdx; //약 코드
 private String uReContent; //댓글 내용
 private String uReDate; //댓글 작성일
+private String uName;
 
+
+
+
+public String getuName() {
+	return uName;
+}
+public void setuName(String uName) {
+	this.uName = uName;
+}
 public int getuReIdx() {
 	return uReIdx;
 }
@@ -40,7 +50,8 @@ public void setuReDate(String uReDate) {
 }
 @Override
 public String toString() {
-	return "uReIdx:"+uReIdx+
+	return ", uName:"+uName+
+		   ", uReIdx:"+uReIdx+
 		   ", uIdx:"+uIdx+
 		   ", mdIdx:"+mdIdx+
 		   ", uReContent:"+uReContent+

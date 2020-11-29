@@ -1,30 +1,38 @@
 package com.medicine.app.admin;
 
-
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.medicine.app.medicine.MedicineVO;
-import com.medicine.app.user.UserVO;
 
 @Repository
 public class AdminDAO {
 
-	
 	@Autowired
 	private SqlSessionTemplate sqlSession;
-	
-	public List<UserVO> selectAdminList()  {
-		return sqlSession.selectList("admin.selectAdminList");
+
+	public List<MedicineVO> selectAdminList(Map<String, Integer> vo) {
+		return sqlSession.selectList("medicine.selectMedicineList", vo);
 	}
-	
-	public List<MedicineVO> selectAdminMedicineList()  {
-		return sqlSession.selectList("medicine.selectMedicineList");
+
+	public void insertMedicine(MedicineVO vo) {
+		sqlSession.insert("medicine.insertMedicine", vo);
 	}
-	
-	
-	
+
+	public String selectMaxMdIdx() {
+		return sqlSession.selectOne("medicine.selectMaxMdIdx");
+	}
+
+	public void deleteAdminMedicine(String mdIdx) {
+		sqlSession.delete("medicine.deleteAdminMedicine", mdIdx);
+	}
+
+	public void updateAdminMedicine(MedicineVO vo) {
+		sqlSession.update("medicine.updateAdminMedicine", vo);
+	}
+
 }

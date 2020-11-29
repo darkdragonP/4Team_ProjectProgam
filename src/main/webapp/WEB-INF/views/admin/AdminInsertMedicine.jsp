@@ -84,30 +84,35 @@
 										<form action="InsertMedicine.do">
 											<p class="thmb_desc">
 												<br> <br>
-												<span class="img_box" style="width: 250px;"> <img
-													src="images/1.jpg" width="500" height="200"
-													alt="이미지를 추가하세요" />
-												</span> <br>
-												<section id="type" class="one dark cover"></section>
-												<hr>
-												<br>
-												<div class="control-group form-group">
-													<div class="controls">
-														<label><h3>분류</h3></label>
-														<p>
-															<input type="text" class="form-control" id="mdTitle"
-																name="mdTitle" required placeholder="이름">
-														</p>
-														<p>
-															<input type="text" class="form-control" id="mdClass"
-																name="mdClass" required placeholder="식약처 븐류">
-														</p>
-														<p>
-															<input type="text" class="form-control" id="mdGrade"
-																name="mdGrade" required placeholder="구분">
-														</p>
-													</div>
+											<div class="form-group">
+												이미지 등록 <input type="file" id="mdImage" name="mdImage"
+													class="form-control" />
+											</div>
+											<br>
+											<section id="type" class="one dark cover"></section>
+											<hr>
+											<br>
+											<div class="control-group form-group">
+												<div class="controls">
+													<label><h3>분류</h3></label>
+													<p>
+														<input type="text" class="form-control" id="mdTitle"
+															name="mdTitle" required placeholder="이름">
+													</p>
+													<p>
+														<input type="text" class="form-control" id="mdClass"
+															name="mdClass" required placeholder="식약처 븐류">
+													</p>
+													<p>
+														<input type="text" class="form-control" id="mdGrade"
+															name="mdGrade" required placeholder="구분">
+													</p>
+													<p>
+														<input type="text" class="form-control" id="mdComp"
+															name="mdComp" required placeholder="업체명">
+													</p>
 												</div>
+											</div>
 											<br>
 											<hr>
 											<br>
@@ -116,8 +121,8 @@
 													<div class="controls">
 														<label><h3>외형정보</h3></label>
 														<p>
-															<input type="text" class="form-control" id=mdIn required
-																name="mdIn" placeholder="성상">
+															<input type="text" class="form-control" id=mdAppr
+																required name="mdAppr" placeholder="성상">
 														</p>
 														<p>
 															<input type="text" class="form-control" id="mdType"
@@ -135,6 +140,12 @@
 															<input type="text" class="form-control" id="mdLine"
 																name="mdLine" required placeholder="약 분할선">
 														</p>
+														<p>
+															<input type="text" class="form-control" id="mdIn"
+																name="mdIn" required placeholder="약 식별표기">
+														</p>
+
+
 													</div>
 												</div>
 											</section>
@@ -217,7 +228,7 @@
 											<br>
 											<div class="control-group form-group">
 												<div class="controls">
-													<label><h3>사용상 주의사항</h3></label>
+													<h3><label>사용상 주의사항</label></h3>
 													<textarea rows="5" cols="100" class="form-control"
 														id="mdCaut" name="mdCaut" required placeholder="내용을 입력하세요"
 														maxlength="999" style="resize: none"></textarea>

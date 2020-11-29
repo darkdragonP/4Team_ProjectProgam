@@ -24,15 +24,12 @@
 				<nav id="nav">
 					<ul>
 						<li><h1>
-								<strong>수정페이지</strong>
+								<strong><div align="left">&nbsp;&nbsp;수정</div>페이지&nbsp;&nbsp;</strong>
 							</h1></li>
 						<br>
 						<br>
-						<li><a href="#class" id="top-link"><span
-							    class="icon solid fa-th"><h6>식약처 분류</h6></span></a></li>
-							    <hr>
-						<li><a href="#type" id="about-link"><span
-								class="icon solid fa-th"><h6>구분</h6></span></a></li>
+						<li><a href="#type" id="top-link"><span
+								class="icon solid fa-th"><h6>분류</h6></span></a></li>
 						<hr>
 						<li><a href="#appr" id="about-link"><span
 								class="icon solid fa-th"><h6>외형정보</h6></span></a></li>
@@ -52,12 +49,9 @@
 						<li><a href="#caution" id="contact-link"><span
 								class="icon solid fa-th"><h6>사용시 주의사항</h6></span></a></li>
 						<br>
-						<br>
-						<br>
 						<hr>
-						
-						<li><a href="" id="contact-link"><h6>저장</h6></span></a></li>
-						<li><a href="" id="contact-link"><h6>리스트 바로가기</h6></span></a></li>
+
+						<li><a href="AdminMedicineList.do"><h6>리스트로 돌아가기</h6></a></li>
 					</ul>
 				</nav>
 
@@ -70,7 +64,7 @@
 		<!-- Page Content -->
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item">수정 페이지</li>
+				<li class="breadcrumb-item">신규 약 추가</li>
 			</ol>
 
 		</div>
@@ -86,159 +80,178 @@
 							<div id="size_ct" class="size_ct_v2">
 								<div class="att_type">
 									<div class="inner_att_type">
-										<p class="thmb_desc">
-										<h3>
-											<strong>${medicine.getMdTitle()}</strong>
-										</h3>
-										<br>
-										<br>
-										<div class="thmb thmb_border">
-												<span class="img_box" style="width: 250px;"> <img
-													src="images/1.jpg" width="500" height="200"
-													alt="${medicine.mdTitle}" />
-												</span>
-										</div>
-											<section id="class" class="one dark cover"></section>
-										<br>
-										<hr>
+										<form action="updateAdminMedicine2.do">
+											<p class="thmb_desc">
+												<br> <br>
+											<div class="form-group">
+												이미지 등록 <input type="file" id="mdImage" name="mdImage"
+													class="form-control" value="${medicine.getMdImage()}" />
+											</div>
 											<br>
-											
-										<div class="control-group form-group">
-											<div class="controls">
-												<p>
-													식약처 분류 <input type="text" class="form-control" width="63%;"
-														id=class required placeholder="${medicine.getMdAppr()}">
-												</p>
-												<br>
 											<section id="type" class="one dark cover"></section>
-												<hr>
-												<br>
-												<p>
-													구분 <input type="text" class="form-control" id="type"
-														required placeholder="${medicine.getMdType()}">
-												</p>
-											</div>
-										</div>
-										<section id="appr" class="one dark cover"></section>
-										<br>
-										<hr>
-	<br>
-										<div class="control-group form-group">
-											<div class="controls">
-												<label><h3>외형정보</h3></label>
-												<p>
-													성상 <input type="text" class="form-control" id=appr required
-														placeholder="${medicine.getMdAppr()}">
-												</p>
-												<p>
-													제형 <input type="text" class="form-control" id="type"
-														required placeholder="${medicine.getMdType()}">
-												</p>
-												<p>
-													모양 <input type="text" class="form-control" id="shape"
-														required placeholder="${medicine.getMdShape()}">
-												</p>
-												<p>
-													색상 <input type="text" class="form-control" id="color"
-														required placeholder="${medicine.getMdColor()}">
-												</p>
-												<section id="ingd" class="one dark cover">
+											<hr>
+											<br>
+											<div class="control-group form-group">
+												<div class="controls">
+													<label><h3>분류</h3></label>
 													<p>
-														약 분할선 <input type="text" class="form-control" id="line"
-															required placeholder="${medicine.getMdLine()}">
+														<label>약 이름</label> <input type="text"
+															class="form-control" id="mdTitle" name="mdTitle"
+															value="${medicine.getMdTitle()}">
 													</p>
-												</section>
+													<p>
+														<label>식약처 분류</label> <input type="text"
+															class="form-control" id="mdClass" name="mdClass"
+															value="${medicine.getMdClass()}">
+													</p>
+													<p>
+														<label>약 구분</label> <input type="text"
+															class="form-control" id="mdGrade" name="mdGrade"
+															value="${medicine.getMdGrade()}">
+													</p>
+													<p>
+														<label>업체명</label> <input type="text" class="form-control"
+															id="mdComp" name="mdComp" value="${medicine.getMdComp()}">
+													</p>
+												</div>
 											</div>
-										</div>
-									</div>
-									<br>
-									<hr>
-									<br>
-									<div class="control-group form-group">
-										<div class="controls">
-											<label><h3>성분정보</h3></label>
-											<textarea rows="5" cols="100" class="form-control"
-												id="message" required placeholder="${medicine.getMdIngd()}"
-												maxlength="999" style="resize: none"></textarea>
-										</div>
-									</div>
+											<br>
+											<hr>
+											<br>
+											<section id="appr" class="one dark cover">
+												<div class="control-group form-group">
+													<div class="controls">
+														<label><h3>외형정보</h3></label>
+														<p>
+															<label>성상</label> <input type="text" class="form-control"
+																id=mdAppr name="mdAppr" value="${medicine.getMdAppr()}">
+														</p>
+														<p>
+															<label>제형</label> <input type="text" class="form-control"
+																id="mdType" name="mdType"
+																value="${medicine.getMdType()}">
+														</p>
+														<p>
+															<label>모양</label> <input type="text" class="form-control"
+																id="mdShape" name="mdShape"
+																value="${medicine.getMdShape()}">
+														</p>
+														<p>
+															<label>색상</label> <input type="text" class="form-control"
+																id="mdColor" name="mdColor"
+																value="${medicine.getMdColor()}">
+														</p>
+														<p>
+															<label>약 분할선</label> <input type="text"
+																class="form-control" id="mdLine" name="mdLine"
+																value="약${medicine.getMdLine()}">
+														</p>
+														<p>
+															<label>약 식별표기</label> <input type="text"
+																class="form-control" id="mdIn" name="mdIn"
+																value="${medicine.getMdComp()}">
+														</p>
 
-									<section id="save" class="one dark cover">
+
+													</div>
+												</div>
+											</section>
+											<section id="ingd" class="one dark cover"></section>
+
+											<br>
+											<hr>
+											<br>
+											<div class="control-group form-group">
+												<div class="controls">
+													<label><h3>성분정보</h3></label>
+													<textarea rows="5" cols="100" class="form-control"
+														id="mdIngd" name="mdIngd" maxlength="999"
+														style="resize: none">${medicine.getMdIngd()}</textarea>
+												</div>
+											</div>
+
+											<section id="save" class="one dark cover">
+												<br>
+											</section>
+											<hr>
+											<br>
+											<div class="control-group form-group">
+												<div class="controls">
+													<label><h3>저장정보</h3></label>
+													<textarea rows="5" cols="100" class="form-control"
+														id="mdSave" name="mdSave" maxlength="999"
+														style="resize: none">${medicine.getMdSave()}</textarea>
+												</div>
+											</div>
+
+
+
+
+
+
+
+											<section id="effect" class="one dark cover">
+												<br>
+											</section>
+											<hr>
+											<br>
+											<div class="control-group form-group">
+												<div class="controls">
+													<label><h3>효능효과</h3></label>
+													<textarea rows="5" cols="100" class="form-control"
+														id="mdEffect" name="mdEffect" maxlength="999"
+														style="resize: none">${medicine.getMdEffect()}</textarea>
+												</div>
+											</div>
+
+
+
+
+
+
+											<section id="capa" class="one dark cover">
+												<br>
+											</section>
+											<hr>
+											<br>
+											<div class="control-group form-group">
+												<div class="controls">
+													<label><h3>용법용량</h3></label>
+													<textarea rows="5" cols="100" class="form-control"
+														id="mdCapa" name="mdCapa" maxlength="999"
+														style="resize: none">${medicine.getMdCapa()}</textarea>
+												</div>
+											</div>
+
+
+
+
+
+											<section id="caution" class="one dark cover">
+												<br>
+											</section>
+											<hr>
+											<br>
+											<div class="control-group form-group">
+												<div class="controls">
+													<label><h3>사용상 주의사항</h3></label>
+													<textarea rows="5" cols="100" class="form-control"
+														id="mdCaut" name="mdCaut" maxlength="999"
+														style="resize: none">${medicine.getMdCaut()}</textarea>
+												</div>
+											</div>
+											<div>
+												<!-- For success/fail messages -->
+												<button type="submit" style="align-items: right;"
+													class="btn btn-primary">저장</button>
+												<button type="button" style="align-items: right;"
+													class="btn btn-primary"
+													onclick="location.href='SelectAdminMedicine.do?mdIdx=${medicine.getMdIdx()}'">돌아가기</button>
+
+											</div>
+										</form>
 										<br>
-									</section>
-									<hr>
-									<br>
-									<div class="control-group form-group">
-										<div class="controls">
-											<label><h3>저장정보</h3></label>
-											<textarea rows="5" cols="100" class="form-control"
-												id="message" required placeholder="${medicine.getMdSave()}"
-												maxlength="999" style="resize: none"></textarea>
-										</div>
 									</div>
-
-
-
-
-
-
-
-									<section id="effect" class="one dark cover">
-										<br>
-									</section>
-									<hr>
-									<br>
-									<div class="control-group form-group">
-										<div class="controls">
-											<label><h3>효능효과</h3></label>
-											<textarea rows="5" cols="100" class="form-control"
-												id="effect" required placeholder="${medicine.getMdEffect()}"
-												maxlength="999" style="resize: none"></textarea>
-										</div>
-									</div>
-
-
-
-
-
-
-									<section id="capa" class="one dark cover">
-										<br>
-									</section>
-									<hr>
-									<br>
-									<div class="control-group form-group">
-										<div class="controls">
-											<label><h3>용법용량</h3></label>
-											<textarea rows="5" cols="100" class="form-control" id="capa"
-												required placeholder="${medicine.getMdCapa()}"
-												maxlength="999" style="resize: none"></textarea>
-										</div>
-									</div>
-
-
-
-
-
-									<section id="caution" class="one dark cover">
-										<br>
-									</section>
-									<hr>
-									<br>
-									<div class="control-group form-group">
-										<div class="controls">
-											<label><h3>사용상 주의사항</h3></label>
-											<textarea rows="5" cols="100" class="form-control" id="caut"
-												required placeholder="${medicine.getMdCaut()}"
-												maxlength="999" style="resize: none"></textarea>
-										</div>
-									</div>
-									<div>
-										<!-- For success/fail messages -->
-										<button type="submit" style="align-items: right;"
-											class="btn btn-primary" id="sentmedicine">저장</button>
-									</div>
-									<br>
 								</div>
 							</div>
 						</div>

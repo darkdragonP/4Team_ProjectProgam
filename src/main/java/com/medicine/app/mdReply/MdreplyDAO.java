@@ -16,5 +16,13 @@ public class MdreplyDAO {
 	public List<MdReplyVO> selectMdReplyList()  {
 		return sqlSession.selectList("mdReply.selectMdReplyList");
 	}
+	public void insertMdReplyList(MdReplyVO vo) {
+	sqlSession.insert("mdReply.insertMdReplyList", vo);
+		
+	}
+	public void deleteMdReply(String uReIdx) {
+		sqlSession.delete("mdReply.deleteMdReply", uReIdx);
+	}
+	
 	
 }

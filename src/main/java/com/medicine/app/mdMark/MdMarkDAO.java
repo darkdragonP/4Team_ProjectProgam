@@ -14,9 +14,14 @@ public class MdMarkDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	public List<MdMarkVO> selectMdMarkList()  {
-		return sqlSession.selectList("mdMark.selectMdMarkList");
+	public List<MdMarkVO> selectMdMark(String mdIdx)  {
+		return sqlSession.selectList("mdMark.selectMdMark", mdIdx);
 	}
 	
-	
+	public void insertMdMark(MdMarkVO vo) {
+		sqlSession.insert("mdMark.insertMdMark", vo);
+	}
+	public MdMarkVO checkMdMark(MdMarkVO vo) {
+		return sqlSession.selectOne("mdMark.checkMdMark", vo);
+	}
 }

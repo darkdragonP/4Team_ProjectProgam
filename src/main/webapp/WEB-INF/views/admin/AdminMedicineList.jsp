@@ -26,7 +26,8 @@
 				<nav id="nav">
 					<ul>
 						<li><h3>
-								<strong><div align="left" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약 관리&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+								<strong><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약
+									관리&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
 							</h3></li>
 						<br>
 						<br>
@@ -51,9 +52,12 @@
 						<br>
 						<br>
 
-
 						<hr>
-						<li><a href="adminMain.do"><h6>관리자 홈</h6></a></li>
+
+						<h6>
+							<br> <br> <br>
+							<li><a href="adminMain.do"> 관리자 홈 </a></li>
+						</h6>
 						<li><a href="main.jsp"><h6>메인 홈</h6></a></li>
 					</ul>
 				</nav>
@@ -80,14 +84,40 @@
 				<tbody>
 					<tr>
 						<td>${adminMedicine.mdImage}</td>
-						<td><a href="SelectAdminMedicine.do?mdIdx=${adminMedicine.mdIdx}">${adminMedicine.mdTitle}</td>
+						<td><a
+							href="SelectAdminMedicine.do?mdIdx=${adminMedicine.mdIdx}">${adminMedicine.mdTitle}</a></td>
 						<td>${adminMedicine.mdAppr}</td>
 						<td>[별점이미지]&nbsp;<!--${medicine.mdRating} --></td>
-						<td>${adminMedicine.mdHits}</td>
+						<td>${adminMedicine.mdRating}</td>
 					</tr>
 				</tbody>
 			</c:forEach>
 		</table>
+		<ul class="pagination">
+			<c:if test="${mdBCounts.curRange ne 0}">
+				<li class="page-item"><b class="page-link"><a
+						href="AdminMedicineList.do?curRange=${mdBCounts.curRange}&result=1">이전</a></b></li>
+			</c:if>
+			<c:forEach var="pageNum" begin="${mdBCounts.startPage}"
+				end="${mdBCounts.endPage}">
+				<c:choose>
+					<c:when test="${pageNum eq  mdBCounts.curPage}">
+						<span style="font-weight: bold;"><b class="page-link"
+							style="background-color: lightpink;"><a
+								href="AdminMedicineList.do?curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}&endp=${mdBCounts.endPage}"
+								onClick="fn_paging('${pageNum }')">${pageNum }</a></b></span>
+					</c:when>
+					<c:otherwise>
+						<li><b class="page-link"> <a
+								href="AdminMedicineList.do?curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}&endp=${mdBCounts.endPage}">${pageNum}</a></b></li>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+			<c:if test="${mdBCounts.curRange+1 ne mdBCounts.rangeCnt}">
+				<li class="page-item"><b class="page-link"><a
+						href="AdminMedicineList.do?curRange=${mdBCounts.curRange}&result=2">다음</a></b></li>
+			</c:if>
+		</ul>
 	</div>
 	<!-- Scripts -->
 	<script src="vendor/jquery/jquery.min.js"></script>

@@ -37,10 +37,10 @@
 										</p>
 										<div class="thmb thmb_border">
 											<span class="img_box" style="width: 250px;"> <img
-												src="images/1.jpg" width="500" height="200"
+												src="${medicine.mdImage}" width="500" height="200"
 												alt="${medicine.mdTitle}" />
 												<div class="enlarge">
-													<a href="images/1.jpg" width="300%" height="300%">이미지
+													<a href="${medicine.mdImage}" width="300%" height="300%">이미지
 														크게보기</a>
 												</div>
 											</span>
@@ -68,7 +68,7 @@
 
 
 														<tr>
-															<th scope="row">제조(수입) 업체명</span></th>
+															<th scope="row">제조(수입) 업체명</th>
 															<td>${medicine.getMdComp()}</td>
 														</tr>
 
@@ -172,10 +172,15 @@
 							</div>
 						</div>
 					</div>
-				<button type="button" style="align-items: right;"
-					class="btn btn-primary" onclick="location.href='deleteAdminMedicine.do?mdIdx=${medicine.getMdIdx()}'">삭제</button>
-				<button type="button" style="align-items: right;"
-					class="btn btn-primary" onclick="location.href='AdminMedicineList.do'">돌아가기</button>
+					<button type="button" style="align-items: right;"
+						class="btn btn-primary"
+						onclick="location.href='deleteAdminMedicine.do?mdIdx=${medicine.getMdIdx()}'">삭제</button>
+					<button type="button" style="align-items: right;"
+						class="btn btn-primary"
+						onclick="location.href='updateAdminMedicine.do?mdIdx=${medicine.getMdIdx()}'">수정</button>
+					<button type="button" style="align-items: right;"
+						class="btn btn-primary"
+						onclick="location.href='AdminMedicineList.do'">돌아가기</button>
 				</div>
 			</div>
 
@@ -184,6 +189,24 @@
 			<div class="col-md-4 blog-right-side">
 
 				<!-- Side Widget -->
+				<div class="card my-4">
+					<h5 class="card-header">바로가기</h5>
+					<div class="card-body">
+						<div>
+							<h4>제목</h4>
+							뭘바로가기루 하징?
+						</div>
+					</div>
+				</div>
+				<div class="card my-4">
+					<h5 class="card-header">바로가기</h5>
+					<div class="card-body">
+						<div>
+							<h4>제목</h4>
+							뭘바로가기루 하징?
+						</div>
+					</div>
+				</div>
 				<div class="card my-4">
 					<h5 class="card-header">바로가기</h5>
 					<div class="card-body">

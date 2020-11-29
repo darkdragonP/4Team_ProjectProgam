@@ -8,14 +8,47 @@
 		<result property="uIdx" column="USER_CODE" />
 		<result property="mdIdx" column="MD_CODE" />
 		<result property="uReContent" column="USER_REPLY" />
-		<result property="uReDate" column="REPLY_DATE" />		
+		<result property="uReDate" column="REPLY_DATE" />	
+		<result property="uName" column="NAME" />		
 	</resultMap>
 	
 	<select id="selectMdReplyList" resultMap="mdReplyResult">
 	<![CDATA[
-		SELECT * FROM md_reply
+		SELECT 
+		md_reply.USER_REPLY_NO,
+		md_reply.USER_CODE, 
+		medicine.MD_CODE, 
+		md_reply.USER_REPLY, 
+		md_reply.REPLY_DATE, 
+		users.name  
+		FROM md_reply, users, medicine
+		where md_reply.USER_CODE = users.USER_CODE
+		and md_reply.MD_CODE=medicine.MD_CODE
+		order by USER_REPLY_NO desc
+		
 	]]>
 	</select>
+	
+	<insert id="insertMdReplyList" parameterType="MdReplyVO">
+	<![CDATA[
+		insert into md_reply(USER_REPLY_NO, USER_CODE, MD_CODE, USER_REPLY,REPLY_DATE)
+		values(MEDICINE_RPY_SEQ.NEXTVAL, 
+		#{uIdx}, 
+		#{mdIdx}, 
+		#{uReContent},
+		sysdate 
+		)
+	]]>
+	</insert>
+	
+	<delete id="deleteMdReply" parameterType="String">
+	<![CDATA[
+		delete from md_Reply where 
+		USER_REPLY_NO = #{uReIdx}
+		
+		
+	]]>
+	</delete>
 	
 	
 </mapper>
