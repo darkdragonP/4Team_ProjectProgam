@@ -74,7 +74,6 @@ public class MedicineServiceImpl implements MedicineService {
 
 	@Override
 	public List<MedicineVO> searchTextMedicine(Map<String, String> vo) {
-		System.out.println("impl통과");
 		return medicineDAO.searchTextMedicine(vo);
 	}
 

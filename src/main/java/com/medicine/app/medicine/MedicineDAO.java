@@ -24,7 +24,6 @@ public class MedicineDAO {
 	}
 
 	public List<MedicineVO> searchTextMedicine(Map<String, String> vo) {
-		System.out.println("dao 통과");
 		return sqlSession.selectList("medicine.searchTextMedicine", vo);
 	}
 

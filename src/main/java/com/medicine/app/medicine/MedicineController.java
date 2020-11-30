@@ -30,6 +30,7 @@ public class MedicineController {
 	public ModelAndView selectmedicineList(@RequestParam(defaultValue = "1") int curPage,
 			@RequestParam(defaultValue = "0") int curRange, @RequestParam(defaultValue = "0") int result,
 			@RequestParam(defaultValue = "1") int startp, HttpServletRequest request, ModelAndView mv) {
+		System.out.println("-------------------------------------------");
 		System.out.println("selectmedicineList 메소드 실행.");
 		int listCnt = medicineService.countsMedicine();
 		MdBoardCounts mdBCounts = new MdBoardCounts();
@@ -48,6 +49,7 @@ public class MedicineController {
 		System.out.println("종료페이지 :" + mdBCounts.getEndPage());
 		System.out.println("현재블럭 :" + mdBCounts.getCurRange() + "+1");
 		System.out.println("최종블럭 :" + mdBCounts.getRangeCnt());
+		System.out.println("-------------------------------------------");
 
 		Map<String, Integer> vo = new HashMap<String, Integer>();
 
@@ -97,36 +99,42 @@ public class MedicineController {
 			@RequestParam(defaultValue = "0") int curRange, @RequestParam(defaultValue = "0") int result,
 			@RequestParam(defaultValue = "1") int startp, String textMedicine, HttpServletRequest request,
 			ModelAndView mv) {
+		System.out.println("-------------------------------------------");
 		System.out.println("serchTextMedicine 약 텍스트검색 메소드 실행.");
+
 		int listCnt = medicineService.searchCountMedicine(textMedicine);
 		MdBoardCounts mdBCounts = new MdBoardCounts();
 		mdBCounts.setTextMedicine(textMedicine);
 		mdBCounts.setListCnt(listCnt);
-		mdBCounts.setPage(curPage, startp, curRange);
-		if (result == 1) {
-			mdBCounts.prevSetBlock(curRange);
+		if (listCnt == 0) {
+			System.out.println("검색된결과가 없습니다.");
+			mv.setViewName("/medicine/TextSearchMedicineList");
+		} else {
+			mdBCounts.setPage(curPage, startp, curRange);
+			if (result == 1) {
+				mdBCounts.prevSetBlock(curRange);
 
-		} else if (result == 2) {
-			mdBCounts.nextSetBlock(curRange);
+			} else if (result == 2) {
+				mdBCounts.nextSetBlock(curRange);
+			}
+			System.out.println("검색키워드 :" + mdBCounts.getTextMedicine());
+			System.out.println("시작인덱스 :" + mdBCounts.getStartIndex());
+			System.out.println("종료인덱스 :" + mdBCounts.getEndIndex());
+			System.out.println("시작페이지 :" + mdBCounts.getStartPage());
+			System.out.println("현재페이지 :" + mdBCounts.getCurPage());
+			System.out.println("종료페이지 :" + mdBCounts.getEndPage());
+			System.out.println("현재블럭 :" + mdBCounts.getCurRange() + "+1");
+			System.out.println("최종블럭 :" + mdBCounts.getRangeCnt());
+			System.out.println("-------------------------------------------");
+			Map<String, String> vo = new HashMap<String, String>();
+
+			vo.put("startIndex", Integer.toString(mdBCounts.getStartIndex()));
+			vo.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
+			vo.put("text", mdBCounts.getTextMedicine());
+			List<MedicineVO> medicineList = medicineService.searchTextMedicine(vo);
+			mv.addObject("mdBCounts", mdBCounts);
+			mv.addObject("medicineList", medicineList);
 		}
-		System.out.println("검색키워드 :" + mdBCounts.getTextMedicine());
-		System.out.println("시작인덱스 :" + mdBCounts.getStartIndex());
-		System.out.println("종료인덱스 :" + mdBCounts.getEndIndex());
-		System.out.println("시작페이지 :" + mdBCounts.getStartPage());
-		System.out.println("현재페이지 :" + mdBCounts.getCurPage());
-		System.out.println("종료페이지 :" + mdBCounts.getEndPage());
-		System.out.println("현재블럭 :" + mdBCounts.getCurRange() + "+1");
-		System.out.println("최종블럭 :" + mdBCounts.getRangeCnt());
-
-		Map<String, String> vo = new HashMap<String, String>();
-
-		vo.put("startIndex", Integer.toString(mdBCounts.getStartIndex()));
-		vo.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
-		vo.put("text", mdBCounts.getTextMedicine());
-		System.out.println("1 메소");
-		List<MedicineVO> medicineList = medicineService.searchTextMedicine(vo);
-		mv.addObject("mdBCounts", mdBCounts);
-		mv.addObject("medicineList", medicineList);
 		mv.setViewName("/medicine/TextSearchMedicineList");
 
 		return mv;
@@ -138,6 +146,7 @@ public class MedicineController {
 			@RequestParam(defaultValue = "0") int curRange, @RequestParam(defaultValue = "0") int result,
 			@RequestParam(defaultValue = "1") int startp, String mdShape, String mdColor, String mdType, String mdLine,
 			HttpServletRequest request, ModelAndView mv) {
+		System.out.println("-------------------------------------------");
 		System.out.println("searchRadioMedicine 약 모양검색 메소드 실행.");
 		Map<String, String> searchRadio = new HashMap<String, String>();
 		searchRadio.put("mdShape", mdShape);
@@ -147,33 +156,39 @@ public class MedicineController {
 		int listCnt = medicineService.searchCountMedicine2(searchRadio);
 
 		MdBoardCounts mdBCounts = new MdBoardCounts();
-		mdBCounts.setMdColor(mdColor);
-		mdBCounts.setMdShape(mdShape);
-		mdBCounts.setMdLine(mdLine);
-		mdBCounts.setMdType(mdType);
 		mdBCounts.setListCnt(listCnt);
-		mdBCounts.setPage(curPage, startp, curRange);
-		if (result == 1) {
-			mdBCounts.prevSetBlock(curRange);
+		if (listCnt == 0) {
+			System.out.println("검색된결과가 없습니다.");
+			mv.setViewName("/medicine/ShapeSearchMedicineList");
+		} else {
+			mdBCounts.setMdColor(mdColor);
+			mdBCounts.setMdShape(mdShape);
+			mdBCounts.setMdLine(mdLine);
+			mdBCounts.setMdType(mdType);
+			mdBCounts.setPage(curPage, startp, curRange);
+			if (result == 1) {
+				mdBCounts.prevSetBlock(curRange);
 
-		} else if (result == 2) {
-			mdBCounts.nextSetBlock(curRange);
+			} else if (result == 2) {
+				mdBCounts.nextSetBlock(curRange);
+			}
+			System.out.println("검색키워드 :" + mdBCounts.getTextMedicine());
+			System.out.println("시작인덱스 :" + mdBCounts.getStartIndex());
+			System.out.println("종료인덱스 :" + mdBCounts.getEndIndex());
+			System.out.println("시작페이지 :" + mdBCounts.getStartPage());
+			System.out.println("현재페이지 :" + mdBCounts.getCurPage());
+			System.out.println("종료페이지 :" + mdBCounts.getEndPage());
+			System.out.println("현재블럭 :" + mdBCounts.getCurRange() + "+1");
+			System.out.println("최종블럭 :" + mdBCounts.getRangeCnt());
+			System.out.println("-------------------------------------------");
+
+			searchRadio.put("startIndex", Integer.toString(mdBCounts.getStartIndex()));
+			searchRadio.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
+
+			List<MedicineVO> medicineList = medicineService.searchRadioMedicine(searchRadio);
+			mv.addObject("mdBCounts", mdBCounts);
+			mv.addObject("medicineList", medicineList);
 		}
-		System.out.println("검색키워드 :" + mdBCounts.getTextMedicine());
-		System.out.println("시작인덱스 :" + mdBCounts.getStartIndex());
-		System.out.println("종료인덱스 :" + mdBCounts.getEndIndex());
-		System.out.println("시작페이지 :" + mdBCounts.getStartPage());
-		System.out.println("현재페이지 :" + mdBCounts.getCurPage());
-		System.out.println("종료페이지 :" + mdBCounts.getEndPage());
-		System.out.println("현재블럭 :" + mdBCounts.getCurRange() + "+1");
-		System.out.println("최종블럭 :" + mdBCounts.getRangeCnt());
-
-		searchRadio.put("startIndex", Integer.toString(mdBCounts.getStartIndex()));
-		searchRadio.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
-
-		List<MedicineVO> medicineList = medicineService.searchRadioMedicine(searchRadio);
-		mv.addObject("mdBCounts", mdBCounts);
-		mv.addObject("medicineList", medicineList);
 		mv.setViewName("/medicine/ShapeSearchMedicineList");
 		return mv;
 
