@@ -32,6 +32,34 @@ public class UserController {
 
 		mv.setViewName("/user/SetUserList");
 
+		return mv;		
+	}
+	
+	@RequestMapping(value = "/UserMain.do")
+	public ModelAndView UserMain(HttpServletRequest request, ModelAndView mv) {
+		System.out.println("UserMain-관리자페이지로의 단순이동");
+		mv.setViewName("/user/UserMain");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/UserMainPay.do")
+	public ModelAndView UserMainPay(HttpServletRequest request, ModelAndView mv) {
+		System.out.println("UserMainPay-관리자페이지로의 단순이동");
+		mv.setViewName("/user/UserMainPay");
+		return mv;
+	}
+		
+	@RequestMapping(value = "/UserOcrSearch.do")
+	public ModelAndView UserOcrSearch(HttpServletRequest request, ModelAndView mv) {
+		System.out.println("UserOcrSearch-OCR페이지로의 단순이동");
+		mv.setViewName("/user/UserOcrSearch");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/UserOcrTextSearch.do")
+	public ModelAndView UserOcrTextSearch(HttpServletRequest request, ModelAndView mv) {
+		System.out.println("UserOcrTextSearch -[사용자페이지]OCR 상세조회 페이지로의 단순이동");
+		mv.setViewName("/user/UserOcrTextSearch");
 		return mv;
 	}
 

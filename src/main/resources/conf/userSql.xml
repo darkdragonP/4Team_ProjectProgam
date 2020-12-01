@@ -35,7 +35,7 @@
 	<!-- 로그인 -->
 	<select id="login" parameterType="UserVO" resultMap="userResult">
 		<![CDATA[
-		select *
+		select USER_CODE, ID
 		from users where ID=#{userID} and PW=#{userPW}
 		]]>
 	</select>

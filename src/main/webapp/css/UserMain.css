@@ -1,0 +1,136 @@
+@charset "EUC-KR";
+
+.card {
+	width: 300px;
+	min-height: 400px;
+	background: #f2efea;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, .1);
+	border-radius: 10px;
+	transition: 0.5s;
+}
+
+.card .box {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	text-align: center;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.card .box .img {
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.card .box .img img {
+	width: 100%;
+	height: 100%;
+}
+
+.card .box h2 {
+	font-size: 20px;
+	color: #262626;
+	margin: 20px auto;
+}
+
+.card .box h2 span {
+	font-size: 14px;
+	background: #EF746F;
+	color: #fff;
+	display: inline-block;
+	padding: 4px 10px;
+	border-radius: 15px;
+}
+
+.card .box p {
+	
+}
+
+.card .box span {
+	display: inline-flex;
+}
+
+/* type2 약이미지 검색 */
+.pricing-bg {
+	padding: 100px 0 100px 0;
+	background: #f7fafd;
+	/* Prcing Red */
+}
+
+.pricing-bg .pricing {
+	padding: 50px;
+	text-align: center;
+	border: 2px solid #aebcc7;
+}
+
+.pricing-bg .pricing img {
+	width: 60px;
+	height: auto;
+	margin-bottom: 30px;
+}
+
+.pricing-bg .pricing h4 {
+	font-size: 27px;
+	margin: 0 0 15px;
+	color: #3f5263;
+}
+
+.pricing-bg .pricing span {
+	display: block;
+	font-size: 16px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #3f5263;
+}
+
+.pricing-bg .pricing .pricing-features {
+	padding: 0;
+	margin: 35px 0;
+	list-style: none;
+}
+
+.pricing-bg .pricing .pricing-features li {
+	padding: 3px 0;
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #8693a7;
+}
+
+.pricing-bg .pricing-red {
+	border: none;
+	padding: 80px 0;
+	background: #d15d5d;
+}
+
+.pricing-bg .pricing-red h4, .pricing-bg .pricing-red span {
+	color: #fff;
+}
+
+.pricing-bg .pricing-red .pricing-features li {
+	color: #f7a0a0;
+}
+
+/* Stylesheet design for above 992px */
+@media ( min-width : 992px) {
+	/* 992px */
+	/* Prcing Red */
+	.pricing {
+		margin-top: 50px;
+	}
+	.pricing-red {
+		margin-top: 20px;
+	}
+	.pricing.no-right-brd {
+		border-right: none;
+	}
+	.pricing.no-left-brd {
+		border-left: none;
+	}
+}
+

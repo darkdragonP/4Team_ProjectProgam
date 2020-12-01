@@ -37,7 +37,7 @@
 						<input type="password" id="userPW" name="userPW" class="form-control" placeholder="비밀번호">
 					</div>
 					<div class="row align-items-center remember">
-						<input type="checkbox">아이디 기억
+						<input type="checkbox" id="idSaveCheck">아이디 기억
 					</div>
 					<p>
 					<div class="form-group">
