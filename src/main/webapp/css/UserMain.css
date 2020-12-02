@@ -40,9 +40,8 @@
 }
 
 .card .box h2 span {
-	font-size: 14px;
+	font-size: 17px;
 	background: #EF746F;
-	color: #fff;
 	display: inline-block;
 	padding: 4px 10px;
 	border-radius: 15px;
@@ -57,14 +56,76 @@
 }
 
 /* type2 약이미지 검색 */
-.pricing-bg {
-	padding: 100px 0 100px 0;
-	background: #f7fafd;
-	/* Prcing Red */
+.heading {
+	z-index: 1;
+	position: relative;
+	text-align: center;
+	margin-bottom: 100px;
 }
 
+.heading:after {
+	left: 50%;
+	height: 3px;
+	width: 50px;
+	content: " ";
+	bottom: -50px;
+	margin-left: -25px;
+	position: absolute;
+	background: #EF746F;
+}
+
+.heading h2 {
+	font-size: 40px;
+	font-weight: 500;
+	margin: 0 0 20px;
+	color: #3f5263;
+}
+
+/*--------------------------------------------------
+	[HEADING LEFT]
+----------------------------------------------------*/
+.heading-left {
+	z-index: 1;
+	margin-bottom: 30px;
+}
+
+.heading-left h2 {
+	font-size: 30px;
+	margin: 0 0 20px;
+	color: #3f5263;
+	text-transform: capitalize;
+}
+
+.heading-left p {
+	color: #8693a7;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+}
+
+.heading-left-light {
+	z-index: 1;
+	margin-bottom: 30px;
+}
+
+.heading-left-light h2 {
+	font-size: 30px;
+	margin: 0 0 20px;
+	text-transform: capitalize;
+}
+
+.heading-left-light p {
+	color: #8693a7;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+}
+
+
+/*--------------------------------------------------
+	[PRICING]
+----------------------------------------------------*/
+
 .pricing-bg .pricing {
-	padding: 50px;
+	background: f2efea;
 	text-align: center;
 	border: 2px solid #aebcc7;
 }
@@ -72,7 +133,6 @@
 .pricing-bg .pricing img {
 	width: 60px;
 	height: auto;
-	margin-bottom: 30px;
 }
 
 .pricing-bg .pricing h4 {
@@ -81,12 +141,18 @@
 	color: #3f5263;
 }
 
+.pricing-bg .pricing h4 {
+	font-size: 27px;
+	margin: 0 0 15px;
+	color: #fff;
+}
+
 .pricing-bg .pricing span {
 	display: block;
 	font-size: 16px;
 	font-weight: 600;
 	text-transform: uppercase;
-	color: #3f5263;
+	color: #fff;
 }
 
 .pricing-bg .pricing .pricing-features {
@@ -96,8 +162,7 @@
 }
 
 .pricing-bg .pricing .pricing-features li {
-	padding: 3px 0;
-	font-size: 16px;
+	font-size: 12px;
 	text-transform: capitalize;
 	color: #8693a7;
 }
@@ -105,32 +170,16 @@
 .pricing-bg .pricing-red {
 	border: none;
 	padding: 80px 0;
-	background: #d15d5d;
+	background: #EF746F;
+}
+.pricing-bg .pricing-blue {
+	border: none;
+	padding: 80px 0;
+	background: #0b4877;
 }
 
-.pricing-bg .pricing-red h4, .pricing-bg .pricing-red span {
-	color: #fff;
-}
 
 .pricing-bg .pricing-red .pricing-features li {
-	color: #f7a0a0;
-}
-
-/* Stylesheet design for above 992px */
-@media ( min-width : 992px) {
-	/* 992px */
-	/* Prcing Red */
-	.pricing {
-		margin-top: 50px;
-	}
-	.pricing-red {
-		margin-top: 20px;
-	}
-	.pricing.no-right-brd {
-		border-right: none;
-	}
-	.pricing.no-left-brd {
-		border-left: none;
-	}
+	color: #F2F2F2;
 }
 

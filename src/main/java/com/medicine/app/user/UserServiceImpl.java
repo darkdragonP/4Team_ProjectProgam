@@ -66,22 +66,5 @@ public class UserServiceImpl implements UserService {
 	}
 
 	// 아이디 찾기
-	@Override
-	public String find_id(HttpServletResponse response, String email) throws Exception {
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		String id = userDAO.find_id(email);
-
-		if (id == null) {
-			out.println("<script>");
-			out.println("alert('가입된 아이디가 없습니다.');");
-			out.println("history.go(-1);");
-			out.println("</script>");
-			out.close();
-			return null;
-		} else {
-			return id;
-		}
-	}
 
 }

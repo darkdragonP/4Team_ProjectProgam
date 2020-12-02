@@ -210,10 +210,5 @@ public class UserController {
 	}
 
 	// 아이디 찾기
-		@RequestMapping(value = "/find_id.do", method = RequestMethod.POST)
-		public String find_id(HttpServletResponse response, @RequestParam("email") String email, Model md) throws Exception{
-			md.addAttribute("id", userService.find_id(response, email));
-			return "/member/find_id";
-		}
 
 }

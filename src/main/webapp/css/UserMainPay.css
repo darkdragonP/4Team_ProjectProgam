@@ -40,7 +40,7 @@
 }
 
 .card .box h2 span {
-	font-size: 14px;
+	font-size: 17px;
 	background: #EF746F;
 	color: #fff;
 	display: inline-block;
@@ -61,6 +61,7 @@
 
 
 
+
 /* type2 약이미지 검색 */
 
 #upload {
@@ -75,7 +76,7 @@
 }
 
 .image-area {
-    border: 2px dashed rgba(255, 255, 255, 0.7);
+    border: 2px dashed rgba(0, 0, 0, 0.7);
     padding: 1rem;
     position: relative;
 }

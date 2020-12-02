@@ -19,7 +19,8 @@ public class UserVO {
 	private String uMailCon; //광고동의
 	private String 	ocrPay; //OCR결제
 
-public int getuIdx() {
+
+	public int getuIdx() {
 		return uIdx;
 	}
 
