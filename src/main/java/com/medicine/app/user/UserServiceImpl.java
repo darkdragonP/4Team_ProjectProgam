@@ -1,10 +1,7 @@
 package com.medicine.app.user;
 
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -66,5 +63,26 @@ public class UserServiceImpl implements UserService {
 	}
 
 	// 아이디 찾기
+	@Override
+	public ArrayList<String> findId(UserVO vo) {
+		List<UserVO> list = userDAO.findId(vo);
+		ArrayList<String> findId = new ArrayList<String>();
+		for (int i = 0; i < list.size(); i++) {
+			String ID = list.get(i).getUserID();
+			findId.add(ID);
+		}
+		return findId;
+	}
 
+	// 비밀번호 찾기
+	@Override
+	public ArrayList<String> findPw(UserVO vo) {
+		List<UserVO> list = userDAO.findPw(vo);
+		ArrayList<String> findPw = new ArrayList<String>();
+		for (int i = 0; i < list.size(); i++) {
+			String PW = list.get(i).getUserPW();
+			findPw.add(PW);
+		}
+		return findPw;
+	}
 }

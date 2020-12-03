@@ -50,5 +50,13 @@ public class UserDAO {
 	}
 	
 	// 아이디찾기
-	
+	public List<UserVO> findId(UserVO vo) {
+		return sqlSession.selectList("user.findId" , vo);
+
+	}
+	// 아이디찾기
+	public List<UserVO> findPw(UserVO vo) {
+		return sqlSession.selectList("user.findPw" , vo);
+		
+	}
 }

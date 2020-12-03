@@ -1,8 +1,8 @@
 package com.medicine.app.user;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
 
 public interface UserService {
 	
@@ -14,5 +14,7 @@ public interface UserService {
 	public UserVO delete_user(UserVO vo);
 	public UserVO login(UserVO vo);
 	public String idoverlap(String id);
+	public ArrayList<String> findId(UserVO vo);
+	public ArrayList<String> findPw(UserVO vo);
 
 }

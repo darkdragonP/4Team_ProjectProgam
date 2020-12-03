@@ -1,9 +1,9 @@
 package com.medicine.app.user;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,30 +32,30 @@ public class UserController {
 
 		mv.setViewName("/user/SetUserList");
 
-		return mv;		
+		return mv;
 	}
-	
+
 	@RequestMapping(value = "/UserMain.do")
 	public ModelAndView UserMain(HttpServletRequest request, ModelAndView mv) {
 		System.out.println("UserMain-관리자페이지로의 단순이동");
 		mv.setViewName("/user/UserMain");
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/UserMainPay.do")
 	public ModelAndView UserMainPay(HttpServletRequest request, ModelAndView mv) {
 		System.out.println("UserMainPay-관리자페이지로의 단순이동");
 		mv.setViewName("/user/UserMainPay");
 		return mv;
 	}
-		
+
 	@RequestMapping(value = "/UserOcrSearch.do")
 	public ModelAndView UserOcrSearch(HttpServletRequest request, ModelAndView mv) {
 		System.out.println("UserOcrSearch-OCR페이지로의 단순이동");
 		mv.setViewName("/user/UserOcrSearch");
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/UserOcrTextSearch.do")
 	public ModelAndView UserOcrTextSearch(HttpServletRequest request, ModelAndView mv) {
 		System.out.println("UserOcrTextSearch -[사용자페이지]OCR 상세조회 페이지로의 단순이동");
@@ -70,11 +70,11 @@ public class UserController {
 		mv.setViewName("/user/findID");
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/findPW.do")
 	public ModelAndView exercise4(HttpServletRequest request, ModelAndView mv) {
 		System.out.println("findPW 임시 메소드 실행");
-		
+
 		mv.setViewName("/user/findPW");
 		return mv;
 	}
@@ -210,5 +210,25 @@ public class UserController {
 	}
 
 	// 아이디 찾기
+	@ResponseBody
+	@RequestMapping(value = "findingId.do", method = RequestMethod.POST, produces = "application/text; charset=utf-8")
+	public String findingId(UserVO vo, Model model){
+		ArrayList<String> IDlList = userService.findId(vo);
+		String findId = "{\"userID\":\"" + IDlList + "\"}";
 
+		System.out.println(findId);
+
+		return IDlList.get(0);
+	}
+	// 비밀번호 찾기
+	@ResponseBody
+	@RequestMapping(value = "findingPw.do", method = RequestMethod.POST, produces = "application/text; charset=utf-8")
+	public String findingPw(UserVO vo, Model model){
+		ArrayList<String> PWlList = userService.findPw(vo);
+		String findPw = "{\"userPW\":\"" + PWlList + "\"}";
+
+		System.out.println(findPw);
+
+		return PWlList.get(0);
+	}
 }

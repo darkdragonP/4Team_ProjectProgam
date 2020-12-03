@@ -104,5 +104,13 @@
 	</select>
 
 	<!-- 아이디 찾기 -->
+	<select id="findId" resultMap="userResult">
+		select ID from USERS where NAME = #{uName} and EMAIL = #{uEmail}
+	</select>
 	
+	<!-- 비밀번호 찾기 -->
+	<select id="findPw" resultMap="userResult">
+		select PW from USERS where ID = #{userID} and EMAIL = #{uEmail}
+	</select>
+
 </mapper>
