@@ -92,7 +92,22 @@ public class UserController {
 		System.out.println("register 임시 메소드 실행.");
 
 		mv.setViewName("/user/register");
-		return mv;
+		return mv;		
+	}
+
+	@RequestMapping(value = "/UserMediCompare.do")
+	public ModelAndView exercise5(HttpServletRequest request, ModelAndView mv) {
+		System.out.println("UserMediCompare 임시 메소드 실행.");
+		
+		mv.setViewName("/user/UserMediCompare");
+		return mv;		
+	}
+	@RequestMapping(value = "/UserMedicineDetail.do")
+	public ModelAndView exercise6(HttpServletRequest request, ModelAndView mv) {
+		System.out.println("처방전 비교하기에서 사용되는 처방전 디테일페이지입니다.");
+		
+		mv.setViewName("/user/UserMedicineDetail");
+		return mv;		
 	}
 
 	// 회원정보
@@ -215,9 +230,7 @@ public class UserController {
 	public String findingId(UserVO vo, Model model){
 		ArrayList<String> IDlList = userService.findId(vo);
 		String findId = "{\"userID\":\"" + IDlList + "\"}";
-
 		System.out.println(findId);
-
 		return IDlList.get(0);
 	}
 	// 비밀번호 찾기
@@ -226,9 +239,7 @@ public class UserController {
 	public String findingPw(UserVO vo, Model model){
 		ArrayList<String> PWlList = userService.findPw(vo);
 		String findPw = "{\"userPW\":\"" + PWlList + "\"}";
-
 		System.out.println(findPw);
-
 		return PWlList.get(0);
 	}
 }
