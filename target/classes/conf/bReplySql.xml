@@ -44,6 +44,13 @@
 	]]>
 	</delete>
 	
+	<delete id="delBReply" parameterType="String">
+	<![CDATA[
+		delete from b_Reply where 
+		BOARD_CODE = #{bIdx}
+	]]>
+	</delete>
+	
 	
 	
 	

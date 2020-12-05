@@ -190,11 +190,19 @@
 										</header>
 										<div class="row py-4">
 											<div class="col-lg-6 mx-auto">
-
+												<!-- Uploaded image area-->
+												<p class="font-italic text-center"  style="color: #0b4877;">이미지를 업로드
+													하시면 아래에 사진이 나타납니다.</p>
+												<div class="image-area mt-4">
+													<img id="imageResult" src="#" alt=""
+														class="img-fluid rounded shadow-sm mx-auto d-block">
+												</div>
+												<br>
 												<!-- Upload image input-->
+												<form action="test.do" enctype="multipart/form-data" method="post">
 												<div
 													class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
-													<input id="upload" type="file" onchange="readURL(this);"
+													<input id="upload" name="uploadFile" type="file" onchange="readURL(this);"
 														class="form-control border-0"> <label
 														id="upload-label" for="upload"
 														class="font-weight-light text-muted">사진 선택하기</label>
@@ -206,14 +214,8 @@
 																올리기</small></label>
 													</div>
 												</div>
-
-												<!-- Uploaded image area-->
-												<p class="font-italic text-center"  style="color: #0b4877;">이미지를 업로드
-													하시면 아래에 사진이 나타납니다.</p>
-												<div class="image-area mt-4">
-													<img id="imageResult" src="#" alt=""
-														class="img-fluid rounded shadow-sm mx-auto d-block">
-												</div>
+												<input type="submit" value="검색"/>
+												</form>
 
 											</div>
 										</div>

@@ -88,7 +88,7 @@
 	]]>
 	</select>
 	
-		<delete id="deleteBoard" parameterType="String">
+	<delete id="deleteBoard" parameterType="String">
 	<![CDATA[
 		delete from BOARD where BOARD_CODE = #{bIdx} 
 	]]>
@@ -171,5 +171,45 @@
 		where board.BOARD_CRYMINAL>=#{startC} and board.BOARD_CRYMINAL<=#{endC}  
 	]]>
 	</select>
+	
+	
+	
+	<select id="searchCountsBoard" parameterType="map" resultType="Integer">
+	<![CDATA[
+		select count(board_code)
+		from (SELECT
+		board.BOARD_CODE,
+		users.NAME
+		FROM board, users
+		where board.USER_CODE = users.USER_CODE
+        and ${searchCnd} like '%' || #{textBoard} || '%'
+        )
+	]]>
+	</select>
+
+	 
+		<select id="selectsearctBoardList" parameterType="map"
+		resultMap="boardResult">
+	<![CDATA[
+	select *
+		from (select ROWNUM as rnum, A.*
+		from (SELECT
+		board.USER_CODE,
+		board.BOARD_CODE,
+		board.BOARD_TITLE,
+		board.BOARD_CONTENTS,
+		board.BOARD_DATE,
+		board.BOARD_HITS,
+		board.BOARD_CRYMINAL,
+		board.BOARD_RATING,
+		users.NAME
+		FROM board, users
+		where board.USER_CODE = users.USER_CODE
+        and ${searchCnd} like '%' || #{textBoard} || '%' 
+		order by BOARD_CODE desc) A)
+		where rnum >= #{startIndex} and rnum <=#{endIndex}
+	]]>
+	</select>
+	
 	
 </mapper>

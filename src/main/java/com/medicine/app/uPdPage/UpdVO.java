@@ -1,5 +1,7 @@
 package com.medicine.app.uPdPage;
 
+import org.springframework.web.multipart.MultipartFile;
+
 //ocr 관련
 public class UpdVO {
 
@@ -9,6 +11,16 @@ public class UpdVO {
 	private String mdName; // 약 이름
 	private String mdContent; // 약 내용
 	private String mdPP_Date; // 조제일자
+	private MultipartFile uploadFile;
+
+	
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
 
 	public int getuIdx() {
 		return uIdx;

@@ -71,24 +71,21 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/InsertBoard.do", method = RequestMethod.POST)
-	public ModelAndView InsertBoard(BoardVO vo, HttpServletRequest request) {
+	public ModelAndView InsertBoard(BoardVO vo, HttpServletRequest request, ModelAndView mv) {
 		HttpSession session = request.getSession();
-		System.out.println(session.getAttribute("uIdx"));
 		int uIdx = (Integer) session.getAttribute("uIdx");
 		vo.setuIdx(uIdx);
-		System.out.println(vo);
 		boardService.insertBoard(vo);
 		String maxBIdx = boardService.selectMaxBIdx();
 		BoardVO board = boardService.selectBoard(maxBIdx);
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("board", board);
-		mv.setViewName("/board/SelectBoard");
+		String bIdx=Integer.toString(board.getbIdx());
+		mv.setViewName("redirect:selectBoard.do?bIdx="+bIdx);
 
 		return mv;
 	}
 
 	@RequestMapping(value = "/selectBoard.do")
-	public ModelAndView selectmedicine(@RequestParam(defaultValue = "1") int curPage,
+	public ModelAndView selectBoard(@RequestParam(defaultValue = "1") int curPage,
 			@RequestParam(defaultValue = "0") int curRange, @RequestParam(defaultValue = "0") int result,
 			@RequestParam(defaultValue = "1") int startp, BoardVO vo, HttpServletRequest request, ModelAndView mv) {
 		System.out.println("selectBoard  메소드 실행.");
@@ -127,6 +124,7 @@ public class BoardController {
 			vi.put("startIndex", mdBCounts.getStartIndex());
 			vi.put("endIndex", mdBCounts.getEndIndex());
 			List<BoardVO> boardList = boardService.selectBoardList(vi);
+			System.out.println(boardList);
 			mv.addObject("mdBCounts", mdBCounts);
 			mv.addObject("boardList", boardList);
 		}
@@ -164,4 +162,45 @@ public class BoardController {
 		return mv;
 	}	
 	
+	@RequestMapping(value = "/searchTextBoard.do")
+	public ModelAndView searchTextBoard(@RequestParam(defaultValue = "1") int curPage,
+			@RequestParam(defaultValue = "0") int curRange, @RequestParam(defaultValue = "0") int result,
+			@RequestParam(defaultValue = "1") int startp, HttpServletRequest request, String textBoard, String searchCnd, ModelAndView mv) {
+		System.out.println("-------------------------------------------");
+		System.out.println("searchTextBoard 메소드 실행.");
+		System.out.println(searchCnd);
+		System.out.println(textBoard);
+		Map<String, Object> vo = new HashMap<String, Object>();
+		vo.put("searchCnd", searchCnd);
+		vo.put("textBoard", textBoard);		
+		int listCnt = boardService.searchCountsBoard(vo);
+		System.out.println(listCnt);
+		MdBoardCounts mdBCounts = new MdBoardCounts();
+		mdBCounts.setListCnt(listCnt);
+		if (listCnt == 0) {
+			System.out.println("검색된결과가 없습니다.");
+		} else {
+			mdBCounts.setSearchCnd(searchCnd);
+			mdBCounts.setTextBoard(textBoard);
+			mdBCounts.setPage(curPage, startp, curRange);
+			if (result == 1) {
+				mdBCounts.prevSetBlock(curRange);
+
+			} else if (result == 2) {
+				mdBCounts.nextSetBlock(curRange);
+			}
+
+			vo.put("startIndex", mdBCounts.getStartIndex());
+			vo.put("endIndex", mdBCounts.getEndIndex());
+			List<BoardVO> boardList = boardService.selectsearctBoardList(vo);
+			mv.addObject("mdBCounts", mdBCounts);
+			mv.addObject("boardList", boardList);
+		}
+		mv.setViewName("/board/SetSearchBoardList");
+
+		return mv;
+	}
+
+	
+
 }

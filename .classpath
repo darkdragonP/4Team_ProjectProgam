@@ -25,7 +25,6 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java [1.8.271.09]"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/jar_files/animal-sniffer-annotations-1.19.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/jar_files/annotations-4.1.1.4.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/jar_files/api-common-1.10.1.jar"/>
@@ -76,5 +75,6 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/jar_files/proto-google-cloud-vision-v1p4beta1-0.83.7.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/jar_files/proto-google-common-protos-2.0.1.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/jar_files/threetenbp-1.5.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_221"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

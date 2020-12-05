@@ -19,6 +19,11 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
+	public List<BoardVO> selectsearctBoardList(Map<String, Object> vo) {
+		return boardDAO.selectsearctBoardList(vo);
+	}
+
+	@Override
 	public List<BoardVO> selectCryBoardList(Map<String, Integer> vo) {
 		return boardDAO.selectCryBoardList(vo);
 	}
@@ -79,6 +84,11 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public List<BoardVO> searchCryBoardList(Map<String, String> vi) {
 		return boardDAO.searchCryBoardList(vi);
+	}
+
+	@Override
+	public Integer searchCountsBoard(Map<String, Object> vo) {
+		return boardDAO.searchCountsBoard(vo);
 	}
 
 	

@@ -10,6 +10,8 @@ public interface BoardService {
 	
 	public List<BoardVO> selectBoardList(Map<String, Integer> vo);
 
+	public List<BoardVO> selectsearctBoardList(Map<String, Object> vo);
+
 	public List<BoardVO> selectCryBoardList(Map<String, Integer> vo);
 	
 	public Integer countsBoard();
@@ -33,6 +35,10 @@ public interface BoardService {
 	public Integer searchCryBoardCounter(Map<String, String> vi);
 	
 	public List<BoardVO> searchCryBoardList(Map<String, String> vi);
+	
+	public Integer searchCountsBoard(Map<String, Object> vo);
+	
+	
 	
 	
 }

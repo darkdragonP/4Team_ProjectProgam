@@ -19,6 +19,9 @@ public class BoardDAO {
 	public List<BoardVO> selectBoardList(Map<String, Integer> vo)  {
 		return sqlSession.selectList("board.selectBoardList", vo);
 	}
+	public List<BoardVO> selectsearctBoardList(Map<String, Object> vo)  {
+		return sqlSession.selectList("board.selectsearctBoardList", vo);
+	}
 	public List<BoardVO> selectCryBoardList(Map<String, Integer> vo)  {
 		return sqlSession.selectList("board.selectCryBoardList", vo);
 	}
@@ -39,7 +42,10 @@ public class BoardDAO {
 		return sqlSession.selectOne("board.selectMaxBIdx");
 	}
 	public void deleteBoard(String bIdx) {
-		sqlSession.delete("board.deleteBoard", bIdx);
+		sqlSession.delete("bcry.deleteBCry", bIdx);
+		sqlSession.delete("bMark.deleteBMark", bIdx);
+		sqlSession.delete("bReply.delBReply", bIdx);
+		sqlSession.delete("board.deleteBoard", bIdx);	
 	}
 	
 	public void updateBoard(BoardVO vo) {
@@ -57,5 +63,9 @@ public class BoardDAO {
 	}
 	public List<BoardVO> searchCryBoardList(Map<String, String> vi) {
 		return sqlSession.selectList("board.searchCryBoardList", vi);
+	}
+
+	public Integer searchCountsBoard(Map<String, Object > vo) {
+		return sqlSession.selectOne("board.searchCountsBoard", vo);
 	}
 }

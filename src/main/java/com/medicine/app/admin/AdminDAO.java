@@ -28,7 +28,10 @@ public class AdminDAO {
 	}
 
 	public void deleteAdminMedicine(String mdIdx) {
+		sqlSession.delete("mdMark.deleteMdMark", mdIdx);
+		sqlSession.delete("mdReply.delMdReply", mdIdx);
 		sqlSession.delete("medicine.deleteAdminMedicine", mdIdx);
+		
 	}
 
 	public void updateAdminMedicine(MedicineVO vo) {

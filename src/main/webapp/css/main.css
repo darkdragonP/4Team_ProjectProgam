@@ -65,7 +65,7 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
-input, select, textarea {
+input, textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	-ms-appearance: none;
@@ -1901,12 +1901,7 @@ input, select, textarea {
 			padding: 0.5em 1em 0.5em 1em;
 		}
 
-		table th {
-			text-align: left;
-			padding: 0.5em 1em 0.5em 1em;
-			color: #fff;
-			background: #222729 url("images/overlay.png");
-		}
+	
 
 		table thead {
 			background: #444;

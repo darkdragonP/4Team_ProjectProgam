@@ -27,6 +27,10 @@
 	]]>
 	</select>
 
-
+	<delete id="deleteBCry" parameterType="String">
+	<![CDATA[
+		delete from B_CRY where BOARD_CODE = #{bIdx} 
+	]]>
+	</delete>
 	
 </mapper>

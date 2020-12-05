@@ -45,8 +45,13 @@
 	<![CDATA[
 		delete from md_Reply where 
 		USER_REPLY_NO = #{uReIdx}
-		
-		
+	]]>
+	</delete>
+	
+	<delete id="delMdReply" parameterType="String">
+	<![CDATA[
+		delete from md_Reply where 
+		MD_CODE = #{mdIdx}
 	]]>
 	</delete>
 	

@@ -31,8 +31,8 @@
 							</h3></li>
 						<br>
 						<br>
-						<li><a href="AdminInsertMedicine.do"><span
-								class="icon solid fa-th"><h6>신규 약 추가</h6></span></a></li>
+					<!-- 	<li><a href="AdminInsertMedicine.do"><span
+								class="icon solid fa-th"><h6>신규 약 추가</h6></span></a></li> -->
 						<hr>
 						<br>
 						<br>
@@ -79,7 +79,7 @@
 			</ol>
 		</div>
 		<strong>신고 건수 검색</strong>
-		<form action="searchCryBoard.do" method="post">
+		<form action="manageBoard.do" method="post">
 			<input type="text" class="bbs_search_input text" placeholder="최소값"
 				name="startC"> ~ <input type="text" class="bbs_search_input text"
 				placeholder="최대값" name="endC" />
@@ -90,7 +90,7 @@
 
 
 		<table class="table table-striped">
-			<thead>
+			<thead align="center">
 				<tr>
 					<th>No.</th>
 					<th>제목</th>
@@ -99,14 +99,17 @@
 					<th>조회</th>
 					<th>좋아요</th>
 					<th>신고누적</th>
-					<th></th>
+					<th>삭제</th>
+					<th>바로가기</th>
 				</tr>
 			</thead>
 			<c:forEach items="${boardList}" var="board">
-				<form name="del_${board.bIdx}" action="deleteBoard.do" method="post">
+				<form name="del_${board.bIdx}" action="deletCryBoard.do" method="post">
 					<input type="hidden" name="bIdx" value="${board.bIdx}">
+					<input type="hidden" name="startC" value="${mdBCounts.startC}">
+					<input type="hidden" name="endC" value="${mdBCounts.endC}">
 				</form>
-				<tbody>
+				<tbody align="center">
 					<tr>
 						<td>${board.bIdx}</td>
 						<td>${board.bTitle}</td>
@@ -117,7 +120,8 @@
 						<td>${board.bCry}</td>
 						<td><input type="button"
 							onclick="location='javascript:document.del_${board.bIdx}.submit();'" value="삭제"/></td>
-
+						<td><input type="button"
+							onclick="location.href='selectBoard.do?bIdx=${board.bIdx}'" value="바로가기"/></td>
 					</tr>
 				</tbody>
 			</c:forEach>
@@ -132,7 +136,7 @@
 		<ul class="pagination">
 			<c:if test="${mdBCounts.curRange ne 0}">
 				<li class="page-item"><b class="page-link"><a
-						href="boardList.do?curRange=${mdBCounts.curRange}&result=1">이전</a></b></li>
+						href="manageBoard.do?startC=${mdBCounts.startC}&endC=${mdBCounts.endC}&curRange=${mdBCounts.curRange}&result=1">이전</a></b></li>
 			</c:if>
 			<c:forEach var="pageNum" begin="${mdBCounts.startPage}"
 				end="${mdBCounts.endPage}">
@@ -140,37 +144,20 @@
 					<c:when test="${pageNum eq  mdBCounts.curPage}">
 						<span style="font-weight: bold;"><b class="page-link"
 							style="background-color: lightpink;"><a
-								href="boardList.do?curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}"
+								href="manageBoard.do?startC=${mdBCounts.startC}&endC=${mdBCounts.endC}&curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}"
 								onClick="fn_paging('${pageNum }')">${pageNum }</a></b></span>
 					</c:when>
 					<c:otherwise>
 						<li><b class="page-link"> <a
-								href="boardList.do?curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}">${pageNum}</a></b></li>
+								href="manageBoard.do?startC=${mdBCounts.startC}&endC=${mdBCounts.endC}&curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}">${pageNum}</a></b></li>
 					</c:otherwise>
 				</c:choose>
 			</c:forEach>
 			<c:if test="${mdBCounts.curRange+1 ne mdBCounts.rangeCnt}">
 				<li class="page-item"><b class="page-link"><a
-						href="boardList.do?curRange=${mdBCounts.curRange}&result=2">다음</a></b></li>
+						href="manageBoard.do?startC=${mdBCounts.startC}&endC=${mdBCounts.endC}&curRange=${mdBCounts.curRange}&result=2">다음</a></b></li>
 			</c:if>
 		</ul>
-
-
-		<div class="bbs_list_search" align="center">
-			<!-- 원하는 부분을 가운데로 옮겨주는 기능 -->
-			<fieldset>
-				<select name="searchCnd" class="bbs_search_select select"
-					title="검색어 선택">
-					<option value="0">제목</option>
-					<option value="1">내용</option>
-					<option value="2">작성자</option>
-				</select> <input type="text" id="searchWrd" name="searchWrd" value=""
-					class="bbs_search_input text" title="검색어를 입력하세요."> <input
-					type="image" src="images/search.png" onclick="goSearchWrd();"
-					alt="검색" class="image">
-			</fieldset>
-
-		</div>
 	</div>
 	<br>
 	<!-- Scripts -->

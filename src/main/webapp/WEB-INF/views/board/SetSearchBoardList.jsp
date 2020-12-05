@@ -65,7 +65,7 @@
 		<ul class="pagination">
 			<c:if test="${mdBCounts.curRange ne 0}">
 				<li class="page-item"><b class="page-link"><a
-						href="boardList.do?curRange=${mdBCounts.curRange}&result=1">이전</a></b></li>
+						href="searchTextBoard.do?searchCnd=${mdBCounts.searchCnd}&textBoard=${mdBCounts.textBoard}&curRange=${mdBCounts.curRange}&result=1">이전</a></b></li>
 			</c:if>
 			<c:forEach var="pageNum" begin="${mdBCounts.startPage}"
 				end="${mdBCounts.endPage}">
@@ -73,18 +73,18 @@
 					<c:when test="${pageNum eq  mdBCounts.curPage}">
 						<span style="font-weight: bold;"><b class="page-link"
 							style="background-color: lightpink;"><a
-								href="boardList.do?curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}"
+								href="searchTextBoard.do?searchCnd=${mdBCounts.searchCnd}&textBoard=${mdBCounts.textBoard}&curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}"
 								onClick="fn_paging('${pageNum }')">${pageNum }</a></b></span>
 					</c:when>
 					<c:otherwise>
 						<li><b class="page-link"> <a
-								href="boardList.do?curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}">${pageNum}</a></b></li>
+								href="searchTextBoard.do?searchCnd=${mdBCounts.searchCnd}&textBoard=${mdBCounts.textBoard}&curPage=${pageNum}&curRange=${mdBCounts.curRange}&startp=${mdBCounts.startPage}">${pageNum}</a></b></li>
 					</c:otherwise>
 				</c:choose>
 			</c:forEach>
 			<c:if test="${mdBCounts.curRange+1 ne mdBCounts.rangeCnt}">
 				<li class="page-item"><b class="page-link"><a
-						href="boardList.do?curRange=${mdBCounts.curRange}&result=2">다음</a></b></li>
+						href="searchTextBoard.do?searchCnd=${mdBCounts.searchCnd}&textBoard=${mdBCounts.textBoard}&curRange=${mdBCounts.curRange}&result=2">다음</a></b></li>
 			</c:if>
 		</ul>
 
