@@ -11,12 +11,14 @@ import com.medicine.app.medicine.MedicineService;
 import com.medicine.app.medicine.MedicineVO;
 
 @Service("AdminMedicineService")
-public class AdminServiceImpl implements MedicineService {
+public class AdminServiceImpl implements MedicineService{
 	@Autowired
 	private AdminDAO adminDAO;
 
 	@Autowired
 	private MedicineDAO medicineDAO;
+	
+	
 
 	
 	

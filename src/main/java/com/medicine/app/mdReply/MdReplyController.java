@@ -33,7 +33,7 @@ public class MdReplyController {
 
 		mdReplyService.insertMdReplyList(vo);
 		MedicineVO medicine = medicineService.selectMedicine(mdIdx);
-		List<MdReplyVO> selectMdReplyList = mdReplyService.selectMdReplyList();
+		List<MdReplyVO> selectMdReplyList = mdReplyService.selectMdReplyList(mdIdx);
 
 		mv.addObject("medicine", medicine);
 		mv.addObject("selectMdReplyList", selectMdReplyList);
@@ -49,7 +49,7 @@ public class MdReplyController {
 
 		mdReplyService.deleteMdReply(uReIdx);
 		MedicineVO medicine = medicineService.selectMedicine(mdIdx);
-		List<MdReplyVO> selectMdReplyList = mdReplyService.selectMdReplyList();
+		List<MdReplyVO> selectMdReplyList = mdReplyService.selectMdReplyList(mdIdx);
 
 		mv.addObject("medicine", medicine);
 		mv.addObject("selectMdReplyList", selectMdReplyList);

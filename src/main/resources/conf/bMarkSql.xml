@@ -9,11 +9,31 @@
 		<result property="bmr" column="MARK_RATING" />
 	</resultMap>
 	
-	<select id="selectBMarkList" parameterType="BMarkVO" resultMap="bMarkResult">
-		<![CDATA[
-		SELECT * FROM b_mark
-		]]>
+	<select id="selectBMark" parameterType="String"
+		resultMap="bMarkResult">
+	<![CDATA[
+		SELECT MARK_RATING FROM b_mark where BOARD_CODE=#{bIdx}
+	]]>
 	</select>
+
+	<insert id="insertBMark" parameterType="BMarkVO">
+	<![CDATA[
+		insert into b_mark(USER_CODE,BOARD_CODE,MARK_RATING)
+		values(
+		#{uIdx},
+		#{bIdx},
+		#{bmr}
+		)
+	]]>
+	</insert>
 	
+	<select id="checkBMark" parameterType="BMarkVO"
+		resultMap="bMarkResult">
+	<![CDATA[
+		SELECT * FROM b_mark where USER_CODE=#{uIdx} and BOARD_CODE=#{bIdx}
+	]]>
+	</select>
+
+
 	
 </mapper>

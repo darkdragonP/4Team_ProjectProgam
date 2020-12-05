@@ -122,18 +122,16 @@
 							<div id="size_ct" class="size_ct_v2">
 								<div class="att_type">
 									<div class="inner_att_type">
-										<p class="thmb_desc">
 										<h3>
 											<strong>${medicine.getMdTitle()}
-										</h3>
 										</strong>
-										</p>
+										</h3>
 										<div class="thmb thmb_border">
 											<span class="img_box" style="width: 250px;"> <img
-												src="${medicine.mdImage}" width="500" height="200"
-												alt="${medicine.mdTitle}" />
+												src="${medicine.getMdImage()}" width="500" height="200"
+												alt="${medicine.getMdTitle()}" />
 												<div class="enlarge">
-													<a href="${medicine.mdImage}" width="300%" height="300%">이미지
+													<a href="${medicine.getMdImage()}" width="300%" height="300%">이미지
 														크게보기</a>
 												</div>
 											</span>

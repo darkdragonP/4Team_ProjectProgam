@@ -343,6 +343,10 @@
 				</tbody>
 			</c:forEach>
 		</table>
+		<div class="total_page">
+			<span>전체 ${mdBCounts.endPage}</span> <span>Page<strong>${mdBCounts.startPage}</strong>/${mdBCounts.endPage}
+			</span>
+		</div>
 		<ul class="pagination">
 			<c:if test="${mdBCounts.curRange ne 0}">
 				<li class="page-item"><b class="page-link"><a

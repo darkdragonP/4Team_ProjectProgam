@@ -49,9 +49,27 @@ public class MdBoardCounts {
 	
 	private String mdLine;
 	
+	private String startC;
+	
+	private String endC;
 	
 	
-	
+	public String getStartC() {
+		return startC;
+	}
+
+	public void setStartC(String startC) {
+		this.startC = startC;
+	}
+
+	public String getEndC() {
+		return endC;
+	}
+
+	public void setEndC(String endC) {
+		this.endC = endC;
+	}
+
 	public String getMdShape() {
 		return mdShape;
 	}

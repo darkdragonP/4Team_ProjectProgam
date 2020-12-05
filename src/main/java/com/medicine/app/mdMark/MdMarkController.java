@@ -48,13 +48,11 @@ public class MdMarkController {
 			xe += 1;
 		}
 		int AvgMr = mr / xe;
-		System.out.println(2);
 		
 		MedicineVO medicine = medicineService.selectMedicine(mdIdx);
 		medicine.setMdRating(Integer.toString(AvgMr));
 		medicineService.updateMdRating(medicine);
-System.out.println(3);
-		List<MdReplyVO> selectMdReplyList = mdReplyService.selectMdReplyList();
+		List<MdReplyVO> selectMdReplyList = mdReplyService.selectMdReplyList(mdIdx);
 		mv.addObject("medicine", medicine);
 		mv.addObject("selectMdReplyList", selectMdReplyList);
 		mv.setViewName("/medicine/SelectMedicine");
