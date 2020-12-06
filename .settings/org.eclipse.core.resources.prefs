@@ -1,5 +1,4 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/qna/QnAList.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/user/UserMediCompare.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/updPage/UserMediCompare.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/user/findID.jsp=UTF-8
-encoding/<project>=UTF-8

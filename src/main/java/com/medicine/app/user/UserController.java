@@ -35,34 +35,6 @@ public class UserController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/UserMain.do")
-	public ModelAndView UserMain(HttpServletRequest request, ModelAndView mv) {
-		System.out.println("UserMain-관리자페이지로의 단순이동");
-		mv.setViewName("/user/UserMain");
-		return mv;
-	}
-
-	@RequestMapping(value = "/UserMainPay.do")
-	public ModelAndView UserMainPay(HttpServletRequest request, ModelAndView mv) {
-		System.out.println("UserMainPay-관리자페이지로의 단순이동");
-		mv.setViewName("/user/UserMainPay");
-		return mv;
-	}
-
-	@RequestMapping(value = "/UserOcrSearch.do")
-	public ModelAndView UserOcrSearch(HttpServletRequest request, ModelAndView mv) {
-		System.out.println("UserOcrSearch-OCR페이지로의 단순이동");
-		mv.setViewName("/user/UserOcrSearch");
-		return mv;
-	}
-
-	@RequestMapping(value = "/UserOcrTextSearch.do")
-	public ModelAndView UserOcrTextSearch(HttpServletRequest request, ModelAndView mv) {
-		System.out.println("UserOcrTextSearch -[사용자페이지]OCR 상세조회 페이지로의 단순이동");
-		mv.setViewName("/user/UserOcrTextSearch");
-		return mv;
-	}
-
 	@RequestMapping(value = "/findID.do")
 	public ModelAndView exercise1(HttpServletRequest request, ModelAndView mv) {
 		System.out.println("findID 임시 메소드 실행");
@@ -92,21 +64,6 @@ public class UserController {
 		System.out.println("register 임시 메소드 실행.");
 
 		mv.setViewName("/user/register");
-		return mv;		
-	}
-
-	@RequestMapping(value = "/UserMediCompare.do")
-	public ModelAndView exercise5(HttpServletRequest request, ModelAndView mv) {
-		System.out.println("UserMediCompare 임시 메소드 실행.");
-		
-		mv.setViewName("/user/UserMediCompare");
-		return mv;		
-	}
-	@RequestMapping(value = "/UserMedicineDetail.do")
-	public ModelAndView exercise6(HttpServletRequest request, ModelAndView mv) {
-		System.out.println("처방전 비교하기에서 사용되는 처방전 디테일페이지입니다.");
-		
-		mv.setViewName("/user/UserMedicineDetail");
 		return mv;		
 	}
 

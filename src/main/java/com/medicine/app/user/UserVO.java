@@ -17,7 +17,7 @@ public class UserVO {
 	private String address; //주소
 	private String uDate; //가입일
 	private String uMailCon; //광고동의
-	private String 	ocrPay; //OCR결제
+	private String 	ocrPay; //OCR결제 0 미결제, 1 결제
 
 
 	public int getuIdx() {

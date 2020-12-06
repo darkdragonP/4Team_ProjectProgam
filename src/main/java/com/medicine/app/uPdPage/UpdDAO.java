@@ -1,6 +1,7 @@
 package com.medicine.app.uPdPage;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +19,15 @@ public class UpdDAO {
 		return sqlSession.selectList("updPage.selectUpdPage");
 	}
 	
+	public void insertUpd(Map<String, Object> vi) {
+		sqlSession.insert("updPage.insertUpd", vi);
+	}
 	
+	public Integer countsuPdPage(int uIdx) {
+		return sqlSession.selectOne("updPage.countsuPdPage", uIdx);
+	}
+
+	public void deleteUpd(Map<String, Object> vi) {
+		sqlSession.delete("updPage.deleteUpd", vi);
+	}
 }

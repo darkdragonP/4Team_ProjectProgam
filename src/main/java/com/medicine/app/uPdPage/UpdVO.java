@@ -6,14 +6,34 @@ import org.springframework.web.multipart.MultipartFile;
 public class UpdVO {
 
 	private int uIdx; // 통합회원코드
+	private int mdIdx; // 약 등록 코드
 	private int ocrIdx; // 약 등록 코드
 	private String ocrSearchDate; // 검색일
 	private String mdName; // 약 이름
 	private String mdContent; // 약 내용
 	private String mdPP_Date; // 조제일자
 	private MultipartFile uploadFile;
+	private String searchResult;
+	
 
 	
+	
+	public int getMdIdx() {
+		return mdIdx;
+	}
+
+	public void setMdIdx(int mdIdx) {
+		this.mdIdx = mdIdx;
+	}
+
+	public String getSearchResult() {
+		return searchResult;
+	}
+
+	public void setSearchResult(String searchResult) {
+		this.searchResult = searchResult;
+	}
+
 	public MultipartFile getUploadFile() {
 		return uploadFile;
 	}

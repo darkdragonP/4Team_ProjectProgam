@@ -136,7 +136,7 @@ div.topLeftBorders a:hover:after {
 						</c:if>
 						<c:if test="${uIdx != null}">
 						<c:if test="${userID != 'admin'}">
-							<li class="nav-item"><a class="nav-link" href="UserMain.do">user page</a></li>
+							<li class="nav-item"><a class="nav-link" href="UserMainPay.do">user page</a></li>
 							</c:if>
 							<c:if test="${userID == 'admin'}">
 								<li class="nav-item"><a class="nav-link" href="adminMain.do">admin page</a></li>

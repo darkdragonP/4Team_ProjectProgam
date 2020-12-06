@@ -78,8 +78,18 @@ public class MedicineServiceImpl implements MedicineService {
 	}
 
 	@Override
-	public int searchCountMedicine2(Map<String, String> vo) {
+	public Integer searchCountMedicine2(Map<String, String> vo) {
 		return medicineDAO.searchCountMedicine2(vo);
+	}
+
+	@Override
+	public Integer searchOcrCountMedicine(String text) {
+		return medicineDAO.searchOcrCountMedicine(text);
+	}
+
+	@Override
+	public List<MedicineVO> searchOcrTextMedicine(String text) {
+		return medicineDAO.searchOcrTextMedicine(text);
 	}
 	
 
