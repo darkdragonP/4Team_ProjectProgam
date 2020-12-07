@@ -46,14 +46,7 @@ public class MedicineDAO {
 	public Integer searchCountMedicine(String text) {
 		return sqlSession.selectOne("medicine.searchCountMedicine", text);
 	}
-	public Integer searchCountMedicine2(Map<String, String> vo) {
+	public int searchCountMedicine2(Map<String, String> vo) {
 		return sqlSession.selectOne("medicine.searchCountMedicine2", vo);
-	}
-	
-	public Integer searchOcrCountMedicine(String text) {
-		return sqlSession.selectOne("medicine.searchCountMedicine2", text);
-	}
-	public List<MedicineVO> searchOcrTextMedicine(String text) {
-		return sqlSession.selectList("medicine.searchOcrTextMedicine", text);
 	}
 }

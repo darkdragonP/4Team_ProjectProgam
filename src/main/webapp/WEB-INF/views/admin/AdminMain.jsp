@@ -39,8 +39,8 @@
 						<li><a href="#type4" id="about-link"><span
 								class="icon solid fa-th"><h6>QnA 관리</h6></span></a></li>
 						<hr>
-						<li><a href="manageBoard.do" id="about-link"><span
-								class="icon solid fa-th"><h6>게시판 관리</h6></span></a></li>
+						<li><a href="#type5" id="about-link"><span
+								class="icon solid fa-th"><h6>결산</h6></span></a></li>
 						<br>
 						<br>
 						<br>

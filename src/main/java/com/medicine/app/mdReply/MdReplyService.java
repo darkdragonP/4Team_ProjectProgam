@@ -8,7 +8,7 @@ import com.medicine.app.medicine.MedicineVO;
 
 public interface MdReplyService {
 	
-	public List<MdReplyVO> selectMdReplyList(String mdIdx);
+	public List<MdReplyVO> selectMdReplyList();
 	public void insertMdReplyList(MdReplyVO vo);
 	public void deleteMdReply(String uReIdx);
 }

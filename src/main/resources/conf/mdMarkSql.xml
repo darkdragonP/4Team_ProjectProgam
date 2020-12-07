@@ -33,13 +33,6 @@
 		SELECT * FROM md_mark where USER_CODE=#{uIdx} and MD_CODE=#{mdIdx}
 	]]>
 	</select>
-	
-	<delete id="deleteMdMark" parameterType="String">
-	<![CDATA[
-		delete from md_Mark where 
-		MD_CODE = #{mdIdx}
-	]]>
-	</delete>
-	
+
 
 </mapper>

@@ -14,15 +14,7 @@ public class BMarkDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	public List<BMarkVO> selectBMark(String bIdx)  {
-		return sqlSession.selectList("bMark.selectBMark",bIdx);
-	}
-	
-	public void insertBMark(BMarkVO vo) {
-		sqlSession.insert("bMark.insertBMark", vo);
-	}
-	
-	public BMarkVO checkBMark(BMarkVO vo) {
-		return sqlSession.selectOne("bMark.checkBMark", vo);
+	public List<BMarkVO> selectBMarkList()  {
+		return sqlSession.selectList("bMark.selectBMarkList");
 	}
 }

@@ -329,8 +329,8 @@
 					<th>작성일</th>
 				</tr>
 			</thead>
-				<tbody>
 			<c:forEach items="${medicineList}" var="medicine">
+				<tbody>
 					<tr>
 						<td>${medicine.mdIdx}</td>
 						<td>${medicine.mdImage}</td>
@@ -340,13 +340,9 @@
 						<td>${medicine.mdHits}</td>
 						<td>${medicine.mdDate}</td>
 					</tr>
-			</c:forEach>
 				</tbody>
+			</c:forEach>
 		</table>
-		<div class="total_page">
-			<span>전체 ${mdBCounts.endPage}</span> <span>Page<strong>${mdBCounts.startPage}</strong>/${mdBCounts.endPage}
-			</span>
-		</div>
 		<ul class="pagination">
 			<c:if test="${mdBCounts.curRange ne 0}">
 				<li class="page-item"><b class="page-link"><a

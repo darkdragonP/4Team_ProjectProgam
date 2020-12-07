@@ -16,8 +16,6 @@
 		<result property="uProfile" column="PROFILE_IMG" />
 		<result property="address" column="ADDRRESS" />
 		<result property="uMailCon" column="UMAIL_CONSENT" />
-		<result property="ocrPay" column="OCR_PAY" />
-		
 	</resultMap>
 
 	<select id="selectUserList" resultMap="userResult">

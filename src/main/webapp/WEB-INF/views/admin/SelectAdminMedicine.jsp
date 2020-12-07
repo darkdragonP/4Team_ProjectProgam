@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="css/main.css?after" />
 <%@ include file="../../../common/top.jsp"%>
 <head>
 <meta charset="EUC-KR">
@@ -11,57 +10,7 @@
 <body>
 
 	<div class="container">
-		<!-- Header -->
-		<div id="header">
 
-			<div class="top">
-
-				<!-- Logo -->
-				<div id="logo">
-					<h1 id="title"></h1>
-				</div>
-
-				<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li><h3>
-								<strong><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약
-									관리&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-							</h3></li>
-						<br>
-						<br>
-						<li><a href="AdminInsertMedicine.do"><span
-								class="icon solid fa-th"><h6>신규 약 추가</h6></span></a></li>
-						<hr>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-
-						<hr>
-
-						<h6>
-							<br> <br> <br>
-							<li><a href="adminMain.do"> 관리자 홈 </a></li>
-						</h6>
-						<li><a href="main.jsp"><h6>메인 홈</h6></a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
 		<!-- Page Content -->
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
@@ -78,28 +27,82 @@
 						<div class="section_wrap ">
 
 							<div id="size_ct" class="size_ct_v2">
-								<p class="thmb_desc">
-								<h3>
-									<strong>${medicine.getMdTitle()}
-								</h3>
-								</strong>
-								</p>
-								<div class="thmb thmb_border">
-									<span class="img_box" style="width: 250px;"> <img
-										src="${medicine.mdImage}" width="500" height="200"
-										alt="${medicine.mdTitle}" />
-										<div class="enlarge">
-											<a href="${medicine.mdImage}" width="300%" height="300%">이미지
-												크게보기</a>
+								<div class="att_type">
+									<div class="inner_att_type">
+										<p class="thmb_desc">
+										<h3>
+											<strong>${medicine.getMdTitle()}
+										</h3>
+										</strong>
+										</p>
+										<div class="thmb thmb_border">
+											<span class="img_box" style="width: 250px;"> <img
+												src="${medicine.mdImage}" width="500" height="200"
+												alt="${medicine.mdTitle}" />
+												<div class="enlarge">
+													<a href="${medicine.mdImage}" width="300%" height="300%">이미지
+														크게보기</a>
+												</div>
+											</span>
 										</div>
-									</span>
+										<div class="wr_tmp_profile">
+											<div class="tmp_profile">
+												<table class="tmp_profile_tb">
+													<colgroup>
+														<col class="tmp_col">
+														<col width="*">
+													</colgroup>
+													<tbody>
+
+
+														<tr>
+															<th scope="row">식약처 분류</th>
+															<td>${medicine.getMdClass()}</td>
+														</tr>
+
+
+														<tr>
+															<th scope="row">구분</th>
+															<td>${medicine.getMdGrade()}</td>
+														</tr>
+
+
+														<tr>
+															<th scope="row">제조(수입) 업체명</th>
+															<td>${medicine.getMdComp()}</td>
+														</tr>
+
+
+														<tr>
+															<th scope="row">제형</th>
+															<td>${medicine.getMdType()}</td>
+														</tr>
+
+
+														<tr>
+															<th scope="row">모양</th>
+															<td>${medicine.getMdShape()}</td>
+														</tr>
+
+
+														<tr>
+															<th scope="row">색상</th>
+															<td>${medicine.getMdColor()}</td>
+														</tr>
+														<tr>
+															<th scope="row">약 분할선</th>
+															<td>${medicine.getMdLine()}</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+
+
+
+									</div>
 								</div>
 								<br>
-								<p class="txt">
-									<strong>· 식약처 분류 : </strong>${medicine.getMdClass()} <br>
-									<strong>· 구분 : </strong> ${medicine.getMdGrade()} <br> <strong>·
-										제조(수입) 업체명 : </strong> ${medicine.getMdComp()}
-								</p>
 								<hr>
 								<br>
 								<h3 class="stress" id="TABLE_OF_CONTENT1">외형정보</h3>
@@ -219,14 +222,10 @@
 		</div>
 
 	</div>
-
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="js/jquery.scrolly.min.js"></script>
-	<script src="js/jquery.scrollex.min.js"></script>
-	<script src="js/browser.min.js"></script>
-	<script src="js/breakpoints.min.js"></script>
-	<script src="js/util.js"></script>
-	<script src="js/main.js"></script>
+	<!-- /.row -->
+	<!-- /.container -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/star.js"></script>
 </body>
 <!--footer starts from here-->
 <%@ include file="../../../common/bottom.jsp"%>

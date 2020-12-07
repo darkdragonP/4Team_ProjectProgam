@@ -5,53 +5,16 @@
 <mapper namespace="bReply">
 	<resultMap id="BReplyResult" type="BReplyVO">
 		<result property="uReIdx" column="USER_REPLY_NO" />
-		<result property="bIdx" column="BOARD_CODE" />
+		<result property="BIdx" column="BOARD_CODE" />
 		<result property="uIdx" column="USER_CODE" />
 		<result property="uReContent" column="USER_REPLY" />
 		<result property="uReDate" column="REPLY_DATE" />
-		<result property="uName" column="NAME" />
 	</resultMap>
-	<select id="selectBReplyList" parameterType="String" resultMap="BReplyResult">
+	<select id="selectBReplyList" parameterType="BReplyVO" resultMap="BReplyResult">
 	<![CDATA[
-		SELECT 
-		b_Reply.USER_CODE, 
-		b_Reply.BOARD_CODE,
-		b_Reply.USER_REPLY, 
-		b_Reply.REPLY_DATE, 
-		users.NAME  
-		FROM b_Reply, users
-		where b_Reply.USER_CODE = users.USER_CODE
-		and b_Reply.BOARD_CODE=#{bIdx}
-		order by USER_REPLY_NO desc
+		SELECT * FROM b_reply
 	]]>
 	</select>
-	<insert id="insertBReplyList" parameterType="BReplyVO">
-	<![CDATA[
-		insert into b_reply(USER_REPLY_NO, USER_CODE, BOARD_CODE, USER_REPLY,REPLY_DATE)
-		values(BOARD_RPY_SEQ.NEXTVAL, 
-		#{uIdx}, 
-		#{bIdx}, 
-		#{uReContent},
-		sysdate 
-		)
-	]]>
-	</insert>
-	
-	<delete id="deleteBReply" parameterType="String">
-	<![CDATA[
-		delete from b_Reply where 
-		USER_REPLY_NO = #{uReIdx}
-	]]>
-	</delete>
-	
-	<delete id="delBReply" parameterType="String">
-	<![CDATA[
-		delete from b_Reply where 
-		BOARD_CODE = #{bIdx}
-	]]>
-	</delete>
-	
-	
 	
 	
 </mapper>

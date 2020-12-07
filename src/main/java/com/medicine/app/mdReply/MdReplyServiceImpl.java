@@ -11,8 +11,8 @@ public class MdReplyServiceImpl implements MdReplyService {
 	private MdreplyDAO mdreplyDAO;
 
 	@Override
-	public List<MdReplyVO> selectMdReplyList(String mdIdx) {
-		return mdreplyDAO.selectMdReplyList(mdIdx);
+	public List<MdReplyVO> selectMdReplyList() {
+		return mdreplyDAO.selectMdReplyList();
 	}
 
 	@Override

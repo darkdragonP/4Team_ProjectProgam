@@ -40,8 +40,6 @@ public class MdBoardCounts {
 	private int curRange;
 	
 	private String textMedicine;
-	
-	private String textBoard;
 
 	private String mdShape;
 	
@@ -51,45 +49,9 @@ public class MdBoardCounts {
 	
 	private String mdLine;
 	
-	private String startC;
-	
-	private String endC;
-	
-	private String searchCnd;
 	
 	
-	public String getSearchCnd() {
-		return searchCnd;
-	}
-
-	public void setSearchCnd(String searchCnd) {
-		this.searchCnd = searchCnd;
-	}
-
-	public String getTextBoard() {
-		return textBoard;
-	}
-
-	public void setTextBoard(String textBoard) {
-		this.textBoard = textBoard;
-	}
-
-	public String getStartC() {
-		return startC;
-	}
-
-	public void setStartC(String startC) {
-		this.startC = startC;
-	}
-
-	public String getEndC() {
-		return endC;
-	}
-
-	public void setEndC(String endC) {
-		this.endC = endC;
-	}
-
+	
 	public String getMdShape() {
 		return mdShape;
 	}
@@ -122,8 +84,6 @@ public class MdBoardCounts {
 		this.mdLine = mdLine;
 	}
 
-	
-	
 	public String getTextMedicine() {
 		return textMedicine;
 	}

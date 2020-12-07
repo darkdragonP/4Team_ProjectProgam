@@ -196,15 +196,4 @@
 		MD_RATING = #{mdRating}  where MD_CODE=${mdIdx}
 		]]>
 	</update>
-	<select id="searchOcrTextMedicine" parameterType="String"
-		resultMap="medicineResult">
-	<![CDATA[
-	select MD_TITLE, MD_CODE from MEDICINE where 
-		MD_TITLE like '%' || #{text} || '%'
-		order by MD_CODE desc
-	]]>
-	</select>
-
-
-
 </mapper>

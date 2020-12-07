@@ -6,8 +6,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.medicine.app.mdReply.MdReplyVO;
-
 
 @Repository
 public class BReplyDAO {
@@ -16,17 +14,7 @@ public class BReplyDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
-	public List<BReplyVO> selectBReplyList(String bIdx)  {
-		return sqlSession.selectList("bReply.selectBReplyList", bIdx);
+	public List<BReplyVO> selectBReplyList()  {
+		return sqlSession.selectList("bReply.selectBReplyList");
 	}
-	
-	public void insertBReplyList(BReplyVO vo) {
-	sqlSession.insert("bReply.insertBReplyList", vo);
-		
-	}
-	public void deleteBReply(String uReIdx) {
-		sqlSession.delete("bReply.deleteBReply", uReIdx);
-	}
-	
-
 }

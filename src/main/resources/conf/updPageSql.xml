@@ -5,41 +5,18 @@
 <mapper namespace="updPage">
 	<resultMap id="updResult" type="UpdVO">
 		<result property="uIdx" column="USER_CODE" />
-		<result property="mdIdx" column="MD_CODE" />
 		<result property="ocrIdx" column="OCR_IDX" />
 		<result property="ocrSearchDate" column="OCR_SEARCH_DATE" />
 		<result property="mdName" column="MD_NAME" />
 		<result property="mdContent" column="MD_CONTENT" />
 		<result property="mdPP_Date" column="MD_PP_DATE" />
 	</resultMap>
-
-	<select id="selectUpdPage" resultMap="updResult">
+	
+	<select id="selectUpdPage"  resultMap="updResult">
 	<![CDATA[
-		SELECT * FROM user_pd_page where ROWNUM <=10
+		SELECT * FROM user_pd_page
 	]]>
 	</select>
-
-	<select id="insertUpd" parameterType="Map">
-	<![CDATA[
-		insert into 
-		user_pd_page(
-		OCR_IDX, USER_CODE, MD_CODE, OCR_SEARCH_DATE, MD_NAME) values 
-		(OCR_SEQ.NEXTVAL, #{uIdx}, #{mdIdx}, sysdate, #{MdName})
-	]]>
-	</select>
-
-	<select id="countsuPdPage" parameterType="Integer" resultType="Integer">
-	<![CDATA[
-		SELECT count(OCR_IDX) FROM user_pd_page where USER_CODE=#{uIdx}
-		order by OCR_IDX desc
-	]]>
-	</select>
-
-	<delete id="deleteUpd" parameterType="map">
-	<![CDATA[
-		delete from user_pd_page where USER_CODE = #{uIdx} and
-		OCR_IDX = #{ocrIdx}
-	]]>
-	</delete>
-
+	
+	
 </mapper>

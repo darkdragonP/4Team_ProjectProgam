@@ -12,18 +12,18 @@
 		<result property="uName" column="NAME" />		
 	</resultMap>
 	
-	<select id="selectMdReplyList" parameterType="String" resultMap="mdReplyResult">
+	<select id="selectMdReplyList" resultMap="mdReplyResult">
 	<![CDATA[
 		SELECT 
 		md_reply.USER_REPLY_NO,
 		md_reply.USER_CODE, 
-		md_reply.MD_CODE, 
+		medicine.MD_CODE, 
 		md_reply.USER_REPLY, 
 		md_reply.REPLY_DATE, 
 		users.name  
-		FROM md_reply, users
+		FROM md_reply, users, medicine
 		where md_reply.USER_CODE = users.USER_CODE
-		and md_reply.MD_CODE=#{mdIdx}
+		and md_reply.MD_CODE=medicine.MD_CODE
 		order by USER_REPLY_NO desc
 		
 	]]>
@@ -45,13 +45,8 @@
 	<![CDATA[
 		delete from md_Reply where 
 		USER_REPLY_NO = #{uReIdx}
-	]]>
-	</delete>
-	
-	<delete id="delMdReply" parameterType="String">
-	<![CDATA[
-		delete from md_Reply where 
-		MD_CODE = #{mdIdx}
+		
+		
 	]]>
 	</delete>
 	
