@@ -1,5 +1,6 @@
 package com.medicine.app.user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -116,7 +117,7 @@ public class UserController {
 		System.out.println("userdetail회원정보페이지 이동");
 
 		int uIdx = (Integer) session.getAttribute("uIdx");
-		vo.setuIdx(uIdx);
+		vo.setUIdx(uIdx);
 		System.out.println(uIdx);
 		UserVO selectUser = userService.userDetail(vo);
 
@@ -163,7 +164,7 @@ public class UserController {
 	public ModelAndView realUserDelete(UserVO vo, HttpServletRequest request, HttpSession session, ModelAndView mv) {
 		System.out.println("진짜삭제한다");
 		int uIdx = (Integer) session.getAttribute("uIdx");
-		vo.setuIdx(uIdx);
+		vo.setUIdx(uIdx);
 		System.out.println(uIdx);
 
 		UserVO selectUser = userService.delete_user(vo);
@@ -194,7 +195,7 @@ public class UserController {
 		UserVO user = userService.login(vo);
 
 		if (user != null) {
-			session.setAttribute("uIdx", user.getuIdx());
+			session.setAttribute("uIdx", user.getUIdx());
 			session.setAttribute("userID", user.getUserID());
 			session.setAttribute("userPW", user.getUserPW());
 			mv.setViewName("../../main");
@@ -221,6 +222,7 @@ public class UserController {
 	public @ResponseBody String idoverlap(@RequestParam("userID") String id) {
 		// json형식으로 보낸걸 받기위해 사용 : @ResponseBody
 		String resultMsg = userService.idoverlap(id);
+		System.out.println(resultMsg);
 		return resultMsg;
 	}
 
@@ -242,4 +244,40 @@ public class UserController {
 		System.out.println(findPw);
 		return PWlList.get(0);
 	}
+	//네이버 로그인 오픈
+	@RequestMapping(value = "/naverlogin.do")
+	public String NaverCallback(HttpSession session)throws IOException {
+		System.out.println("네이버 로그인 ");
+		session.invalidate();
+		return "redirect:login2.do";
+	}
+	
+	// 네이버 로그인
+	@RequestMapping(value = "/naverpopup.do", method = RequestMethod.POST)
+	public ModelAndView NaverLogin(UserVO vo, HttpServletRequest request, HttpSession session, ModelAndView mv) {
+		System.out.println("네이버 로그인실행");
+		System.out.println(vo);
+		String id = request.getParameter("naverid");
+		String password = request.getParameter("naverpw");
+
+		vo.setUserID(id);
+		vo.setUserPW(password);
+
+		System.out.println("아이디 : " + vo.getUserID());
+		System.out.println("비밀번호 : " + vo.getUserPW());
+
+		UserVO user = userService.login(vo);
+
+		if (user != null) {
+			session.setAttribute("uIdx", user.getUIdx());
+			session.setAttribute("userID", user.getUserID());
+			session.setAttribute("userPW", user.getUserPW());
+			mv.setViewName("../../main");
+			return mv;
+		} else {
+			mv.setViewName("/user/login");
+			return mv;
+		}
+	}
+	
 }

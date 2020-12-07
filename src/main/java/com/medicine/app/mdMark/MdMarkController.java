@@ -33,7 +33,7 @@ public class MdMarkController {
 		System.out.println("insertMdMark 메소드 실행.");
 		HttpSession session = request.getSession();
 		int uidx =(Integer)session.getAttribute("uIdx");
-		vo.setuIdx(uidx);
+		vo.setUIdx(uidx);
 		String mdIdx = Integer.toString(vo.getMdIdx());
 		if (mdMarkService.checkMdMark(vo) == null) {
 			mdMarkService.insertMdMark(vo);

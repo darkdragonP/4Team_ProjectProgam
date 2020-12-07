@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.medicine.app.MdBoardCounts;
 
 
-
 @Service("MedicineService")
 public class MedicineServiceImpl implements MedicineService {
 	@Autowired

@@ -28,7 +28,7 @@ public class MdReplyController {
 		System.out.println("insertmdReply 댓글 추가 메소드 실행.");
 		HttpSession session = request.getSession();
 		int uIdx = (Integer) session.getAttribute("uIdx");
-		vo.setuIdx(uIdx);
+		vo.setUIdx(uIdx);
 		String mdIdx = Integer.toString(vo.getMdIdx());
 
 		mdReplyService.insertMdReplyList(vo);
@@ -44,7 +44,7 @@ public class MdReplyController {
 	@RequestMapping(value = "/deleteMdReply.do")
 	public ModelAndView deleteMdReply(MdReplyVO vo, HttpServletRequest request, ModelAndView mv) {
 		System.out.println("deleteMdReply 댓글 제거 메소드 실행.");
-		String uReIdx = Integer.toString(vo.getuReIdx());
+		String uReIdx = Integer.toString(vo.getUReIdx());
 		String mdIdx = Integer.toString(vo.getMdIdx());
 
 		mdReplyService.deleteMdReply(uReIdx);
