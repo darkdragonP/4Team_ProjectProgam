@@ -1,16 +1,33 @@
 /* Made with love by Mutiullah Samim*/
+
 html,
 body {
   font-family: "Numans", sans-serif;
 }
+a {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
 
+.row {
+    font-size: 15px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
 .container {
   height: 100%;
   align-content: center;
 }
 
 .card {
-  height: 450px;
+  height: 570px;
   margin-top: auto;
   margin-bottom: auto;
   width: 400px;
@@ -98,8 +115,34 @@ input:focus {
 
 .links {
   color: #0b4877;
+  
+    font-size: 14px;
 }
 
-.links a {
-  margin-left: 4px;
+
+.card-body > img {
+margin-left:20px;
+    width: 310px;
+    margin-top: -8px;
+}
+
+#naver{
+	margin-top:-12px;
+}
+
+#kakao{
+	margin-top:-12px;
+}
+
+#google{
+	margin-top:-12px;
+}
+
+.flex{
+	margin-left:350px;
+}
+
+.log{
+	margin-left:650px;
+    font-size: 1.2rem;
 }
