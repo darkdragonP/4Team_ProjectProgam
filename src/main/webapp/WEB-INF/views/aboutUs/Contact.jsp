@@ -25,13 +25,14 @@
 	<!--컨택트 푸터부분입니다.-->
 	<div class="container" data-aos="fade-up">
 		<!--검색창-->
-		<form class="form-inline">
-			<input class="form-control" type="search" placeholder="Search"
-				aria-label="Search"> <br>
-			<br>
-			<br>
-			<button class="btn btn-outline-success" type="submit">Search</button>
-		</form>
+		<div class="form-inline">
+				<input class="form-control" type="search" placeholder="Search"
+					id="search1" aria-label="Search"> <br> <br> <br>
+
+				<button class="btn btn-outline-success" id="postYourAdd"
+					onclick="postYourAdd()">Search</button>
+
+		</div>
 		<!--/검색창-->
 
 
@@ -43,17 +44,15 @@
 		</div>
 
 		<div data-aos="fade-up">
-			<iframe style="border: 0; width: 100%; height: 400px;"
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.2391305310075!2d126.87645931530923!3d37.47868297981447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b61fcb47b582b%3A0x536ee2f714c1e156!2z7JuU65Oc66mU66W065SU7JWZ67Kk7LKY7IS87YSwMuywqA!5e0!3m2!1sko!2skr!4v1604467273254!5m2!1sko!2skr"
-				width="100px" height="450" frameborder="50" style="border:100;"
-				allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-			</iframe>
-
+			<iframe class="mapmap" id="map" width="600" height="450"
+					frameborder="0" style="border: 0"
+					src="https://www.google.com/maps/embed/v1/place?q=가산디지털단지+약국&key=AIzaSyDTTytLEEbp91KBVn8jBF-NGiihKLvQQ_M"></iframe>
+			
 		</div>
 	</div>
 </section>
 
-</main>
+
 
 
 
