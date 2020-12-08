@@ -59,12 +59,12 @@
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="center">
-              <a href="#"><img src="images/mobile-payment.svg" style="width:100px; height:100px;"></a>
+              <a href="UserMainPay.do"><img src="images/star.png" style="width:100px; height:100px;"></a>
               <!-- 결제페이지로 이동 링크 삽입 -->
             </div>
             <br>
-            <h3>유료회원이 아니신가요?</h3>
-            <p class="lead mb-0">결제 후 처방전 등록, 약모양 검색 등 더 많은 서비스를 만날 수 있습니다. </p>
+            <h3>VIP 회원님 환영합니다.</h3>
+            <p class="lead mb-0">회원님은 처방전 등록, 약 모양 검색을 이용할 수 있습니다.</p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -80,13 +80,12 @@
       </div>
     </div>
   </section>
+
   
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  
 
 
 <%@ include file="common/bottom.jsp"%>

@@ -1,5 +1,6 @@
 package com.medicine.app.user;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,9 +36,30 @@ public class UserController {
 		return mv;
 	}
 
+	@RequestMapping(value = "/UserMain.do")
+	public ModelAndView UserMain(HttpServletRequest request, ModelAndView mv) {
+		System.out.println("UserMain-관리자페이지로의 단순이동");
+		mv.setViewName("/user/UserMain");
+		return mv;
+	}
+
+	@RequestMapping(value = "/UserOcrSearch.do")
+	public ModelAndView UserOcrSearch(HttpServletRequest request, ModelAndView mv) {
+		System.out.println("UserOcrSearch-OCR페이지로의 단순이동");
+		mv.setViewName("/user/UserOcrSearch");
+		return mv;
+	}
+
+	@RequestMapping(value = "/UserOcrTextSearch.do")
+	public ModelAndView UserOcrTextSearch(HttpServletRequest request, ModelAndView mv) {
+		System.out.println("UserOcrTextSearch -[사용자페이지]OCR 상세조회 페이지로의 단순이동");
+		mv.setViewName("/user/UserOcrTextSearch");
+		return mv;
+	}
+
 	@RequestMapping(value = "/findID.do")
 	public ModelAndView exercise1(HttpServletRequest request, ModelAndView mv) {
-		System.out.println("findID 임시 메소드 실행");
+		System.out.println("findID �엫�떆 硫붿냼�뱶 �떎�뻾");
 
 		mv.setViewName("/user/findID");
 		return mv;
@@ -45,7 +67,7 @@ public class UserController {
 
 	@RequestMapping(value = "/findPW.do")
 	public ModelAndView exercise4(HttpServletRequest request, ModelAndView mv) {
-		System.out.println("findPW 임시 메소드 실행");
+		System.out.println("findPW �엫�떆 硫붿냼�뱶 �떎�뻾");
 
 		mv.setViewName("/user/findPW");
 		return mv;
@@ -53,7 +75,7 @@ public class UserController {
 
 	@RequestMapping(value = "/login.do")
 	public ModelAndView exercise2(HttpServletRequest request, ModelAndView mv) {
-		System.out.println("login 임시 메소드 실행.");
+		System.out.println("login �엫�떆 硫붿냼�뱶 �떎�뻾.");
 
 		mv.setViewName("/user/login");
 		return mv;
@@ -61,16 +83,31 @@ public class UserController {
 
 	@RequestMapping(value = "/register.do")
 	public ModelAndView exercise3(HttpServletRequest request, ModelAndView mv) {
-		System.out.println("register 임시 메소드 실행.");
+		System.out.println("register �엫�떆 硫붿냼�뱶 �떎�뻾.");
 
 		mv.setViewName("/user/register");
 		return mv;		
 	}
 
-	// 회원정보
+	@RequestMapping(value = "/UserMediCompare.do")
+	public ModelAndView exercise5(HttpServletRequest request, ModelAndView mv) {
+		System.out.println("UserMediCompare 임시 메소드 실행.");
+		
+		mv.setViewName("/user/UserMediCompare");
+		return mv;		
+	}
+	@RequestMapping(value = "/UserMedicineDetail.do")
+	public ModelAndView exercise6(HttpServletRequest request, ModelAndView mv) {
+		System.out.println("처방전 비교하기에서 사용되는 처방전 디테일페이지입니다.");
+		
+		mv.setViewName("/user/UserMedicineDetail");
+		return mv;		
+	}
+
+	// �쉶�썝�젙蹂�
 	@RequestMapping(value = "/detailUser.do")
 	public ModelAndView userdetail(UserVO vo, HttpServletRequest request, HttpSession session, ModelAndView mv) {
-		System.out.println("userdetail회원정보페이지 이동");
+		System.out.println("userdetail�쉶�썝�젙蹂댄럹�씠吏� �씠�룞");
 
 		int uIdx = (Integer) session.getAttribute("uIdx");
 		vo.setuIdx(uIdx);
@@ -82,10 +119,10 @@ public class UserController {
 		return mv;
 	}
 
-	// 회원가입
+	// �쉶�썝媛��엯
 	@RequestMapping(value = "/insert_Reg.do", method = RequestMethod.POST)
 	public ModelAndView insert_Reg(UserVO vo, HttpServletRequest request, ModelAndView mv) {
-		System.out.println("insert_Reg 메소드 실행");
+		System.out.println("insert_Reg 硫붿냼�뱶 �떎�뻾");
 		System.out.println(vo);
 
 		userService.insert_Reg(vo);
@@ -94,10 +131,10 @@ public class UserController {
 		return mv;
 	}
 
-	// 회원수정
+	// �쉶�썝�닔�젙
 	@RequestMapping(value = "/update_user.do", method = RequestMethod.POST)
 	public ModelAndView update_user(UserVO vo, HttpServletRequest request, ModelAndView mv) {
-		System.out.println("update_user 메소드 실행");
+		System.out.println("update_user 硫붿냼�뱶 �떎�뻾");
 		System.out.println(vo);
 		userService.update_user(vo);
 
@@ -105,20 +142,20 @@ public class UserController {
 		return mv;
 	}
 
-	// 회원삭제 페이지 이동
+	// �쉶�썝�궘�젣 �럹�씠吏� �씠�룞
 	@RequestMapping(value = "/userDelete.do", method = RequestMethod.GET)
 	public ModelAndView userDelete(UserVO vo, HttpServletRequest request, ModelAndView mv) {
-		System.out.println("userDelete 메소드 실행");
+		System.out.println("userDelete 硫붿냼�뱶 �떎�뻾");
 		System.out.println(vo);
 
 		mv.setViewName("user/userDelete");
 		return mv;
 	}
 
-	// 진짜 회원삭제
+	// 吏꾩쭨 �쉶�썝�궘�젣
 	@RequestMapping(value = "/realUserDelete.do", method = RequestMethod.POST)
 	public ModelAndView realUserDelete(UserVO vo, HttpServletRequest request, HttpSession session, ModelAndView mv) {
-		System.out.println("진짜삭제한다");
+		System.out.println("吏꾩쭨�궘�젣�븳�떎");
 		int uIdx = (Integer) session.getAttribute("uIdx");
 		vo.setuIdx(uIdx);
 		System.out.println(uIdx);
@@ -134,10 +171,10 @@ public class UserController {
 		return mv;
 	}
 
-	// 로그인
+	// 濡쒓렇�씤
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public ModelAndView login(UserVO vo, HttpServletRequest request, HttpSession session, ModelAndView mv) {
-		System.out.println("로그인실행");
+		System.out.println("濡쒓렇�씤�떎�뻾");
 		System.out.println(vo);
 		String id = request.getParameter("userID");
 		String password = request.getParameter("userPW");
@@ -145,8 +182,8 @@ public class UserController {
 		vo.setUserID(id);
 		vo.setUserPW(password);
 
-		System.out.println("아이디 : " + vo.getUserID());
-		System.out.println("비밀번호 : " + vo.getUserPW());
+		System.out.println("�븘�씠�뵒 : " + vo.getUserID());
+		System.out.println("鍮꾨�踰덊샇 : " + vo.getUserPW());
 
 		UserVO user = userService.login(vo);
 
@@ -162,7 +199,7 @@ public class UserController {
 		}
 	}
 
-	// 로그아웃
+	// 濡쒓렇�븘�썐
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest request, HttpSession session) {
 		if (session != null)
@@ -173,15 +210,16 @@ public class UserController {
 		return "../../main";
 	}
 
-	// 아이디 중복 확인
+	// �븘�씠�뵒 以묐났 �솗�씤
 	@RequestMapping(value = "idoverlap")
 	public @ResponseBody String idoverlap(@RequestParam("userID") String id) {
-		// json형식으로 보낸걸 받기위해 사용 : @ResponseBody
+		// json�삎�떇�쑝濡� 蹂대궦嫄� 諛쏄린�쐞�빐 �궗�슜 : @ResponseBody
 		String resultMsg = userService.idoverlap(id);
+		System.out.println(resultMsg);
 		return resultMsg;
 	}
 
-	// 아이디 찾기
+	// �븘�씠�뵒 李얘린
 	@ResponseBody
 	@RequestMapping(value = "findingId.do", method = RequestMethod.POST, produces = "application/text; charset=utf-8")
 	public String findingId(UserVO vo, Model model){
@@ -190,7 +228,7 @@ public class UserController {
 		System.out.println(findId);
 		return IDlList.get(0);
 	}
-	// 비밀번호 찾기
+	// 鍮꾨�踰덊샇 李얘린
 	@ResponseBody
 	@RequestMapping(value = "findingPw.do", method = RequestMethod.POST, produces = "application/text; charset=utf-8")
 	public String findingPw(UserVO vo, Model model){
@@ -199,4 +237,40 @@ public class UserController {
 		System.out.println(findPw);
 		return PWlList.get(0);
 	}
+
+	//네이버 로그인 오픈
+		@RequestMapping(value = "/naverlogin.do")
+		public String NaverCallback(HttpSession session)throws IOException {
+			System.out.println("네이버 로그인 ");
+			session.invalidate();
+			return "redirect:login2.do";
+		}
+		
+		// 네이버 로그인
+		@RequestMapping(value = "/naverpopup.do", method = RequestMethod.POST)
+		public ModelAndView NaverLogin(UserVO vo, HttpServletRequest request, HttpSession session, ModelAndView mv) {
+			System.out.println("네이버 로그인실행");
+			System.out.println(vo);
+			String id = request.getParameter("naverid");
+			String password = request.getParameter("naverpw");
+
+			vo.setUserID(id);
+			vo.setUserPW(password);
+
+			System.out.println("아이디 : " + vo.getUserID());
+			System.out.println("비밀번호 : " + vo.getUserPW());
+
+			UserVO user = userService.login(vo);
+
+			if (user != null) {
+				session.setAttribute("uIdx", user.getuIdx());
+				session.setAttribute("userID", user.getUserID());
+				session.setAttribute("userPW", user.getUserPW());
+				mv.setViewName("../../main");
+				return mv;
+			} else {
+				mv.setViewName("/user/login");
+				return mv;
+			}
+		}
 }

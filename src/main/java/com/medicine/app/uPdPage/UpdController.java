@@ -40,7 +40,7 @@ public class UpdController {
 	public ModelAndView UserMainPay(@RequestParam(defaultValue = "1") int curPage,
 			@RequestParam(defaultValue = "0") int curRange, @RequestParam(defaultValue = "0") int result,
 			@RequestParam(defaultValue = "1") int startp, ModelAndView mv, HttpServletRequest request) {
-		System.out.println("UserMainPay-리스트 이동");
+		System.out.println("UserMainPay-由ъ뒪�듃 �씠�룞");
 		HttpSession session = request.getSession();
 		int uIdx = (Integer) session.getAttribute("uIdx");
 		UserVO vi = new UserVO();
@@ -49,11 +49,9 @@ public class UpdController {
 
 		int listCnt = updService.countsuPdPage(uIdx);
 		MdBoardCounts mdBCounts = new MdBoardCounts();
-		
-		
 		mdBCounts.setListCnt(listCnt);
 		if (listCnt == 0) {
-			System.out.println("일치하는 정보가 없습니다.");
+			System.out.println("�벑濡앺븯�떊 �궡�뿭�씠 �뾾�뒿�땲�떎.");
 		} else {
 			mdBCounts.setPage(curPage, startp, curRange);
 			if (result == 1) {
@@ -62,12 +60,12 @@ public class UpdController {
 			} else if (result == 2) {
 				mdBCounts.nextSetBlock(curRange);
 			}
-			Map<String, Object> vu = new HashMap<String, Object>();			
+
+			Map<String, Object> vu = new HashMap<String, Object>();
 			vu.put("uIdx", uIdx);
 			vu.put("startIndex", Integer.toString(mdBCounts.getStartIndex()));
 			vu.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
 			List<UpdVO> updList = updService.selectUpdList(vu);
-			System.out.println(updList);
 			mv.addObject("mdBCounts", mdBCounts);
 			mv.addObject("updList", updList);
 		}
@@ -81,7 +79,7 @@ public class UpdController {
 	public ModelAndView InsertUpd(UpdVO vo, ModelAndView mv, HttpServletRequest request) throws IOException {
 		HttpSession session = request.getSession();
 		int uIdx = (Integer) session.getAttribute("uIdx");
-		System.out.println("selectUpdList�޼ҵ� ���� ����.");
+		System.out.println("selectUpdList占쌨소듸옙 占쏙옙占쏙옙 占쏙옙占쏙옙.");
 		System.out.println(vo.getUploadFile().getOriginalFilename());
 		System.out.println("----------------------------------------");
 		GoogleVisionImage test = new GoogleVisionImage();
@@ -94,7 +92,7 @@ public class UpdController {
 			System.out.println("----");
 			List<MedicineVO> selectMedicine = medicineService.searchOcrTextMedicine(j);
 			if (selectMedicine == null) {
-				System.out.println("일치하는 정보가 없습니다.");
+				System.out.println("寃곌낵媛믪씠 �뾾�뒿�땲�떎.");
 			} else {
 				for (MedicineVO i : selectMedicine) {
 					Map<String, Object> vi = new HashMap<String, Object>();
@@ -128,7 +126,7 @@ public class UpdController {
 			@RequestParam(defaultValue = "0") int curRange, @RequestParam(defaultValue = "0") int result,
 			@RequestParam(defaultValue = "1") int startp, ModelAndView mv, HttpServletRequest request, UpdVO vo)
 			throws IOException {
-		System.out.println("SearchOcr-리스트 이동");
+		System.out.println("SearchOcr-由ъ뒪�듃 �씠�룞");
 		GoogleVisionImage test = new GoogleVisionImage();
 		String text = test.onlyText(vo.getUploadFile());
 		List<String> image = test.ImageSearch(vo.getUploadFile());
@@ -159,7 +157,7 @@ public class UpdController {
 		mdBCounts.setListCnt(listCnt);
 		Map<String, Object> vu = new HashMap<String, Object>();
 		if (listCnt == 0) {
-			System.out.println("등록하신 내역이 없습니다.");
+			System.out.println("�벑濡앺븯�떊 �궡�뿭�씠 �뾾�뒿�땲�떎.");
 		} else {
 			mdBCounts.setPage(curPage, startp, curRange);
 			if (result == 1) {
@@ -169,19 +167,18 @@ public class UpdController {
 				mdBCounts.nextSetBlock(curRange);
 			}
 
-
 			vu.put("uIdx", uIdx);
 			vu.put("startIndex", Integer.toString(mdBCounts.getStartIndex()));
 			vu.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
 			vu.put("image", colorResult);
 			List<UpdVO> updList = updService.selectUpdList(vu);
+			mv.addObject("textImage",vu);
+			mv.addObject("searchMdList", searchMdList);
+			mv.addObject("colorResult", colorResult);
 			mv.addObject("mdBCounts", mdBCounts);
 			mv.addObject("updList", updList);
 		}
 		vu.put("text", text);
-		mv.addObject("textImage",vu);
-		mv.addObject("searchMdList", searchMdList);
-		mv.addObject("colorResult", colorResult);
 		mv.addObject("selectUser", selectUser);
 		mv.setViewName("updPage/UserMainPay");
 		return mv;
