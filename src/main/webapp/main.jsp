@@ -8,13 +8,14 @@
 
  			<!-- video 속성값 설정 --> <!-- Text 속성값 설정 --> <!-- button 속성값 설정 -->
  <style> 
-	video#bgvid {
-	position: fixed; right: 0; bottom: 0;
-	min-width: 100%; min-height: 100%;
-	width: auto; height: auto; z-index: -100;
-	background-size: cover;
-	position: relative;
-	}
+	video {
+   position: fixed; right: 0; bottom: 0;
+   max-width: 99.9%;
+   width: 1080; height: auto; z-index: -100;
+   background-size: cover;
+   position: relative;
+   margin-left: 1pt; margin-bottom: -2pt;
+   }	
 			
 	.jb-text { position: absolute; top: 10%; width: 100%; }
     .jb-text p { margin-top: -24px; text-align: center; font-size: 30px; color: rgba(0,0,0,0.15); }
