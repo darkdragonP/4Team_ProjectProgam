@@ -5,18 +5,54 @@
 <mapper namespace="updPage">
 	<resultMap id="updResult" type="UpdVO">
 		<result property="uIdx" column="USER_CODE" />
+		<result property="mdIdx" column="MD_CODE" />
 		<result property="ocrIdx" column="OCR_IDX" />
 		<result property="ocrSearchDate" column="OCR_SEARCH_DATE" />
 		<result property="mdName" column="MD_NAME" />
 		<result property="mdContent" column="MD_CONTENT" />
 		<result property="mdPP_Date" column="MD_PP_DATE" />
 	</resultMap>
-	
-	<select id="selectUpdPage"  resultMap="updResult">
+
+	<select id="selectUpdPage" parameterType="map" resultMap="updResult">
 	<![CDATA[
-		SELECT * FROM user_pd_page
+		select *
+		from (select ROWNUM as rnum, A.*
+		from (SELECT 
+		user_pd_page.USER_CODE,
+		user_pd_page.MD_CODE,
+		user_pd_page.OCR_IDX,
+		user_pd_page.OCR_SEARCH_DATE,
+		user_pd_page.MD_NAME,
+		user_pd_page.MD_CONTENT,
+		user_pd_page.MD_PP_DATE
+		FROM user_pd_page
+		where user_pd_page.USER_CODE = #{uIdx}
+		order by OCR_IDX desc) A)
+		where rnum >= #{startIndex} and rnum <= #{endIndex}
 	]]>
 	</select>
-	
-	
+
+	<select id="insertUpd" parameterType="Map">
+	<![CDATA[
+		insert into 
+		user_pd_page(
+		OCR_IDX, USER_CODE, MD_CODE, OCR_SEARCH_DATE, MD_NAME) values 
+		(OCR_SEQ.NEXTVAL, #{uIdx}, #{mdIdx}, sysdate, #{MdName})
+	]]>
+	</select>
+
+	<select id="countsuPdPage" parameterType="Integer" resultType="Integer">
+	<![CDATA[
+		SELECT count(OCR_IDX) FROM user_pd_page where USER_CODE=#{uIdx}
+		order by OCR_IDX desc
+	]]>
+	</select>
+
+	<delete id="deleteUpd" parameterType="map">
+	<![CDATA[
+		delete from user_pd_page where USER_CODE = #{uIdx} and
+		OCR_IDX = #{ocrIdx}
+	]]>
+	</delete>
+
 </mapper>

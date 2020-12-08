@@ -7,13 +7,17 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.medicine.app.MdBoardCounts;
+import com.medicine.app.board.BoardService;
+import com.medicine.app.board.BoardVO;
 import com.medicine.app.medicine.MedicineService;
 import com.medicine.app.medicine.MedicineVO;
 
@@ -25,6 +29,9 @@ public class AdminController {
 
 	@Resource(name = "AdminMedicineService")
 	private MedicineService adminService;
+
+	@Autowired
+	private BoardService boardService;
 
 	@RequestMapping(value = "/adminMain.do")
 	public ModelAndView adminMain(HttpServletRequest request) {
@@ -72,28 +79,25 @@ public class AdminController {
 		int listCnt = medicineService.countsMedicine();
 		MdBoardCounts mdBCounts = new MdBoardCounts();
 		mdBCounts.setListCnt(listCnt);
-		mdBCounts.setPage(curPage, startp, curRange);
-		if (result == 1) {
-			mdBCounts.prevSetBlock(curRange);
+		if (listCnt == 0) {
+			System.out.println("현재 자료가 없습니다.");
+		} else {
+			mdBCounts.setPage(curPage, startp, curRange);
+			if (result == 1) {
+				mdBCounts.prevSetBlock(curRange);
 
-		} else if (result == 2) {
-			mdBCounts.nextSetBlock(curRange);
+			} else if (result == 2) {
+				mdBCounts.nextSetBlock(curRange);
+			}
+
+			Map<String, Integer> vo = new HashMap<String, Integer>();
+
+			vo.put("startIndex", mdBCounts.getStartIndex());
+			vo.put("endIndex", mdBCounts.getEndIndex());
+			List<MedicineVO> AdminMedicineList = medicineService.selectMedicineList(vo);
+			mv.addObject("mdBCounts", mdBCounts);
+			mv.addObject("AdminMedicineList", AdminMedicineList);
 		}
-		System.out.println("시작인덱스 :" + mdBCounts.getStartIndex());
-		System.out.println("종료인덱스 :" + mdBCounts.getEndIndex());
-		System.out.println("시작페이지 :" + mdBCounts.getStartPage());
-		System.out.println("현재페이지 :" + mdBCounts.getCurPage());
-		System.out.println("종료페이지 :" + mdBCounts.getEndPage());
-		System.out.println("현재블럭 :" + mdBCounts.getCurRange() + "+1");
-		System.out.println("최종블럭 :" + mdBCounts.getRangeCnt());
-
-		Map<String, Integer> vo = new HashMap<String, Integer>();
-
-		vo.put("startIndex", mdBCounts.getStartIndex());
-		vo.put("endIndex", mdBCounts.getEndIndex());
-		List<MedicineVO> AdminMedicineList = medicineService.selectMedicineList(vo);
-		mv.addObject("mdBCounts", mdBCounts);
-		mv.addObject("AdminMedicineList", AdminMedicineList);
 		mv.setViewName("/admin/AdminMedicineList");
 		return mv;
 	}
@@ -116,14 +120,13 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/InsertMedicine.do")
-	public ModelAndView InsertMedicine(MedicineVO vo, HttpServletRequest request) {
+	public ModelAndView InsertMedicine(MedicineVO vo, HttpServletRequest request, ModelAndView mv) {
 		System.out.println("InsertMedicine-[관리자] 약 추가 메소드 실행.");
 
 		adminService.insertMedicine(vo);
 		String maxMdIdx = adminService.selectMaxMdIdx();
 		MedicineVO medicine = adminService.selectMedicine(maxMdIdx);
 
-		ModelAndView mv = new ModelAndView();
 		mv.addObject("medicine", medicine);
 		mv.setViewName("/admin/SelectAdminMedicine");
 
@@ -154,6 +157,87 @@ public class AdminController {
 		mv.addObject("medicine", medicine);
 		mv.setViewName("/admin/SelectAdminMedicine");
 		// mv.setViewName("redirect:AdminMedicineList.do?uIdx"=);
+		return mv;
+	}
+
+	@RequestMapping(value = "/manageBoard.do")
+	public ModelAndView manageBoard(@RequestParam(defaultValue = "1") int curPage,
+			@RequestParam(defaultValue = "0") int curRange, @RequestParam(defaultValue = "0") int result,
+			@RequestParam(defaultValue = "1") int startp, @RequestParam(defaultValue = "1")String startC, 
+			@RequestParam(defaultValue = "99999")String endC, HttpServletRequest request, ModelAndView mv) {
+		System.out.println("-------------------------------------------");
+		System.out.println("manageBoard [관리자] 특정수부터 특정수까지의 메소드 실행.");
+
+		Map<String, String> vi = new HashMap<String, String>();
+		vi.put("startC", startC);
+		vi.put("endC", endC);
+		int listCnt = boardService.searchCryBoardCounter(vi);
+
+		MdBoardCounts mdBCounts = new MdBoardCounts();
+		mdBCounts.setListCnt(listCnt);
+		if (listCnt == 0) {
+			System.out.println("검색된결과가 없습니다.");
+		} else {
+			mdBCounts.setStartC(startC);
+			mdBCounts.setEndC(endC); 
+			mdBCounts.setPage(curPage, startp, curRange);
+			if (result == 1) {
+				mdBCounts.prevSetBlock(curRange);
+
+			} else if (result == 2) {
+				mdBCounts.nextSetBlock(curRange);
+			}
+			vi.put("startIndex", Integer.toString(mdBCounts.getStartIndex()));
+			vi.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
+			List<BoardVO> boardList = boardService.searchCryBoardList(vi);
+			mv.addObject("mdBCounts", mdBCounts);
+			mv.addObject("boardList", boardList);
+		}
+		mv.setViewName("/admin/AdminManageList");
+
+		return mv;
+
+	}
+
+
+
+	
+	@RequestMapping(value = "/deletCryBoard.do", method = RequestMethod.POST)
+	public ModelAndView deleteBoard(@RequestParam(defaultValue = "1") int curPage,
+			@RequestParam(defaultValue = "0") int curRange, @RequestParam(defaultValue = "0") int result,
+			@RequestParam(defaultValue = "1") int startp, @RequestParam(defaultValue = "1")String startC, 
+			@RequestParam(defaultValue = "99999")String endC, HttpServletRequest request, ModelAndView mv, BoardVO vo) {
+		System.out.println("deleteAdminMedicine[관리자]-특정 게시글 제거 메소드 실행.");
+		String bIdx = Integer.toString(vo.getbIdx());
+		System.out.println(bIdx);
+		boardService.deleteBoard(bIdx);
+
+		Map<String, String> vi = new HashMap<String, String>();
+		vi.put("startC", startC);
+		vi.put("endC", endC);
+		int listCnt = boardService.searchCryBoardCounter(vi);
+
+		MdBoardCounts mdBCounts = new MdBoardCounts();
+		mdBCounts.setListCnt(listCnt);
+		if (listCnt == 0) {
+			System.out.println("검색된결과가 없습니다.");
+		} else {
+			mdBCounts.setStartC(startC);
+			mdBCounts.setEndC(endC); 
+			mdBCounts.setPage(curPage, startp, curRange);
+			if (result == 1) {
+				mdBCounts.prevSetBlock(curRange);
+
+			} else if (result == 2) {
+				mdBCounts.nextSetBlock(curRange);
+			}
+			vi.put("startIndex", Integer.toString(mdBCounts.getStartIndex()));
+			vi.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
+			List<BoardVO> boardList = boardService.searchCryBoardList(vi);
+			mv.addObject("mdBCounts", mdBCounts);
+			mv.addObject("boardList", boardList);
+		}
+		mv.setViewName("/admin/AdminManageList");
 		return mv;
 	}
 

@@ -29,10 +29,14 @@ public interface MedicineService {
 
 	public List<MedicineVO> searchRadioMedicine(Map<String, String> vo);
 
-	public int searchCountMedicine2(Map<String, String> vo);
+	public Integer searchCountMedicine2(Map<String, String> vo);
 	
 	public Integer searchCountMedicine(String text);
 	
+	public Integer searchOcrCountMedicine(String text);
 	
+	public List<MedicineVO> searchOcrTextMedicine(String text);
+	
+	public List<MedicineVO> searchOcrImageMedicine(String text);
 	
 }

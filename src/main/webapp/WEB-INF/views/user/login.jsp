@@ -45,7 +45,7 @@
 					</div>
 				</form>
 				
-			<button type="button" id="naverbtn" class="btn btnEvent">
+			<button type="button" id="naver" class="btn btnEvent">
 				   <img srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile21.uf.tistory.com%2Fimage%2F995B4C375C3D83CA260587" src="https://t1.daumcdn.net/cfile/tistory/995B4C375C3D83CA26" style="max-width:100%;height:auto" width="90%;" height="250" filename="btn_login_naver_long.png" filemime="image/jpeg" ""="" alt="btnImages">
 				   </button>
 				   
@@ -123,13 +123,6 @@ $(function () {
 		             }
 				}
 	})
-	})
-	// 네이버 팝업
-	$("#naverbtn").click(function naver() {
-		var url = "naverlogin.do";
-        var name = "naverLogin";
-        var option = "width = 500, height = 500, top = 100, left = 200, location = no"
-        window.open(url, name, option);
 	})
 	
 })

@@ -11,12 +11,203 @@
 		<result property="bDate" column="BOARD_DATE" />
 		<result property="bHits" column="BOARD_HITS" />
 		<result property="bRating" column="BOARD_RATING" />
-		<result property="bCry" column="BOARD_CRYMINAL" />		
+		<result property="bCry" column="BOARD_CRYMINAL" />
+		<result property="uName" column="NAME" />
 	</resultMap>
-	
-	<select id="selectBoardList" parameterType="BoardVO" resultMap="boardResult">
+
+	<select id="selectBoardList" parameterType="map"
+		resultMap="boardResult">
 	<![CDATA[
-		SELECT * FROM board
+	select *
+		from (select ROWNUM as rnum, A.*
+		from (SELECT 
+		board.USER_CODE,
+		board.BOARD_CODE,
+		board.BOARD_TITLE, 
+		board.BOARD_CONTENTS, 
+		board.BOARD_DATE, 
+		board.BOARD_HITS, 
+		board.BOARD_CRYMINAL,
+		board.BOARD_RATING,
+		users.NAME  
+		FROM board, users
+		where board.USER_CODE = users.USER_CODE
+		order by BOARD_CODE desc) A)
+		where rnum >= #{startIndex} and rnum <=#{endIndex}
+	]]>
+	</select>
+	<select id="boardCounts" resultType="Integer">
+	<![CDATA[
+		select count(BOARD_CODE) from BOARD
+	]]>
+	</select>
+	
+	<select id="selectBoard" parameterType="String"
+		resultMap="boardResult">
+	<![CDATA[
+		SELECT
+		board.USER_CODE,
+		board.BOARD_CODE,
+		board.BOARD_TITLE,
+		board.BOARD_CONTENTS,
+		board.BOARD_DATE,
+		board.BOARD_HITS,
+		board.BOARD_CRYMINAL,
+		board.BOARD_RATING,
+		users.NAME
+		FROM board, users
+		where board.USER_CODE = users.USER_CODE
+        and BOARD_CODE=#{bIdx}
+		
+	]]>
+	</select>
+	
+	<update id="updateHits" parameterType="BoardVO">
+	<![CDATA[
+	
+		update board set BOARD_HITS = #{bHits} where BOARD_CODE=${bIdx}
+	]]>
+	</update>
+	
+	<insert id="insertBoard" parameterType="BoardVO">
+	<![CDATA[
+		insert into 
+		BOARD(
+		BOARD_CODE,USER_CODE, BOARD_TITLE, BOARD_CONTENTS, BOARD_DATE) values 
+		(BOARD_SEQ.NEXTVAL,
+		#{uIdx},
+		#{bTitle, jdbcType=VARCHAR},
+		#{bContents, jdbcType=VARCHAR},
+		sysdate
+		)
+	]]>
+	</insert>
+	<select id="selectMaxBIdx" resultType="String">
+	<![CDATA[
+		select max(BOARD_CODE) from board 
+	]]>
+	</select>
+	
+	<delete id="deleteBoard" parameterType="String">
+	<![CDATA[
+		delete from BOARD where BOARD_CODE = #{bIdx} 
+	]]>
+	</delete>
+	
+		<update id="updateBoard" parameterType="BoardVO">
+	<![CDATA[
+		update board set 
+		BOARD_TITLE = #{bTitle, jdbcType=VARCHAR},
+		BOARD_CONTENTS = #{bContents, jdbcType=VARCHAR},
+		BOARD_DATE = sysdate
+		
+		 where BOARD_CODE=${bIdx} 
+	]]>
+	</update>
+	
+	<update id="updateBRating" parameterType="BoardVO">
+	<![CDATA[
+		update board set
+		BOARD_RATING = #{bRating}  where BOARD_CODE=${bIdx}
+		]]>
+	</update>
+	
+	<update id="updateBCry" parameterType="BoardVO">
+	<![CDATA[
+		update board set
+		BOARD_CRYMINAL = #{bCry}  where BOARD_CODE=${bIdx}
+		]]>
+	</update>
+	
+	<select id="selectCryBoardList" parameterType="map"
+		resultMap="boardResult">
+	<![CDATA[
+	select *
+		from (select ROWNUM as rnum, A.*
+		from (SELECT
+		board.USER_CODE,
+		board.BOARD_CODE,
+		board.BOARD_TITLE,
+		board.BOARD_CONTENTS,
+		board.BOARD_DATE,
+		board.BOARD_HITS,
+		board.BOARD_CRYMINAL,
+		board.BOARD_RATING,
+		users.NAME
+		FROM board, users
+		where board.USER_CODE = users.USER_CODE
+		and board.BOARD_CRYMINAL>=1
+		order by BOARD_CRYMINAL desc) A)
+		where rnum >= #{startIndex} and rnum <=#{endIndex}
+	]]>
+	</select>
+	
+		<select id="searchCryBoardList" parameterType="map"
+		resultMap="boardResult">
+	<![CDATA[
+	select *
+		from (select ROWNUM as rnum, A.*
+		from (SELECT
+		board.USER_CODE,
+		board.BOARD_CODE,
+		board.BOARD_TITLE,
+		board.BOARD_CONTENTS,
+		board.BOARD_DATE,
+		board.BOARD_HITS,
+		board.BOARD_CRYMINAL,
+		board.BOARD_RATING,
+		users.NAME
+		FROM board, users
+		where board.USER_CODE = users.USER_CODE
+		and board.BOARD_CRYMINAL>=#{startC} and board.BOARD_CRYMINAL<=#{endC} 
+		order by BOARD_CRYMINAL desc) A)
+		where rnum >= #{startIndex} and rnum <=#{endIndex}
+	]]>
+	</select>
+	<select id="searchCryBoardCounter" parameterType="map" resultType="Integer">
+	<![CDATA[
+		select count(BOARD_CODE) 
+		from BOARD
+		where board.BOARD_CRYMINAL>=#{startC} and board.BOARD_CRYMINAL<=#{endC}  
+	]]>
+	</select>
+	
+	
+	
+	<select id="searchCountsBoard" parameterType="map" resultType="Integer">
+	<![CDATA[
+		select count(board_code)
+		from (SELECT
+		board.BOARD_CODE,
+		users.NAME
+		FROM board, users
+		where board.USER_CODE = users.USER_CODE
+        and ${searchCnd} like '%' || #{textBoard} || '%'
+        )
+	]]>
+	</select>
+
+	 
+		<select id="selectsearctBoardList" parameterType="map"
+		resultMap="boardResult">
+	<![CDATA[
+	select *
+		from (select ROWNUM as rnum, A.*
+		from (SELECT
+		board.USER_CODE,
+		board.BOARD_CODE,
+		board.BOARD_TITLE,
+		board.BOARD_CONTENTS,
+		board.BOARD_DATE,
+		board.BOARD_HITS,
+		board.BOARD_CRYMINAL,
+		board.BOARD_RATING,
+		users.NAME
+		FROM board, users
+		where board.USER_CODE = users.USER_CODE
+        and ${searchCnd} like '%' || #{textBoard} || '%' 
+		order by BOARD_CODE desc) A)
+		where rnum >= #{startIndex} and rnum <=#{endIndex}
 	]]>
 	</select>
 	

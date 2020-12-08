@@ -16,7 +16,7 @@
     <!-- Root Context: defines shared resources visible to all other web components -->
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
-    <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></property>
+    <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
     <property name="username" value="HOMEDICINE"></property>
     <property name="password" value="hd1234"></property>
 </bean>

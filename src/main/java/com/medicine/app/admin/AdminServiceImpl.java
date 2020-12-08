@@ -11,15 +11,35 @@ import com.medicine.app.medicine.MedicineService;
 import com.medicine.app.medicine.MedicineVO;
 
 @Service("AdminMedicineService")
-public class AdminServiceImpl implements MedicineService {
+public class AdminServiceImpl implements MedicineService{
 	@Autowired
 	private AdminDAO adminDAO;
 
 	@Autowired
 	private MedicineDAO medicineDAO;
+	
+	
 
 	
 	
+	@Override
+	public List<MedicineVO> searchOcrImageMedicine(String text) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer searchOcrCountMedicine(String text) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<MedicineVO> searchOcrTextMedicine(String text) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	@Override
 	public List<MedicineVO> selectMedicineList(Map<String, Integer> vo) {
 		return adminDAO.selectAdminList(vo);
@@ -88,7 +108,7 @@ public class AdminServiceImpl implements MedicineService {
 	}
 
 	@Override
-	public int searchCountMedicine2(Map<String, String> vo) {
+	public Integer searchCountMedicine2(Map<String, String> vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

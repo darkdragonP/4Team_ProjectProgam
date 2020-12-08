@@ -4,8 +4,11 @@ import java.util.List;
 
 
 
+
 public interface BMarkService {
 	
-	public List<BMarkVO> selectBMarkList();
+	public List<BMarkVO> selectBMark(String bIdx);
+	public void insertBMark(BMarkVO vo);
+	public BMarkVO checkBMark(BMarkVO vo);
 	
 }

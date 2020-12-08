@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bcry">
+	<resultMap id="bCryResult" type="BCryVO">
+		<result property="bIdx" column="BOARD_CODE" />
+		<result property="uIdx" column="USER_CODE" />
+		<result property="bcry" column="B_CRY_CNT" />
+	</resultMap>
+	
+	<insert id="insertBCry" parameterType="BCryVO">
+	<![CDATA[
+		insert into b_CRY(USER_CODE,BOARD_CODE,B_CRY_CNT)
+		values(
+		#{uIdx},
+		#{bIdx},
+		#{bcry}
+		)
+	]]>
+	</insert>
+	
+	<select id="checkBCry" parameterType="BCryVO"
+		resultMap="bCryResult">
+	<![CDATA[
+		SELECT * FROM b_CRY where USER_CODE=#{uIdx} and BOARD_CODE=#{bIdx}
+	]]>
+	</select>
+
+	<delete id="deleteBCry" parameterType="String">
+	<![CDATA[
+		delete from B_CRY where BOARD_CODE = #{bIdx} 
+	]]>
+	</delete>
+	
+</mapper>

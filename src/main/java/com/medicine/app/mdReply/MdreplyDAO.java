@@ -13,8 +13,8 @@ public class MdreplyDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	public List<MdReplyVO> selectMdReplyList()  {
-		return sqlSession.selectList("mdReply.selectMdReplyList");
+	public List<MdReplyVO> selectMdReplyList(String mdIdx)  {
+		return sqlSession.selectList("mdReply.selectMdReplyList", mdIdx);
 	}
 	public void insertMdReplyList(MdReplyVO vo) {
 	sqlSession.insert("mdReply.insertMdReplyList", vo);

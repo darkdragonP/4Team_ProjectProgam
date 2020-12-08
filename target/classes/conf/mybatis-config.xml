@@ -14,6 +14,8 @@
     	<typeAlias type="com.medicine.app.board.BoardVO" alias="BoardVO" />
     	<typeAlias type="com.medicine.app.bMark.BMarkVO" alias="BMarkVO" />
     	<typeAlias type="com.medicine.app.qna.QnAVO" alias="QnAVO" />
+    	<typeAlias type="com.medicine.app.bCry.BCryVO" alias="BCryVO" />
+    	
     	
     </typeAliases>
     
@@ -28,6 +30,8 @@
 		<mapper resource="conf/boardSql.xml" />
 		<mapper resource="conf/bMarkSql.xml" />
 		<mapper resource="conf/qnaSql.xml" />
+		<mapper resource="conf/bCrySql.xml" />
+		
 			
  </mappers>
 </configuration>
