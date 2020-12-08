@@ -79,6 +79,29 @@
 </div>
 </body>
 
+<script type="text/javascript">
+	var urltemplate = "https://www.google.com/maps/embed/v1/place?q={}&key=AIzaSyDTTytLEEbp91KBVn8jBF-NGiihKLvQQ_M"
+
+	function postYourAdd() {
+		var search1 = $("#search1");
+
+		console.log(search1.val());
+
+		var url = urltemplate.replace("{}", search1.val());
+
+		console.log(url);
+
+		var iframe = $("#map");
+
+		iframe.attr("src", url);
+	}
+	
+	
+	
+	$("#search1").keyup(function(e){if(e.keyCode == 13)  postYourAdd(); });
+
+
+</script>
 
 <!--footer starts from here-->
 <%@ include file="../../../common/bottom.jsp"%>
