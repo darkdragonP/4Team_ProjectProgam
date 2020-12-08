@@ -1,7 +1,6 @@
 package com.medicine.app.qna;
 
 
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 

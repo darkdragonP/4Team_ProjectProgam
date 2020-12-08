@@ -3,7 +3,6 @@ package com.medicine.app.medicine;
 import java.util.List;
 import java.util.Map;
 
-import com.medicine.app.MdBoardCounts;
 
 public interface MedicineService {
 

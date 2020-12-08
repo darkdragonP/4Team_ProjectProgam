@@ -2,7 +2,6 @@ package com.medicine.app.mdReply;
 
 import java.util.List;
 
-import com.medicine.app.medicine.MedicineVO;
 
 
 

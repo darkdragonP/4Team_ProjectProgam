@@ -2,7 +2,6 @@ package com.medicine.app.bReply;
 
 import java.util.List;
 
-import com.medicine.app.board.BoardVO;
 
 
 

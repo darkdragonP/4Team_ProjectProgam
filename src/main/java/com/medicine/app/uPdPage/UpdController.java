@@ -10,7 +10,6 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,9 +49,11 @@ public class UpdController {
 
 		int listCnt = updService.countsuPdPage(uIdx);
 		MdBoardCounts mdBCounts = new MdBoardCounts();
+		
+		
 		mdBCounts.setListCnt(listCnt);
 		if (listCnt == 0) {
-			System.out.println("등록하신 내역이 없습니다.");
+			System.out.println("일치하는 정보가 없습니다.");
 		} else {
 			mdBCounts.setPage(curPage, startp, curRange);
 			if (result == 1) {
@@ -61,16 +62,16 @@ public class UpdController {
 			} else if (result == 2) {
 				mdBCounts.nextSetBlock(curRange);
 			}
-
-			Map<String, Object> vu = new HashMap<String, Object>();
+			Map<String, Object> vu = new HashMap<String, Object>();			
 			vu.put("uIdx", uIdx);
 			vu.put("startIndex", Integer.toString(mdBCounts.getStartIndex()));
 			vu.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
 			List<UpdVO> updList = updService.selectUpdList(vu);
-			mv.addObject("selectUser", selectUser);
+			System.out.println(updList);
 			mv.addObject("mdBCounts", mdBCounts);
 			mv.addObject("updList", updList);
 		}
+		mv.addObject("selectUser", selectUser);
 		mv.setViewName("updPage/UserMainPay");
 		return mv;
 
@@ -93,7 +94,7 @@ public class UpdController {
 			System.out.println("----");
 			List<MedicineVO> selectMedicine = medicineService.searchOcrTextMedicine(j);
 			if (selectMedicine == null) {
-				System.out.println("결과값이 없습니다.");
+				System.out.println("일치하는 정보가 없습니다.");
 			} else {
 				for (MedicineVO i : selectMedicine) {
 					Map<String, Object> vi = new HashMap<String, Object>();
@@ -156,6 +157,7 @@ public class UpdController {
 		int listCnt = updService.countsuPdPage(uIdx);
 		MdBoardCounts mdBCounts = new MdBoardCounts();
 		mdBCounts.setListCnt(listCnt);
+		Map<String, Object> vu = new HashMap<String, Object>();
 		if (listCnt == 0) {
 			System.out.println("등록하신 내역이 없습니다.");
 		} else {
@@ -167,20 +169,20 @@ public class UpdController {
 				mdBCounts.nextSetBlock(curRange);
 			}
 
-			Map<String, Object> vu = new HashMap<String, Object>();
+
 			vu.put("uIdx", uIdx);
 			vu.put("startIndex", Integer.toString(mdBCounts.getStartIndex()));
 			vu.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
-			vu.put("text", text);
 			vu.put("image", colorResult);
 			List<UpdVO> updList = updService.selectUpdList(vu);
-			mv.addObject("textImage",vu);
-			mv.addObject("searchMdList", searchMdList);
-			mv.addObject("colorResult", colorResult);
-			mv.addObject("selectUser", selectUser);
 			mv.addObject("mdBCounts", mdBCounts);
 			mv.addObject("updList", updList);
 		}
+		vu.put("text", text);
+		mv.addObject("textImage",vu);
+		mv.addObject("searchMdList", searchMdList);
+		mv.addObject("colorResult", colorResult);
+		mv.addObject("selectUser", selectUser);
 		mv.setViewName("updPage/UserMainPay");
 		return mv;
 

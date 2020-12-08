@@ -6,8 +6,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.medicine.app.medicine.MedicineDAO;
-import com.medicine.app.medicine.MedicineVO;
 
 @Service
 public class UpdServiceImpl implements UpdService {

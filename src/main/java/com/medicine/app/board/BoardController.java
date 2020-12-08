@@ -124,7 +124,6 @@ public class BoardController {
 			vi.put("startIndex", mdBCounts.getStartIndex());
 			vi.put("endIndex", mdBCounts.getEndIndex());
 			List<BoardVO> boardList = boardService.selectBoardList(vi);
-			System.out.println(boardList);
 			mv.addObject("mdBCounts", mdBCounts);
 			mv.addObject("boardList", boardList);
 		}

@@ -100,7 +100,7 @@
 						<option value="NAME">작성자</option>
 					</select> <input type="text" name="textBoard" class="bbs_search_input text"
 						placeholder="검색어를 입력하세요."> <input type="image"
-						src="images/search.png" onclick="goSearchWrd();" alt="검색"
+						src="images/search.png"  alt="검색"
 						class="image">
 				</form>
 			</fieldset>

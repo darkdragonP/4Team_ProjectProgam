@@ -46,14 +46,6 @@ public class MedicineController {
 		} else if (result == 2) {
 			mdBCounts.nextSetBlock(curRange);
 		}
-//		System.out.println("시작인덱스 :" + mdBCounts.getStartIndex());
-//		System.out.println("종료인덱스 :" + mdBCounts.getEndIndex());
-//		System.out.println("시작페이지 :" + mdBCounts.getStartPage());
-//		System.out.println("현재페이지 :" + mdBCounts.getCurPage());
-//		System.out.println("종료페이지 :" + mdBCounts.getEndPage());
-//		System.out.println("현재블럭 :" + mdBCounts.getCurRange() + "+1");
-//		System.out.println("최종블럭 :" + mdBCounts.getRangeCnt());
-//		System.out.println("-------------------------------------------");
 
 		Map<String, Integer> vo = new HashMap<String, Integer>();
 

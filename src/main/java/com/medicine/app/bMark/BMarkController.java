@@ -47,7 +47,7 @@ public class BMarkController {
 			vo.setBmr(recentBmr);
 			bMarkService.insertBMark(vo);
 		} else {
-			System.out.println("이미 별점 주셧습니다.");
+			System.out.println("이미 공감 주셧습니다.");
 		}
 		BoardVO board = boardService.selectBoard(bIdx);
 		board.setbRating(Integer.toString(recentBmr));

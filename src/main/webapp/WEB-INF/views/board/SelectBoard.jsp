@@ -20,9 +20,18 @@
 				<li class="breadcrumb-item">게시판</li>
 			</ol>
 		</div>
+		<c:if test="${board.getuIdx() == uIdx}">
+			<form name="upBoard" action="updateBoard.do" method="post">
+				<input type="hidden" name="bIdx" value="${board.getbIdx()}">
+			</form>
+			<form name="deBoard" action="deleteBoard.do" method="post">
+				<input type="hidden" name="bIdx" value="${board.getbIdx()}">
+			</form>
+		</c:if>
+
 		<div class="row">
 			<!-- Blog Entries Column -->
-			<div class="col-md-8 blog-entries">
+			<div class="col-md-12">
 				<div id="content">
 
 					<div id="size_ct" class="size_ct_v2">
@@ -38,6 +47,8 @@
 							<h3>
 								<strong>${board.getbTitle()}</strong>
 							</h3>
+							<button onclick="javascript:document.upBoard.submit();">수정</button>
+				<button onclick="javascript:document.deBoard.submit();">삭제</button>
 							<hr>
 							작성자 : ${board.getuName()} <br>
 							<hr>
@@ -49,52 +60,55 @@
 							<div class="card my-4">
 								<div class="card-body">${board.getbContents()}</div>
 							</div>
-							공감이 가신다변 해당 버튼을 클릭!<br>
-							<button onclick="javascript:document.bR.submit();">공감</button>
-							<button onclick="javascript:document.bC.submit();">신고</button>
+							<center>
+								공감이 가신다변 해당 버튼을 클릭!<br>
+								<button onclick="javascript:document.bR.submit();">공감</button>
+								<button onclick="javascript:document.bC.submit();">신고</button>
+							</center>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<c:if test="${board.getuIdx() == uIdx}">
-			<form name="upBoard" action="updateBoard.do" method="post">
-				<input type="hidden" name="bIdx" value="${board.getbIdx()}">
-			</form>
-			<form name="deBoard" action="deleteBoard.do" method="post">
-				<input type="hidden" name="bIdx" value="${board.getbIdx()}">
-			</form>
-			<br>
-			<button class="btn btn-primary"
-				onclick="javascript:document.upBoard.submit();">수정</button>
-			<button class="btn btn-primary"
-				onclick="javascript:document.deBoard.submit();">삭제</button>
-
-
-		</c:if>
 	</div>
-
+	<br>
 	<div class="container">
 		<div class="blog-right-side">
 			<!-- Comments Form -->
 
-			<div class="card my-5">
+			<div class="card my-12">
 
 				<h5 class="card-header">댓글 등록</h5>
 				<div class="card-body">
 					<br>
-					<div>
-						<form action="insertBReply.do" method="post">
-							<input type=hidden id="bIdx" name="bIdx"
-								value="${board.getbIdx()}">
-							<div class="form-group">
-								<textarea class="form-control" rows="3" id="uReContent"
-									name="uReContent" required
-									placeholder="내용을 입력하세요 or 로그인후 이용가능합니다 or ocr인증 후 이용가능합니다. [ajax로 구현 예정]"></textarea>
+					<c:choose>
+						<c:when test="${empty uIdx}">
+
+							<div>
+								<form action="login.do">
+									<div class="form-group">
+										<textarea style="width: 100%" class="form-control" rows="3"
+											id="uReContent" name="uReContent" placeholder="로그인 후 이용가능합니다"></textarea>
+									</div>
+									<button type="submit" class="btn btn-primary">댓글 등록</button>
+								</form>
 							</div>
-							<button type="submit" class="btn btn-primary">댓글 등록</button>
-						</form>
-					</div>
+						</c:when>
+						<c:otherwise>
+							<div>
+								<form action="insertBReply.do" method="post">
+									<input type=hidden id="bIdx" name="bIdx"
+										value="${board.getbIdx()}">
+									<div class="form-group">
+										<textarea style="width: 100%" class="form-control" rows="3"
+											id="uReContent" name="uReContent" required
+											placeholder="내용을 입력해주세요"></textarea>
+									</div>
+									<button type="submit" class="btn btn-primary">댓글 등록</button>
+								</form>
+							</div>
+						</c:otherwise>
+					</c:choose>
 				</div>
 			</div>
 		</div>
@@ -201,15 +215,17 @@
 		<div class="bbs_list_search" align="center">
 			<!-- 원하는 부분을 가운데로 옮겨주는 기능 -->
 			<fieldset>
-				<select name="searchCnd" class="bbs_search_select select"
-					title="검색어 선택">
-					<option value="0">제목</option>
-					<option value="1">내용</option>
-					<option value="2">작성자</option>
-				</select> <input type="text" id="searchWrd" name="searchWrd" value=""
-					class="bbs_search_input text" title="검색어를 입력하세요."> <input
-					type="image" src="images/search.png" onclick="goSearchWrd();"
-					alt="검색" class="image">
+				<form action="searchTextBoard.do">
+					<select name="searchCnd" class="bbs_search_select select"
+						title="검색어 선택">
+						<option value="BOARD_TITLE">제목</option>
+						<option value="BOARD_CONTENTS">내용</option>
+						<option value="NAME">작성자</option>
+					</select> <input type="text" name="textBoard" class="bbs_search_input text"
+						placeholder="검색어를 입력하세요."> <input type="image"
+						src="images/search.png"  alt="검색"
+						class="image">
+				</form>
 			</fieldset>
 
 		</div>
