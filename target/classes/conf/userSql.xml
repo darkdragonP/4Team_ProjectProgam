@@ -98,10 +98,9 @@
 	</delete>
 
 	<!-- 아이디 중복 확인 -->
-	<select id="idoverlap" parameterType="String">
+	<select id="idoverlap" parameterType="String" resultType="String">
 	<![CDATA[
-		resultType="String">
-		SELECT * FROM USERS WHERE ID = #{userID}
+		SELECT ID FROM USERS WHERE ID = #{userID}
 	]]>
 	</select>
 
