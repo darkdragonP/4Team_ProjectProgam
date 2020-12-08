@@ -3,30 +3,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HOMEDICINE:::회원가입</title>
+<!-- CSS -->
 <link rel="stylesheet" href="css/register_styles.css" />
 <link rel="stylesheet" href="css/all.css" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/style.css" />
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
+<!-- 스크립트 -->
+<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 	<%@ include file="../../../common/top.jsp"%>
 	<div class="container register">
 		<div class="row">
 			<div class="col-md-3 register-left">
-				<img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
-				<h3>HOMEDICINE</h3>
+				<img src="images/register4.png" style="color:#EF746F" alt="" />
+				<h3 style="color:#EF746F";>HOMEDICINE</h3>
 				<a href="login.html"><input type="submit" name="login"
 					value="이미 가입하셨나요?" /></a><br />
 			</div>
@@ -110,6 +111,13 @@
 				</div>
 			</div>
 		</div>
+
+			<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	</div>
 	<%@ include file="../../../common/bottom.jsp"%>
 
