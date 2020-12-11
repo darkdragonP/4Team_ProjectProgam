@@ -250,20 +250,20 @@
 					<div class="mdLine">
 						<div style="border: 1px solid hidden; float: left; width: 25%;">
 							<div>
-								<input type="radio" name="mdLine" value="없음"> 
+								<input type="radio" name="mdLine" value=""> 
 								<img src="images/line01.jpg" alt="없음">
 							</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 25%;">
 							<div>
-								<input type="radio" name="mdLine" value="(-)형"> 
-								<img src="images/line02.jpg" alt="-형">
+								<input type="radio" name="mdLine" value="-"> 
+								<img src="images/line02.jpg" alt="(-)형">
 							</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 25%;">
 							<div>
-								<input type="radio" name="mdLine" value="(+)형"> 
-								<img src="images/line03.jpg" alt="+형">
+								<input type="radio" name="mdLine" value="+"> 
+								<img src="images/line03.jpg" alt="(+)형">
 							</div>
 						</div>
 						<div style="border: 1px solid hidden; float: left; width: 25%;">

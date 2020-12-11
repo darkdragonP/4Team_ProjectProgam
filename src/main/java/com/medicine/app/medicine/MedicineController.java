@@ -139,8 +139,15 @@ public class MedicineController {
 		Map<String, String> searchRadio = new HashMap<String, String>();
 		searchRadio.put("mdShape", mdShape);
 		searchRadio.put("mdColor", mdColor);
-		searchRadio.put("mdType", mdType);
 		searchRadio.put("mdLine", mdLine);
+		if(mdType == "정제류") {
+			searchRadio.put("mdType1", "나정");
+			searchRadio.put("mdType2", "필름코팅정");
+			searchRadio.put("mdType3", "붕해(현탁)정");
+		}else {
+			searchRadio.put("mdType", mdType);
+		}
+	
 		int listCnt = medicineService.searchCountMedicine2(searchRadio);
 
 		MdBoardCounts mdBCounts = new MdBoardCounts();
