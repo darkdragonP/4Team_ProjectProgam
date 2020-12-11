@@ -1,3 +1,5 @@
+
+
 div{
 	
 }
@@ -32,7 +34,7 @@ div{
     margin-rigth: 50%;
     line-height: 1.25;
     color: #0b4877;
-    background-color: #f2efea;
+    background-color: white;
     border: 1px solid #dee2e6;
 }
 
@@ -155,18 +157,6 @@ a:hover {
 }
 
 
-.page-link {
-    text-align: center;
-    position: relative;
-    display: block;
-    padding: .5rem .75rem;
-    margin-left: -1px;
-    line-height: 1.25;
-    color: #0b4877;
-    background-color: #f2efea;
-    border: 1px solid #dee2e6;
-}
-
 .pagination {
     display: -ms-flexbox;
     display: flex;
@@ -187,6 +177,19 @@ a:hover {
 
 .mt-4, .my-4 {
     margin-top: 1.5rem!important;
+}
+.cards {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 50px;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
 }
 
 .card {

@@ -4,6 +4,7 @@
 <html>
 <%@ include file="../../../common/top.jsp"%>
 <link rel="stylesheet" href="css/Medicine.css?after" />
+  <link href="css/board.css" rel="stylesheet">
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
@@ -11,10 +12,8 @@
 <body>
 
 	<div class="container">
-		<h2 class="sub-header">
-			약관련 정보 게시판 <img src="images/logo.png"
-				style="width: 3.5%; height: 3.5%;" />
-		</h2>
+		<h2 class="header" style="color: #EF746F;">
+		<a href="boardList.do" class="flex flex-column items-center justify-center color-inherit w-100 pa2 br2 br--top no-underline hover-bg-blue4 hover-white" style="font-size:30px;"><i class="fas fa-chalkboard-teacher" style="color: #EF746F;" >&nbsp;약 관련 정보 게시판</i></a></h2>
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">게시판</li>
@@ -185,10 +184,10 @@
 
 			</span>
 		</div>
-		<ul class="pagination">
+			<ul class="pagination" style="display: flex; justify-content: center; align-items: center";>
 			<c:if test="${mdBCounts.curRange ne 0}">
 				<li class="page-item"><b class="page-link"><a
-						href="boardList.do?curRange=${mdBCounts.curRange}&result=1">이전</a></b></li>
+						href="boardList.do?curRange=${mdBCounts.curRange}&result=1"><</a></b></li>
 			</c:if>
 			<c:forEach var="pageNum" begin="${mdBCounts.startPage}"
 				end="${mdBCounts.endPage}">
@@ -207,7 +206,7 @@
 			</c:forEach>
 			<c:if test="${mdBCounts.curRange+1 ne mdBCounts.rangeCnt}">
 				<li class="page-item"><b class="page-link"><a
-						href="boardList.do?curRange=${mdBCounts.curRange}&result=2">다음</a></b></li>
+						href="boardList.do?curRange=${mdBCounts.curRange}&result=2">></a></b></li>
 			</c:if>
 		</ul>
 

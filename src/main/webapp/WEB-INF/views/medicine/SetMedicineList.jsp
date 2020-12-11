@@ -5,16 +5,17 @@
 <html>
 <%@ include file="../../../common/top.jsp"%>
 <link rel="stylesheet" href="css/Medicine.css?after" />
+	<link rel="stylesheet" href="css/style.css" />
 <head>
 <meta charset="EUC-KR">
 <title>MEDICINE</title>
 </head>
 <body>
 	<div class="container">
-		<h2 class="sub-header" style="color: #EF746F;"><a href="http://localhost/app/SelectMedicine.do?mdIdx=18"
+		<h2 class="sub-header" style="color: #EF746F;"><a href="medicineList.do"
 				class="flex flex-column items-center justify-center color-inherit w-100 pa2 br2 br--top no-underline hover-bg-blue4 hover-white"
 				style="font-size: 30px;"> <i class="fas fa-ambulance"
-				style="color: #EF746F;">&약 검색</i></a>
+				style="color: #EF746F;">약 검색</i></a>
 		</h2>
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
@@ -313,7 +314,7 @@
 						<td>${medicine.mdIdx}</td>
 						<td>${medicine.mdImage}</td>
 						<td><a href="SelectMedicine.do?mdIdx=${medicine.mdIdx}">${medicine.mdTitle}</a></td>
-						<td><img src="images/star${medicine.mdRating}.jpg"
+						<td><img src="images/star${medicine.mdRating}.png"
 							width="100" height="20"></td>
 						<td>${medicine.mdHits}</td>
 						<td>${medicine.mdDate}</td>
@@ -329,7 +330,7 @@
 		<ul class="pagination">
 			<c:if test="${mdBCounts.curRange ne 0}">
 				<li class="page-item"><b class="page-link"><a
-						href="medicineList.do?curRange=${mdBCounts.curRange}&result=1">이전</a></b></li>
+						href="medicineList.do?curRange=${mdBCounts.curRange}&result=1"><</a></b></li>
 			</c:if>
 			<c:forEach var="pageNum" begin="${mdBCounts.startPage}"
 				end="${mdBCounts.endPage}">
@@ -348,12 +349,13 @@
 			</c:forEach>
 			<c:if test="${mdBCounts.curRange+1 ne mdBCounts.rangeCnt}">
 				<li class="page-item"><b class="page-link"><a
-						href="medicineList.do?curRange=${mdBCounts.curRange}&result=2">다음</a></b></li>
+						href="medicineList.do?curRange=${mdBCounts.curRange}&result=2">></a></b></li>
 			</c:if>
 		</ul>
 		</div>
 
 
+	</div>
 	</div>
 </body>
 <%@ include file="../../../common/bottom.jsp"%>

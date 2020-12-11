@@ -25,7 +25,7 @@
 				<nav id="nav">
 					<ul>
 						<li><h3>
-								<strong><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약
+								<strong><div align="left" style="color: #EF746F;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약
 									관리&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
 							</h3></li>
 						<br>
@@ -182,38 +182,6 @@
 			</div>
 
 
-			<!-- Sidebar Widgets Column -->
-			<div class="col-md-4 blog-right-side">
-
-				<!-- Side Widget -->
-				<div class="card my-4">
-					<h5 class="card-header">바로가기</h5>
-					<div class="card-body">
-						<div>
-							<h4>제목</h4>
-							뭘바로가기루 하징?
-						</div>
-					</div>
-				</div>
-				<div class="card my-4">
-					<h5 class="card-header">바로가기</h5>
-					<div class="card-body">
-						<div>
-							<h4>제목</h4>
-							뭘바로가기루 하징?
-						</div>
-					</div>
-				</div>
-				<div class="card my-4">
-					<h5 class="card-header">바로가기</h5>
-					<div class="card-body">
-						<div>
-							<h4>제목</h4>
-							뭘바로가기루 하징?
-						</div>
-					</div>
-				</div>
-			</div>
 
 
 		</div>

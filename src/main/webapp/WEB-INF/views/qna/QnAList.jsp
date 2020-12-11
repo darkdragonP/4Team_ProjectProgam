@@ -122,7 +122,7 @@
             <div class="col-lg-12">
               <div class="ibox float-e-margins">
                   <div class="ibox-title">
-                      <h5>QnA table </h5>
+                   <h5 class="header" style="color: #EF746F;"><a href="qnaList.do" class="flex flex-column items-center justify-center color-inherit w-100 pa2 br2 br--top no-underline hover-bg-blue4 hover-white" style="font-size:30px;"><i class="fas fa-chess-queen" style="color: #EF746F;" >&nbsp;QnA table</i></a></h5>
                       
          
 
@@ -377,7 +377,6 @@
 
     <span style="float:right;"> <!-- 가운데로 옮길때는 <center></center>  -->
     <button class="btn btn-secondary" type="button" >글 작성</button>
-    <button class="btn btn-secondary" type="button"> 삭제</button>
     </span>
     <br>
     <br>	
@@ -397,4 +396,6 @@
 
 
 </div>
-  </body>  
+  </body>
+    
+  </html>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
 <%@ include file="common/top.jsp"%>
 <head>
@@ -13,7 +14,6 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
   <link href="../css/all.css">
   <link href="../css/style.css">
-
   <!-- Custom styles for this template -->
   <link href="css/landing-page.css" rel="stylesheet">
   <link href="css/landing-page.min.css" rel="stylesheet">
@@ -63,8 +63,8 @@
               <!-- 결제페이지로 이동 링크 삽입 -->
             </div>
             <br>
-            <h3>유료회원이 아니신가요?</h3>
-            <p class="lead mb-0">결제 후 처방전 등록, 약모양 검색 등 더 많은 서비스를 만날 수 있습니다. </p>
+             <h3>유료회원 결제하기</h3>
+            <p class="lead mb-0">결제 후 처방전등록, 약사진검색 등 더 많은 서비스를 만날 수 있습니다. </p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -79,6 +79,8 @@
         </div>
       </div>
     </div>
+    <br>
+
   </section>
   
 

@@ -5,7 +5,7 @@
 <html>
 <link rel="stylesheet" href="css/main.css?after" />
 <%@ include file="../../../common/top.jsp"%>
-
+  <link href="css/board.css" rel="stylesheet">
 <head>
 <meta charset="EUC-KR">
 <title>MEDICINE</title>
@@ -93,7 +93,7 @@
 				</tbody>
 			</c:forEach>
 		</table>
-		<ul class="pagination">
+				<ul class="pagination" style="display: flex;  justify-content: center; align-items: center";>
 			<c:if test="${mdBCounts.curRange ne 0}">
 				<li class="page-item"><b class="page-link"><a
 						href="AdminMedicineList.do?curRange=${mdBCounts.curRange}&result=1">이전</a></b></li>

@@ -9,10 +9,8 @@
 </head>
 <body>
 	<div class="container">
-		<h2>
-			<font color="black"> 약관련 정보 게시판 <img src="images/logo.png"
-				style="width: 3.5%; height: 3.5%;" /></font>
-		</h2>
+		<h2 class="header" style="color: #EF746F;">
+		<a href="boardList.do" class="flex flex-column items-center justify-center color-inherit w-100 pa2 br2 br--top no-underline hover-bg-blue4 hover-white" style="font-size:30px;"><i class="fas fa-chalkboard-teacher" style="color: #EF746F;" >&nbsp;약 관련 정보 게시판</i></a></h2>
 		<!-- Page Content -->
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">

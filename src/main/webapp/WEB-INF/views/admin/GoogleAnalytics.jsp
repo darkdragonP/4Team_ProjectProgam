@@ -24,7 +24,7 @@
 				<nav id="nav">
 					<ul>
 						<li><h3>
-								<strong><div align="left" >&nbsp;&nbsp;&nbsp;Google</div>Analytics&nbsp;</strong>
+								<strong><div align="left" style="color: #EF746F;">&nbsp;&nbsp;&nbsp;Google</div>Analytics&nbsp;</strong>
 							</h3></li>
 						<br>
 						<br>
