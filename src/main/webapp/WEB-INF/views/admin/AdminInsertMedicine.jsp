@@ -24,7 +24,7 @@
 				<nav id="nav">
 					<ul>
 						<li><h1>
-								<strong><div align="left">&nbsp;&nbsp;신규 약</div>추가&nbsp;&nbsp;</strong>
+								<strong><div align="left" style="color: #EF746F;">&nbsp;&nbsp;신규 약</div>추가&nbsp;&nbsp;</strong>
 							</h1></li>
 						<br>
 						<br>

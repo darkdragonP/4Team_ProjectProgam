@@ -8,17 +8,19 @@
 <title>HOMEDICINE</title>
 <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <!-- Custom fonts for this template -->
   <link href="vendor/bootstrap/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-  <link href="../css/all.css">
-  <link href="../css/style.css">
+  <link href="css/all.css"  rel="stylesheet">
+  <link href="css/style.css"  rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="css/landing-page.css" rel="stylesheet">
   <link href="css/landing-page.min.css" rel="stylesheet">
+  
 </head>
 <body>
+
 	<!-- Masthead -->
   <header class="masthead text-white text-center">
     <div class="container">
@@ -83,10 +85,6 @@
 
   </section>
   
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   
 

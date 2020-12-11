@@ -37,6 +37,16 @@ ol, ul {
 	list-style: none;
 }
 
+
+
+.wrap{
+	
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 blockquote, q {
 	quotes: none;
 }

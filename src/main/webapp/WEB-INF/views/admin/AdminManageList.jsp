@@ -26,7 +26,7 @@
 				<nav id="nav">
 					<ul>
 						<li><h3>
-								<strong><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약
+								<strong><div align="left" style="color: #EF746F;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약
 									관리&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
 							</h3></li>
 						<br>
@@ -133,6 +133,8 @@
 			</span>
 
 		</div>
+		
+			<div class="wrap">
 		<ul class="pagination">
 			<c:if test="${mdBCounts.curRange ne 0}">
 				<li class="page-item"><b class="page-link"><a
@@ -158,6 +160,7 @@
 						href="manageBoard.do?startC=${mdBCounts.startC}&endC=${mdBCounts.endC}&curRange=${mdBCounts.curRange}&result=2">다음</a></b></li>
 			</c:if>
 		</ul>
+		</div>
 	</div>
 	<br>
 	<!-- Scripts -->

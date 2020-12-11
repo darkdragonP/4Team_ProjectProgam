@@ -26,7 +26,7 @@
 				<nav id="nav">
 					<ul>
 						<li><h3>
-								<strong><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약
+								<strong><div align="left" style="color: #EF746F;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약
 									관리&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
 							</h3></li>
 						<br>
