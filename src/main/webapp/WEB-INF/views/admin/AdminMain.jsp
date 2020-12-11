@@ -23,7 +23,7 @@
 				<nav id="nav">
 					<ul>
 						<li><h2>
-								<strong><div align="left" style="color: #EF746F;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관리자</div>페이지&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+								<strong><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관리자</div>페이지&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
 							</h2></li>
 						<br>
 						<br>
@@ -54,9 +54,6 @@
 			</div>
 		</div>
 
-
-
-
 		<!-- Page Content -->
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
@@ -73,29 +70,91 @@
 
 							<div id="size_ct" class="size_ct_v2">
 								<div class="att_type">
+									<!-- <section id="type1" class="one dark cover"></section> -->
+									
+		<!-- Page Content -->
+		<div style="width:50%; float:left; display:inline;">
+		<strong><h5>약 리스트 관리</h5></strong>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>이름</th>
+					<th>내용</th>
+					<th>평균별점</th>
+					<th>조회수</th>
+				</tr>
+			</thead>
+			<c:forEach items="${AdminMedicineList}" var="adminMedicine">
+				<tbody>
+					<tr>
+						<td>${adminMedicine.mdImage}</td>
+						<td><a
+							href="SelectAdminMedicine.do?mdIdx=${adminMedicine.mdIdx}">${adminMedicine.mdTitle}</a></td>
+						<td>${adminMedicine.mdAppr}</td>
+						<td>[별점이미지]&nbsp;<!--${medicine.mdRating} --></td>
+						<td>${adminMedicine.mdRating}</td>
+					</tr>
+				</tbody>
+			</c:forEach>
+		</table>
+		</div>
+		&nbsp;
+			
+		<div style="width:49%; float:right; display:inline;">
+		<strong><h5>게시판 관리</h5></strong>
+		<table class="table table-striped">
+			<thead align="center">
+				<tr>
+					<th>No</th>
+					<th>제목</th>
+					<th>작성일</th>
+					<th>작성자</th>
+					<th>조회</th>
+					<th>좋아요</th>
+					<th>신고누적</th>
+				</tr>
+			</thead>
+			<c:forEach items="${boardList}" var="board">
+				<form name="del_${board.bIdx}" action="deletCryBoard.do" method="post">
+					<input type="hidden" name="bIdx" value="${board.bIdx}">
+					<input type="hidden" name="startC" value="${mdBCounts.startC}">
+					<input type="hidden" name="endC" value="${mdBCounts.endC}">
+				</form>
+				<tbody align="center">
+					<tr>
+						<td>${board.bIdx}</td>
+						<td>${board.bTitle}</td>
+						<td>${board.bDate}</td>
+						<td>${board.uName}</td>
+						<td>${board.bHits}</td>
+						<td>${board.bRating}</td>
+						<td>${board.bCry}</td>
+						<td><input type="button"
+							onclick="location='javascript:document.del_${board.bIdx}.submit();'" value="삭제"/></td>
+						<td><input type="button"
+							onclick="location.href='selectBoard.do?bIdx=${board.bIdx}'" value="바로가기"/></td>
+					</tr>
+				</tbody>
+			</c:forEach>
+		</table>
+		</div>
 									<br>
-									<hr>
 									<br>
-									<section id="type1" class="one dark cover"></section>
 									<br>
-									<hr>
 									<br>
-
-									<section id="type2" class="one dark cover"></section>
 									<br>
-									<hr>
 									<br>
-									<section id="type3" class="one dark cover"></section>
 									<br>
-									<hr>
 									<br>
-									<section id="type4" class="one dark cover"></section>
 									<br>
-									<hr>
 									<br>
-									<section id="type5" class="one dark cover"></section>
 									<br>
-									<hr>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
 									<br>
 
 								</div>
