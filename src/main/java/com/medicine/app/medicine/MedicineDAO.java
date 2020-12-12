@@ -53,7 +53,7 @@ public class MedicineDAO {
 		return sqlSession.selectOne("medicine.searchCountMedicine2", text);
 	}
 	public List<MedicineVO> searchOcrTextMedicine(String text) {
-		return sqlSession.selectList("medicine.searchOcrTextMedicine", text);
+		return sqlSession.selectList ("medicine.searchOcrTextMedicine", text);
 	}
 	
 	public List<MedicineVO> searchOcrImageMedicine(String text) {

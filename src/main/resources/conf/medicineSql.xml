@@ -200,7 +200,9 @@
 		resultMap="medicineResult">
 	<![CDATA[
 	select MD_TITLE, MD_CODE from MEDICINE where 
-		MD_TITLE like '%' || #{text} || '%'
+		MD_TITLE like '%' || #{text} || '%' or
+		MD_TITLE like '%' || #{text} or
+		MD_TITLE like #{text} || '%' 
 		order by MD_CODE desc
 	]]>
 	</select>
@@ -209,7 +211,9 @@
 		resultMap="medicineResult">
 	<![CDATA[
 	select MD_TITLE, MD_CODE from MEDICINE where 
-		MD_IN like '%' || #{text} || '%'
+		MD_IN like '%' || #{text} || '%' or
+		MD_IN like '%' || #{text} or
+		MD_IN like #{text} || '%' 
 		order by MD_CODE desc
 	]]>
 	</select>

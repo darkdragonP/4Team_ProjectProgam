@@ -79,20 +79,14 @@ public class UpdController {
 	public ModelAndView InsertUpd(UpdVO vo, ModelAndView mv, HttpServletRequest request) throws IOException {
 		HttpSession session = request.getSession();
 		int uIdx = (Integer) session.getAttribute("uIdx");
-		System.out.println("selectUpdList占쌨소듸옙 占쏙옙占쏙옙 占쏙옙占쏙옙.");
-		System.out.println(vo.getUploadFile().getOriginalFilename());
-		System.out.println("----------------------------------------");
 		GoogleVisionImage test = new GoogleVisionImage();
 		String text = test.onlyText(vo.getUploadFile());
 
 		String[] change_target = text.replace(".", "").split(" |\t|\n|\r");
 		for (String j : change_target) {
-			System.out.println("----");
-			System.out.println(j);
-			System.out.println("----");
 			List<MedicineVO> selectMedicine = medicineService.searchOcrTextMedicine(j);
 			if (selectMedicine == null) {
-				System.out.println("寃곌낵媛믪씠 �뾾�뒿�땲�떎.");
+				System.out.println("OCR텍스트로 조회 했으나 일치하는 값이 없음.");
 			} else {
 				for (MedicineVO i : selectMedicine) {
 					Map<String, Object> vi = new HashMap<String, Object>();
@@ -126,12 +120,17 @@ public class UpdController {
 			@RequestParam(defaultValue = "0") int curRange, @RequestParam(defaultValue = "0") int result,
 			@RequestParam(defaultValue = "1") int startp, ModelAndView mv, HttpServletRequest request, UpdVO vo)
 			throws IOException {
-		System.out.println("SearchOcr-由ъ뒪�듃 �씠�룞");
+		List<MedicineVO> searchMdList=null;
 		GoogleVisionImage test = new GoogleVisionImage();
 		String text = test.onlyText(vo.getUploadFile());
+		String[] tex = text.split("\n");
+		System.out.println(tex);
+		for(String i : tex) {
+			searchMdList = medicineService.searchOcrImageMedicine(i);
+		}
 		List<String> image = test.ImageSearch(vo.getUploadFile());
-
-		List<MedicineVO> searchMdList = medicineService.searchOcrImageMedicine(text);
+		System.out.println(searchMdList);
+		
 		List<Float> type = new ArrayList<Float>();
 		String colorResult = null;
 		for (String i : image) {
@@ -157,7 +156,6 @@ public class UpdController {
 		mdBCounts.setListCnt(listCnt);
 		Map<String, Object> vu = new HashMap<String, Object>();
 		if (listCnt == 0) {
-			System.out.println("�벑濡앺븯�떊 �궡�뿭�씠 �뾾�뒿�땲�떎.");
 		} else {
 			mdBCounts.setPage(curPage, startp, curRange);
 			if (result == 1) {
@@ -170,17 +168,18 @@ public class UpdController {
 			vu.put("uIdx", uIdx);
 			vu.put("startIndex", Integer.toString(mdBCounts.getStartIndex()));
 			vu.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
-			vu.put("image", colorResult);
 			List<UpdVO> updList = updService.selectUpdList(vu);
-			mv.addObject("textImage",vu);
-			mv.addObject("searchMdList", searchMdList);
 			mv.addObject("colorResult", colorResult);
 			mv.addObject("mdBCounts", mdBCounts);
 			mv.addObject("updList", updList);
 		}
+
 		vu.put("text", text);
+		vu.put("image", colorResult);
+		mv.addObject("textImage",vu);
+		mv.addObject("searchMdList", searchMdList);
 		mv.addObject("selectUser", selectUser);
-		mv.setViewName("updPage/UserMainPay");
+		mv.setViewName("updPage/UserMainPayResult");
 		return mv;
 
 	}

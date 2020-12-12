@@ -19,14 +19,6 @@
 				<li class="breadcrumb-item">게시판</li>
 			</ol>
 		</div>
-		<c:if test="${board.getuIdx() == uIdx}">
-			<form name="upBoard" action="updateBoard.do" method="post">
-				<input type="hidden" name="bIdx" value="${board.getbIdx()}">
-			</form>
-			<form name="deBoard" action="deleteBoard.do" method="post">
-				<input type="hidden" name="bIdx" value="${board.getbIdx()}">
-			</form>
-		</c:if>
 
 		<div class="row">
 			<!-- Blog Entries Column -->
@@ -46,8 +38,16 @@
 							<h3>
 								<strong>${board.getbTitle()}</strong>
 							</h3>
-							<button onclick="javascript:document.upBoard.submit();">수정</button>
-				<button onclick="javascript:document.deBoard.submit();">삭제</button>
+							<c:if test="${board.getuIdx() == uIdx}">
+								<form name="upBoard" action="updateBoard.do" method="post">
+									<input type="hidden" name="bIdx" value="${board.getbIdx()}">
+								</form>
+								<form name="deBoard" action="deleteBoard.do" method="post">
+									<input type="hidden" name="bIdx" value="${board.getbIdx()}">
+								</form>
+								<button onclick="javascript:document.upBoard.submit();">수정</button>
+								<button onclick="javascript:document.deBoard.submit();">삭제</button>
+							</c:if>
 							<hr>
 							작성자 : ${board.getuName()} <br>
 							<hr>
@@ -59,11 +59,23 @@
 							<div class="card my-4">
 								<div class="card-body">${board.getbContents()}</div>
 							</div>
-							<center>
-								공감이 가신다변 해당 버튼을 클릭!<br>
-								<button onclick="javascript:document.bR.submit();">공감</button>
-								<button onclick="javascript:document.bC.submit();">신고</button>
-							</center>
+							<c:choose>
+								<c:when test="${empty uIdx}">
+									<center>
+										공감이 가신다변 해당 버튼을 클릭!<br>
+										<button onclick="alert('로그인 후 이용 가능합니다.');">공감</button>
+										<button onclick="alert('로그인 후 이용 가능합니다.');">신고</button>
+									</center>
+								</c:when>
+								<c:otherwise>
+									<center>
+										
+										공감이 가신다변 해당 버튼을 클릭!<br>
+										<button onclick="javascript:document.bR.submit();">공감</button>
+										<button onclick="javascript:document.bC.submit();">신고</button>
+									</center>
+								</c:otherwise>
+							</c:choose>
 						</div>
 					</div>
 				</div>
@@ -84,13 +96,12 @@
 						<c:when test="${empty uIdx}">
 
 							<div>
-								<form action="login.do">
 									<div class="form-group">
 										<textarea style="width: 100%" class="form-control" rows="3"
 											id="uReContent" name="uReContent" placeholder="로그인 후 이용가능합니다"></textarea>
 									</div>
-									<button type="submit" class="btn btn-primary">댓글 등록</button>
-								</form>
+									<button type="button" class="btn btn-primary"
+										onclick="alert('로그인 후 이용 가능합니다.');">댓글 등록</button>
 							</div>
 						</c:when>
 						<c:otherwise>
@@ -119,7 +130,7 @@
 			<!-- Single Comment -->
 			<c:if test="${BReplyList.uIdx == uIdx}">
 				<a
-					href="deleteBReply.do?uReIdx=${BReplyList.uReIdx}&mdIdx=${BReplyList.BIdx}"
+					href="deleteBReply.do?uReIdx=${BReplyList.uReIdx}&bIdx=${board.bIdx}"
 					class="delete">삭제&nbsp;&nbsp;</a>
 			</c:if>
 			<br>
@@ -178,16 +189,24 @@
 			<!-- 콘텐츠 내용에서 주제가 바뀔 때 사용할 수 있는 수평 가로선을 정의할 때 사용 -->
 			<span>전체 ${mdBCounts.endPage}</span> <span>Page<strong>${mdBCounts.startPage}</strong>/${mdBCounts.endPage}
 			</span> <span style="float: right;"><span class="input-group-btn">
-					<button class="btn btn-secondary" type="button"
-						onclick="location.href='insertBoard.do'">새 글 등록</button>
+					<c:choose>
+						<c:when test="${empty uIdx}">
+							<button class="btn btn-secondary" type="button"
+								onclick="alert('로그인 후 이용가능합니다.')">새 글 등록</button>
+						</c:when>
+						<c:otherwise>
+							<button class="btn btn-secondary" type="button"
+								onclick="location.href='insertBoard.do'">새 글 등록</button>
+						</c:otherwise>
+					</c:choose>
 
 
 			</span>
 		</div>
-			<ul class="pagination" style="display: flex; justify-content: center; align-items: center";>
+		<ul class="pagination">
 			<c:if test="${mdBCounts.curRange ne 0}">
 				<li class="page-item"><b class="page-link"><a
-						href="boardList.do?curRange=${mdBCounts.curRange}&result=1"><</a></b></li>
+						href="boardList.do?curRange=${mdBCounts.curRange}&result=1">이전</a></b></li>
 			</c:if>
 			<c:forEach var="pageNum" begin="${mdBCounts.startPage}"
 				end="${mdBCounts.endPage}">
@@ -206,7 +225,7 @@
 			</c:forEach>
 			<c:if test="${mdBCounts.curRange+1 ne mdBCounts.rangeCnt}">
 				<li class="page-item"><b class="page-link"><a
-						href="boardList.do?curRange=${mdBCounts.curRange}&result=2">></a></b></li>
+						href="boardList.do?curRange=${mdBCounts.curRange}&result=2">다음</a></b></li>
 			</c:if>
 		</ul>
 
@@ -222,14 +241,23 @@
 						<option value="NAME">작성자</option>
 					</select> <input type="text" name="textBoard" class="bbs_search_input text"
 						placeholder="검색어를 입력하세요."> <input type="image"
-						src="images/search.png"  alt="검색"
-						class="image">
+						src="images/search.png" alt="검색" class="image">
 				</form>
 			</fieldset>
 
 		</div>
 	</div>
 	<br>
+	<c:if test="${!empty comment1}">
+	<script type="text/javascript">
+		alert("이미 공감 주셧습니다.");
+	</script>
+	</c:if>
+	<c:if test="${!empty comment2}">
+	<script type="text/javascript">
+		alert("이미 신고처리 되었습니다.");
+	</script>
+	</c:if>
 	<!-- /.row -->
 	<!-- /.container -->
 	<script src="js/jquery-1.11.3.min.js"></script>

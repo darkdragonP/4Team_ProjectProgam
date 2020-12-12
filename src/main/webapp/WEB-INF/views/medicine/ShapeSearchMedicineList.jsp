@@ -11,23 +11,17 @@
 </head>
 <body>
 	<div class="container">
-		<h2 class="sub-header">약 검색</h2>
-
-
-		<div class="card mb-4">
-			<h5 class="card-header">
-				<img src="images/googleVision.jpg" alt="OCR"
-					style="width: 2%; height: 2%;" />OCR 이용하기
-			</h5>
-			<div class="card-body">
-				<span class="input-group-btn">
-					<button class="btn btn-secondary" type="button">사진으로 검색</button>
-				</span> <span class="input-group-btn">
-					<button class="btn btn-secondary" type="button">처방전 등록하기</button>
-				</span>
-			</div>
+		<h2 class="sub-header" style="color: #EF746F;">
+			<a href="medicineList.do"
+				class="flex flex-column items-center justify-center color-inherit w-100 pa2 br2 br--top no-underline hover-bg-blue4 hover-white"
+				style="font-size: 30px;"> <i class="fas fa-ambulance"
+				style="color: #EF746F;">약 검색</i></a>
+		</h2>
+		<div class="breadcrumb-main">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">약 세부사항</li>
+			</ol>
 		</div>
-
 
 		<!-- Search Widget -->
 		<div class="card mb-4">
@@ -368,10 +362,12 @@
 						href="searchRadioMedicine.do?mdShape=${mdBCounts.mdShape}&mdColor=${mdBCounts.mdColor}&mdType=${mdBCounts.mdType}&mdLine=${mdBCounts.mdLine}&curRange=${mdBCounts.curRange}&result=2">다음</a></b></li>
 			</c:if>
 		</ul>
-
-
-
 	</div>
+	<c:if test="${!empty comment}">
+		<script type="text/javascript">
+			alert("검색된 결과가 없습니다.");
+		</script>
+	</c:if>
 </body>
 <%@ include file="../../../common/bottom.jsp"%>
 </html>

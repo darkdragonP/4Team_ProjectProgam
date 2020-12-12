@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="css/Medicine.css?after" />
 <head>
 <meta charset="EUC-KR">
-<link href="css/DR.css" rel="stylesheet">
 <title>Insert title here</title>
 <style>
 .star-input>.input, .star-input>.input>label:hover, .star-input>.input>input:focus+label,
@@ -110,7 +109,6 @@
 				style="font-size: 30px;"> <i class="fas fa-ambulance"
 				style="color: #EF746F;">약 검색</i></a>
 		</h2>
-		
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">약 세부사항</li>
@@ -129,19 +127,15 @@
 								<div class="att_type">
 									<div class="inner_att_type">
 										<h3>
-											<strong>${medicine.getMdTitle()}
-										</strong>
+											<strong>${medicine.getMdTitle()} </strong>
 										</h3>
 										<div class="thmb thmb_border">
 											<span class="img_box" style="width: 250px;"> <img
-												src="${medicine.getMdImage()}" width="500" height="200"
+												src="${medicine.getMdImage()}" width="700" height="250"
 												alt="${medicine.getMdTitle()}" />
-												<div class="enlarge">
-													<a href="${medicine.getMdImage()}" width="300%" height="300%">이미지
-														크게보기</a>
-												</div>
 											</span>
 										</div>
+										<br>
 										<div class="wr_tmp_profile">
 											<div class="tmp_profile">
 												<table class="tmp_profile_tb">
@@ -153,41 +147,41 @@
 
 
 														<tr>
-															<th scope="row">식약처 분류</th>
+															<th scope="row">식약처 분류 : </th>
 															<td>${medicine.getMdClass()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row">구분</th>
+															<th scope="row">구분 : </th>
 															<td>${medicine.getMdGrade()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row">제조(수입) 업체명</th>
+															<th scope="row">제조(수입) 업체명 : </th>
 															<td>${medicine.getMdComp()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row">제형</th>
+															<th scope="row">제형 : </th>
 															<td>${medicine.getMdType()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row">모양</th>
+															<th scope="row">모양 : </th>
 															<td>${medicine.getMdShape()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row">색상</th>
+															<th scope="row">색상 : </th>
 															<td>${medicine.getMdColor()}</td>
 														</tr>
 														<tr>
-															<th scope="row">약 분할선</th>
+															<th scope="row">약 분할선 : </th>
 															<td>${medicine.getMdLine()}</td>
 														</tr>
 													</tbody>
@@ -271,61 +265,41 @@
 					</div>
 				</div>
 			</div>
-			
 			<!-- Sidebar Widgets Column -->
-			
 			<div class="col-md-4 blog-right-side">
-			
-			
-							<!-- Categories Widget -->
+				<!-- Categories Widget -->
+				<div class="card my-4">
 					<!-- 현재 별점 -->
-					
-					
-					
 					<div class="card-body">
 
-						<img src="images/detail_star${medicine.mdRating}.png" width="70%"
-						>&nbsp;&nbsp;&nbsp;
+						<img src="images/star${medicine.mdRating}.jpg" width="100"
+							height="20">&nbsp;&nbsp;&nbsp;${medicine.mdRating}점
 					</div>
-					
-					
-					
+				</div>
 				<!-- Side Widget -->
-				<div> 
-					<h5 class="cards-header" style="font-weight:bold";font-color="" >약국 검색</h5>
-					<div class="cards-body"
-						style="overflow: scroll; width: 350px; height: 538px;">
-						
+				<div class="card my-4">
+					<h5 class="card-header">관련 게시물</h5>
+					<div class="card-body"
+						style="overflow: scroll; width: 350px; height: 1100px;">
 						<div>
-						
-							<iframe class="mapmap" id="map" width="600" height="450" 
-								frameborder="0" style="border: 0"
-								
-								src="https://www.google.com/maps/embed/v1/place?q=가산디지털단지+약국&key=AIzaSyDTTytLEEbp91KBVn8jBF-NGiihKLvQQ_M"></iframe>
-						</div>
-						<!--검색창-->
-						<div class="form-inline">
-						<input class="form-control" type="search" placeholder="Search" style="padding: 0.61rem 3.77rem;"
-							id="search1" aria-label="Search"> <br> <br> <br>
-
-						<button class="btn btn-outline-success" id="postYourAdd"
-							onclick="postYourAdd()">Search</button>
+							<h4>게시글 제목</h4>
+							You can put anything you want inside of these side widgets. They
+							are easy to use, and feature the new Bootstrap 4 card containers!
 						</div>
 						<br>
 						<hr>
 						<br>
 					</div>
-				
+				</div>
 			</div>
-			
 		</div>
 	</div>
-</div>
+
 	<div class="container">
 		<div class="blog-right-side">
 			<!-- Comments Form -->
 
-			<div class="card my-5">
+			<div class="card my-12">
 
 				<h5 class="card-header">댓글 등록</h5>
 				<div class="card-body">
@@ -343,23 +317,41 @@
 									<input type="radio" name="mdMR" value="5" id="p5"> <label
 									for="p5">5</label>
 							</span>
-							</span><span> <output for="star-input">
-									<button type="submit" class="btn btn-primary">확인</button>
-								</output>
+							</span><span> <c:choose>
+									<c:when test="${empty uIdx}">
+										<button type="button" class="btn btn-primary"
+											onclick="alert('로그인 후 이용 가능합니다.');">확인</button>
+									</c:when>
+									<c:otherwise>
+										<button type="submit" class="btn btn-primary">확인</button>
+									</c:otherwise>
+								</c:choose>
 							</span>
 						</form>
 					</div>
 					<br>
 					<div>
-						<form action="insertmdReply.do" method="post">
-							<input type=hidden id="mdIdx" name="mdIdx" 
+						<form id="insertMdRe" method="post">
+							<input type=hidden id="mdIdx" name="mdIdx"
 								value="${medicine.mdIdx}">
-							<div class="form-group">
-								<textarea class="form-control2" rows="3" id="uReContent"
-									name="uReContent" required
-									placeholder="내용을 입력하세요 or 로그인후 이용가능합니다 or ocr인증 후 이용가능합니다.[ajax로 구현 예정]"></textarea>
-							</div>
-							<button type="submit" class="btn btn-primary">댓글 등록</button>
+							<c:choose>
+								<c:when test="${empty uIdx}">
+									<div class="form-group">
+										<textarea style="width: 100%" class="form-control" rows="3"
+											id="uReContent" name="uReContent" placeholder="로그인 후 이용가능합니다"></textarea>
+									</div>
+									<button type="button" class="btn btn-primary"
+										onclick="alert('로그인 후 이용 가능합니다.');">댓글 등록</button>
+								</c:when>
+								<c:otherwise>
+									<div class="form-group">
+										<textarea class="form-control" rows="3" id="uReContent"
+											name="uReContent" required placeholder="내용을 입력해주세요"></textarea>
+									</div>
+									<button type="submit" class="btn btn-primary" onclick="insertmdRe();return false;">댓글
+										등록</button>
+								</c:otherwise>
+							</c:choose>
 						</form>
 					</div>
 				</div>
@@ -390,32 +382,14 @@
 		</c:forEach>
 	</div>
 
+
 	<!-- /.row -->
 	<!-- /.container -->
+
+
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/star.js"></script>
 </body>
-
-<script type="text/javascript">
-	var urltemplate = "https://www.google.com/maps/embed/v1/place?q={}&key=AIzaSyDTTytLEEbp91KBVn8jBF-NGiihKLvQQ_M"
-
-	function postYourAdd() {
-		var search1 = $("#search1");
-
-		console.log(search1.val());
-
-		var url = urltemplate.replace("{}", search1.val());
-
-		console.log(url);
-
-		var iframe = $("#map");
-
-		iframe.attr("src", url);
-	}
-	
-	$("#search1").keyup(function(e){if(e.keyCode == 13)  postYourAdd(); });
-</script>
-
 <!--footer starts from here-->
 <%@ include file="../../../common/bottom.jsp"%>
 </html>

@@ -12,11 +12,7 @@
 <body>
 	<div class="container">
 
-		<h2 class="sub-header">
-			약관련 정보 게시판 <img src="images/logo.png"
-				style="width: 3.5%; height: 3.5%;" />
-		</h2>
-		<!-- 		<img src="images/board1.jpg" alt="board" width="1110px" height="400px"
+		<a href="boardList.do" class="flex flex-column items-center justify-center color-inherit w-100 pa2 br2 br--top no-underline hover-bg-blue4 hover-white" style="font-size:30px;"><i class="fas fa-chalkboard-teacher" style="color: #EF746F;" >&nbsp;약 관련 정보 게시판</i></a></h2><!-- 		<img src="images/board1.jpg" alt="board" width="1110px" height="400px"
 			align="right">
  -->
 		<div class="breadcrumb-main">
@@ -56,16 +52,24 @@
 			<!-- 콘텐츠 내용에서 주제가 바뀔 때 사용할 수 있는 수평 가로선을 정의할 때 사용 -->
 			<span>전체 ${mdBCounts.endPage}</span> <span>Page<strong>${mdBCounts.startPage}</strong>/${mdBCounts.endPage}
 			</span> <span style="float: right;"><span class="input-group-btn">
-					<button class="btn btn-secondary" type="button"
-						onclick="location.href='insertBoard.do'">새 글 등록</button>
+					<c:choose>
+						<c:when test="${empty uIdx}">
+							<button class="btn btn-secondary" type="button"
+								onclick="alert('로그인 후 이용가능합니다.')">새 글 등록</button>
+						</c:when>
+						<c:otherwise>
+							<button class="btn btn-secondary" type="button"
+								onclick="location.href='insertBoard.do'">새 글 등록</button>
+						</c:otherwise>
+					</c:choose>
 
 
 			</span>
 		</div>
-		<ul class="pagination">
+		<ul class="pagination" style="display: flex;  justify-content: center; align-items: center";>
 			<c:if test="${mdBCounts.curRange ne 0}">
 				<li class="page-item"><b class="page-link"><a
-						href="searchTextBoard.do?searchCnd=${mdBCounts.searchCnd}&textBoard=${mdBCounts.textBoard}&curRange=${mdBCounts.curRange}&result=1">이전</a></b></li>
+						href="searchTextBoard.do?searchCnd=${mdBCounts.searchCnd}&textBoard=${mdBCounts.textBoard}&curRange=${mdBCounts.curRange}&result=1"><</a></b></li>
 			</c:if>
 			<c:forEach var="pageNum" begin="${mdBCounts.startPage}"
 				end="${mdBCounts.endPage}">
@@ -84,10 +88,9 @@
 			</c:forEach>
 			<c:if test="${mdBCounts.curRange+1 ne mdBCounts.rangeCnt}">
 				<li class="page-item"><b class="page-link"><a
-						href="searchTextBoard.do?searchCnd=${mdBCounts.searchCnd}&textBoard=${mdBCounts.textBoard}&curRange=${mdBCounts.curRange}&result=2">다음</a></b></li>
+						href="searchTextBoard.do?searchCnd=${mdBCounts.searchCnd}&textBoard=${mdBCounts.textBoard}&curRange=${mdBCounts.curRange}&result=2">></a></b></li>
 			</c:if>
 		</ul>
-
 
 		<div class="bbs_list_search" align="center">
 			<!-- 원하는 부분을 가운데로 옮겨주는 기능 -->
@@ -108,6 +111,12 @@
 		</div>
 	</div>
 	<br>
+		<c:if test="${!empty comment0}">
+			<script type="text/javascript">
+				alert("검색된 결과가 없습니다.");
+			</script>
+		</c:if>
+	
 </body>
 <%@ include file="../../../common/bottom.jsp"%>
 </html>

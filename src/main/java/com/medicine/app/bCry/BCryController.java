@@ -48,7 +48,7 @@ public class BCryController {
 			vo.setBcry(recentBCry);
 			bCryService.insertBCry(vo);
 		} else {
-			System.out.println("이미 신고처리되었습니다.");
+			mv.addObject("comment2", "이미 신고처리 되었습니다.");
 		}
 		BoardVO board = boardService.selectBoard(bIdx);
 		board.setbCry(Integer.toString(recentBCry));

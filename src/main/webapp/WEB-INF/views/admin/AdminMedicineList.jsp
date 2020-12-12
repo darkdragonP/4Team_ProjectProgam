@@ -5,7 +5,7 @@
 <html>
 <link rel="stylesheet" href="css/main.css?after" />
 <%@ include file="../../../common/top.jsp"%>
-  <link href="css/board.css" rel="stylesheet">
+
 <head>
 <meta charset="EUC-KR">
 <title>MEDICINE</title>
@@ -26,7 +26,7 @@
 				<nav id="nav">
 					<ul>
 						<li><h3>
-								<strong><div align="left" style="color: #EF746F;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약
+								<strong><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약
 									관리&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
 							</h3></li>
 						<br>
@@ -83,7 +83,8 @@
 			<c:forEach items="${AdminMedicineList}" var="adminMedicine">
 				<tbody>
 					<tr>
-						<td>${adminMedicine.mdImage}</td>
+						<td><img src="${adminMedicine.getMdImage()}" width="70"
+								height="35" alt="${medicine.getMdTitle()}" /></td>
 						<td><a
 							href="SelectAdminMedicine.do?mdIdx=${adminMedicine.mdIdx}">${adminMedicine.mdTitle}</a></td>
 						<td>${adminMedicine.mdAppr}</td>
@@ -93,7 +94,7 @@
 				</tbody>
 			</c:forEach>
 		</table>
-				<ul class="pagination" style="display: flex;  justify-content: center; align-items: center";>
+		<ul class="pagination">
 			<c:if test="${mdBCounts.curRange ne 0}">
 				<li class="page-item"><b class="page-link"><a
 						href="AdminMedicineList.do?curRange=${mdBCounts.curRange}&result=1">이전</a></b></li>

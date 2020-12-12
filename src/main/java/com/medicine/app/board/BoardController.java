@@ -37,7 +37,7 @@ public class BoardController {
 		MdBoardCounts mdBCounts = new MdBoardCounts();
 		mdBCounts.setListCnt(listCnt);
 		if (listCnt == 0) {
-			System.out.println("검색된결과가 없습니다.");
+			mv.addObject("comment", "현재 자료가 없습니다.");
 		} else {
 			mdBCounts.setPage(curPage, startp, curRange);
 			if (result == 1) {
@@ -109,7 +109,7 @@ public class BoardController {
 		MdBoardCounts mdBCounts = new MdBoardCounts();
 		mdBCounts.setListCnt(listCnt);
 		if (listCnt == 0) {
-			System.out.println("검색된결과가 없습니다.");
+			
 		} else {
 			mdBCounts.setPage(curPage, startp, curRange);
 			if (result == 1) {
@@ -130,6 +130,7 @@ public class BoardController {
 
 		mv.addObject("board", board);
 		List<BReplyVO> selectBReplyList = bReplyService.selectBRelplyList(Integer.toString(vo.getbIdx()));
+		System.out.println(selectBReplyList);
 		mv.addObject("selectBReplyList", selectBReplyList);
 		mv.setViewName("/board/SelectBoard");
 
@@ -177,7 +178,7 @@ public class BoardController {
 		MdBoardCounts mdBCounts = new MdBoardCounts();
 		mdBCounts.setListCnt(listCnt);
 		if (listCnt == 0) {
-			System.out.println("검색된결과가 없습니다.");
+			mv.addObject("comment0", "검색된결과가 없습니다.");
 		} else {
 			mdBCounts.setSearchCnd(searchCnd);
 			mdBCounts.setTextBoard(textBoard);

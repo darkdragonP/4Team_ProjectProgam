@@ -14,6 +14,7 @@
 	<select id="selectBReplyList" parameterType="String" resultMap="BReplyResult">
 	<![CDATA[
 		SELECT 
+		b_Reply.USER_REPLY_NO,
 		b_Reply.USER_CODE, 
 		b_Reply.BOARD_CODE,
 		b_Reply.USER_REPLY, 

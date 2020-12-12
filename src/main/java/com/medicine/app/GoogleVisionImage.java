@@ -85,13 +85,7 @@ public class GoogleVisionImage {
 					}
 
 					String text=res.getTextAnnotationsList().get(0).getDescription();
-					// For full list of available annotations, see http://g.co/cloud/vision/docs
-					/*
-					 * for (EntityAnnotation annotation : res.getTextAnnotationsList()) {
-					 * 
-					 * //System.out.printf("Text: %s\n", annotation.getDescription());
-					 * //System.out.printf("Position : %s\n", annotation.getBoundingPoly()); }
-					 */
+				
 					return text;
 				}
 			}

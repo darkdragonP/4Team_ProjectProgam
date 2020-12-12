@@ -74,7 +74,7 @@ public class BReplyController {
 		System.out.println("deleteMdReply 댓글 제거 메소드 실행.");
 		String uReIdx = Integer.toString(vo.getuReIdx());
 		String bIdx = Integer.toString(vo.getBIdx());
-
+		System.out.println(uReIdx);
 		bReplyService.deleteBReply(uReIdx);
 		BoardVO board = boardService.selectBoard(bIdx);
 		List<BReplyVO> selectBReplyList = bReplyService.selectBRelplyList(bIdx);
@@ -101,7 +101,6 @@ public class BReplyController {
 			mv.addObject("mdBCounts", mdBCounts);
 			mv.addObject("boardList", boardList);
 		}
-
 		mv.addObject("board", board);
 		mv.addObject("selectBReplyList", selectBReplyList);
 		mv.setViewName("/board/SelectBoard");

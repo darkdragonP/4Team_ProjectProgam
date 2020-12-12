@@ -25,7 +25,7 @@
 				<nav id="nav">
 					<ul>
 						<li><h3>
-								<strong><div align="left" style="color: #EF746F;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약
+								<strong><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;등록된</div>약
 									관리&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
 							</h3></li>
 						<br>
@@ -86,12 +86,8 @@
 								</p>
 								<div class="thmb thmb_border">
 									<span class="img_box" style="width: 250px;"> <img
-										src="${medicine.mdImage}" width="500" height="200"
+										src="${medicine.mdImage}" width="800" height="300"
 										alt="${medicine.mdTitle}" />
-										<div class="enlarge">
-											<a href="${medicine.mdImage}" width="300%" height="300%">이미지
-												크게보기</a>
-										</div>
 									</span>
 								</div>
 								<br>
@@ -180,9 +176,6 @@
 						onclick="location.href='AdminMedicineList.do'">돌아가기</button>
 				</div>
 			</div>
-
-
-
 
 		</div>
 
