@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="css/main.css?after" />
+<link rel="stylesheet" href="css/Medicine.css?after" />
 <%@ include file="../../../common/top.jsp"%>
 <head>
 <style>
@@ -204,11 +205,14 @@
 											<h2>
 												${selectUser.getuName()}<br> <br> <span>생일
 													: ${selectUser.getuBirth()}</span> <br> <br> <span>이메일
-													: ${selectUser.getuEmail()}</span> <br> <br> <span>OCR결제여부
-													: ${selectUser.getOcrPay()}</span>
-
+													: ${selectUser.getuEmail()}</span> <br> <br>
+												<c:if test="${selectUser.getOcrPay() eq 1}">
+													<span>OCR결제여부 : 구독중</span>
+											</c:if>
+											<c:if test="${selectUser.getOcrPay() ne 1}">
+													<span>OCR결제여부 : 미구독</span>
+											</c:if>
 											</h2>
-
 											<p>
 												<a href="detailUser.do"><button class="btn-list">
 														수정하기</button> </a>
@@ -238,50 +242,43 @@
 												<div class="row py-4">
 													<div class="col-lg-6 mx-auto">
 														<!-- Uploaded image area-->
-														<p class="font-italic text-center" style="color: #0b4877;">이미지를
-															업로드 하시면 아래에 사진이 나타납니다.</p>
-														<div class="image-area mt-4">
-															<img id="imageResult" src="#" alt=""
-																class="img-fluid rounded shadow-sm mx-auto d-block">
+														<c:if test="${!empty textImage.text}">
+														<div>
+															<img src="images/OcrTest.jpg" height="250" width="520">
 														</div>
+														</c:if>
 														<br>
-														<!-- Upload image input-->
-														<form id="OcrSearch" action="SearchOcr.do" enctype="multipart/form-data"
+														<!--
+														 Upload image input-->
+
+														<form action="SearchOcr.do" enctype="multipart/form-data"
 															method="post">
-															<div
-																class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
-																<input id="upload" name="uploadFile" type="file"
-																	onchange="readURL(this);" class="form-control border-0">
-																<label id="upload-label" for="upload"
-																	class="font-weight-light text-muted">사진 선택하기</label>
-																<div class="input-group-append">
-																	<label for="upload"
-																		class="btn btn-light m-0 rounded-pill px-4"> <i
-																		class="fa fa-cloud-upload mr-2 text-muted"></i><small
-																		class="text-uppercase font-weight-bold text-muted">사진
-																			올리기</small></label>
-																</div>
-															</div>
-															<c:choose>
-															<c:when test="${empty textImage.text}">
-															<div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
-															<p class="font-weight-light text-muted">검색된 텍스트 추출칸입니다.</p>
-															</div>
-															</c:when>
-															<c:otherwise>
-															<div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
-															<ul>
-															<li>식별표기 : ${textImage.text}</li>
-															<li>약 색상 :RGB ${textImage.image}</li>
-															</ul>
-															</div>
-															</c:otherwise>
-															</c:choose>
-															
-															<button type="submit" form="OcrSearch">검색</button>
-															
+															<input name="uploadFile" type="file">
+															<button type="submit">검색</button>
 														</form>
 														<br>
+														<c:choose>
+															<c:when test="${empty textImage.text}">
+																<div
+																	class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+																	<p class="font-weight-light text-muted">검색된 텍스트
+																		추출칸입니다.</p>
+																</div>
+															</c:when>
+															<c:otherwise>
+																<div
+																	class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+																	<tr>
+																		<td>추출
+																			값&nbsp;&nbsp;:&nbsp;&nbsp;${textImage.text}</td>
+																		<td><div class="com" align="left"
+																				style="background-color: rgb(${textImage.image});"></div></td>
+																	</tr>
+																</div>
+															</c:otherwise>
+														</c:choose>
+
+
 														<table class="table table-striped">
 															<thead>
 																<tr>
@@ -298,6 +295,7 @@
 																</tr>
 																<c:forEach items="${searchMdList}" var="upd">
 																	<tr>
+
 																		<td>${upd.mdIdx}</td>
 																		<td><a href="#"></a>${upd.mdTitle}</td>
 																		<td><a
@@ -477,41 +475,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- Scripts -->
-	<script>
-		/*  ==========================================
-		SHOW UPLOADED IMAGE
-		 * ========================================== */
-		function readURL(input) {
-			if (input.files && input.files[0]) {
-				var reader = new FileReader();
-
-				reader.onload = function(e) {
-					$('#imageResult').attr('src', e.target.result);
-				};
-				reader.readAsDataURL(input.files[0]);
-			}
-		}
-
-		$(function() {
-			$('#upload').on('change', function() {
-				readURL(input);
-			});
-		});
-
-		/*  ==========================================
-		    SHOW UPLOADED IMAGE NAME
-		 * ========================================== */
-		var input = document.getElementById('upload');
-		var infoArea = document.getElementById('upload-label');
-
-		input.addEventListener('change', showFileName);
-		function showFileName(event) {
-			var input = event.srcElement;
-			var fileName = input.files[0].name;
-			infoArea.textContent = 'File name: ' + fileName;
-		}
-	</script>
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="js/jquery.scrolly.min.js"></script>
 	<script src="js/jquery.scrollex.min.js"></script>

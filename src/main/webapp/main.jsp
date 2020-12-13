@@ -76,9 +76,9 @@
 z									</c:when>
 
 								<c:otherwise>
-									<a href="#"><img src="images/mobile-payment.svg"
+									<a href="UserMainPay.do"><img src="images/mobile-payment.svg"
 										style="width: 100px; height: 100px;"></a>
-									<a href="#"><img src="images/mobile-payment.svg"
+									<a href="UserMainPay.do"><img src="images/mobile-payment.svg"
 										style="width: 100px; height: 100px;"></a>
 								</c:otherwise>
 							</c:choose>

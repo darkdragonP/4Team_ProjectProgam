@@ -34,8 +34,11 @@ public interface MedicineService {
 	
 	public Integer searchOcrCountMedicine(String text);
 	
-	public List<MedicineVO> searchOcrTextMedicine(String text);
+	public List<MedicineVO> searchOcrTextMedicine(Map<String, Object> vo);
 	
-	public List<MedicineVO> searchOcrImageMedicine(String text);
+	public List<MedicineVO> searchOcrImageMedicine(Map<String, Object> vo);
+	
+	public Integer searchOcrTCountMedicine(String text);
+	public Integer searchOcrICountMedicine(String text);
 	
 }

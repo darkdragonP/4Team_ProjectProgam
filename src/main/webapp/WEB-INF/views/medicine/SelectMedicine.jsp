@@ -104,7 +104,8 @@
 <body>
 
 	<div class="container">
-		<h2 class="sub-header" style="color: #EF746F;"><a href="SelectMedicine.do?mdIdx=43272"
+		<h2 class="sub-header" style="color: #EF746F;">
+			<a href="SelectMedicine.do?mdIdx=43272"
 				class="flex flex-column items-center justify-center color-inherit w-100 pa2 br2 br--top no-underline hover-bg-blue4 hover-white"
 				style="font-size: 30px;"> <i class="fas fa-ambulance"
 				style="color: #EF746F;">약 검색</i></a>
@@ -147,41 +148,41 @@
 
 
 														<tr>
-															<th scope="row">식약처 분류 : </th>
+															<th scope="row">식약처 분류 :</th>
 															<td>${medicine.getMdClass()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row">구분 : </th>
+															<th scope="row">구분 :</th>
 															<td>${medicine.getMdGrade()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row">제조(수입) 업체명 : </th>
+															<th scope="row">제조(수입) 업체명 :</th>
 															<td>${medicine.getMdComp()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row">제형 : </th>
+															<th scope="row">제형 :</th>
 															<td>${medicine.getMdType()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row">모양 : </th>
+															<th scope="row">모양 :</th>
 															<td>${medicine.getMdShape()}</td>
 														</tr>
 
 
 														<tr>
-															<th scope="row">색상 : </th>
+															<th scope="row">색상 :</th>
 															<td>${medicine.getMdColor()}</td>
 														</tr>
 														<tr>
-															<th scope="row">약 분할선 : </th>
+															<th scope="row">약 분할선 :</th>
 															<td>${medicine.getMdLine()}</td>
 														</tr>
 													</tbody>
@@ -331,34 +332,38 @@
 					</div>
 					<br>
 					<div>
-						<form id="insertMdRe" method="post">
-							<input type=hidden id="mdIdx" name="mdIdx"
-								value="${medicine.mdIdx}">
-							<c:choose>
-								<c:when test="${empty uIdx}">
+						<c:choose>
+							<c:when test="${empty uIdx}">
+								<div>
 									<div class="form-group">
 										<textarea style="width: 100%" class="form-control" rows="3"
 											id="uReContent" name="uReContent" placeholder="로그인 후 이용가능합니다"></textarea>
 									</div>
 									<button type="button" class="btn btn-primary"
 										onclick="alert('로그인 후 이용 가능합니다.');">댓글 등록</button>
-								</c:when>
-								<c:otherwise>
-									<div class="form-group">
-										<textarea class="form-control" rows="3" id="uReContent"
-											name="uReContent" required placeholder="내용을 입력해주세요"></textarea>
-									</div>
-									<button type="submit" class="btn btn-primary" onclick="insertmdRe();return false;">댓글
-										등록</button>
-								</c:otherwise>
-							</c:choose>
-						</form>
+								</div>
+							</c:when>
+							<c:otherwise>
+								<div>
+									<form action="insertmdReply.do" method="post">
+										<input type=hidden id="mdIdx" name="mdIdx"
+											value="${medicine.mdIdx}">
+										<div class="form-group">
+											<textarea style="width: 100%" class="form-control" rows="3"
+												id="uReContent" name="uReContent" required
+												placeholder="내용을 입력해주세요"></textarea>
+										</div>
+										<button type="submit" class="btn btn-primary">댓글 등록</button>
+									</form>
+								</div>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+<br>
 	<div class="container">
 		<c:forEach items="${selectMdReplyList}" var="mdReplyList">
 
@@ -381,11 +386,6 @@
 			<hr>
 		</c:forEach>
 	</div>
-
-
-	<!-- /.row -->
-	<!-- /.container -->
-
 
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/star.js"></script>

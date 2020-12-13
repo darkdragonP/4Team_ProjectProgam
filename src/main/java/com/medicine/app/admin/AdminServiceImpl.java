@@ -22,11 +22,39 @@ public class AdminServiceImpl implements MedicineService{
 
 	
 	
+	
+
 	@Override
-	public List<MedicineVO> searchOcrImageMedicine(String text) {
+	public List<MedicineVO> searchOcrTextMedicine(Map<String, Object> vo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
+	@Override
+	public List<MedicineVO> searchOcrImageMedicine(Map<String, Object> vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public Integer searchOcrTCountMedicine(String text) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public Integer searchOcrICountMedicine(String text) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 	@Override
 	public Integer searchOcrCountMedicine(String text) {
@@ -34,11 +62,7 @@ public class AdminServiceImpl implements MedicineService{
 		return null;
 	}
 
-	@Override
-	public List<MedicineVO> searchOcrTextMedicine(String text) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	@Override
 	public List<MedicineVO> selectMedicineList(Map<String, Integer> vo) {

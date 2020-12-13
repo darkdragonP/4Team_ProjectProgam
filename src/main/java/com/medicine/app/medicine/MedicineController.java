@@ -1,5 +1,8 @@
 package com.medicine.app.medicine;
 
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.medicine.app.MdBoardCounts;
@@ -98,6 +102,7 @@ public class MedicineController {
 			ModelAndView mv) {
 		System.out.println("-------------------------------------------");
 		System.out.println("serchTextMedicine 약 텍스트검색 메소드 실행.");
+		int listCnt1 = medicineService.countsMedicine();
 		int listCnt = medicineService.searchCountMedicine(textMedicine);
 		MdBoardCounts mdBCounts = new MdBoardCounts();
 		mdBCounts.setTextMedicine(textMedicine);
@@ -117,15 +122,15 @@ public class MedicineController {
 			vo.put("startIndex", Integer.toString(mdBCounts.getStartIndex()));
 			vo.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
 			vo.put("text", mdBCounts.getTextMedicine());
-			
+
 			List<MedicineVO> medicineList = null;
-			if (listCnt > 5000) {
-				ThreadVO vv = new ThreadVO(listCnt);
-				Thread1 thread1 = new Thread1(vo, listCnt, vv);
-				Thread2 thread2 = new Thread2(vo, listCnt, vv);
-				Thread3 thread3 = new Thread3(vo, listCnt, vv);
-				Thread4 thread4 = new Thread4(vo, listCnt, vv);
-				Thread5 thread5 = new Thread5(vo, listCnt, vv);
+			if (listCnt1 > 5000) {
+				ThreadVO vv = new ThreadVO(listCnt1);
+				Thread1 thread1 = new Thread1(vo, listCnt1, vv);
+				Thread2 thread2 = new Thread2(vo, listCnt1, vv);
+				Thread3 thread3 = new Thread3(vo, listCnt1, vv);
+				Thread4 thread4 = new Thread4(vo, listCnt1, vv);
+				Thread5 thread5 = new Thread5(vo, listCnt1, vv);
 				thread1.run();
 				thread2.run();
 				thread3.run();
@@ -146,11 +151,13 @@ public class MedicineController {
 						if (medicineList == null) {
 							medicineList = thread1.medicineList;
 						} else {
+
 							medicineList.addAll(thread1.medicineList);
 						}
 						break;
 					}
-
+				}
+				while (true) {
 					if (thread2.medicineList == null) {
 						System.out.println("2번쓰레드 도는중?");
 						continue;
@@ -161,61 +168,68 @@ public class MedicineController {
 					} else if (thread2.medicineList != null) {
 						System.out.println("2번쓰레드 검색완료");
 						if (medicineList == null) {
-							medicineList = thread1.medicineList;
+							medicineList = thread2.medicineList;
 						} else {
-							medicineList.addAll(thread1.medicineList);
-						}
-						break;
-					}
-					if (thread3.medicineList == null) {
-						System.out.println("2번쓰레드 도는중?");
-						continue;
-					} else if (thread3.result == "없다") {
-						System.out.println("2번쓰레드 겸색완료");
-						break;
-
-					} else if (thread3.medicineList != null) {
-						System.out.println("2번쓰레드 검색완료");
-						if (medicineList == null) {
-							medicineList = thread1.medicineList;
-						} else {
-							medicineList.addAll(thread1.medicineList);
-						}
-						break;
-					}
-					if (thread4.medicineList == null) {
-						System.out.println("2번쓰레드 도는중?");
-						continue;
-					} else if (thread4.result == "없다") {
-						System.out.println("2번쓰레드 겸색완료");
-						break;
-
-					} else if (thread4.medicineList != null) {
-						System.out.println("2번쓰레드 검색완료");
-						if (medicineList == null) {
-							medicineList = thread1.medicineList;
-						} else {
-							medicineList.addAll(thread1.medicineList);
-						}
-						break;
-					}
-					if (thread5.medicineList == null) {
-						System.out.println("2번쓰레드 도는중?");
-						continue;
-					} else if (thread5.result == "없다") {
-						System.out.println("2번쓰레드 겸색완료");
-						break;
-
-					} else if (thread5.medicineList != null) {
-						System.out.println("2번쓰레드 검색완료");
-						if (medicineList == null) {
-							medicineList = thread1.medicineList;
-						} else {
-							medicineList.addAll(thread1.medicineList);
+							medicineList.addAll(thread2.medicineList);
 						}
 						break;
 					}
 				}
+				while (true) {
+					if (thread3.medicineList == null) {
+						System.out.println("3번쓰레드 도는중?");
+						continue;
+					} else if (thread3.result == "없다") {
+						System.out.println("3번쓰레드 겸색완료");
+						break;
+
+					} else if (thread3.medicineList != null) {
+						System.out.println("3번쓰레드 검색완료");
+						if (medicineList == null) {
+							medicineList = thread3.medicineList;
+						} else {
+							medicineList.addAll(thread3.medicineList);
+						}
+						break;
+					}
+				}
+				while (true) {
+					if (thread4.medicineList == null) {
+						System.out.println("4번쓰레드 도는중?");
+						continue;
+					} else if (thread4.result == "없다") {
+						System.out.println("4번쓰레드 겸색완료");
+						break;
+
+					} else if (thread4.medicineList != null) {
+						System.out.println("4번쓰레드 검색완료");
+						if (medicineList == null) {
+							medicineList = thread4.medicineList;
+						} else {
+							medicineList.addAll(thread4.medicineList);
+						}
+						break;
+					}
+				}
+				while (true) {
+					if (thread5.medicineList == null) {
+						System.out.println("5번쓰레드 도는중?");
+						continue;
+					} else if (thread5.result == "없다") {
+						System.out.println("5번쓰레드 겸색완료");
+						break;
+
+					} else if (thread5.medicineList != null) {
+						System.out.println("5번쓰레드 검색완료");
+						if (medicineList == null) {
+							medicineList = thread5.medicineList;
+						} else {
+							medicineList.addAll(thread5.medicineList);
+						}
+						break;
+					}
+				}
+
 			} else {
 				medicineList = medicineService.searchTextMedicine(vo);
 			}
@@ -248,7 +262,7 @@ public class MedicineController {
 		} else {
 			searchRadio.put("mdType", mdType);
 		}
-
+		int listCnt1 = medicineService.countsMedicine();
 		int listCnt = medicineService.searchCountMedicine2(searchRadio);
 
 		MdBoardCounts mdBCounts = new MdBoardCounts();
@@ -272,13 +286,13 @@ public class MedicineController {
 			searchRadio.put("endIndex", Integer.toString(mdBCounts.getEndIndex()));
 
 			List<MedicineVO> medicineList = null;
-			if (listCnt > 5000) {
-				ThreadVO vv = new ThreadVO(listCnt);
-				Thread1 thread1 = new Thread1(searchRadio, listCnt, vv);
-				Thread2 thread2 = new Thread2(searchRadio, listCnt, vv);
-				Thread3 thread3 = new Thread3(searchRadio, listCnt, vv);
-				Thread4 thread4 = new Thread4(searchRadio, listCnt, vv);
-				Thread5 thread5 = new Thread5(searchRadio, listCnt, vv);
+			if (listCnt1 > 5000) {
+				ThreadVO vv = new ThreadVO(listCnt1);
+				Thread1 thread1 = new Thread1(searchRadio, listCnt1, vv);
+				Thread2 thread2 = new Thread2(searchRadio, listCnt1, vv);
+				Thread3 thread3 = new Thread3(searchRadio, listCnt1, vv);
+				Thread4 thread4 = new Thread4(searchRadio, listCnt1, vv);
+				Thread5 thread5 = new Thread5(searchRadio, listCnt1, vv);
 				thread1.run();
 				thread2.run();
 				thread3.run();
@@ -299,11 +313,13 @@ public class MedicineController {
 						if (medicineList == null) {
 							medicineList = thread1.medicineList;
 						} else {
+							
 							medicineList.addAll(thread1.medicineList);
 						}
 						break;
 					}
-
+				}
+				while (true) {
 					if (thread2.medicineList == null) {
 						System.out.println("2번쓰레드 도는중?");
 						continue;
@@ -314,65 +330,72 @@ public class MedicineController {
 					} else if (thread2.medicineList != null) {
 						System.out.println("2번쓰레드 검색완료");
 						if (medicineList == null) {
-							medicineList = thread1.medicineList;
+							medicineList = thread2.medicineList;
 						} else {
-							medicineList.addAll(thread1.medicineList);
-						}
-						break;
-					}
-					if (thread3.medicineList == null) {
-						System.out.println("2번쓰레드 도는중?");
-						continue;
-					} else if (thread3.result == "없다") {
-						System.out.println("2번쓰레드 겸색완료");
-						break;
-
-					} else if (thread3.medicineList != null) {
-						System.out.println("2번쓰레드 검색완료");
-						if (medicineList == null) {
-							medicineList = thread1.medicineList;
-						} else {
-							medicineList.addAll(thread1.medicineList);
-						}
-						break;
-					}
-					if (thread4.medicineList == null) {
-						System.out.println("2번쓰레드 도는중?");
-						continue;
-					} else if (thread4.result == "없다") {
-						System.out.println("2번쓰레드 겸색완료");
-						break;
-
-					} else if (thread4.medicineList != null) {
-						System.out.println("2번쓰레드 검색완료");
-						if (medicineList == null) {
-							medicineList = thread1.medicineList;
-						} else {
-							medicineList.addAll(thread1.medicineList);
-						}
-						break;
-					}
-					if (thread5.medicineList == null) {
-						System.out.println("2번쓰레드 도는중?");
-						continue;
-					} else if (thread5.result == "없다") {
-						System.out.println("2번쓰레드 겸색완료");
-						break;
-
-					} else if (thread5.medicineList != null) {
-						System.out.println("2번쓰레드 검색완료");
-						if (medicineList == null) {
-							medicineList = thread1.medicineList;
-						} else {
-							medicineList.addAll(thread1.medicineList);
+							medicineList.addAll(thread2.medicineList);
 						}
 						break;
 					}
 				}
-			}else {
+				while (true) {
+					if (thread3.medicineList == null) {
+						System.out.println("3번쓰레드 도는중?");
+						continue;
+					} else if (thread3.result == "없다") {
+						System.out.println("3번쓰레드 겸색완료");
+						break;
+
+					} else if (thread3.medicineList != null) {
+						System.out.println("3번쓰레드 검색완료");
+						if (medicineList == null) {
+							medicineList = thread3.medicineList;
+						} else {
+							medicineList.addAll(thread3.medicineList);
+						}
+						break;
+					}
+				}
+				while (true) {
+					if (thread4.medicineList == null) {
+						System.out.println("4번쓰레드 도는중?");
+						continue;
+					} else if (thread4.result == "없다") {
+						System.out.println("4번쓰레드 겸색완료");
+						break;
+
+					} else if (thread4.medicineList != null) {
+						System.out.println("4번쓰레드 검색완료");
+						if (medicineList == null) {
+							medicineList = thread4.medicineList;
+						} else {
+							medicineList.addAll(thread4.medicineList);
+						}
+						break;
+					}
+				}
+				while (true) {
+					if (thread5.medicineList == null) {
+						System.out.println("5번쓰레드 도는중?");
+						continue;
+					} else if (thread5.result == "없다") {
+						System.out.println("5번쓰레드 겸색완료");
+						break;
+
+					} else if (thread5.medicineList != null) {
+						System.out.println("5번쓰레드 검색완료");
+						if (medicineList == null) {
+							medicineList = thread5.medicineList;
+						} else {
+							medicineList.addAll(thread5.medicineList);
+						}
+						break;
+					}
+				}
+
+			} else {
 				medicineList = medicineService.searchRadioMedicine(searchRadio);
-			}			
-			
+			}
+
 			mv.addObject("mdBCounts", mdBCounts);
 			mv.addObject("medicineList", medicineList);
 		}
@@ -380,6 +403,10 @@ public class MedicineController {
 		return mv;
 
 	}
+	
+	
+
+	
 
 	class Thread1 implements Runnable {
 

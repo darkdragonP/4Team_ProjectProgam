@@ -24,8 +24,7 @@ public class MdReplyController {
 	@Resource(name = "MedicineService")
 	private MedicineService medicineService;
 	
-	@ResponseBody
-	@RequestMapping(value = "/insertmdReply.do", method = RequestMethod.POST )
+	@RequestMapping(value = "/insertmdReply.do")
 	public ModelAndView insertmdReply(MdReplyVO vo, HttpServletRequest request, ModelAndView mv) {
 		System.out.println("insertmdReply 댓글 추가 메소드 실행.");
 		HttpSession session = request.getSession();

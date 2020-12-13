@@ -327,9 +327,10 @@
 				<tbody>
 					<tr>
 						<td>${medicine.mdIdx}</td>
-						<td>${medicine.mdImage}</td>
+						<td><img src="${medicine.getMdImage()}" width="70"
+							height="35" alt="${medicine.getMdTitle()}" /></td>
 						<td><a href="SelectMedicine.do?mdIdx=${medicine.mdIdx}">${medicine.mdTitle}</a></td>
-						<td><img src="images/star${medicine.mdRating}.jpg"
+						<td><img src="images/star${medicine.mdRating}.png"
 							width="100" height="20"></td>
 						<td>${medicine.mdHits}</td>
 						<td>${medicine.mdDate}</td>

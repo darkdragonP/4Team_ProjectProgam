@@ -52,13 +52,18 @@ public class MedicineDAO {
 	public Integer searchOcrCountMedicine(String text) {
 		return sqlSession.selectOne("medicine.searchCountMedicine2", text);
 	}
-	public List<MedicineVO> searchOcrTextMedicine(String text) {
-		return sqlSession.selectList ("medicine.searchOcrTextMedicine", text);
+	public List<MedicineVO> searchOcrTextMedicine(Map<String, Object> vo) {
+		return sqlSession.selectList ("medicine.searchOcrTextMedicine", vo);
 	}
 	
-	public List<MedicineVO> searchOcrImageMedicine(String text) {
-		return sqlSession.selectList("medicine.searchOcrImageMedicine", text);
+	public List<MedicineVO> searchOcrImageMedicine(Map<String, Object> vo) {
+		return sqlSession.selectList("medicine.searchOcrImageMedicine", vo);
 	}
 	
-	
+	public Integer searchOcrTCountMedicine(String text) {
+		return sqlSession.selectOne("medicine.searchOcrTCountMedicine", text);
+	}
+	public Integer searchOcrICountMedicine(String text) {
+		return sqlSession.selectOne("medicine.searchOcrICountMedicine", text);
+	}
 }

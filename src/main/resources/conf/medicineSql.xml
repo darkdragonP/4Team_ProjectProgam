@@ -196,28 +196,60 @@
 		MD_RATING = #{mdRating}  where MD_CODE=${mdIdx}
 		]]>
 	</update>
-	<select id="searchOcrTextMedicine" parameterType="String"
-		resultMap="medicineResult">
+	
+	<select id="searchOcrTCountMedicine" parameterType="String"
+		resultType="Integer">
 	<![CDATA[
-	select MD_TITLE, MD_CODE from MEDICINE where 
+		select count(MD_CODE) from medicine where 
 		MD_TITLE like '%' || #{text} || '%' or
 		MD_TITLE like '%' || #{text} or
 		MD_TITLE like #{text} || '%' 
 		order by MD_CODE desc
 	]]>
 	</select>
-
-	<select id="searchOcrImageMedicine" parameterType="String"
+	
+	
+	<select id="searchOcrTextMedicine" parameterType="map"
 		resultMap="medicineResult">
+	<![CDATA[select * from(
+	select ROWNUM as rnum, A.* from
+	 (select MD_TITLE, MD_CODE from MEDICINE where 
+		MD_TITLE like '%' || #{text} || '%' or
+		MD_TITLE like '%' || #{text} or
+		MD_TITLE like #{text} || '%' 
+		order by MD_CODE desc) A)
+		where rnum >= #{startIndex} and rnum <=#{endIndex}
+	]]>
+	</select>
+
+	<select id="searchOcrICountMedicine" parameterType="String"
+		resultType="Integer">
 	<![CDATA[
-	select MD_TITLE, MD_CODE from MEDICINE where 
+		select count(MD_CODE) from medicine where 
 		MD_IN like '%' || #{text} || '%' or
 		MD_IN like '%' || #{text} or
 		MD_IN like #{text} || '%' 
 		order by MD_CODE desc
 	]]>
 	</select>
+	
 
+	<select id="searchOcrImageMedicine" parameterType="map"
+		resultMap="medicineResult">
+	<![CDATA[
+
+	select * from(
+	select ROWNUM as rnum, A.* from
+	 (select MD_TITLE, MD_CODE from MEDICINE where 
+		MD_IN like '%' || #{text} || '%' or
+		MD_IN like '%' || #{text} or
+		MD_IN like #{text} || '%' 
+		order by MD_CODE desc) A)
+		where rnum >= #{startIndex} and rnum <=#{endIndex}
+		
+		
+	]]>
+	</select>
 
 
 </mapper>
