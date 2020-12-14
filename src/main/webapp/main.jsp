@@ -13,8 +13,8 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css">
-<link href="../css/all.css">
-<link href="../css/style.css">
+<link href="css/all.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="css/landing-page.css" rel="stylesheet">
@@ -104,11 +104,6 @@ z									</c:when>
 			</div>
 		</div>
 	</section>
-
-
-	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
 
