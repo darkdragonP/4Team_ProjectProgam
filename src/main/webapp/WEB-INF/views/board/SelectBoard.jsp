@@ -89,7 +89,7 @@
 
 			<div class="card my-12">
 
-				<h5 class="card-header">댓글 등록</h5>
+				<h5 class="card-header" style="margin-bottom: 15px; font-family: inherit; font-weight: 400; line-height: 50px; color: #0b4877;">댓글 등록</h5>
 				<div class="card-body">
 					<br>
 					<c:choose>
@@ -120,6 +120,11 @@
 						</c:otherwise>
 					</c:choose>
 				</div>
+				
+				
+				
+				
+				
 			</div>
 		</div>
 	</div>

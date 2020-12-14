@@ -5,23 +5,40 @@
 <html>
 <%@ include file="../../../common/top.jsp"%>
 <link rel="stylesheet" href="css/Medicine.css?after" />
+<link rel="stylesheet" href="css/style.css" />
 <head>
 <meta charset="EUC-KR">
 <title>MEDICINE</title>
 </head>
 <body>
 	<div class="container">
-		<h2 class="sub-header" style="color: #EF746F;">
-			<a href="medicineList.do"
+		<h2 class="sub-header" style="color: #EF746F;"><a href="http://localhost:8080/app/searchTextMedicine.do?textMedicine=%ED%83%80%EC%9D%B4%EB%A0%88%EB%86%80"
 				class="flex flex-column items-center justify-center color-inherit w-100 pa2 br2 br--top no-underline hover-bg-blue4 hover-white"
 				style="font-size: 30px;"> <i class="fas fa-ambulance"
 				style="color: #EF746F;">약 검색</i></a>
 		</h2>
+		
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item">약 세부사항</li>
+				<li class="breadcrumb-item">&nbsp;약 세부사항</li>
 			</ol>
 		</div>
+		
+
+		<div class="card mb-4">
+			<h5 class="card-header">
+				<img src="images/googleVision.jpg" alt="OCR"
+					style="width: 2%; height: 2%;" />OCR 이용하기
+			</h5>
+			<div class="card-body">
+				<span class="input-group-btn">
+					<button class="btn btn-secondary" type="button">사진으로 검색</button>
+				</span> <span class="input-group-btn">
+					<button class="btn btn-secondary" type="button">처방전 등록하기</button>
+				</span>
+			</div>
+		</div>
+
 
 		<!-- Search Widget -->
 		<div class="card mb-4">
@@ -34,261 +51,259 @@
 						<button class="btn btn-secondary" type="submit">검색</button>
 					</div>
 				</form>
-			</div>
+			
 			<br>
 			<h5 class="card-header">약 모양으로 검색</h5>
 			<div class="card-body">
 				<form action="searchRadioMedicine.do">
-					<div class="shape">
-						<div style="border: 1px solid hidden; float: left; width: 8%;">
+				
+				<div class="shape">
+								<div style="border: 1px solid hidden; float: left; width: 8.6%;">
 							<div>
-								<input type="radio" name="mdShape" checked="checked" value="">
+								<input type="radio" id="" name="" class="" checked="checked" value="">
 							</div>
 							<div>
 								모양<br>전체
 							</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 8%;">
+						
+	<div style="border: 1px solid hidden; float: left; width:17.8%;">
 							<div>
 								<input type="radio" name="mdShape" value="원형">
+								<img src="images/shape01.jpg" alt="원형">
 							</div>
-							<div>원형</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 8%;">
+						&nbsp;
+						<div style="border: 1px solid hidden; float: left; width: 17.8%;">
 							<div>
-								<input type="radio" name="mdShape" value="타원형">
+								<input type="radio" name="mdShape" value="타원형"> <img
+									src="images/shape02.jpg" alt="타원형">
 							</div>
-							<div>타원형</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 8%;">
+						<div style="border: 1px solid hidden; float: left; width:17.8%;">
 							<div>
-								<input type="radio" name="mdShape" value="반원형">
+								<input type="radio" name="mdShape" value="반원형"> <img
+									src="images/shape03.jpg" alt="반원형">
 							</div>
-							<div>반원형</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 8%;">
+						<div style="border: 1px solid hidden; float: left; width: 17.8%;">
 							<div>
-								<input type="radio" name="mdShape" value="삼각형">
+								<input type="radio" name="mdShape" value="삼각형"> <img
+									src="images/shape04.jpg" alt="삼각형">
 							</div>
-							<div>삼각형</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 8%;">
+						<div style="border: 1px solid hidden; float: left; width:17.8%;">
 							<div>
-								<input type="radio" name="mdShape" value="사각형">
+								<input type="radio" name="mdShape" value="사각형"> <img
+									src="images/shape05.jpg" alt="사각형">
 							</div>
-							<div>사각형</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 8%;">
-							<div>
-								<input type="radio" name="mdShape" value="마름모형">
+							<div style="clear: both;"></div>
+						<div style="clear: both;">
+							<div style="border: 1px solid hidden; float: left; width:17.8%;">
+								<div>
+									<input type="radio" name="mdShape" value="마름모형"> <img
+										src="images/shape06.jpg" alt="마름모형">
+								</div>
 							</div>
-							<div>마름모형</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 8%;">
+						<div style="border: 1px solid hidden; float: left; width: 17.8%;">
 							<div>
-								<input type="radio" name="mdShape" value="장방형">
+								<input type="radio" name="mdShape" value="장방형"> <img
+									src="images/shape07.jpg" alt="장방형">
 							</div>
-							<div>장방형</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 8%;">
+						<div style="border: 1px solid hidden; float: left; width: 17.8%;">
 							<div>
-								<input type="radio" name="mdShape" value="오각형">
+								<input type="radio" name="mdShape" value="오각형"> <img
+									src="images/shape10.jpg" alt="오각형">
 							</div>
-							<div>오각형</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 8%;">
+						<div style="border: 1px solid hidden; float: left; width: 17.8%;">
 							<div>
-								<input type="radio" name="mdShape" value="육각형">
+								<input type="radio" name="mdShape" value="육각형"> <img
+									src="images/shape08.jpg" alt="육각형">
 							</div>
-							<div>육각형</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 8%;">
+						<div style="border: 1px solid hidden; float: left; width: 17.8%;">
 							<div>
-								<input type="radio" name="mdShape" value="팔각형">
+								<input type="radio" name="mdShape" value="팔각형"> <img
+									src="images/shape09.jpg" alt="팔각형">
 							</div>
-							<div>팔각형</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 8%;">
-							<div>
-								<input type="radio" name="mdShape" value="기타">
-							</div>
-							<div>기타</div>
 						</div>
 					</div>
-					<br> <br> <br>
+					<br> <br> 
 					<hr>
 					<div class="color">
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
+						<div style="border: 1px solid hidden; float: left; width: 8.6%;">
 							<div>
-								<input type="radio" name="mdColor" checked="checked" value="">
+								<input type="radio" id="" name="" class="" checked="checked" value="">
 							</div>
 							<div>
 								색상<br>전체
 							</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
+							<input type="radio" name="mdColor" value="빨강">
 							<div>
-								<input type="radio" name="mdColor" value="하양">
+								<div class="com" style="background-color: #FA5858;"></div>
+								<span style="color: black;" />
+								<div class="coys1" style="background-color: white;"color:"black";>빨강</div>
+								</div>
 							</div>
-							<div>하양</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
 								<input type="radio" name="mdColor" value="노랑">
+								<div class="com" style="background-color: #F4FA58;"></div>
+								<span style="color: black;" />
+								<div class="coys1" style="background-color: white;"color:black;>노랑</div>
 							</div>
-							<div>노랑</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
 								<input type="radio" name="mdColor" value="주황">
+								<div class="com" style="background-color: #FE642E;"></div>
+								<span style="color: black;" />
+								<div class="coys1" style="background-color: white;"color:"black";>주황</div>
 							</div>
-							<div>주황</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
 								<input type="radio" name="mdColor" value="분홍">
+								<div class="com" style="background-color: #F6CEF5;"></div>
+								<span style="color: black;" />
+								<div class="coys1" style="background-color: white;"color:"black";>분홍</div>
 							</div>
-							<div>분홍</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
-								<input type="radio" name="mdColor" value="빨강">
-							</div>
-							<div>빨강</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
-								<input type="radio" name="mdColor" value="갈색">
-							</div>
-							<div>갈색</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
-								<input type="radio" name="mdColor" value="연두">
-							</div>
-							<div>연두</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
-								<input type="radio" name="mdColor" value="초록">
-							</div>
-							<div>초록</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
-								<input type="radio" name="mdColor" value="청록">
-							</div>
-							<div>청록</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
-								<input type="radio" name="mdColor" value="파랑">
-							</div>
-							<div>파랑</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
-								<input type="radio" name="mdColor" value="청록">
-							</div>
-							<div>청록</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
-								<input type="radio" name="mdColor" value="남색">
-							</div>
-							<div>남색</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
-								<input type="radio" name="mdColor" value="자주">
-							</div>
-							<div>자주</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
-								<input type="radio" name="mdColor" value="보라">
-							</div>
-							<div>보라</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
 								<input type="radio" name="mdColor" value="회색">
+								<div class="com" style="background-color: #D8D8D8;"></div>
+								<span style="color: black;" />
+								<div class="coys1" style="background-color: white;"color:"white";>회색</div>
 							</div>
-							<div>회색</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
+								<input type="radio" name="mdColor" value="갈색">
+								<div class="com" style="background-color: #B40431;"></div>
+								<span style="color: black;" />
+								<div class="coys1" style="background-color: white;"color:"black";>갈색</div>
+							</div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
+								<input type="radio" name="mdColor" value="연두">
+								<div class="com" style="background-color: #BEF781;"></div>
+								<span style="color: black;" />
+									<div class="coys1" style="background-color: white;"color:"black";>연두</div>
+							</div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
+								<input type="radio" name="mdColor" value="초록">
+								<div class="com" style="background-color: #58FA82;"></div>
+								<span style="color: black;"/>
+									<div class="coys1" style="background-color: white;"color:"black";>초록</div>
+							</div>
+								<div style="clear: both;"></div>
+							<br>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
+								<input type="radio" name="mdColor" value="청록">
+								<div class="com" style="background-color: #04B486;"></div>
+								<span style="color: black;" />
+									<div class="coys1" style="background-color: white;"color:"black";>청록</div>
+							</div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
+								<input type="radio" name="mdColor" value="파랑">
+								<div class="com" style="background-color: #5858FA;"></div>
+								<span style="color: black;" />
+									<div class="coys1" style="background-color: white;"color:"black";>파랑</div>
+							</div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
+								<input type="radio" name="mdColor" value="남색">
+								<div class="com" style="background-color: #0B0B61;"></div>
+								<span style="color: black;" />
+									<div class="coys1" style="background-color: white;"color:"black";>남색</div>
+							</div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
+								<input type="radio" name="mdColor" value="자주">
+								<div class="com" style="background-color: #FE2E9A;"></div>
+								<span style="color: black;" />
+									<div class="coys1" style="background-color: white;"color:"black";>자주</div>
+							</div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
+								<input type="radio" name="mdColor" value="보라">
+								<div class="com" style="background-color: #AC58FA;"></div>
+								<span style="color: black;" />
+									<div class="coys1" style="background-color: white;"color:"black";>보라</div>
+							</div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
+								<input type="radio" name="mdColor" value="회색">
+								<div class="com" style="background-color: #F2F2F2;"></div>
+								<span style="color: black;" />
+									<div class="coys1" style="background-color: white;"color:"black";>흰색</div>
+							</div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
 								<input type="radio" name="mdColor" value="검정">
+								<div class="com" style="background-color: #000000;"></div>
+								<span style="color: black;" />
+									<div class="coys1" style="background-color: white;"color:"black";>검정</div>
 							</div>
-							<div>검정</div>
-						</div>
-						<div style="border: 1px solid hidden; float: left; width: 5.5%;">
-							<div>
+							<div style="border: 1px solid hidden; float: left; width: 11.1%;">
 								<input type="radio" name="mdColor" value="투명">
+								<div class="com" style="background-color: none;"></div>
+								<span style="color: black;" />
+									<div class="coys1" style="background-color: white;"color:"black";>투명</div>
 							</div>
-							<div>투명</div>
-						</div>
+						<p style="clear: both"><hr>
+						</p>
 					</div>
-					<br> <br> <br>
-					<hr>
 					<div class="Type">
-						<div style="border: 1px solid hidden; float: left; width: 25%;">
+						<div style="border: 1px solid hidden; float: left; width: 8.6%;">
 							<div>
-								<input type="radio" name="mdType" checked="checked" value="">
+								<input type="radio" id="" name="" class="" checked="checked" value="">
 							</div>
 							<div>
 								제형<br>전체
 							</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 25%;">
+							<div style="border: 1px solid hidden; float: left; width: 30.1%;">
 							<div>
 								<input type="radio" name="mdType" value="정제류">
+								<img src="images/type01.jpg" alt="정제류">
 							</div>
-							<div>정제류</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 25%;">
+						<div style="border: 1px solid hidden; float: left; width: 30.1%;">
 							<div>
 								<input type="radio" name="mdType" value="경질캡슐">
+								<img src="images/type02.jpg" alt="경질캡슐">
 							</div>
-							<div>경질캡슐</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 25%;">
+						<div style="border: 1px solid hidden; float: left; width: 30.1%;">
 							<div>
 								<input type="radio" name="mdType" value="연질캡슐">
+								<img src="images/type03.jpg" alt="연질캡슐">
 							</div>
-							<div>연질캡슐</div>
 						</div>
 					</div>
-					<br> <br> <br>
+					<br> <br>
 					<hr>
 					<div class="mdLine">
-						<div style="border: 1px solid hidden; float: left; width: 20%;">
+						<div style="border: 1px solid hidden; float: left; width: 8.6%;">
 							<div>
-								<input type="radio" name="mdLine" checked="checked" value="">
+								<input type="radio" id="" name="" class="" checked="checked" value="">
 							</div>
 							<div>
 								분할선<br>전체
 							</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 20%;">
+						<div style="border: 1px solid hidden; float: left; width: 22.8%;">
 							<div>
-								<input type="radio" name="mdLine" value="없음">
+								<input type="radio" name="mdLine" value=""> 
+								<img src="images/line01.jpg" alt="없음">
 							</div>
-							<div>없음</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 20%;">
+						<div style="border: 1px solid hidden; float: left; width: 22.8%;">
 							<div>
-								<input type="radio" name="mdLine" value="(-)형">
+								<input type="radio" name="mdLine" value="-"> 
+								<img src="images/line02.jpg" alt="(-)형">
 							</div>
-							<div>(-)형</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 20%;">
+						<div style="border: 1px solid hidden; float: left; width: 22.8%;">
 							<div>
-								<input type="radio" name="mdLine" value="(+)형">
+								<input type="radio" name="mdLine" value="+"> 
+								<img src="images/line03.jpg" alt="(+)형">
 							</div>
-							<div>(+)형</div>
 						</div>
-						<div style="border: 1px solid hidden; float: left; width: 20%;">
+						<div style="border: 1px solid hidden; float: left; width: 22.8%;">
 							<div>
 								<input type="radio" name="mdLine" value="기타">
 							</div>
@@ -297,15 +312,20 @@
 					</div>
 					<br> <br> <br>
 					<hr>
-					<center>
-						<button class="btn btn-secondary" type="submit">검색</button>
-						<button class="btn btn-secondary" type="submit">초기화</button>
-					</center>
+					<span style="float: right;"> 
+						<span class="input-group-btn">
+							<button class="btn btn-secondary" type="button">검색</button>
+						</span>
+						<span class="input-group-btn">
+							<button class="btn btn-secondary" type="button">초기화</button>
+						</span>
+					</span>
+			<br>
 				</form>
 			</div>
-		</div>
-
-
+			<br>
+	</div>
+	
 		<!-- Page Content -->
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
@@ -323,21 +343,26 @@
 					<th>작성일</th>
 				</tr>
 			</thead>
+			<tbody>
 			<c:forEach items="${medicineList}" var="medicine">
-				<tbody>
+				
 					<tr>
 						<td>${medicine.mdIdx}</td>
-						<td><img src="${medicine.getMdImage()}" width="70"
-							height="35" alt="${medicine.getMdTitle()}" /></td>
+						<td><img src="images/ku${medicine.mdImage}.jpg"></td>
 						<td><a href="SelectMedicine.do?mdIdx=${medicine.mdIdx}">${medicine.mdTitle}</a></td>
 						<td><img src="images/star${medicine.mdRating}.png"
 							width="100" height="20"></td>
 						<td>${medicine.mdHits}</td>
 						<td>${medicine.mdDate}</td>
 					</tr>
-				</tbody>
+				
 			</c:forEach>
+			</tbody>
 		</table>
+		
+		
+		<div class="wrap">
+		
 		<ul class="pagination">
 			<c:if test="${mdBCounts.curRange ne 0}">
 				<li class="page-item"><b class="page-link"><a
@@ -363,15 +388,9 @@
 						href="searchTextMedicine.do?textMedicine=${mdBCounts.textMedicine}&curRange=${mdBCounts.curRange}&result=2">다음</a></b></li>
 			</c:if>
 		</ul>
-
-
-
-	</div>
-	<c:if test="${!empty comment}">
-		<script type="text/javascript">
-			alert("검색된 결과가 없습니다.");
-		</script>
-	</c:if>
+			</div>
+</div>
+</div>
 </body>
 <%@ include file="../../../common/bottom.jsp"%>
 </html>
